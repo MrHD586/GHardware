@@ -1,4 +1,4 @@
 <?php
-	include("header.php");
-	include("footer.php");
+	include("./partial/header.php");
+	include("./partial/footer.php");
 ?>

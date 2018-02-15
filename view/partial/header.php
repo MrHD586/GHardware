@@ -1,5 +1,7 @@
 <?php
-	echo '<header id="header" style=" background-color:#8080ff;">
+	echo '
+		</br>
+		<header id="header" style=" background-color:#8080ff;">
 			<table class="menu">
 				<tr>
 					<td><a href="home.php" style="color:black;">Home</a></td>

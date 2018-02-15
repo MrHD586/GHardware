@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 	$userdb='projet151';
 	$passdb='projet151';
 	$dbh = new PDO('mysql:host=localhost;dbname=projet151', $userdb, $passdb);
@@ -14,6 +15,9 @@
 			</table>
 		</header>
 	';
+=======
+
+>>>>>>> be145ec687cdd25fadda67acd447e4c833dfbf04
 ?>
 
 <html>

@@ -1,5 +1,13 @@
 <?php
 	include("./partial/header.php");
+	
+	$imgSearch = ("../images/home.png");
+	
+	echo '<div id="searchBody" style="text-align:center;">
+			<img src="'.$imgSearch.'">
+		</div>
+	';
+	
 	include("./partial/footer.php"); 
 ?>
 

@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-	$userdb='projet151';
-	$passdb='projet151';
-	$dbh = new PDO('mysql:host=localhost;dbname=projet151', $userdb, $passdb);
 	
 	echo '<header id="header" style=" background-color:#8080ff;">
 			<table class="menu">
@@ -15,9 +11,7 @@
 			</table>
 		</header>
 	';
-=======
 
->>>>>>> be145ec687cdd25fadda67acd447e4c833dfbf04
 ?>
 
 <html>

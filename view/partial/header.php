@@ -2,6 +2,9 @@
 $userdb='projet151';
 $passdb='projet151';
 $dbh = new PDO('mysql:host=localhost;dbname=projet151', $userdb, $passdb);
+//foreach($dbh->query('SELECT * from t_user') as $row) {
+//        print_r($row);
+//    }
 ?>
 
 <html>

@@ -1,5 +1,7 @@
 <?php
-
+$userdb='projet151';
+$passdb='projet151';
+$dbh = new PDO('mysql:host=localhost;dbname=projet151', $userdb, $passdb);
 ?>
 
 <html>

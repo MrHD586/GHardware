@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-	
-=======
->>>>>>> 8f731d48b1f2dac6a91d3f3a400cd33363d85d8b
 	echo '<header id="header" style=" background-color:#8080ff;">
 			<table class="menu">
 				<tr>
@@ -14,10 +10,6 @@
 			</table>
 		</header>
 	';
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f731d48b1f2dac6a91d3f3a400cd33363d85d8b
 ?>
 
 <html>

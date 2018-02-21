@@ -1,5 +1,16 @@
 <?php
 	include("./partial/header.php");
+	
+	$sql = "SELECT * FROM t-articles"; 
+	$resultat = $dbmanager->Query($sql);
+	$resultat = $resultat->fetch();
+	
+	
+	
+	
+	
+	
+	
 	include("./partial/footer.php"); 
 ?>
 

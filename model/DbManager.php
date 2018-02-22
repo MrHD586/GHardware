@@ -1,4 +1,12 @@
 <?php
+	################################################################################
+	#### Auteur : Butticaz Yvann   
+	#### Date : 22 Février 2018
+	#### Classe DbManager :
+	#### 			Cette classe possède deux fonctions. Une pour la connexion à la base 
+	####			et une pour effectuer les requêtes 
+	################################################################################
+
 class DbManager {
 	
 	// attributs
@@ -7,9 +15,10 @@ class DbManager {
 	private $password = "projet151";
 	private $dbname = "projet151";
 	
+	//variable de la DB
 	private $dbGh = null;
 
-	
+	//appelle la fonction connect
 	function __construct() {
 		$this->Connect();
 	}

@@ -7,34 +7,33 @@
 	####			et une pour effectuer les requêtes 
 	################################################################################
 
-class DbManager {
-	
-	// attributs
-	private $servername = "localhost";
-	private $username = "projet151";
-	private $password = "projet151";
-	private $dbname = "projet151";
-	
-	//variable de la DB
-	private $dbGh = null;
+	class DbManager {
+		
+		// attributs
+		private $servername = "localhost";
+		private $username = "projet151";
+		private $password = "projet151";
+		private $dbname = "projet151";
+		
+		//variable de la DB
+		private $dbGh = null;
 
-	//appelle la fonction connect
-	function __construct() {
-		$this->Connect();
-	}
+		// connexion à la db
+		public function Connect() {
+			//instantiation de la classe DbManager
+			$dbManager = new DbManager();
+			//requête de tous les objets de la table articles
+			$sql = "SELECT * FROM t_articles"; 
+			//passage de la requête $sql dans la fonction query
+			$resultat = $dbManager->Query($sql);
+		}
+		
 	
-	
-	// connexion à la db
-	public function Connect() {
-		$this->dbGh = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
-		// set the PDO error mode to exception
-		$this->dbGh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		// execute une requête
+		public function Query($query) {
+			$stmt = $this->dbGh->prepare($query);
+			$stmt->execute();
+			return $stmt;
+		}
 	}
-	
-	// execute une requête
-	public function Query($query) {
-		$stmt = $this->dbGh->prepare($query);
-		$stmt->execute();
-		return $stmt;
-	}
-}

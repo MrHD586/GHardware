@@ -1,4 +1,11 @@
 <?php
+    ################################################################################
+    #### Auteur : Butticaz Yvann
+    #### Date : 27 Février 2018
+    #### Page views/Site/home.php:
+    #### 	  Page Home par défaut
+    ################################################################################
+    
 	include("./partial/header.php");
 	
 	$imgSearch = ("../images/home.png");

@@ -1,10 +1,10 @@
-ï»¿<?php
+<?php
 	################################################################################
 	#### Auteur : Butticaz Yvann   
-	#### Date : 26 FÃ©vrier 2018
+	#### Date : 26 Février 2018
 	#### Classe ArticleManager :
-    #### 		Cette classe possÃ¨de des fonctions effectuants
-    ####		des requÃªtes souvant utilisÃ©es.
+	#### 		Cette classe possède des fonctions effectuants
+    ####		des requêtes souvant utilisées.
 	################################################################################
 
 	//include de la classe DbManager
@@ -20,7 +20,7 @@
 		}
 		
 		
-		// execute une requÃªte
+		// execute une requête
 		public function getArticles() {
 			$sql = "SELECT * FROM t_articles"; 
 			$resultat = $this->dbManager->Query($sql);

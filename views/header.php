@@ -4,10 +4,10 @@
 		<header id="header" style=" background-color:#8080ff;">
 			<table class="menu">
 				<tr>
-					<td><a href="home.php" style="color:black;">Home</a></td>
-					<td><a href="search.php" style="color:black;">Recherche</a></td>
-					<td><a href="login.php" style="color:black;">Connexion</a></td>
-					<td><a href="cart.php" style="color:black;">Panier</a></td>
+					<td><a href="index.php?controller=Site&action=home" style="color:black;">Home</a></td>
+					<td><a href="index.php?controller=Search&action=test" style="color:black;">Recherche</a></td>
+					<td><a href="index.php?controller=Connection&action=login" style="color:black;">Connexion</a></td>
+					<td><a href="index.php?controller=Cart&action=display" style="color:black;">Panier</a></td>
 				</tr>
 			</table>
 		</header>

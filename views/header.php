@@ -1,5 +1,12 @@
 <?php
-	echo '
+    ################################################################################
+    #### Auteur : Butticaz Yvann
+    #### Date : 27 Février 2018
+    #### Page Header:
+    ####       Ceci est le header qui est include dans le index.php
+    ################################################################################
+    
+    echo '
 		</br>
 		<header id="header" style=" background-color:#8080ff;">
 			<table class="menu">

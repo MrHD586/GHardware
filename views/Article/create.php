@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	################################################################################
 	#### Auteur : Butticaz Yvann   
 	#### Date : 22 Février 2018
@@ -7,10 +7,10 @@
 	################################################################################
 
 	//include de la classe DbManager
-	include("../model/DbManager.php");
+	include("../../models/DbManager.php");
 	
 	//include du Header
-	include("./partial/header.php");
+	include("../partial/header.php");
 	
 	//requête de tous les objets de la table articles
 	$sql = "SELECT * FROM t_articles"; 
@@ -39,7 +39,7 @@
 	}
 
 	//include du footer
-	include("./partial/footer.php"); 
+	include("../partial/footer.php"); 
 	
 ?>
 

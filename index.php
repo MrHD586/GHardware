@@ -44,11 +44,9 @@
     		//chemin du fichier et test s'il existe
     		$filePath = "./"."controllers/$controller/$action.php";
     		$fileTest = file_exists($filePath);
-<<<<<<< HEAD
-=======
+
     		$filePathAside = "./controllers/Aside/aside.php";
     		
->>>>>>> 5d14a65da19cff0b13d6d925642dd6bf81766ae4
     		if(!$fileTest){
     		    echo "<h2>la page souhaitée n'a pas été trouvée</h2>";
     		}elseif ($fileTest){

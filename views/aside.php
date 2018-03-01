@@ -22,35 +22,15 @@
                 <a class="navbar-brand" href="index.html"></a><br>
             </div>
 				<div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="#">Boîtier</a>
-                        </li>
-                        <li>
-                            <a href="#">Alimentation</a>
-                        </li>
-						<li>
-                            <a href="#">Carte extension</a>
-                        </li>
-						<li>
-                            <a href="#">Carte graphique</a>
-                        </li>
-						<li>
-                            <a href="#">Carte mère</a>
-                        </li>
-						<li>
-                            <a href="#">Processeur</a>
-                        </li>
-						<li>
-                            <a href="#">Disques Durs</a>
-                        </li>
-						<li>
-                            <a href="#">SSD</a>
-                        </li>
-						<li>
-                            <a href="#">RAM</a>
-                        </li>
-                      </ul>  
+                    <ul class="nav" id="side-menu">';
+                    var_dump($aside);
+                 /*foreach($aside as $value){
+                    echo '<li>
+                     <a href="#">'.$value.'</a>
+                     </li>';
+                 }*/
+                 echo'
+                </ul>  
                 </div>
                 <!-- /.sidebar-collapse -->
 			

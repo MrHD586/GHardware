@@ -23,12 +23,12 @@
             </div>
 				<div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">';
-                    var_dump($aside);
-                 /*foreach($aside as $value){
+                    
+                 foreach($aside as $value){
                     echo '<li>
                      <a href="#">'.$value.'</a>
                      </li>';
-                 }*/
+                 }
                  echo'
                 </ul>  
                 </div>

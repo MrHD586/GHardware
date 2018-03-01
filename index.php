@@ -39,6 +39,7 @@
     	<?php 
     	    //Header
     		include 'views/header.php';
+			include 'views/aside.php';
     		
     		//chemin du fichier et test s'il existe
     		$filePath = "./"."controllers/$controller/$action.php";

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     ################################################################################
     #### Auteur : Butticaz Yvann
     #### Date : 27 F�vrier 2018
@@ -6,9 +6,15 @@
     ####       Ceci est le footer qui est include dans le index.php
     ################################################################################
 	
-	echo '<footer id="footer" style="border-width:1px; background-color:#8080ff; text-align:center; bottom:2px;">
-		voici le footer 
-		
-		</footer>
+	echo '<footer>
+	
+	<div class="row">
+		<div class="col-sm-4">S\'Abonner à la Newsletter<br>
+		<img width="150px" src="images/logotemplate.png"></div>
+		<div class="col-sm-4">Liens</div>
+		<div class="col-sm-4">Contact</div>
+	</div>
+	
+	</footer>
 	';
 ?>

@@ -7,20 +7,55 @@
     ################################################################################
     
     echo '
-		</br>
-		<header id="header" style=" background-color:#8080ff;">
-			<table class="menu">
-				<tr>
-					<td><a href="index.php?controller=Site&action=home" style="color:black;">Home</a></td>
-					<td><a href="index.php?controller=Search&action=test" style="color:black;">Recherche</a></td>
-					<td><a href="index.php?controller=Connection&action=login" style="color:black;">Connexion</a></td>
-					<td><a href="index.php?controller=Cart&action=display" style="color:black;">Panier</a></td>
-				</tr>
-			</table>
-		</header>
+		<link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- FORMATION BOOTSTRAP -->
+<!-- Les 4 types de Colonnes -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>Projet Bootstrap</title>
+  
+    <link href="views/Assets/css/bootstrap.css" rel="stylesheet">
+	<link href="views/Assets/css/addstyle.css" rel="stylesheet">
+  </head>
+  
+  
+  <body>
+  
+  <div class="container"
+  
+  <!-- Header Menu -->
+  <!-- Login / Logout Button -->
+	  <header>
+		<div class="row">
+			<div class="col-xs-offset-9 col-lg-3">Login / Logout</div>
+		</div>
+	  </header>
+  
+  <!-- Navigation (Logo + Search + Panier) -->
+  
+	<div class="row">
+  <div class="col-sm-3"><img width="100px" src="images/logotemplate.png"></div>
+  <div class="col-sm-6">
+	<form method="post" action="#">
+		<br>
+		<input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+	</form>
+  
+  </div>
+  <div class="col-sm-3">
+		<button type="button" class="btn btn-default navbar-btn" href="#">Panier <span class="badge text-success">38.50</span></button> 
+  </div>
+	</div>
 	';
 ?>
 
+<!--
 <html>
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -29,3 +64,5 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 	</head>
 </html>
+
+-->

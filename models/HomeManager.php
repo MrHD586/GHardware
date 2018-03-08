@@ -10,7 +10,7 @@
 	//include de la classe DbManager
 	include("models/DbManager.php");
 	
-	class ArticleManager {
+	class HomeManager {
 		
 		private $dbManager;
 		

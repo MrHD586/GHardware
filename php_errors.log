@@ -1,0 +1,6 @@
+[08-Mar-2018 10:38:21 Europe/Zurich] PHP Notice:  Undefined variable: aside in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\aside.php on line 27
+[08-Mar-2018 10:38:21 Europe/Zurich] PHP Warning:  Invalid argument supplied for foreach() in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\aside.php on line 27
+[08-Mar-2018 10:38:38 Europe/Zurich] PHP Notice:  Undefined variable: aside in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\aside.php on line 27
+[08-Mar-2018 10:38:38 Europe/Zurich] PHP Warning:  Invalid argument supplied for foreach() in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\aside.php on line 27
+[08-Mar-2018 10:38:44 Europe/Zurich] PHP Notice:  Undefined variable: aside in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\aside.php on line 27
+[08-Mar-2018 10:38:44 Europe/Zurich] PHP Warning:  Invalid argument supplied for foreach() in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\aside.php on line 27

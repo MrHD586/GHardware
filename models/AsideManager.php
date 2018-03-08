@@ -11,18 +11,14 @@ include("models/DbManager.php");
 
 class AsideManager {
     
-    private $dbManager;
-    
-    function __construct(){
-        //instantiation de la classe DbManager
-        $this->dbManager = new DbManager();
-    }
-    
+    private $dbManagerAside;
     
     // execute une requête
     public function getCategories() {
+        $dbManagerAside = new DbManager();
         $sql = "SELECT Ccategorie FROM t_categories";
-        $resultat = $this->dbManager->Query($sql);
+        $resultat = $dbManagerAside->Query($sql);
         return $resultat->fetchAll();
+        $this->dbManagerAside->$dbGh = null;
     }
 }

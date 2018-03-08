@@ -45,12 +45,12 @@
     		$filePath = "./"."controllers/$controller/$action.php";
     		$fileTest = file_exists($filePath);
 
-    		$filePathAside = "./controllers/Aside/aside.php";
+    		//$filePathAside = "./controllers/Aside/aside.php";
     		
     		if(!$fileTest){
     		    echo "<h2>la page souhaitée n'a pas été trouvée</h2>";
     		}elseif ($fileTest){
-    		    include $filePathAside;
+    		    //include $filePathAside;
     			include $filePath; 
     		}
     		

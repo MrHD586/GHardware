@@ -10,6 +10,7 @@
 	//include de la classe DbManager
 	include("models/DbManager.php");
 	
+	
 	class ArticleManager {
 		
 		private $dbManager;

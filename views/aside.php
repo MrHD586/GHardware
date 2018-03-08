@@ -23,10 +23,10 @@
             </div>
 				<div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">';
-                    
+                
                 foreach($aside as $value){
                     echo '<li>
-                     <a href="#">'.$value.'</a>
+                     <a href="#">'.$value['Ccategorie'].'</a>
                      </li>';
                  }
                  echo'

@@ -27,4 +27,11 @@
 			$resultat = $this->dbManager->Query($sql);
 			return $resultat->fetchAll();
 		}
+		
+		// execute une requête
+		public function getCategories() {
+		    $sql = "SELECT Ccategorie FROM t_categories";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
 	}

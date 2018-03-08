@@ -9,6 +9,10 @@
     include 'models/ArticleManager.php';
     
     $articlesManager = new ArticleManager();
+    
     $articles = $articlesManager->getArticles();
     
+    $aside = $articlesManager->getCategories();
+    
+    include 'views/aside.php';
     include 'views/Article/list.php';

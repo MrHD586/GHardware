@@ -7,6 +7,7 @@
     ################################################################################
    
     include 'models/HomeManager.php';
-    
-    
+    $homeManager = new HomeManager();
+    $aside = $homeManager->getCategories();
+    include 'views/aside.php';
     include 'views/Site/home.php';

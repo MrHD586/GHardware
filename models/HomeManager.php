@@ -19,11 +19,10 @@
 			 $this->dbManager = new DbManager();
 		}
 		
-		
 		// execute une requête
-		public function getArticles() {
-			$sql = "SELECT * FROM t_articles"; 
-			$resultat = $this->dbManager->Query($sql);
-			return $resultat->fetchAll();
+		public function getCategories() {
+		    $sql = "SELECT Ccategorie FROM t_categories";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
 		}
 	}

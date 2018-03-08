@@ -30,7 +30,7 @@
                      </li>';
                  }
                  echo'
-                </ul>  
+                </ul>   
                 </div>
                 <!-- /.sidebar-collapse -->
 			

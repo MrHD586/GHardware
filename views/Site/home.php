@@ -30,6 +30,7 @@ Nam imperdiet ex a elit tincidunt iaculis. Donec volutpat ex sed purus pellentes
 Duis at imperdiet elit. Praesent ligula sapien, auctor aliquet scelerisque eget, ultrices porttitor nibh. Nam feugiat dolor diam, eu ornare massa tristique tincidunt. Nullam non cursus sapien, sit amet lacinia sapien. In et malesuada lacus, blandit convallis risus. Nulla a porta est. Vestibulum laoreet, lacus non feugiat maximus, massa urna placerat ex, eget tincidunt eros nisl a augue. Nam sit amet elementum mi, id condimentum tellus. Curabitur vel varius nibh. Quisque blandit maximus risus et fringilla.
 
 	</div>
+	</div>
 	';
 ?>
 

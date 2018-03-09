@@ -1,5 +1,4 @@
 <?php
-<?php
 ################################################################################
 #### Auteur : Butticaz Yvann
 #### Date : 26 Février 2018
@@ -10,7 +9,7 @@
 
 //include de la classe DbManager
 include("models/DbManager.php");
-
+$Categorie=$_GET['categorie'];
 
 class CategorieManager {
     
@@ -23,15 +22,18 @@ class CategorieManager {
     
     
     // execute une requête
-    public function getArticlesCategorie() {
-        $sql = "SELECT * FROM t_articles";
+    public function getArticlesCategorie($Categorie) {
+        $sql = "SELECT *
+                FROM t_articles
+                INNER JOIN t_categories ON t_articles.FK_Categories = t_categories.idCategories WHERE t_categories.Ccategorie = '$Categorie'";
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
     
     // execute une requête
     public function getCategories() {
-        $sql = "SELECT Ccategorie FROM t_categories";
+        $sql = "SELECT Ccategorie 
+                FROM t_categories";
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }

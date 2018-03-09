@@ -10,9 +10,10 @@ include 'models/CategorieManager.php';
 
 $categorieManager = new CategorieManager();
 
-$Categoriearticles = $articlesManager->getCategorieArticles();
+$Categoriearticles = $categorieManager->getArticlesCategorie($Categorie);
 
-$aside = $articlesManager->getCategories();
+$aside = $categorieManager->getCategories();
 
-include 'views/ArticlesCategorie.php';
-include 'views/Categorie/list.php';
+
+include 'views/Article/CategorieList.php';
+include 'views/aside.php';

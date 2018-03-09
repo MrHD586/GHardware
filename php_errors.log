@@ -7,3 +7,254 @@
 [09-Mar-2018 12:18:02 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 2
 [09-Mar-2018 12:18:07 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 2
 [09-Mar-2018 12:18:14 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 2
+[09-Mar-2018 12:21:00 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 2
+[09-Mar-2018 12:23:10 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 2
+[09-Mar-2018 12:23:13 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 2
+[09-Mar-2018 12:24:05 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<', expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 2
+[09-Mar-2018 12:25:00 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getCategorieArticles() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:25:58 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getCategorieArticles() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:00 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getCategorieArticles() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:06 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:06 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:51 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:52 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:52 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:52 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:26:54 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 12:27:07 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getArticlesCategorie() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php:13
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13
+[09-Mar-2018 14:00:39 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:02:17 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:02:18 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:02:59 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:02:59 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:02:59 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:03:00 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:03:04 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:04:37 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:06:26 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:06:27 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:06:27 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:06:27 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:06:27 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:06:48 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT idArctic...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:07:55 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 3 in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT *\r\n     ...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:08:45 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT *\r\n     ...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:08:46 Europe/Zurich] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HDD' in 'where clause' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php:36
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php(36): PDOStatement->execute()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php(29): DbManager->Query('SELECT *\r\n     ...')
+#2 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#3 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#4 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\DbManager.php on line 36
+[09-Mar-2018 14:14:02 Europe/Zurich] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 28
+[09-Mar-2018 14:15:00 Europe/Zurich] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CategorieManager::getArticlesCategorie(), 0 passed in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13 and exactly 1 expected in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php:25
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#2 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 25
+[09-Mar-2018 14:15:00 Europe/Zurich] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function CategorieManager::getArticlesCategorie(), 0 passed in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php on line 13 and exactly 1 expected in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php:25
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Categorie\list.php(13): CategorieManager->getArticlesCategorie()
+#1 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(53): include('C:\\uWamp-EPSIC\\...')
+#2 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\models\CategorieManager.php on line 25

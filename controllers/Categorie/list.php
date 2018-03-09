@@ -14,6 +14,5 @@ $Categoriearticles = $categorieManager->getArticlesCategorie($Categorie);
 
 $aside = $categorieManager->getCategories();
 
-
-include 'views/Article/CategorieList.php';
 include 'views/aside.php';
+include 'views/Article/CategorieList.php';

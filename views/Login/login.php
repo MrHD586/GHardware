@@ -40,7 +40,6 @@
 			<input type="submit" name="enregistrer" value="Envoyer"/>
 		</p>
 		</form>
-		<a href="index.php?destroy=true"> Destroy</a>
 
 	</body>
 </html>

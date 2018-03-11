@@ -22,9 +22,10 @@ class LoginManager {
     
     // execute une requête
     public function getLogin($userLogin){
-        $sql = 'SELECT * FROM t_user WHERE ULogin = :userLogin';
-        $sql->bindParam(':userLogin', $userLogin);
+        $sql = "SELECT * FROM t_user WHERE ULogin = '".$userLogin."'";
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
 }
+
+

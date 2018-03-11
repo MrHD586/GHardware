@@ -21,7 +21,7 @@
 		}	
 		?>
 			
-		<form method="post" action="index.php?controller=Login&action=login">
+		<form method="post" action="">
 		
 			<p>
 				<label for="Login_User">Votre Login</label>

@@ -9,9 +9,11 @@
     //include de la classe DbManager
     include("models/LoginManager.php");
         
+    session_start();
+    
 	if(isset($_POST['enregistrer'])) {
 		
-	    if($_POST['Login']){
+	    if(isset($_POST['Login'])){
 	        
 	        //instantiation de la classe LoginManager
 	        $loginManager = new LoginManager();
@@ -19,14 +21,14 @@
 	        $userLogin = $_POST['Login'];
 
 	        $userLoginDb = $loginManager->getLogin($userLogin);
-
-	        $row = $userLoginDb;	
+            
+	        $row = $userLoginDb->fetch();
 	        
-			if (is_array($row) && $_POST['Password'] == $row['UPassword']){
+	        if($userLogin == $row['ULogin']){
 				if($row['isAdmin'] == 1){
-					//redirection sur la page admin
+					header("location:index.php?controller=Site&action=home");
 				}else{
-				    //redirection sur la page home
+				    header("location:index.php?controller=Site&action=home");
 				}
 			}else{
 				$_SESSION['message_erreur'] = "Le login ou le mot de passe est incorrect";

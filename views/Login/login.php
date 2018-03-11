@@ -1,3 +1,12 @@
+<?php 
+    ################################################################################
+    #### Auteur : Butticaz Yvann
+    #### Date : 27 Février 2018
+    #### Page views/Login/login.php:
+    #### 	  Formulaire de login
+    ################################################################################
+?>
+
 <!DOCTYPE>
 <html>
 	<head>
@@ -12,23 +21,20 @@
 		}	
 		?>
 			
-		<form method="post" action="index.php?page=connexion">
+		<form method="post" action="index.php?controller=Login&action=login">
 		
 			<p>
 				<label for="Login_User">Votre Login</label>
 	
-				<input type="text" name="Login"  placeholder="Login" /> 
+				<input type="text" name="Login"/> 
 					
 			</p>
 			
 				
 			<p>
 				<label for="password">Votre mot de passe</label>
-				<input type="password" name="password" />
+				<input type="password" name="Password" />
 			</p>
-		<?php 
-			echo '<p> Votre adresse IP ' . $_SERVER['REMOTE_ADDR'] . ' </p>'; 
-		?>
 		
 		<p>
 			<input type="submit" name="enregistrer" value="Envoyer"/>

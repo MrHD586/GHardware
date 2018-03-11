@@ -33,7 +33,7 @@
   <!-- Login / Logout Button -->
 	  <header>
 		<div class="row">
-			<div class="col-xs-offset-9 col-lg-3">Login / Logout</div>
+			<div class="col-xs-offset-9 col-lg-3"><a href="index.php?controller=Login&action=login">Login / Logout</a></div>
 		</div>
 	  </header>
   

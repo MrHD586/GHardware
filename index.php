@@ -3,7 +3,7 @@
     #### Auteur : Butticaz Yvann
     #### Date : 27 Février 2018
     #### Classe index.php :
-    #### 		Ce fichier va permettre grâce à des paramétres dans l'url
+    #### 		Ce fichier permet grâce à des paramétres dans l'url
     ####		d'aller sur les bons fichiers.
     ################################################################################
     

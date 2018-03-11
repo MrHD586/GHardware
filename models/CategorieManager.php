@@ -1,8 +1,8 @@
 <?php
 ################################################################################
-#### Auteur : Butticaz Yvann
-#### Date : 26 Février 2018
-#### Classe ArticleManager :
+#### Auteur : Viquerat Killian
+#### Date : 9 Mars 2018
+#### Classe CategorieManager :
 #### 		Cette classe possède des fonctions effectuants
 ####		des requêtes souvant utilisées.
 ################################################################################

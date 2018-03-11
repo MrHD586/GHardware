@@ -19,26 +19,27 @@
 	        $loginManager = new LoginManager();
 	        
 	        $userLogin = $_POST['Login'];
-
+	        $userPassword = $_POST['Password'];
+	        
 	        $userLoginDb = $loginManager->getLogin($userLogin);
             
 	        $row = $userLoginDb->fetch();
 	        
-	        if($userLogin == $row['ULogin']){
+	        if($userLogin == $row['ULogin'] && $userPassword == $row['UPassword']){
 				if($row['isAdmin'] == 1){
-					header("location:index.php?controller=Site&action=home");
+					header("location:index.php?controller=Admin&action=adminHome");
 				}else{
 				    header("location:index.php?controller=Site&action=home");
 				}
 			}else{
 				$_SESSION['message_erreur'] = "Le login ou le mot de passe est incorrect";
-				//redirection sur la page login 
+				die(header("location:index.php?controller=Login&action=login"));
 			}
 			
 					
 		}else{
 			$_SESSION['message_erreur'] = "Le nom d'utilisateur est inconnu";
-			//redirection sur la page login
+			die(header("location:index.php?controller=Login&action=login"));
 		} 
 		
 	}

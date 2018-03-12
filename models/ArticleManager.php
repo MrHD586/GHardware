@@ -23,7 +23,7 @@
 		
 		// execute une requête
 		public function getArticles($idarticle) {
-			$sql = "SELECT * FROM t_articles WHERE idArcticle='$idarticle'"; 
+			$sql = "SELECT * FROM t_articles WHERE idArticle='$idarticle'"; 
 			$resultat = $this->dbManager->Query($sql);
 			return $resultat->fetchAll();
 		}

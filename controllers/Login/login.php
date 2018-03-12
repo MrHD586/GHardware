@@ -33,6 +33,7 @@
             
             if($userLogin == $row['ULogin'] && $userPassword == $row['UPassword']){
                 $_SESSION['user_name'] = $userLogin;
+                $_SESSION['Connecter'] = TRUE;
     			if($row['isAdmin'] == 1){
     			    header($urlToAdmin);
     			}else{

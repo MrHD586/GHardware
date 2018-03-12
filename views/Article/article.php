@@ -17,9 +17,15 @@ foreach($articles as $articles){
                   <div class="col-lg-7 col-xs-offset-1"><img class="img-responsive" src="images/imagetemplate.png"></div> 
     			  <div class="col-lg-4">
     			       <div class="col-md-12">En Stock : <span class="badge text-success">'.$articles['AStock'].'</span></div>
-    				   <div class="col-md-12"><h2>Prix : <span class="badge text-success">'.$articles['APrix'].'</h2></span></div>
-    				   <div class="col-md-12"><button type="button" class="btn btn-default navbar-btn" href="#">Ajouter au Panier</button></div>	
-    			  </div>
+    				   <div class="col-md-12"><h2>Prix : <span class="badge text-success">'.$articles['APrix'].'</h2></span></div>';
+	                   if($_SESSION['Connecter']==TRUE){
+    				   echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Panier&action=bdd&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+	                   }else{
+	                       $Panier = $_COOKIE['Panier'];
+	                       echo $Panier[0];
+                           echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Panier&action=cookie&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+                       }
+    			  echo'</div>
     		  </div>
     		  <br>
     		  <div class="row">
@@ -29,7 +35,7 @@ foreach($articles as $articles){
     		               '.$articles['ADescription'].'
     	               </div>
     		      </div>
-    	       </div>
+    	       </div> 
 	      </div>
 	';}
 

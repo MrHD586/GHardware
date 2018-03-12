@@ -7,6 +7,8 @@
     ####		d'aller sur les bons fichiers.
     ################################################################################
     
+    session_start();
+    
     //sert à afficher les erreurs et les warning
     error_reporting(E_ERROR | E_PARSE);
 	ini_set('display_errors', '1');

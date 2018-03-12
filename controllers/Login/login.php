@@ -9,7 +9,7 @@
     //include de la classe DbManager
     include("models/LoginManager.php");
         
-    session_start();
+    
     
 	if(isset($_POST['enregistrer'])) {
 		
@@ -26,6 +26,7 @@
 	        $row = $userLoginDb->fetch();
 	        
 	        if($userLogin == $row['ULogin'] && $userPassword == $row['UPassword']){
+	            $_SESSION['user_name'] = $userLogin;
 				if($row['isAdmin'] == 1){
 					header("location:index.php?controller=Admin&action=adminHome");
 				}else{

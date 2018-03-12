@@ -6,6 +6,14 @@
     ####       Ceci est le header qui est include dans le index.php
     ################################################################################
     
+
+    if($_SESSION['user_name'] != null){
+        $loginText = $_SESSION['user_name'];
+    
+    }else{
+        $loginText = "login";
+    }
+    
     echo '
 		<link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -32,8 +40,8 @@
   <!-- Header Menu -->
   <!-- Login / Logout Button -->
 	  <header>
-		<div class="row">
-			<div class="col-xs-offset-9 col-lg-3"><a href="index.php?controller=Login&action=login">Login / Logout</a></div>
+		<div class="row">          
+			<div class="col-xs-offset-9 col-lg-3"><a href="index.php?controller=Login&action=login">'.$loginText.'</a></div>
 		</div>
 	  </header>
   

@@ -7,7 +7,7 @@
     ################################################################################
     
     include 'models/ArticleManager.php';
-    $idarticle =$_GET['id']; 
+    $idarticle =1;
     $articlesManager = new ArticleManager();
     
     $articles = $articlesManager->getArticles($idarticle);

@@ -7,7 +7,8 @@
 	################################################################################
 
 	//affichage des données récupérées
-	//echo "<pre>".var_dump($articles)."</pre>" 
+	//echo "<pre>".var_dump($articles)."</pre>";
+	
 	echo '<div class="col-lg-9">
 		      <div class="row">
                    <div class="col-lg-4 col-lg-offset-4"><h1>'.$articles['AName'].'</h1></div>

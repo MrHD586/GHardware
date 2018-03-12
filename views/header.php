@@ -18,7 +18,7 @@
 <html>
   <head>
 	<meta charset="utf-8">
-	<title>Projet Bootstrap</title>
+	<title>Ghardware</title>
   
     <link href="views/Assets/css/bootstrap.css" rel="stylesheet">
 	<link href="views/Assets/css/addstyle.css" rel="stylesheet">

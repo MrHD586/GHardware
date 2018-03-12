@@ -24,6 +24,7 @@
 				<div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">';
                 
+                //affichage des catégories dans le menu
                 foreach($aside as $value){
                     echo '<li>
                      <a href="index.php?controller=Categorie&action=list&categorie='.$value['Ccategorie'].'">'.$value['Ccategorie'].'</a>

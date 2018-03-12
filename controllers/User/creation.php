@@ -7,51 +7,44 @@
     ################################################################################
    
     //include de la classe DbManager
-    include("models/LoginManager.php");
+    include("models/UserCreationManager.php");
         
     // ----- LIEN POUR REDIRECTION -----
     //redirection sur login si erreurs
+    $urlToCreation = "location:index.php?controller=User&action=creation";
+    //login
     $urlToLogin = "location:index.php?controller=Login&action=login";
-    //home
-    $urlToHome = "location:index.php?controller=Site&action=home";
-    //page d'administration
-    $urlToAdmin = "location:index.php?controller=Admin&action=adminHome";
     
 	if(isset($_POST['enregistrer'])) {
 		
 	    $userLogin = $_POST['Login'];
 	    $userPassword = $_POST['Password'];
+	    $userFirstname = $_POST['Firstname'];
+	    $userLastname = $_POST['Lastname'];
+	    $userEmail = $_POST['Email'];
+	    $userBirthdate = $_POST['Birthdate'];
+	    
 	    
 	    //si un champ ne sont pas vides
-	    if($userLogin != null && $userPassword != null){	    
+	    if($userLogin != null && $userPassword != null && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != "0000-00-00"){	    
             //instantiation de la classe LoginManager   
-            $loginManager = new LoginManager();
+            $creationManager = new UserCreationManager();
+            echo "yes";
             
-            $userLoginDb = $loginManager->getLogin($userLogin);
+            $userCreationDb = $creationManager->setUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
             
             $row = $userLoginDb->fetch();
             
-            if($userLogin == $row['ULogin'] && $userPassword == $row['UPassword']){
-                $_SESSION['user_name'] = $userLogin;
-    			if($row['isAdmin'] == 1){
-    			    header($urlToAdmin);
-    			}else{
-    			    header($urlToHome);
-    			}
-    		}else{
-    			$_SESSION['message_erreur'] = "Le login ou le mot de passe est incorrect";
-    			die(header($urlToLogin));
-    		}
     		
 	    }else{
 	        $_SESSION["message_erreur"] = "Veuillez remplir tous les champs";
-	        header($urlToLogin);
+	        header($urlToCreation);
 	    }
     		
 	}
 		
 	
-	include 'views/Login/login.php';
+	include 'views/User/creation.php';
 							
 			
 ?>

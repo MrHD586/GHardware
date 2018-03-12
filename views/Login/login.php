@@ -14,6 +14,7 @@
     }
 
     echo '
+        <h2>Connexion</h2><br/>
 		<form method="post" action="">
 		      '.$formErrors.'
 			<p>
@@ -28,6 +29,7 @@
 		
 		    <p>
 			    <input type="submit" name="enregistrer" value="Envoyer"/>
+               <a href="index.php?controller=User&action=creation">vous n\'avez pas de compte ?</a>
 		    </p>
 		</form>
     ';

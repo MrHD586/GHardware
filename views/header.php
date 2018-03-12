@@ -9,9 +9,10 @@
 
     if($_SESSION['user_name'] != null){
         $loginText = $_SESSION['user_name'];
-    
+        $deconectButton = '<a href="index.php?controller=Login&action=logout"> Deconnexion</a>';
     }else{
         $loginText = "login";
+        $deconectButton = null;
     }
     
     echo '
@@ -41,7 +42,7 @@
   <!-- Login / Logout Button -->
 	  <header>
 		<div class="row">          
-			<div class="col-xs-offset-9 col-lg-3"><a href="index.php?controller=Login&action=login">'.$loginText.'</a></div>
+			<div class="col-xs-offset-9 col-lg-3"><a href="index.php?controller=Login&action=login">'.$loginText.'</a>'.$deconectButton.'</div>
 		</div>
 	  </header>
   

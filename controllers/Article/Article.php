@@ -13,6 +13,5 @@
     $articles = $articlesManager->getArticles($idarticle);
     
     $aside = $articlesManager->getCategories();
-    
     include 'views/aside.php';
     include 'views/Article/article.php';

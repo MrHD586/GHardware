@@ -7,12 +7,12 @@
     ################################################################################
     
     include 'models/ArticleManager.php';
-    
+    $idarticle =$_GET['id']; 
     $articlesManager = new ArticleManager();
     
-    $articles = $articlesManager->getArticles();
+    $articles = $articlesManager->getArticles($idarticle);
     
     $aside = $articlesManager->getCategories();
     
     include 'views/aside.php';
-    include 'views/Article/list.php';
+    include 'views/Article/article.php';

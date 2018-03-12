@@ -22,8 +22,8 @@
 		
 		
 		// execute une requête
-		public function getArticles() {
-			$sql = "SELECT * FROM t_articles"; 
+		public function getArticles($idarticle) {
+			$sql = "SELECT * FROM t_articles WHERE idArcticle='$idarticle'"; 
 			$resultat = $this->dbManager->Query($sql);
 			return $resultat->fetchAll();
 		}

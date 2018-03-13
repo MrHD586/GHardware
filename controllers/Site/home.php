@@ -7,6 +7,9 @@
     ################################################################################
    
     include 'models/HomeManager.php';
+    
+    session_start();
+    
     $homeManager = new HomeManager();
     $aside = $homeManager->getCategories();
     include 'views/aside.php';

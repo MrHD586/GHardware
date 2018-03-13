@@ -31,7 +31,7 @@
             $creationManager = new UserCreationManager();
             echo "1";
             
-            $userCreationDb = $creationManager->setUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
+            $userCreationDb = $creationManager->setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
             echo "2";            
     		
 	    }else{

@@ -23,7 +23,7 @@
 	if(isset($_POST['enregistrer'])) {
 		
 	    $userLogin = $_POST['Login'];
-	    $userPassword = $_POST['Password'];
+	    $userPassword = md5($_POST['Password']);
 	    
 	    //si un champ ne sont pas vides
 	    if($userLogin != null && $userPassword != null){	    

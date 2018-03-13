@@ -22,28 +22,17 @@
 		
 		
 		// execute une requête
-		public function setUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, 
+		public function setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, 
 		                        $userFkPicUser, $userisAdmin) {
 		    //valeurs par défaut
-		    bit($isActive) = 1;  //les users sont par défaut actifs
+		    $isActive = 1;  //les users sont par défaut actifs
             $fkPicUser = 1; //l'avatar par défaut
-            (bin $isAdmin = 0;   //les users ne sont pas par défaut admin
-            
-            //Si la valeur est diffèrente que celle par défaut
-            if($userFkPicUser != $fkPicUser){
-                $fkPicUser = $userFkPicUser;
-            }
-            
-            //Si la valeur est diffèrente que celle par défaut
-            if($userisAdmin != $isAdmin ){
-                $isAdmin = $userisAdmin;
-            }
+            $isAdmin = 0;   //les users ne sont pas par défaut admin
             
 			$sql = "INSERT INTO t_user (ULogin, UPassword, UFirstName, ULastName, UEmail, UBirthdate, isActive, FK_PicUser, isAdmin)
                     VALUES ('$userLogin', '$userPassword', '$userFirstname', '$userLastName', '$userEmail', '$userBirthdate', 
-                            '$isActive', '$fkPicUser', '$isAdmin')"; 
-			$resultat = $this->dbManager->Query($sql);
-			return $resultat->fetchAll();
+                            b'$isActive', '$fkPicUser', b'$isAdmin')"; 
+			$this->dbManager->Query($sql);
 		}
 		
 	

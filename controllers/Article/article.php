@@ -8,6 +8,8 @@
     
     include 'models/ArticleManager.php';
     
+    session_start();
+    
     $idarticle =$_GET['id'];
     $articlesManager = new ArticleManager();
     

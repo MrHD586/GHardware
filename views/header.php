@@ -6,6 +6,7 @@
     ####       Ceci est le header qui est include dans le index.php
     ################################################################################
     
+    session_start();
 
     if($_SESSION['user_name'] != null){
         $loginText = $_SESSION['user_name'];

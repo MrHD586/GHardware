@@ -7,15 +7,19 @@
     ################################################################################
     
     $id = $_GET['id'];
-    $Panier = array($id);
+    $Panier = $id;
     $urlToarticle = "location:index.php?controller=Article&action=article&id=".$id."";
     
     if(isset($_COOKIE["Panier"])){
-        $tempPanier = $_COOKIE["Panier"];
-        array_push($tempPanier, "".$Panier."");
-        setcookie("Panier","".$tempPanier."");
-        header($urlToarticle);
+        $tempPanier= unserialize($_COOKIE["Panier"]);
+        echo $tempPanier[0];
+        array_push($tempPanier,$Panier);
+        echo $tempPanier[0];
+        echo $tempPanier[1];
+        setcookie("Panier",serialize($tempPanier));
+        //header($urlToarticle);
     }else{
-        setcookie("Panier","".$Panier."");
+        $PanierA[0] = $id;
+        setcookie("Panier",serialize($PanierA));
         header($urlToarticle);
     }

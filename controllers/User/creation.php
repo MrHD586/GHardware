@@ -18,7 +18,7 @@
 	if(isset($_POST['enregistrer'])) {
 		
 	    $userLogin = $_POST['Login'];
-	    $userPassword = $_POST['Password'];
+	    $userPassword = md5($_POST['Password']);
 	    $userFirstname = $_POST['Firstname'];
 	    $userLastname = $_POST['Lastname'];
 	    $userEmail = $_POST['Email'];
@@ -26,15 +26,13 @@
 	    
 	    
 	    //si un champ ne sont pas vides
-	    if($userLogin != null && $userPassword != null && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != "0000-00-00"){	    
+	    if($userLogin != null && $userPassword != md5("") && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){	    
             //instantiation de la classe LoginManager   
             $creationManager = new UserCreationManager();
-            echo "yes";
+            echo "1";
             
             $userCreationDb = $creationManager->setUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
-            
-            $row = $userLoginDb->fetch();
-            
+            echo "2";            
     		
 	    }else{
 	        $_SESSION["message_erreur"] = "Veuillez remplir tous les champs";

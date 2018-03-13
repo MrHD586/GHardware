@@ -25,9 +25,9 @@
 		public function setUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, 
 		                        $userFkPicUser, $userisAdmin) {
 		    //valeurs par défaut
-            $isActive = 1;  //les users sont par défaut actifs
+		    bit($isActive) = 1;  //les users sont par défaut actifs
             $fkPicUser = 1; //l'avatar par défaut
-            $isAdmin = 0;   //les users ne sont pas par défaut admin
+            (bin $isAdmin = 0;   //les users ne sont pas par défaut admin
             
             //Si la valeur est diffèrente que celle par défaut
             if($userFkPicUser != $fkPicUser){

@@ -57,9 +57,13 @@
 	</form>
   
   </div>
-  <div class="col-sm-3">
-		<button type="button" class="btn btn-default navbar-btn" href="#">Panier <span class="badge text-success">38.50</span></button> 
-  </div>
+  <div class="col-sm-3">';
+    if($_SESSION['UserSession']==TRUE){
+        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success">38.50</span></a>';
+    }else{
+        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">38.50</span></a>';
+    }
+  echo'</div>
 	</div>
 	';
 ?>

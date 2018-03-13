@@ -18,12 +18,13 @@ foreach($articles as $articles){
     			  <div class="col-lg-4">
     			       <div class="col-md-12">En Stock : <span class="badge text-success">'.$articles['AStock'].'</span></div>
     				   <div class="col-md-12"><h2>Prix : <span class="badge text-success">'.$articles['APrix'].'</h2></span></div>';
-	                   if($_SESSION['Connecter']==TRUE){
-    				   echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Panier&action=bdd&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+	                   
+	                   if($_SESSION['UserSession']==TRUE){
+    				       echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
 	                   }else{
 	                       $Panier = $_COOKIE['Panier'];
 	                       echo $Panier[0];
-                           echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Panier&action=cookie&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+                           echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=cookie&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
                        }
     			  echo'</div>
     		  </div>

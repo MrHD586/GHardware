@@ -17,6 +17,9 @@
     //page d'administration
     $urlToAdmin = "location:index.php?controller=Admin&action=adminHome";
     
+    //si true le user est connecté
+    $_SESSION['UserSession'] = NULL;
+    
 	if(isset($_POST['enregistrer'])) {
 		
 	    $userLogin = $_POST['Login'];
@@ -32,8 +35,9 @@
             $row = $userLoginDb->fetch();
             
             if($userLogin == $row['ULogin'] && $userPassword == $row['UPassword']){
+                $_SESSION['UserSession'] = TRUE;
                 $_SESSION['user_name'] = $userLogin;
-                $_SESSION['Connecter'] = TRUE;
+                               
     			if($row['isAdmin'] == 1){
     			    header($urlToAdmin);
     			}else{

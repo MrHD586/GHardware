@@ -12,12 +12,9 @@
     
     if(isset($_COOKIE["Panier"])){
         $tempPanier= unserialize($_COOKIE["Panier"]);
-        echo $tempPanier[0];
         array_push($tempPanier,$Panier);
-        echo $tempPanier[0];
-        echo $tempPanier[1];
         setcookie("Panier",serialize($tempPanier));
-        //header($urlToarticle);
+        header($urlToarticle);
     }else{
         $PanierA[0] = $id;
         setcookie("Panier",serialize($PanierA));

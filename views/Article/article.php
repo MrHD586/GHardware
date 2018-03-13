@@ -23,8 +23,9 @@ foreach($articles as $articles){
     				       echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
 	                   }else{
 	                       $Panier = unserialize($_COOKIE['Panier']);
-	                       echo $Panier[0];
-	                       echo $Panier[1];
+	                       foreach($Panier as $value){
+	                           echo $value;
+	                       }
                            echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=cookie&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
                        }
     			  echo'</div>

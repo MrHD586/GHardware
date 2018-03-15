@@ -29,11 +29,10 @@
 	    if($userLogin != null && $userPassword != md5("") && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){	    
             //instantiation de la classe LoginManager   
             $creationManager = new UserCreationManager();
-            echo "1";
             
-            $userCreationDb = $creationManager->setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
-            echo "2";            
+            $userCreationDb = $creationManager->setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);           
     		
+            header($urlToLogin);
 	    }else{
 	        $_SESSION["message_erreur"] = "Veuillez remplir tous les champs";
 	        header($urlToCreation);

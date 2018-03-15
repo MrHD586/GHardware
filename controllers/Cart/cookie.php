@@ -3,7 +3,7 @@
     #### Auteur : Viquerat Killian
     #### Date : 13 Mars 2018
     #### Page controllers/Cart/cookie.php:
-    #### 		
+    ####Création et attribution des id d'articles 		
     ################################################################################
     
     $id = $_GET['id'];

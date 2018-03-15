@@ -7,15 +7,12 @@
 ################################################################################
 
 //affichage des données récupérée
+
+$categorie = $_GET['categorie'];
+
 foreach($Categoriearticles as $value){
     $id = $value['idArticle'];
-    echo '<a href="index.php?controller=Article&action=article&id='.$id.'">';
-    echo'Articles: '.$value['AName'].'';
-    echo'</a>';
-    echo'</br>';
-}
-
-echo'
+    echo'
 			
 			<div class="col-xs-12 col-sm-6 col-md-4">
 			<!-- START ARTICLE-->	
@@ -23,7 +20,7 @@ echo'
 					<a id="categorylink" href="#">
 						<!-- Category -->
 							<div class="col-xl-12">
-								Catégorie
+								'.$categorie.'
 							</div>
 						
 						<!-- Image -->
@@ -32,10 +29,10 @@ echo'
 							</div>
 						<!-- Price and Text -->
 							<div class="col-xl-12">
-								214.50
+								'.$value['APrix'].'
 							</div>
 							<div class="col-xl-12">
-								NOM ARTICLE
+								'.$value['AName'].'
 							</div>
 							
 							</a>	
@@ -61,4 +58,4 @@ echo'
 			
 			
 			';
-
+}

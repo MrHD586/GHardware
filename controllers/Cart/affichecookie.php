@@ -18,6 +18,7 @@ foreach($PanierNoDouble as $value){
     $articles[$index] = $panierCookieManager->getArticlesCookie($index);
 }
 
+
 $aside = $panierCookieManager->getCategories();
 
 include 'views/aside.php';

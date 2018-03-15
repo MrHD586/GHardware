@@ -6,6 +6,12 @@
 ####       Cette page va sert à afficher l'article que l'on consulte
 ################################################################################
 
-//affichage des données récupérées
-?><pre><?php var_dump($Categoriearticles); ?></pre>
+//affichage des données récupérée
+foreach($Categoriearticles as $value){
+    $id = $value['idArticle'];
+    echo '<a href="index.php?controller=Article&action=article&id='.$id.'">';
+    echo'Articles: '.$value['AName'].'';
+    echo'</a>';
+    echo'</br>';
+}
 

@@ -11,7 +11,7 @@
 	echo '<div class="col-lg-9">
               <br/>
               <br/>
-	          <h1>Page d\'accueille</h1>
+	          <h1>Page d\'accueil</h1>
               <br/>
               <br/>
 	      </div>

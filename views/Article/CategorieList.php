@@ -23,7 +23,7 @@ foreach($Categoriearticles as $value){
 		<div class="col-xs-12 col-sm-6 col-md-4">	
 			<!-- START ARTICLE-->	
 				<div class="articlebox">
-					<a id="categorylink" href="#">
+					<a id="categorylink" href="index.php?controller=Article&action=article&id='.$id.'">
 						<!-- Category -->
 							<div class="col-xl-12">
 								'.$categorie.'

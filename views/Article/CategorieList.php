@@ -49,7 +49,7 @@ foreach($Categoriearticles as $value){
 									<div class="col-xs-9">
 										*****
 									</div><div class="col-xs-3">
-										<a href="index.php?controller=Cart&action=cookie&id='.$id.'"><img class="img-responsive" src="images/carticon.png"></a>
+										<a href="index.php?controller=Cart&action=cookie&id='.$id.'&categorie='.$categorie.'"><img class="img-responsive" src="images/carticon.png"></a>
 									</div>
 								</div>
 							</div>

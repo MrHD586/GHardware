@@ -8,6 +8,8 @@
    
     //include de la classe DbManager
     include("models/LoginManager.php");
+    
+    session_start();
         
     // ----- LIEN POUR REDIRECTION -----
     //redirection sur login si erreurs
@@ -20,16 +22,20 @@
     //si true le user est connecté
     $_SESSION['UserSession'] = NULL;
     
-	if(isset($_POST['enregistrer'])) {
-		
+    //grain de sel du password
+    $salt = password_hash("salt-pwd", PASSWORD_DEFAULT);
+    
+	if(isset($_POST['submit'])) {
+			    
 	    $userLogin = $_POST['Login'];
-	    $userPassword = md5($_POST['Password']);
+	    $userPassword = $salt.md5($_POST['Password']);
+	    echo $userPassword;
 	    
 	    //si un champ ne sont pas vides
-	    if($userLogin != null && $userPassword != null){	    
+	    if($userLogin != null && $userPassword != $salt.md5("")){	    
             //instantiation de la classe LoginManager   
             $loginManager = new LoginManager();
-            
+            echo "yes";
             $userLoginDb = $loginManager->getLogin($userLogin);
             
             $row = $userLoginDb->fetch();

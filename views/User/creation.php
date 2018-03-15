@@ -49,7 +49,7 @@
 			</p>
        
 		    <p>
-			    <input type="submit" name="enregistrer" value="Envoyer"/>
+			    <input type="submit" name="submit" value="Envoyer"/>
 		    </p>
 		</form>
     ';

@@ -29,7 +29,7 @@
 			</p>
 		
 		    <p>
-			    <input type="submit" name="enregistrer" value="Envoyer"/>
+			    <input type="submit" name="submit" value="Envoyer"/>
                <a href="index.php?controller=User&action=creation">vous n\'avez pas de compte ?</a>
 		    </p>
 		</form>

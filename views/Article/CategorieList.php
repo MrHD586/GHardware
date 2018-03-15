@@ -10,11 +10,17 @@
 
 $categorie = $_GET['categorie'];
 
+echo'
+	<div class="col-lg-9">
+	
+	
+';
+
 foreach($Categoriearticles as $value){
     $id = $value['idArticle'];
     echo'
 			
-			<div class="col-xs-12 col-sm-6 col-md-4">
+		<div class="col-xs-12 col-sm-6 col-md-4">	
 			<!-- START ARTICLE-->	
 				<div class="articlebox">
 					<a id="categorylink" href="#">
@@ -48,9 +54,9 @@ foreach($Categoriearticles as $value){
 								</div>
 							</div>
 					</div>
-							
+				</div>		
 				<!-- END ARTICLE-->
-				</div>
+				
 					
 			
 					
@@ -59,3 +65,8 @@ foreach($Categoriearticles as $value){
 			
 			';
 }
+
+echo'
+	
+	</div>
+';

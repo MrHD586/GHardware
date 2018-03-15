@@ -29,9 +29,10 @@
   <head>
 	<meta charset="utf-8">
 	<title>Ghardware</title>
-  
+	
+  	<link href="views/assets/css/addstyle.css" rel="stylesheet">
     <link href="views/Assets/css/bootstrap.css" rel="stylesheet">
-	<link href="views/Assets/css/addstyle.css" rel="stylesheet">
+
   </head>
   
   
@@ -74,6 +75,10 @@
     }
   echo'</div>
 	</div>
+	
+	
+	<!-- ROW for Central Part | DO NOT TOUCH-->
+	<div class="row">
 	';
 ?>
 

@@ -60,9 +60,17 @@
   </div>
   <div class="col-sm-3">';
     if($_SESSION['UserSession']==TRUE){
-        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success">38.50</span></a>';
+  
+        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success"></span></a>';
+        
     }else{
-        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">38.50</span></a>';
+        $Panier = unserialize($_COOKIE['Panier']);
+        if($Panier[0]!=NULL){
+        $Nombre = count($Panier);
+        }else{
+        $Nombre = NULL;
+        }
+        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
     }
   echo'</div>
 	</div>

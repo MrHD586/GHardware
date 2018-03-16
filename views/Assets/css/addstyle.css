@@ -2,6 +2,16 @@ body {
   background-color : rgb(40,96,144);
 }
 
+input[type=search]{
+	width: 70%;
+    padding: 4px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 header{
 	padding-top:10px;
 }

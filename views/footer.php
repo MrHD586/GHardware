@@ -16,7 +16,7 @@
 	
 	<div class="row">
 		<div class="col-sm-4">S\'Abonner à la Newsletter<br>
-		<img width="150px" src="images/logotemplate.png"></div>
+		<img width="150px" src="images/GHardwareLogoB.png"></div>
 		<div class="col-sm-4">Liens</div>
 		<div class="col-sm-4">Contact</div>
 	</div>

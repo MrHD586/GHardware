@@ -21,9 +21,6 @@
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- FORMATION BOOTSTRAP -->
-<!-- Les 4 types de Colonnes -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,26 +37,19 @@
   
   <div class="container"
   
-  <!-- Header Menu -->
-  <!-- Login / Logout Button -->
-	  <header>
-		<div class="row">          
-			<div class="col-xs-offset-9 col-lg-3"><a href="index.php?controller=Login&action=login">'.$loginText.'</a>'.$deconectButton.'</div>
-		</div>
-	  </header>
-  
-  <!-- Navigation (Logo + Search + Panier) -->
-  
-	<div class="row">
-  <div class="col-sm-3"><img width="100px" src="images/logotemplate.png"></div>
-  <div class="col-sm-6">
-	<form method="post" action="#">
-		<br>
-		<input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
-	</form>
-  
-  </div>
-  <div class="col-sm-3">';
+ <!-- Header Menu -->
+  	<header>
+		<div class="row">
+			<div class="col-sm-3"><a href="#"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
+			<div class="col-sm-9">
+	<!-- Login / Logout Button -->
+				<div class="col-xs-offset-8 col-lg-4"><a href="index.php?controller=Login&action=login">'.$loginText.'</a>'.$deconectButton.'</div>
+				<div class="col-sm-8">
+	<!-- Navigation (Logo + Search + Panier) -->
+					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
+				</div>
+				  <div class="col-sm-4">';
+				  
     if($_SESSION['UserSession']==TRUE){
   
         echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success"></span></a>';
@@ -74,8 +64,10 @@
         }
         echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
     }
-  echo'</div>
-	</div>
+  echo' </div>
+			</div>
+		</div>
+	</header>
 	
 	
 	<!-- ROW for Central Part | DO NOT TOUCH-->

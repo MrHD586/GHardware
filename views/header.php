@@ -66,10 +66,11 @@
         
     }else{
         $Panier = unserialize($_COOKIE['Panier']);
+        
         if($Panier[0]!=NULL){
-        $Nombre = count($Panier);
+            $Nombre = count($Panier);
         }else{
-        $Nombre = NULL;
+            $Nombre = NULL;
         }
         echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
     }

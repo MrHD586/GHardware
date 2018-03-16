@@ -1,8 +1,8 @@
 <?php
 Foreach($articles as $value){
     foreach($value as $value){
-        $index=$value['idArticle'];
-        $prixtotal= $value['APrix'] * $PanierNb[$index];
+        $index = $value['idArticle'];
+        $prixtotal = $value['APrix'] * $PanierNb[$index];
         echo 'Nom Article  : ';
         echo $value['AName'];
         echo'   ';

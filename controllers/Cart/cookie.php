@@ -12,20 +12,22 @@
     $urlTocategorie = "location:index.php?controller=Categorie&action=list&categorie=".$_GET['categorie']."";
     
     if(isset($_COOKIE["Panier"])){
-        $tempPanier= unserialize($_COOKIE["Panier"]);
+        $tempPanier = unserialize($_COOKIE["Panier"]);
         array_push($tempPanier,$Panier);
         setcookie("Panier",serialize($tempPanier));
+        
         if(isset($_GET['categorie'])){
-        header($urlTocategorie);
+            header($urlTocategorie);
         }else{
-        header($urlToarticle);
+            header($urlToarticle);
         }
     }else{
         $PanierA[0] = $id;
         setcookie("Panier",serialize($PanierA));
+      
         if(isset($_GET['categorie'])){
-        header($urlTocategorie);
+          header($urlTocategorie);
         }else{
-        header($urlToarticle);
+         header($urlToarticle);
         }
     }

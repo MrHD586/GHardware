@@ -25,7 +25,8 @@
 
 		// connexion à la db
 		public function Connect() {
-			$this->dbGh = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
+		    $this->dbGh = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password, 
+		                          array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
 			// set the PDO error mode to exception
 			$this->dbGh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}

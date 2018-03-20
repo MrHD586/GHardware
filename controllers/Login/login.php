@@ -22,25 +22,23 @@
     //si true le user est connecté
     $_SESSION['UserSession'] = NULL;
     
-    //grain de sel du password
-    $salt = password_hash("salt-pwd", PASSWORD_DEFAULT);
-    
 	if(isset($_POST['submit'])) {
 			    
 	    $userLogin = $_POST['Login'];
-	    $userPassword = $salt.md5($_POST['Password']);
-	    echo $userPassword;
+	    $userPassword = md5($_POST['Password']);
 	    
 	    //si un champ ne sont pas vides
-	    if($userLogin != null && $userPassword != $salt.md5("")){	    
+	    if($userLogin != null && $userPassword != null){	    
             //instantiation de la classe LoginManager   
             $loginManager = new LoginManager();
-            echo "yes";
             $userLoginDb = $loginManager->getLogin($userLogin);
             
             $row = $userLoginDb->fetch();
             
-            if($userLogin == $row['ULogin'] && $userPassword == $row['UPassword']){
+            //verification du password hashé
+            $isValid = password_verify($userPassword, $row['UPassword']);
+            
+            if($userLogin == $row['ULogin'] && $isValid){
                 $_SESSION['UserSession'] = TRUE;
                 $_SESSION['user_name'] = $userLogin;
                                

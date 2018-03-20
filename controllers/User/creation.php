@@ -16,27 +16,26 @@
     $urlToCreation = "location:index.php?controller=User&action=creation";
     //login
     $urlToLogin = "location:index.php?controller=Login&action=login";
-    
-    //grain de sel du password
-    $salt = password_hash("salt-pwd", PASSWORD_DEFAULT);
-    
+        
     //si le formulaire est envoyé
-	if(isset($_POST['submit'])) {
+	if(isset($_POST['submit'])){
 	    	    
 	    $userLogin = $_POST['Login'];
-	    $userPassword = $salt.md5($_POST['Password']);
+	    $userPassword = md5($_POST['Password']);
 	    $userFirstname = $_POST['Firstname'];
 	    $userLastname = $_POST['Lastname'];
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
 	    
+	    //hash du password
+	    $hash = password_hash($userPassword, PASSWORD_DEFAULT);
 	   
 	    //si un champ ne sont pas vides
-	    if($userLogin != null && $userPassword != $salt.md5("") && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){	    
-            //instantiation de la classe LoginManager   
+	    if($userLogin != null && $userPassword != null && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){	    
+            //instantiation de la classe LoginManager
             $creationManager = new UserCreationManager();
            
-            $userCreationDb = $creationManager->setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);           
+            $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);           
     		
             header($urlToLogin);
 	    }else{

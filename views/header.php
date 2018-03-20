@@ -10,68 +10,70 @@
 
     if($_SESSION['user_name'] != null){
         $loginText = $_SESSION['user_name'];
+        $loginHref ="index.php?controller=User&action=account";
         $deconectButton = '<a href="index.php?controller=Login&action=logout"> Deconnexion</a>';
     }else{
         $loginText = "login";
+        $loginHref ="index.php?controller=Login&action=login";
         $deconectButton = null;
     }
     
     echo '
 		<link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!DOCTYPE html>
-<html>
-  <head>
-	<meta charset="utf-8">
-	<title>Ghardware</title>
-	
-  	<link href="views/assets/css/addstyle.css" rel="stylesheet">
-    <link href="views/Assets/css/bootstrap.css" rel="stylesheet">
-
-  </head>
-  
-  
-  <body>
-  
-  <div class="container"
-  
- <!-- Header Menu -->
-  	<header>
-		<div class="row">
-			<div class="col-sm-3"><a href="#"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
-			<div class="col-sm-9">
-	<!-- Login / Logout Button -->
-				<div class="col-xs-offset-8 col-lg-4"><a href="index.php?controller=Login&action=login">'.$loginText.'</a>'.$deconectButton.'</div>
-				<div class="col-sm-8">
-	<!-- Navigation (Logo + Search + Panier) -->
-					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
-				</div>
-				  <div class="col-sm-4">';
-				  
-    if($_SESSION['UserSession']==TRUE){
-  
-        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success"></span></a>';
+        <!DOCTYPE html>
+        <html>
+          <head>
+        	<meta charset="utf-8">
+        	<title>Ghardware</title>
+        	
+          	<link href="views/assets/css/addstyle.css" rel="stylesheet">
+            <link href="views/Assets/css/bootstrap.css" rel="stylesheet">
         
-    }else{
-        $Panier = unserialize($_COOKIE['Panier']);
-        
-        if($Panier[0]!=NULL){
-            $Nombre = count($Panier);
-        }else{
-            $Nombre = NULL;
-        }
-        echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
-    }
-  echo' </div>
-			</div>
-		</div>
-	</header>
-	
-	
-	<!-- ROW for Central Part | DO NOT TOUCH-->
-	<div class="row">
+          </head>
+          
+          
+          <body>
+          
+          <div class="container"
+          
+            <!-- Header Menu -->
+          	<header>
+        		<div class="row">
+        			<div class="col-sm-3"><a href="#"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
+        			<div class="col-sm-9">
+            	<!-- Login / Logout Button -->
+        				<div class="col-xs-offset-8 col-lg-4"><a href='.$loginHref.'>'.$loginText.'</a>'.$deconectButton.'</div>
+        				<div class="col-sm-8">
+        	   <!-- Navigation (Logo + Search + Panier) -->
+        					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
+        				</div>
+        				  <div class="col-sm-4">';
+        				  
+            if($_SESSION['UserSession']==TRUE){
+          
+                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success"></span></a>';
+                
+            }else{
+                $Panier = unserialize($_COOKIE['Panier']);
+                
+                if($Panier[0]!=NULL){
+                    $Nombre = count($Panier);
+                }else{
+                    $Nombre = NULL;
+                }
+                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
+            }
+          echo' </div>
+        			</div>
+        		</div>
+        	</header>
+        	
+        	
+        	<!-- ROW for Central Part | DO NOT TOUCH-->
+        	<div class="row">
 	';
 ?>
 

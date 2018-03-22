@@ -1,4 +1,5 @@
 <?php
+echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">';
 Foreach($articles as $value){
     foreach($value as $value){
         $index = $value['idArticle'];
@@ -9,12 +10,15 @@ Foreach($articles as $value){
         echo 'Prix : ' ;
         echo $value['APrix'];
         echo'   ';
-        echo 'Nombre  : ';
-        echo $PanierNb[$index];
-        echo'   ';
         echo 'Prix total: ';
         echo $prixtotal;
+        echo'   ';
+        echo 'Nombre  : ';
+        
+               echo '<input type="number" value="'.$PanierNb[$index].'"name="'.$index.'" style="width: 50px" onchange="submit()">';
+              
         echo '</br>';
         
     }
 }
+echo'</form>';

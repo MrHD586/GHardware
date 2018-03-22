@@ -283,3 +283,4 @@ Stack trace:
 [22-Mar-2018 13:26:04 Europe/Zurich] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 100663304 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 15
 [22-Mar-2018 13:31:22 Europe/Zurich] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 100663304 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 9
 [22-Mar-2018 13:31:45 Europe/Zurich] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 100663304 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 9
+[22-Mar-2018 15:49:56 Europe/Zurich] PHP Parse error:  syntax error, unexpected end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 27

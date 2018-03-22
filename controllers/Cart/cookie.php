@@ -11,8 +11,10 @@
     //url des redirection sois sur l'articles ou la liste des articles par catégorie
     $urlToarticle = "location:index.php?controller=Article&action=article&id=".$id."";
     $urlTocategorie = "location:index.php?controller=Categorie&action=list&categorie=".$_GET['categorie']."";
-    //test pour savoir si un cookie a déjà été crée
-    if(isset($_COOKIE["Panier"])){
+    //Récuperation du cookie pour un test 
+    $testarray = unserialize($_COOKIE["Panier"]);
+    //test pour savoir si un cookie a déjà été crée et si un cookie déja crée n'est pas vide
+    if(isset($_COOKIE["Panier"]) && $testarray != NULL){
         //récupere l'ancien panier et le stock dans un tableau
         $tempPanier = unserialize($_COOKIE["Panier"]);
         //met a la fin du tableu le nouveau articles rajouté
@@ -28,6 +30,7 @@
             header($urlToarticle);
         }
     }else{
+        setcookie("Panier",time()-1);
         //ajoute l'id de l'articles dans un tableau
         $PanierA[0] = $id;
         //Création du cookie pour la première fois

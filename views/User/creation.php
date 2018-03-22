@@ -1,11 +1,10 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 Février 2018
+    #### Date : 27 FÃ©vrier 2018
     #### Page views/User/creation.php:
-    #### 	  Formulaire de création de compte utilisateur
+    #### 	  Formulaire de crÃ©ation de compte utilisateur
     ################################################################################
-
     
     //message d'erreurs
     if($_SESSION['message_erreur'] != null){
@@ -15,7 +14,7 @@
     }
     
     echo '
-        <h2>Création de votre compte</h2><br/>
+        <h2>CrÃ©ation de votre compte</h2><br/>
 		<form method="post" action="">
 		      '.$formErrors.'
 			<p>
@@ -29,7 +28,7 @@
 			</p>
 
             <p>
-				<label for="Firstname">Votre prénom</label>
+				<label for="Firstname">Votre prÃ©nom</label>
 				<input type="text" name="Firstname" />
 			</p>
 

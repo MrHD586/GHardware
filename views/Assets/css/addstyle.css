@@ -41,4 +41,24 @@ footer{
 	padding-bottom:20px;
 }
 
+.cartmenu{
+	text-align: center;
+	padding-bottom:10px;
+}
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number]{
+	text-align: center;
+}
+
+.cartarticle{
+	border-top: 1px solid black;
+	padding-top:10px;
+	padding-bottom:10px;
+}

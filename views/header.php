@@ -5,7 +5,7 @@
     #### Page Header:
     ####       Ceci est le header qui est include dans le index.php
     ################################################################################
-    
+        
     session_start();
 
     if($_SESSION['user_name'] != null){
@@ -19,17 +19,15 @@
     }
     
     echo '
-		<link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
         <!DOCTYPE html>
         <html>
           <head>
         	<meta charset="utf-8">
         	<title>Ghardware</title>
-        	
-          	<link href="views/assets/css/addstyle.css" rel="stylesheet">
+        	<link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          	<link href="views/Assets/css/addstyle.css" rel="stylesheet">
             <link href="views/Assets/css/bootstrap.css" rel="stylesheet">
         
           </head>

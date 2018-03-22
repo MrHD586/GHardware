@@ -49,19 +49,23 @@
         					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
         				</div>
         				  <div class="col-sm-4">';
-        				  
+        	//test pour savoir si l'utilisateur est connecté			  
             if($_SESSION['UserSession']==TRUE){
-          
+                //si il est connecté utilisation du manager pour le panier bdd
                 echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success"></span></a>';
                 
             }else{
+                //recuperation du cookie
                 $Panier = unserialize($_COOKIE['Panier']);
-                
+                //test pour savoir si le cookie a des valeur a 'intérieur
                 if($Panier[0]!=NULL){
+                    //attribution du nombre d'articles dans une variable pour afficher a coté du bouton panier
                     $Nombre = count($Panier);
                 }else{
+                    //attribution d'aucun valeur pour que rien ne s'affiche a cote du bonton
                     $Nombre = NULL;
                 }
+                //si il n'est pas connecté utilisation du panier avec les cookies
                 echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
             }
           echo' </div>

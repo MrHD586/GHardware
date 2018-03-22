@@ -1,7 +1,7 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 Février 2018
+    #### Date : 27 Fï¿½vrier 2018
     #### Page Header:
     ####       Ceci est le header qui est include dans le index.php
     ################################################################################
@@ -40,7 +40,7 @@
             <!-- Header Menu -->
           	<header>
         		<div class="row">
-        			<div class="col-sm-3"><a href="#"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
+        			<div class="col-sm-3"><a href="index.php"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
         			<div class="col-sm-9">
             	<!-- Login / Logout Button -->
         				<div class="col-xs-offset-8 col-lg-4"><a href='.$loginHref.'>'.$loginText.'</a>'.$deconectButton.'</div>

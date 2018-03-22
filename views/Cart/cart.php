@@ -1,36 +1,4 @@
 <?php
-<<<<<<< HEAD
-echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">';
-Foreach($articles as $value){
-=======
-/*Foreach($articles as $value){
->>>>>>> 28fe3195368353c7e6e38db32697df4e4df5aa8f
-    foreach($value as $value){
-        $index = $value['idArticle'];
-        $prixtotal = $value['APrix'] * $PanierNb[$index];
-        echo 'Nom Article  : ';
-        echo $value['AName'];
-        echo'   ';
-        echo 'Prix : ' ;
-        echo $value['APrix'];
-        echo'   ';
-        echo 'Prix total: ';
-        echo $prixtotal;
-        echo'   ';
-        echo 'Nombre  : ';
-        
-               echo '<input type="number" value="'.$PanierNb[$index].'"name="'.$index.'" style="width: 50px" onchange="submit()">';
-              
-        echo '</br>';
-        
-    }
-}
-<<<<<<< HEAD
-echo'</form>';
-=======
-
-*/
-
 echo'
 
 <div class="col-lg-9">
@@ -46,9 +14,16 @@ echo'
 				
 			</div>
 		
-		<!-- ARTICLES -->
-		
-			<div class="cartarticle">
+		<!-- ARTICLES -->';
+        echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">';
+        Foreach($articles as $value){
+        foreach($value as $value){
+        $index = $value['idArticle'];
+        $prixtotal = $value['APrix'] * $PanierNb[$index];
+        echo'
+        
+		<div class="cartarticle">
+        
 				<center>
 			<div class="row">
 				<div class="col-md-2">
@@ -58,17 +33,17 @@ echo'
 				<div class="col-md-6">
 					<div class="row">
 						<center>
-						<b>Nom Article</b>
+						<b>'.$value['AName'].'</b>
 						</center>
 					</div>
 				
 					<div class="row">
 						
-						<form>
-							<input type="button" onclick="#" value="-">
-							<input type="number" name="quantity" min="0" max="99">
-							<input type="button" onclick="#" value="+">
-						</form>
+						
+							<input type="button" onclick="nb =document.getElementById('.$index.').value;nb--;document.getElementById('.$index.').value= nb;submit()" value="-">
+							<input type="number" value="'.$PanierNb[$index].'" onchange="submit()" name="'.$index.'" id="'.$index.'"min="0" max="99">
+							<input type="button" onclick="nb =document.getElementById('.$index.').value;nb++;document.getElementById('.$index.').value= nb;submit()" value="+">
+						
 						
 					</div>
 					
@@ -79,7 +54,7 @@ echo'
 							<b>Prix Unitaire :</b>
 						</div>
 						<div class="row">
-							<b>56.50</b>
+							<b>'.$value['APrix'].'</b>
 						</div>
 					</div>
 					
@@ -88,18 +63,22 @@ echo'
 							<b>Prix Total :</b>
 						</div>
 						<div class="row">
-							<b>56.50</b>
+							<b>'.$prixtotal.'</b>
 						</div>
 					</div>
 					
 				
 			</div>
 				</center>
-			</div>
-
+			</div>';
+        }
+        }
+        echo'</form>';
+         
+         echo '
 		<!-- FIN ARTICLE -->
 		
 		</div>
 		
 		';
->>>>>>> 28fe3195368353c7e6e38db32697df4e4df5aa8f
+

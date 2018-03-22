@@ -274,3 +274,10 @@ Stack trace:
 [22-Mar-2018 11:41:39 Europe/Zurich] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 100663304 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 15
 [22-Mar-2018 11:43:21 Europe/Zurich] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 201326600 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 15
 [22-Mar-2018 11:43:25 Europe/Zurich] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 201326600 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 15
+[22-Mar-2018 11:59:37 Europe/Zurich] PHP Parse error:  syntax error, unexpected '<<' (T_SL), expecting end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\Cart\cart.php on line 2
+[22-Mar-2018 12:00:19 Europe/Zurich] PHP Parse error:  syntax error, unexpected end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\Cart\cart.php on line 102
+[22-Mar-2018 12:00:20 Europe/Zurich] PHP Parse error:  syntax error, unexpected end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\Cart\cart.php on line 102
+[22-Mar-2018 13:00:56 Europe/Zurich] PHP Parse error:  syntax error, unexpected '$prixtotal' (T_VARIABLE), expecting ',' or ';' in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\Cart\cart.php on line 88
+[22-Mar-2018 13:01:46 Europe/Zurich] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 100663304 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 15
+[22-Mar-2018 13:17:20 Europe/Zurich] PHP Parse error:  syntax error, unexpected end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\views\Cart\cart.php on line 83
+[22-Mar-2018 13:26:04 Europe/Zurich] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 100663304 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 15

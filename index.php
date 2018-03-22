@@ -31,34 +31,25 @@
 	$controller = ucfirst(strtolower($controller)); 
 	//Formatage du text // aRticLe => article
 	$action = strtolower($action);
+  
+//------------include des pages----------------
+    //Header
+	include 'views/header.php';
+	
+	//chemin du fichier et test s'il existe
+	$filePath = "./"."controllers/$controller/$action.php";
+	$fileTest = file_exists($filePath);
+
+	//$filePathAside = "./controllers/Aside/aside.php";
+	
+	if(!$fileTest){
+	    echo "<h2>la page souhaitée n'a pas été trouvée</h2>";
+	}elseif ($fileTest){
+	    //include $filePathAside;
+		include $filePath; 
+	}
+	
+	//Footer
+	include 'views/footer.php';
 ?>
-
-<!DOCTYPE>
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	</head>
-	<body>
-    	<?php 
-    	    //Header
-    		include 'views/header.php';
-    		
-    		//chemin du fichier et test s'il existe
-    		$filePath = "./"."controllers/$controller/$action.php";
-    		$fileTest = file_exists($filePath);
-
-    		//$filePathAside = "./controllers/Aside/aside.php";
-    		
-    		if(!$fileTest){
-    		    echo "<h2>la page souhaitée n'a pas été trouvée</h2>";
-    		}elseif ($fileTest){
-    		    //include $filePathAside;
-    			include $filePath; 
-    		}
-    		
-    		//Footer
-    		include 'views/footer.php';
-    	?>
-	</body>
-</html>
 

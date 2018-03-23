@@ -1,9 +1,9 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 22 Février 2018
+    #### Date : 22 Fï¿½vrier 2018
     #### Page views/Article/list.php:
-    ####       Cette page sert à afficher l'article que l'on consulte
+    ####       Cette page sert ï¿½ afficher l'article que l'on consulte
     ################################################################################
     
 
@@ -47,8 +47,13 @@
     									<div class="col-xs-9">
     										*****
     									</div><div class="col-xs-3">
-    										<a href="index.php?controller=Cart&action=cookie&id='.$id.'&categorie='.$categorie.'"><img class="img-responsive" src="images/carticon.png"></a>
-    									</div>
+                                            ';
+                                        if($_SESSION['UserSession']==TRUE){
+                                            echo'<a href="index.php?controller=Cart&action=bdd&id='.$id.'&categorie='.$categorie.'"><img class="img-responsive" src="images/carticon.png"></a>';
+                                        }else{
+    										echo'<a href="index.php?controller=Cart&action=cookie&id='.$id.'&categorie='.$categorie.'"><img class="img-responsive" src="images/carticon.png"></a>';
+                                        }
+    									echo'</div>
     								</div>
     							</div>
     					</div>

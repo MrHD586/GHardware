@@ -1,7 +1,7 @@
 <?php 
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 Février 2018
+    #### Date : 27 Fï¿½vrier 2018
     #### Page controllers/Login/login.php:
     #### 	  control du login
     ################################################################################
@@ -17,9 +17,9 @@
     //home
     $urlToHome = "location:index.php?controller=Site&action=home";
     //page d'administration
-    $urlToAdmin = "location:index.php?controller=Admin&action=adminHome";
+    $urlToAdmin = "location:index.php?controller=Admin&action=home";
     
-    //si true le user est connecté
+    //si true le user est connectï¿½
     $_SESSION['UserSession'] = NULL;
     
 	if(isset($_POST['submit'])) {
@@ -35,7 +35,7 @@
             
             $row = $userLoginDb->fetch();
             
-            //verification du password hashé
+            //verification du password hashï¿½
             $isValid = password_verify($userPassword, $row['UPassword']);
             
             if($userLogin == $row['ULogin'] && $isValid){
@@ -43,6 +43,7 @@
                 $_SESSION['user_name'] = $userLogin;
                                
     			if($row['isAdmin'] == 1){
+    			    $_SESSION['userIsAdmin'] = TRUE; 
     			    header($urlToAdmin);
     			}else{
     			    header($urlToHome);

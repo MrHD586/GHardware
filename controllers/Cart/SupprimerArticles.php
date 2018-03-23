@@ -6,11 +6,12 @@ $PanierNoDouble = array_unique($Panier);
 //initialisation d'une variable pour l'indexation du tableau finale
 $nbtableau= 0;
 //pour chaque articles présent dans le panier
+if($_POST['vider']!= NULL){
+$newPanier;
+}else{
 foreach($PanierNoDouble as $value){
     //test si la valeur du post et définie pour l'article
     if(isset($_POST[''.$value.''])){
-        //test si la valeur de ce post n'est pas égale à 0 ou en dessous
-        if(($_POST[''.$value.''])> 0){
         //attribution de la valeur du nombre du meme article dans une variable
         $nombrearticles=$_POST[''.$value.''];
         //pour chaque nombre d'articles 

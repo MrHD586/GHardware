@@ -1,15 +1,16 @@
 <?php
+//<button type="submit" name="vider" value="1" class="btn btn-default">Vider le panier</button>
 echo'
 
 <div class="col-lg-9">
 
-<!-- CART MENU -->
-		
+<!-- CART MENU -->	
 			<div class="row">
 				
 				<div class="cartmenu">
-					<button type="button" class="btn btn-default" href="#">Passer la commande</button>
-					<button type="button" class="btn btn-default" href="#">Vider le panier</button>
+                <form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">
+					<button type="submit" class="btn btn-default">Passer la commande</button>
+                    <input type="submit" name="vider" value="Vider le panier">
 				</div>
 				
 			</div>

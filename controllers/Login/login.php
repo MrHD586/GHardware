@@ -35,7 +35,7 @@
             
             $row = $userLoginDb->fetch();
             
-            //verification du password hash�
+            //verification du password hashé
             $isValid = password_verify($userPassword, $row['UPassword']);
             
             if($userLogin == $row['ULogin'] && $isValid){

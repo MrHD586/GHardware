@@ -28,6 +28,11 @@
 			</p>
 
             <p>
+				<label for="PasswordVerif">Confirmation du mot de passe</label>
+				<input type="password" name="PasswordVerif" />
+			</p>
+
+            <p>
 				<label for="Firstname">Votre prénom</label>
 				<input type="text" name="Firstname" />
 			</p>

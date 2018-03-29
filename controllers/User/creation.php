@@ -31,6 +31,11 @@
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
 	   
+	    //si un champ ne sont pas vides
+	    if($userLogin != null && $userPassword != null && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){
+	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
+	        $hasError = TRUE;
+	    }
 	    
 	    //instantiation de la classe LoginManager
 	    $creationManager = new UserCreationManager();
@@ -48,11 +53,6 @@
 	        $hasError = TRUE;
 	    }   
 	    
-	    //si un champ ne sont pas vides
-	    if($userLogin != null && $userPassword != null && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){	    
-	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
-	        $hasError = TRUE;
-	    }
         //Si les deux champs password correspondent
         if($userPassword != $userPasswordVerif){
            $_SESSION["errorPassword"] = "Les mots de passes ne sont pas identiques";
@@ -65,14 +65,14 @@
         }
      	
         //s'il n'y a pas d'erreurs
-        if($hasError != TRUE){
+        if($hasError == TRUE){
+            header($urlToCreation);
+        }else{
             //hash du password
             $hash = password_hash($userPassword, PASSWORD_DEFAULT);
             //requête pour la création de l'utilisateur
             $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
             header($urlToLogin);
-        }else{
-            header($urlToCreation);
         }
 	}
 		

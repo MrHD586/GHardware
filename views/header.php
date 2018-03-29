@@ -23,6 +23,7 @@
         <html>
           <head>
         	<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
         	<title>Ghardware</title>
         	<link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
             <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>

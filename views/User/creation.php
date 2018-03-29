@@ -6,17 +6,15 @@
     #### 	  Formulaire de création de compte utilisateur
     ################################################################################
     
-    //message d'erreurs
-    if($_SESSION['message_erreur'] != null){
-        $formErrors = $_SESSION['message_erreur'];
-    }else{
-        $formErrors = null;
-    }
+   
     
     echo '
         <h2>Création de votre compte</h2><br/>
 		<form method="post" action="">
-		      '.$formErrors.'
+		      '.$_SESSION['errorUserName'].'<br/>
+              '.$_SESSION['errorEmptyField'].'<br/>
+              '.$_SESSION['errorPassword'].'<br/>
+              '.$_SESSION['errorEmail'].'<br/>
 			<p>
 				<label for="Login_User">Votre Login</label>
 				<input type="text" name="Login"/>

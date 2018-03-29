@@ -48,7 +48,7 @@
 	    }
 	    
 	    //si le login n'est pas égale au login retourné par la requête
-	    if($userLogin != $loginAlreadyExsist){
+	    if($userLogin == $loginAlreadyExsist){
 	        $_SESSION["errorUserName"] = "Le nom d'utilisateur est déjà utilisé";
 	        $hasError = TRUE;
 	    }   

@@ -63,6 +63,9 @@ input[type=number]{
 	padding-bottom:10px;
 }
 
+
+
+
 /* CSS Slider */
 
 * {box-sizing: border-box}
@@ -160,4 +163,15 @@ img {vertical-align: middle;}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
+}
+
+.commentarticle{
+	border-top: 1px solid black;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.commentpseudo{
+	padding-top:12px;
+	padding-bottom:10px;
 }

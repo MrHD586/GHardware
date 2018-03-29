@@ -7,14 +7,40 @@
     ################################################################################
     
    
+    //message d'erreurs champs vide
+    if($_SESSION['errorEmptyField'] != null){
+        $errorEmptyField = $_SESSION['errorEmptyField']."<br/>";
+    }else{
+        $errorEmptyField = null;
+    }
+
+    //message d'erreurs nom d'utilisateur
+    if($_SESSION['errorUserName'] != null){
+        $errorUserName = $_SESSION['errorUserName']."<br/>";
+    }else{
+        $errorUserName = null;
+    }
+       
+    //message d'erreurs mot de passe
+    if($_SESSION['errorPassword'] != null){
+        $errorPassword = $_SESSION['errorPassword']."<br/>";
+    }else{
+        $errorPassword = null;
+    }
     
+    //message d'erreurs email
+    if($_SESSION['errorEmail'] != null){
+        $errorEmail = $_SESSION['errorEmail']."<br/>";
+    }else{
+        $errorEmail = null;
+    }
     echo '
         <h2>Création de votre compte</h2><br/>
 		<form method="post" action="">
-		      '.$_SESSION['errorUserName'].'<br/>
-              '.$_SESSION['errorEmptyField'].'<br/>
-              '.$_SESSION['errorPassword'].'<br/>
-              '.$_SESSION['errorEmail'].'<br/>
+		      '.$errorEmptyField.'
+              '.$errorUserName.'
+              '.$errorPassword.'
+              '.$errorEmail.'
 			<p>
 				<label for="Login_User">Votre Login</label>
 				<input type="text" name="Login"/>

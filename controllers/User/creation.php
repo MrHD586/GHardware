@@ -16,6 +16,9 @@
     $urlToCreation = "location:index.php?controller=User&action=creation";
     //login
     $urlToLogin = "location:index.php?controller=Login&action=login";
+    
+    //variable d'erreure
+    $hasError = NULL;
         
     //si le formulaire est envoyé
 	if(isset($_POST['submit'])){
@@ -28,41 +31,49 @@
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
 	   
-	   
+	    
+	    //instantiation de la classe LoginManager
+	    $creationManager = new UserCreationManager();
+	    
+	    //recherche d'un user name correspondant au login entré
+	    $checkByUserName = $creationManager->getUserName($userLogin);
+	    
+	    foreach($checkByUserName as $checkByUserName){
+	        $loginAlreadyExsist = $checkByUserName['ULogin'];
+	    }
+	    
+	    //si le login n'est pas égale au login retourné par la requête
+	    if($userLogin != $loginAlreadyExsist){
+	        $_SESSION["errorUserName"] = "Le nom d'utilisateur est déjà utilisé";
+	        $hasError = TRUE;
+	    }   
+	    
 	    //si un champ ne sont pas vides
 	    if($userLogin != null && $userPassword != null && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){	    
-           
-	        //Si les deux champs password correspondent
-	        if($userPassword == $userPasswordVerif){
-    	        //instantiation de la classe LoginManager
-                $creationManager = new UserCreationManager();
-                
-                //recherche d'un user name correspondant au login entré
-                $checkByUserName = $creationManager->getUserName($userLogin);
-                
-                foreach($checkByUserName as $checkByUserName){
-                    $loginAlreadyExsist = $checkByUserName['ULogin'];
-                }
-                
-                //si le login n'est pas égale au login retourné par la requête
-                if($userLogin != $loginAlreadyExsist){
-                    //hash du password
-                    $hash = password_hash($userPassword, PASSWORD_DEFAULT);
-                    $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);           
-                    header($urlToLogin);
-                }else{
-                    $_SESSION["message_erreur"] = "Le nom d'utilisateur est déjà utilisé";
-                    header($urlToCreation);
-                }
-	        }else{
-	            $_SESSION["message_erreur"] = "Les mots de passes ne sont pas identiques";
-	            header($urlToCreation);
-	        }
-	    }else{
-	        $_SESSION["message_erreur"] = "Veuillez remplir tous les champs";
-	        header($urlToCreation);
+	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
+	        $hasError = TRUE;
 	    }
-    		
+        //Si les deux champs password correspondent
+        if($userPassword != $userPasswordVerif){
+           $_SESSION["errorPassword"] = "Les mots de passes ne sont pas identiques";
+           $hasError = TRUE;
+        }
+        
+        if(preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
+           $_SESSION["errorEmail"] = "L'email n'est pas correct";
+           $hasError = TRUE;
+        }
+     	
+        //s'il n'y a pas d'erreurs
+        if($hasError != TRUE){
+            //hash du password
+            $hash = password_hash($userPassword, PASSWORD_DEFAULT);
+            //requête pour la création de l'utilisateur
+            $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
+            header($urlToLogin);
+        }else{
+            header($urlToCreation);
+        }
 	}
 		
 	include 'views/User/creation.php';

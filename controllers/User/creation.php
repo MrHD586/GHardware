@@ -31,8 +31,8 @@
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
 	   
-	    //si un champ ne sont pas vides
-	    if($userLogin != null && $userPassword != null && $userFirstname != null && $userLastname != null && $userEmail != null && $userBirthdate != null){
+	    //si un champ sont vides
+	    if($userLogin == null && $userPassword == null && $userFirstname == null && $userLastname == null && $userEmail == null && $userBirthdate == null){
 	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
 	        $hasError = TRUE;
 	    }
@@ -59,7 +59,7 @@
            $hasError = TRUE;
         }
         
-        if(preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
+        if(!preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
            $_SESSION["errorEmail"] = "L'email n'est pas correct";
            $hasError = TRUE;
         }

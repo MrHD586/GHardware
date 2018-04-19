@@ -49,7 +49,7 @@
         	   <!-- Navigation (Logo + Search + Panier) -->
         					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
         				</div>
-        				  <div class="col-sm-4">';
+        				  <div class="col-sm-1">';
         	//test pour savoir si l'utilisateur est connecté			  
             if($_SESSION['UserSession']==TRUE){
                 //si il est connecté utilisation du manager pour le panier bdd
@@ -69,14 +69,47 @@
                 //si il n'est pas connecté utilisation du panier avec les cookies
                 echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
             }
-          echo' </div>
+          echo' 
+		  
+		  </div>
+		  
+		  <div class="col-sm-3">
+		  
+		  <div class="dropdown">
+				<button onclick="myFunction()" class="btn btn-default navbar-btn dropbtn">Dropdown</button>
+				  <div id="myDropdown" class="dropdown-content">
+					<a href="#home">Profil</a>
+					<a href="#about">Panier</a>
+					<a href="#contact">Admin</a>
+				  </div>
+			</div>
         			</div>
         		</div>
+			
         	</header>
         	
         	
         	<!-- ROW for Central Part | DO NOT TOUCH-->
         	<div class="row">
+			
+			<script>
+				function myFunction() {
+					document.getElementById("myDropdown").classList.toggle("show");
+				}
+				window.onclick = function(event) {
+				  if (!event.target.matches(\'.dropbtn\')) {
+					var dropdowns = document.getElementsByClassName("dropdown-content");
+					var i;
+					for (i = 0; i < dropdowns.length; i++) {
+					  var openDropdown = dropdowns[i];
+					  if (openDropdown.classList.contains(\'show\')) {
+						openDropdown.classList.remove(\'show\');
+					  }
+					}
+				  }
+				}
+			</script>
+
 	';
 ?>
 

@@ -1,4 +1,4 @@
-body {
+﻿body {
   background-color : rgb(40,96,144);
 }
 
@@ -23,12 +23,16 @@ section{
 
 .container {
 	background-color: rgb(248, 248, 248);
-	border-left: 4px solid black;
-	border-right: 4px solid black;
+	margin-top : 20px;
+	margin-bottom : 20px;
+	padding-top : 20px;
+	padding-bottom : 50px;
+	border: 4px solid black;
 }
 
 .articlebox {
 	padding: 15px;
+	margin-top : 20px;
 	background-color: rgb(248, 248, 248);
 	border: 2px solid rgb(40,96,144);
 }
@@ -193,3 +197,47 @@ textarea{
     margin-bottom: 16px; 
     resize: vertical 
 }
+
+/* Dropdown Menu */
+
+.dropbtn {
+    background-color: #fff;
+	border-color: #ccc;
+    color: #333;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #ccc;;
+}
+
+.dropdown {
+    float: right;
+    position: relative;
+    display: inline-block;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}

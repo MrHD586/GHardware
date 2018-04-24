@@ -32,6 +32,12 @@
                      </li>';
                  }
                  echo'
+				 <li>
+					<form method="post" action="#">
+												<input class="searchbar" type="search" name="search" placeholder="Marques">
+												<br><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+											</form>
+				 </li>
                 </ul>   
                 </div>
                 <!-- /.sidebar-collapse -->

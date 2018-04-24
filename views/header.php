@@ -44,7 +44,10 @@
         			<div class="col-sm-3"><a href="index.php"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
         			<div class="col-sm-9">
             	<!-- Login / Logout Button -->
-        				<div class="col-xs-offset-8 col-lg-4"><a href='.$loginHref.'>'.$loginText.'</a>'.$deconectButton.'</div>
+        				<div class="col-xs-offset-8 col-lg-4"><a href='.$loginHref.'>'.$loginText.'</a>'.$deconectButton.'
+						
+						</div>
+						
         				<div class="col-sm-8">
         	   <!-- Navigation (Logo + Search + Panier) -->
         					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
@@ -78,6 +81,8 @@
 		  <div class="dropdown">
 				<button onclick="myFunction()" class="btn btn-default navbar-btn dropbtn">Dropdown</button>
 				  <div id="myDropdown" class="dropdown-content">
+					
+									
 					<a href="#home">Profil</a>
 					<a href="#about">Panier</a>
 					<a href="#contact">Admin</a>

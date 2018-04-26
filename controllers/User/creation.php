@@ -33,7 +33,7 @@
 	   
 	    //si un champ est vides
 	    if($userLogin == null || $userPassword == null || $userFirstname == null || $userLastname == null || $userEmail == null || $userBirthdate == null){
-	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
+	        $_SESSION["errorEmptyField"] = "";
 	        $hasError = TRUE;
 	    }else{
 	        

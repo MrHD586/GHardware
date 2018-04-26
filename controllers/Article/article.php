@@ -11,6 +11,7 @@
     session_start();
     
     $idarticle =$_GET['id'];
+    
     $articlesManager = new ArticleManager();
     
     $articles = $articlesManager->getArticles($idarticle);

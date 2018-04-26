@@ -14,7 +14,6 @@
 			
 			
 			
-			
 			<div class="slideshow-container">
 
 			<div class="mySlides fade">

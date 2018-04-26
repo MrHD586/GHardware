@@ -23,7 +23,7 @@
     include 'views/aside.php';
     
     if($sessionAdminUser == TRUE){
-        include 'views/Admin/home.php';    
+        header('location:views/Admin/home.php');    
     }else{
         header($redirectToHome);
     }

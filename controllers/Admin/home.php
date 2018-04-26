@@ -14,7 +14,10 @@
     //Lien Home
     $redirectToHome = "location:index.php?controller=Site&action=home";
     
+    
     if($sessionAdminUser == TRUE){
+        $aside = $articlesManager->getCategories();
+        include 'views/aside.php';
         include 'views/Admin/home.php';    
     }else{
         header($redirectToHome);

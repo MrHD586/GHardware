@@ -23,7 +23,7 @@
         $aside = $adminPageManager->getCategories();
         include 'views/aside.php';
     
-        include 'location:views/Admin/home.php';    
+        include 'views/Admin/home.php';    
     }else{
         header($redirectToHome);
     }

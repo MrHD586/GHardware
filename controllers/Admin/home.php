@@ -20,9 +20,9 @@
     
     //aside
     $aside = $adminPageManager->getCategories();
+    include 'views/aside.php';
     
     if($sessionAdminUser == TRUE){
-        include 'views/aside.php';
         include 'views/Admin/home.php';    
     }else{
         header($redirectToHome);

@@ -31,50 +31,51 @@
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
 	   
-	    //si un champ sont vides
-	    if($userLogin == null && $userPassword == null && $userFirstname == null && $userLastname == null && $userEmail == null && $userBirthdate == null){
+	    //si un champ est vides
+	    if($userLogin == null || $userPassword == null || $userFirstname == null || $userLastname == null || $userEmail == null && $userBirthdate || null){
 	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
 	        $hasError = TRUE;
+	    }else{
+	    
+    	    //instantiation de la classe LoginManager
+    	    $creationManager = new UserCreationManager();
+    	    
+    	    //recherche d'un user name correspondant au login entré
+    	    $checkByUserName = $creationManager->getUserName($userLogin);
+    	    
+    	    foreach($checkByUserName as $checkByUserName){
+    	        $loginAlreadyExsist = $checkByUserName['ULogin'];
+    	    }
+    	    
+    	    //si le login est égal au login retourné par la requête
+    	    if($userLogin == $loginAlreadyExsist){
+    	        $_SESSION["errorUserName"] = "Le nom d'utilisateur est déjà utilisé";
+    	        $hasError = TRUE;
+    	    }   
+    	    
+            //Si les deux champs password correspondent
+            if($userPassword != $userPasswordVerif){
+               $_SESSION["errorPassword"] = "Les mots de passes ne sont pas identiques";
+               $hasError = TRUE;
+            }
+            
+            //^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
+            if(!preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
+               $_SESSION["errorEmail"] = "L'email n'est pas correct";
+               $hasError = TRUE;
+            }
+         	
+            //s'il n'y a pas d'erreurs
+            if($hasError == TRUE){
+                header($urlToCreation);
+            }else{
+                //hash du password
+                $hash = password_hash($userPassword, PASSWORD_DEFAULT);
+                //requête pour la création de l'utilisateur
+                $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
+                header($urlToLogin);
+            }
 	    }
-	    
-	    //instantiation de la classe LoginManager
-	    $creationManager = new UserCreationManager();
-	    
-	    //recherche d'un user name correspondant au login entré
-	    $checkByUserName = $creationManager->getUserName($userLogin);
-	    
-	    foreach($checkByUserName as $checkByUserName){
-	        $loginAlreadyExsist = $checkByUserName['ULogin'];
-	    }
-	    
-	    //si le login n'est pas égale au login retourné par la requête
-	    if($userLogin == $loginAlreadyExsist){
-	        $_SESSION["errorUserName"] = "Le nom d'utilisateur est déjà utilisé";
-	        $hasError = TRUE;
-	    }   
-	    
-        //Si les deux champs password correspondent
-        if($userPassword != $userPasswordVerif){
-           $_SESSION["errorPassword"] = "Les mots de passes ne sont pas identiques";
-           $hasError = TRUE;
-        }
-        
-        //^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
-        if(!preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
-           $_SESSION["errorEmail"] = "L'email n'est pas correct";
-           $hasError = TRUE;
-        }
-     	
-        //s'il n'y a pas d'erreurs
-        if($hasError == TRUE){
-            header($urlToCreation);
-        }else{
-            //hash du password
-            $hash = password_hash($userPassword, PASSWORD_DEFAULT);
-            //requête pour la création de l'utilisateur
-            $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
-            header($urlToLogin);
-        }
 	}
 		
 	include 'views/User/creation.php';

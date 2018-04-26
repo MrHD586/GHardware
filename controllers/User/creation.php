@@ -10,7 +10,7 @@
     include("models/UserCreationManager.php");
     
     session_start();
-        
+    session_destroy();
     // ----- LIEN POUR REDIRECTION ----- //
     //redirection sur login si erreurs
     $urlToCreation = "location:index.php?controller=User&action=creation";

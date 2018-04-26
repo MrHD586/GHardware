@@ -35,7 +35,62 @@ foreach($articles as $articles){
     	               </div>
     		      </div>
     	       </div> 
+			   
+					   <div class="row">
+							<div class="col-lg-10">
+								
+								<div class="commentarticle">
+								
+									<div class="row">
+									
+										<div class="pseudoavatar">
+											<div class="col-xs-3">
+												<img width="50" height="50" src="images/defaultavatar.png">
+											</div>
+											
+											<div class="col-xs-9">
+												<div class="commentpseudo">
+													<b>
+													xXD4rKnight69Xx
+													</b>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+									
+									
+									<div class="row">
+										
+										<div class="col-xs-10 col-xs-offset-1">
+											<div class="jumbotron">
+												   C\'est d\'la MERDE !!!
+											   </div>
+										</div>
+									</div>
+									
+									<div class="commentform">
+										<div class="col-xs-10 col-xs-offset-1">
+											<form method="post" action="#">
+												<textarea class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"></textarea>
+												<br><button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
+											</form>
+										</div>
+									</div>
+									
+								</div>
+								
+								
+							</div>
+						</div>
+			   
 	      </div>
+		  
+		
+		  
+		
+		  
+		  
 	';}
 
 

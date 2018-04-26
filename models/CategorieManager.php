@@ -3,38 +3,38 @@
 #### Auteur : Viquerat Killian
 #### Date : 9 Mars 2018
 #### Classe CategorieManager :
-#### 		Cette classe possède des fonctions effectuants
-####		des requêtes souvant utilisées.
+#### 		Cette classe possï¿½de des fonctions effectuants
+####		des requï¿½tes souvant utilisï¿½es.
 ################################################################################
 
-//include de la classe DbManager
-include("models/DbManager.php");
-$Categorie=$_GET['categorie'];
-
-class CategorieManager {
+    //include de la classe DbManager
+    include("models/DbManager.php");
+    $Categorie=$_GET['categorie'];
     
-    private $dbManager;
-    
-    function __construct(){
-        //instantiation de la classe DbManager
-        $this->dbManager = new DbManager();
+    class CategorieManager {
+        
+        private $dbManager;
+        
+        function __construct(){
+            //instantiation de la classe DbManager
+            $this->dbManager = new DbManager();
+        }
+        
+        
+        // execute une requï¿½te
+        public function getArticlesCategorie($Categorie) {
+            $sql = "SELECT *
+                    FROM t_articles
+                    INNER JOIN t_categories ON t_articles.FK_Categories = t_categories.idCategories WHERE t_categories.Ccategorie = '$Categorie'";
+            $resultat = $this->dbManager->Query($sql);
+            return $resultat->fetchAll();
+        }
+        
+        // execute une requï¿½te
+        public function getCategories() {
+            $sql = "SELECT Ccategorie 
+                    FROM t_categories";
+            $resultat = $this->dbManager->Query($sql);
+            return $resultat->fetchAll();
+        }
     }
-    
-    
-    // execute une requête
-    public function getArticlesCategorie($Categorie) {
-        $sql = "SELECT *
-                FROM t_articles
-                INNER JOIN t_categories ON t_articles.FK_Categories = t_categories.idCategories WHERE t_categories.Ccategorie = '$Categorie'";
-        $resultat = $this->dbManager->Query($sql);
-        return $resultat->fetchAll();
-    }
-    
-    // execute une requête
-    public function getCategories() {
-        $sql = "SELECT Ccategorie 
-                FROM t_categories";
-        $resultat = $this->dbManager->Query($sql);
-        return $resultat->fetchAll();
-    }
-}

@@ -36,6 +36,8 @@
 	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
 	        $hasError = TRUE;
 	    }else{
+	        
+	        $_SESSION["errorEmptyField"] = null;
 	    
     	    //instantiation de la classe LoginManager
     	    $creationManager = new UserCreationManager();
@@ -51,18 +53,24 @@
     	    if($userLogin == $loginAlreadyExsist){
     	        $_SESSION["errorUserName"] = "Le nom d'utilisateur est déjà utilisé";
     	        $hasError = TRUE;
-    	    }   
+    	    }else{
+    	        $_SESSION["errorUserName"] = null;
+    	    }
     	    
             //Si les deux champs password correspondent
             if($userPassword != $userPasswordVerif){
                $_SESSION["errorPassword"] = "Les mots de passes ne sont pas identiques";
                $hasError = TRUE;
+            }else{
+                $_SESSION["errorPassword"] = null;
             }
             
             //^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
             if(!preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
                $_SESSION["errorEmail"] = "L'email n'est pas correct";
                $hasError = TRUE;
+            }else{
+                $_SESSION["errorEmail"] = null;
             }
          	
             //s'il n'y a pas d'erreurs

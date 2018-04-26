@@ -16,7 +16,7 @@
     
     
     if($sessionAdminUser == TRUE){
-        $aside = $articlesManager->getCategories();
+        $aside = $AdminPageManager->getCategories();
         include 'views/aside.php';
         include 'views/Admin/home.php';    
     }else{

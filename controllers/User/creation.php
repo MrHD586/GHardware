@@ -10,7 +10,7 @@
     include("models/UserCreationManager.php");
     
     session_start();
-    session_destroy();
+    
     // ----- LIEN POUR REDIRECTION ----- //
     //redirection sur login si erreurs
     $urlToCreation = "location:index.php?controller=User&action=creation";
@@ -32,7 +32,7 @@
 	    $userBirthdate = $_POST['Birthdate'];
 	   
 	    //si un champ est vides
-	    if($userLogin == null || $userPassword == null || $userFirstname == null || $userLastname == null || $userEmail == null || $userBirthdate || null){
+	    if($userLogin == null || $userPassword == null || $userFirstname == null || $userLastname == null || $userEmail == null || $userBirthdate == null){
 	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
 	        $hasError = TRUE;
 	    }else{

@@ -6,6 +6,8 @@
     #### 		  Page d'accueil pour l'administration
     ################################################################################
     
+    include 'models/AdminPageManager.php';
+
     session_start();
     
     //Variable contenant le paramêtre de session 'userIsAdmin'

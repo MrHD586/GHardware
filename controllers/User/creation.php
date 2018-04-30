@@ -80,7 +80,7 @@
                 //hash du password
                 $hash = password_hash($userPassword, PASSWORD_DEFAULT);
                 //requête pour la création de l'utilisateur
-                $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastName, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
+                $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
                 header($urlToLogin);
             }
 	    }

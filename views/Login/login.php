@@ -1,7 +1,7 @@
 <?php 
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 FÈvrier 2018
+    #### Date : 27 FÔøΩvrier 2018
     #### Page views/Login/login.php:
     #### 	  Formulaire de login
     ################################################################################
@@ -13,9 +13,12 @@
     }else{
         $formErrors = null;
     }
-
-    echo '
-        <h2>Connexion</h2><br/>
+    if($_GET['Paniercookie']==1){
+        echo '<h2>Veuillez-vous connecter ou cr√©e un compte avant de pouvoir commander</h2><br/>';
+    }else{
+        echo ' <h2>Connexion</h2><br/>';
+    }     
+    echo'
 		<form method="post" action="">
 		      '.$formErrors.'
 			<p>

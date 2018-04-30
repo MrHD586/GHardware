@@ -8,14 +8,13 @@ echo'
 			<div class="row">
 				
 				<div class="cartmenu">
-                <form action="index.php?controller=User&action=creation&Paniercookie=1" method="POST">
+                <form action="index.php?controller=Login&action=login&Paniercookie=1" method="POST">
 					<input type="submit" name="commande" value="Passer la commande">
                 </form>
-                </div>    
                 <form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">
                     <input type="submit" name="vider" value="Vider le panier">
 				</form>
-                
+                </div>    
 			</div>
 		
 		<!-- ARTICLES -->';

@@ -80,14 +80,15 @@
 		  
           
 		  <div class="dropdown">
-				<button onclick="myFunction()" class="btn btn-default navbar-btn dropbtn">Dropdown</button>
-                  '. if($_SESSION['UserSession'] == TRUE){
-        				  .'<div id="myDropdown" class="dropdown-content">				
+				<button onclick="myFunction()" class="btn btn-default navbar-btn dropbtn">Dropdown</button>';
+                   if($_SESSION['UserSession'] == TRUE){
+        				  echo '<div id="myDropdown" class="dropdown-content">				
             					<a href="#home">Profil</a>
             					<a href="#about">Panier</a>
             					<a href="#contact">Admin</a>
-        				    </div>.'
-                      }.'
+        				    </div>';
+                      }
+			echo '
 			</div>
         			</div>
         		</div>

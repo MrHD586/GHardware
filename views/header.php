@@ -7,16 +7,6 @@
     ################################################################################
         
     session_start();
-
-    if($_SESSION['user_name'] != null){
-        $loginText = $_SESSION['user_name'];
-        $loginHref ="index.php?controller=User&action=account";
-        $deconectButton = '<a href="index.php?controller=Login&action=logout"> Deconnexion</a>';
-    }else{
-        $loginText = "login";
-        $loginHref ="index.php?controller=Login&action=login";
-        $deconectButton = null;
-    }
     
     echo '
         <!DOCTYPE html>
@@ -76,11 +66,21 @@
 		  
 		  </div>
 		  
-		  <div class="col-sm-3">
+		  <div class="col-sm-3">';
 		  
-          
+            if($_SESSION['user_name'] != null){
+                    $loginButtonText = $_SESSION['user_name'];
+                    $loginButtonHref ="DropdownButtonFonction()";
+                }else{
+                    $loginButtonText = "login";
+                    $loginButtonHref ="index.php?controller=Login&action=login";
+                }
+          <a href='.$loginHref.'>'.$loginText.'</a>'..'
+$deconectButton = '<a href="index.php?controller=Login&action=logout"> Deconnexion</a>';
+
+		 echo'
 		  <div class="dropdown">
-				<button onclick="myFunction()" class="btn btn-default navbar-btn dropbtn">Dropdown</button>';
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.'</button>';
                    if($_SESSION['UserSession'] == TRUE){
         				  echo '<div id="myDropdown" class="dropdown-content">				
             					<a href="#home">Profil</a>
@@ -100,7 +100,7 @@
         	<div class="row">
 			
 			<script>
-				function myFunction() {
+				function DropdownButtonFonction() {
 					document.getElementById("myDropdown").classList.toggle("show");
 				}
 				window.onclick = function(event) {

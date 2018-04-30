@@ -35,10 +35,12 @@
         $errorEmail = null;
     }
     
-    echo '
-        <h2>Création de votre compte</h2><br/>';
+   
+        
         if($_GET['Paniercookie']==1){
              echo '<h3>Veuillez-vous crée un compte avant de pouvoir commander ou connecter-vous</h3><br/>'; 
+        }else{
+            echo ' <h2>Création de votre compte</h2><br/>';
         }
 		echo'<form method="post" action="">
 		      '.$errorEmptyField.'

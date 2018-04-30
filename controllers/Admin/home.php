@@ -10,19 +10,19 @@
 
     session_start();
     
-    $adminPageManager = new AdminPageManager();
-    
     //Variable contenant le paramêtre de session 'userIsAdmin'
     $sessionAdminUser = $_SESSION['userIsAdmin'];
     
     //Lien Home
     $redirectToHome = "location:index.php?controller=Site&action=home";
     
-    //aside
-    $aside = $adminPageManager->getCategories();
-    include 'views/aside.php';
-    
     if($sessionAdminUser == TRUE){
+        $adminPageManager = new AdminPageManager();
+                
+        //aside
+        $aside = $adminPageManager->getCategories();
+        include 'views/aside.php';
+    
         include 'views/Admin/home.php';    
     }else{
         header($redirectToHome);

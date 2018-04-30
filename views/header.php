@@ -78,15 +78,16 @@
 		  
 		  <div class="col-sm-3">
 		  
+          
 		  <div class="dropdown">
 				<button onclick="myFunction()" class="btn btn-default navbar-btn dropbtn">Dropdown</button>
-				  <div id="myDropdown" class="dropdown-content">
-					
-									
-					<a href="#home">Profil</a>
-					<a href="#about">Panier</a>
-					<a href="#contact">Admin</a>
-				  </div>
+                  '. if($_SESSION['UserSession'] == TRUE){
+        				  .'<div id="myDropdown" class="dropdown-content">				
+            					<a href="#home">Profil</a>
+            					<a href="#about">Panier</a>
+            					<a href="#contact">Admin</a>
+        				    </div>.'
+                      }.'
 			</div>
         			</div>
         		</div>

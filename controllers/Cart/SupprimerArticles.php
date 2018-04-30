@@ -1,4 +1,10 @@
 <?php
+################################################################################
+#### Auteur : Viquerat Killian
+#### Date : 13 Mars 2018
+#### Page controllers/Cart/SupprimerArticles.php:
+#### Suppression des articles ce trouvant dans le panier
+################################################################################
 //Récuperation du panier dans le cookie
 $Panier = unserialize($_COOKIE['Panier']);
 //dédoublement des valeurs du panier

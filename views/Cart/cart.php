@@ -9,18 +9,18 @@ echo'
 				
 				<div class="cartmenu">
                 <form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">
-					<button type="submit" class="btn btn-default">Passer la commande</button>
+					<input type="submit" name="commande" value="Passer la commande">
                     <input type="submit" name="vider" value="Vider le panier">
 				</div>
-				
+				</form>
 			</div>
 		
 		<!-- ARTICLES -->';
         echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">';
         Foreach($articles as $value){
-        foreach($value as $value){
-        $index = $value['idArticle'];
-        $prixtotal = $value['APrix'] * $PanierNb[$index];
+            foreach($value as $value){
+                $index = $value['idArticle'];
+                $prixtotal = $value['APrix'] * $PanierNb[$index];
         echo'
         
 		<div class="cartarticle">

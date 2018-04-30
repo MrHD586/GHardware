@@ -73,16 +73,13 @@
                     $loginButtonHref ="DropdownButtonFonction()";
                 }else{
                     $loginButtonText = "login";
-                    $loginButtonHref ="index.php?controller=Login&action=login";
+                    $loginButtonHref ="location.href = 'index.php?controller=Login&action=login';";
                 }
           //<a href='.$loginHref.'>'.$loginText.'</a>'..'
         
                 
 		 echo'
 		  <div class="dropdown">
-                <form action="$loginButtonHref">
-                    <input type="submit" value="Go to Login" />
-                </form>
 				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.'</button>';
                    if($_SESSION['UserSession'] == TRUE){
         				  echo '<div id="myDropdown" class="dropdown-content">				

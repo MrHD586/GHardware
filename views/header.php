@@ -75,7 +75,7 @@
                     $loginButtonText = "login";
                     $loginButtonHref ="index.php?controller=Login&action=login";
                 }
-          <a href='.$loginHref.'>'.$loginText.'</a>'..'
+          //<a href='.$loginHref.'>'.$loginText.'</a>'..'
 $deconectButton = '<a href="index.php?controller=Login&action=logout"> Deconnexion</a>';
 
 		 echo'

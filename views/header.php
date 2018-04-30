@@ -68,27 +68,24 @@
 		  
 		  <div class="col-sm-3">';
 		  
+            //titre et fonction du bouton
             if($_SESSION['user_name'] != null){
-                    $loginButtonText = $_SESSION['user_name'];
-                    $loginButtonHref ="DropdownButtonFonction()";
-                }else{
-                    $loginButtonText = "login";
-                    $loginButtonHref ="location.href = 'index.php?controller=Login&action=login';";
-                }
-          //<a href='.$loginHref.'>'.$loginText.'</a>'..'
-        
+                $loginButtonText = $_SESSION['user_name'];
+                $loginButtonHref ="DropdownButtonFonction()";
+            }else{
+                $loginButtonText = "login";
+                $loginButtonHref ="location.href = 'index.php?controller=Login&action=login';";
+            }
+          
                 
 		 echo'
 		  <div class="dropdown">
-				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.'</button>';
-                   if($_SESSION['UserSession'] == TRUE){
-        				  echo '<div id="myDropdown" class="dropdown-content">				
-            					<a href="#home">Profil</a>
-            					<a href="#about">Panier</a>
-                                <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
-        				    </div>';
-                      }
-			echo '
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.'</button> 
+				  <div id="myDropdown" class="dropdown-content">				
+    					<a href="#home">Profil</a>
+    					<a href="index.php?controller=Cart&action=bdd">Panier</a>
+                        <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
+				    </div>
 			</div>
         			</div>
         		</div>

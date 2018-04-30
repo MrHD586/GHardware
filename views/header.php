@@ -75,6 +75,8 @@
                
                 if($_SESSION['userIsAdmin']){
                    $adminDropdown = '<a href="index.php?controller=Admin&action=home">Administration</a>'; 
+                }else{
+                    $panierDropdown = '<a href="index.php?controller=Cart&action=bdd">Panier</a>';
                 }
             }else{
                 $loginButtonText = "login";
@@ -88,7 +90,7 @@
 				  <div id="myDropdown" class="dropdown-content">	
                         '.$adminDropdown.'
     					<a href="index.php?controller=Site&action=profil">Profil</a>
-    					<a href="index.php?controller=Cart&action=bdd">Panier</a>
+    					'.$panierDropdown.'
                         <a href="">Commandes</a>
                         <a href="">Liste de souhaits</a>
                         <a href="index.php?controller=Login&action=logout"> Deconnexion</a>

@@ -76,16 +76,19 @@
                     $loginButtonHref ="index.php?controller=Login&action=login";
                 }
           //<a href='.$loginHref.'>'.$loginText.'</a>'..'
-$deconectButton = '<a href="index.php?controller=Login&action=logout"> Deconnexion</a>';
-
+        
+                
 		 echo'
 		  <div class="dropdown">
+                <form action="$loginButtonHref">
+                    <input type="submit" value="Go to Login" />
+                </form>
 				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.'</button>';
                    if($_SESSION['UserSession'] == TRUE){
         				  echo '<div id="myDropdown" class="dropdown-content">				
             					<a href="#home">Profil</a>
             					<a href="#about">Panier</a>
-            					<a href="#contact">Admin</a>
+                                <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
         				    </div>';
                       }
 			echo '

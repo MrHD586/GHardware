@@ -13,7 +13,7 @@
 	       <!-- FOOTER -->
         	<div class="row">
         		<div class="col-sm-4">S\'Abonner à la Newsletter<br>
-        		<img width="150px" src="images/GHardwareLogoB.png"></div>
+                <a href="index.php"><img width="150px" src="images/GHardwareLogoB.png"></a></div>
         		<div class="col-sm-4">Liens</div>
         		<div class="col-sm-4">Contact</div>
         	</div>

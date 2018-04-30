@@ -46,7 +46,11 @@
     			    $_SESSION['userIsAdmin'] = TRUE; 
     			    header($urlToAdmin);
     			}else{
+    			    if($_GET['Paniercookie']==1){
+    			    header('index.php?controller=Login&action=login&Paniercookie=1');
+    			    }else{
     			    header($urlToHome);
+    			    }
     			}
     		}else{
     			$_SESSION['message_erreur'] = "Le login ou le mot de passe est incorrect";

@@ -82,8 +82,10 @@
 		  <div class="dropdown">
 				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.'</button> 
 				  <div id="myDropdown" class="dropdown-content">				
-    					<a href="#home">Profil</a>
+    					<a href="index.php?controller=Site&action=profil">Profil</a>
     					<a href="index.php?controller=Cart&action=bdd">Panier</a>
+                        <a href="">Commandes</a>
+                        <a href="">Liste de souhaits</a>
                         <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
 				    </div>
 			</div>

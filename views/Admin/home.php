@@ -15,6 +15,8 @@
 			
 			
 			<!-- ADMIN -->
+			
+			<!-- User -->
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">
@@ -32,6 +34,7 @@
 					</div>
 				</div>
 				
+			<!-- New Article -->	
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">
@@ -48,7 +51,8 @@
 							
 					</div>
 				</div>
-				
+			
+			<!-- New Brand -->
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">
@@ -66,6 +70,7 @@
 					</div>
 				</div>
 				
+			<!-- New Category -->
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">

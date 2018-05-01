@@ -1,7 +1,7 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 F�vrier 2018
+    #### Date : 27 Février 2018
     #### Page Header:
     ####       Ceci est le header qui est include dans le index.php
     ################################################################################

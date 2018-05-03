@@ -9,14 +9,18 @@ echo'
 				
 				<div class="cartmenu">
 		<!-- Order the cart content button -->
+			<div class="col-sm-offset-2 col-sm-4" id="carticon" >
                 <form action="index.php?controller=Login&action=login&Paniercookie=1" method="POST">
 					<input type="submit" name="commande" value="Passer la commande">
                 </form>
+			</div>
 				
 		<!-- Discard the shopping cart button -->
-                <form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">
-                    <input type="submit" name="vider" value="Vider le panier">
-				</form>
+					<div class="col-sm-4" id="carticon">
+						<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">
+							<input type="submit" name="vider" value="Vider le panier">
+						</form>
+					</div>
                 </div>    
 			</div>
 		

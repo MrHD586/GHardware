@@ -12,6 +12,44 @@ input[type=search]{
     box-sizing: border-box;
 }
 
+input[type=text]{
+	width: 80%;
+    padding: 4px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password]{
+	width: 80%;
+    padding: 4px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #fff;
+	border-color: #ccc;
+    color: #333;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label{
+	padding: 4px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
 header{
 	padding-top:10px;
 }
@@ -48,6 +86,12 @@ footer{
 .cartmenu{
 	text-align: center;
 	padding-bottom:10px;
+	
+}
+
+#carticon{
+	margin-top:10px;
+	margin-bottom:10px;
 }
 
 input::-webkit-outer-spin-button,
@@ -236,6 +280,11 @@ textarea{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+}
+
+#forgotten{
+	padding: 4px;
+    display: inline-block;
 }
 
 .dropdown a:hover {background-color: #ddd}

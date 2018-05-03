@@ -79,7 +79,7 @@
                     $panierDropdown = '<a href="index.php?controller=Cart&action=bdd">Panier</a>';
                 }
             }else{
-                $loginButtonText = "login";
+                $loginButtonText = "Login";
                 $loginButtonHref ="location.href = 'index.php?controller=Login&action=login';";
             }
           

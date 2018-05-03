@@ -47,7 +47,7 @@
     			    header($urlToAdmin);
     			}else{
     			    if($_GET['Paniercookie']==1){
-    			    header('index.php?controller=Login&action=login&Paniercookie=1');
+    			    header('index.php?controller=Cart&action=CookieToBdd');
     			    }else{
     			    header($urlToHome);
     			    }

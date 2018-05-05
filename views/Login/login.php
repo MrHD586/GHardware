@@ -34,7 +34,11 @@
 			<p>
 				<!-- Login -->
 				<div class="col-lg-4"><label for="Login_User">Utilisateur</label></div>
-				<div class="col-lg-8"><input type="text" name="Login"/></div>
+				<div class="col-lg-8"><input type="text" name="Login"/></div>';
+                if($_GET['Paniercookie']==1){
+                     echo' <input type="hidden" name="Paniercookie" value="1">';
+                }
+                echo'
 			</p>
 			
 			<p>

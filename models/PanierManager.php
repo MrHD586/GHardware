@@ -29,7 +29,7 @@ class PanierManager {
     }
     
     public function getUserName($userLogin){
-        $sql = "SELECT idUser FROM t_user WHERE ULogin = '$userLogin'";
+        $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
         $resultat = $this->dbManager->Query($sql);
         return $resultat;
     }

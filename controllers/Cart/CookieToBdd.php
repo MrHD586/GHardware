@@ -25,5 +25,4 @@ $PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser);
 }
 setcookie('Panier',serialize($newPanier));
 header('location:index.php');
-
 ?>

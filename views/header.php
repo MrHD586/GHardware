@@ -46,7 +46,7 @@
         	//test pour savoir si l'utilisateur est connecté			  
             if($_SESSION['UserSession']==TRUE){
                 //si il est connecté utilisation du manager pour le panier bdd
-                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichebdd" role="button">Panier <span class="badge text-success"></span></a>';
+                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success"></span></a>';
                 
             }else{
                 //recuperation du cookie

@@ -28,7 +28,7 @@ echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="
 Foreach($articlesbdd as $value){
     foreach($value as $value){
         $index = $value['idArticle'];
-        $prixtotal = $value['APrix'] * $PanierNb[$index];
+        $prixtotal = $value['APrix'] * $articlesNb[$index];
         echo'
             
 		<div class="cartarticle">
@@ -54,7 +54,7 @@ Foreach($articlesbdd as $value){
 						    
 				<!-- + and - Buttons -->
 							<input type="button" onclick="nb =document.getElementById('.$index.').value;nb--;document.getElementById('.$index.').value= nb;submit()" value="-">
-								<input type="number" value="'.$articles[$index].'" onchange="submit()" name="'.$index.'" id="'.$index.'"min="0" max="99">
+								<input type="number" value="'.$articlesNb[$index].'" onchange="submit()" name="'.$index.'" id="'.$index.'"min="0" max="99">
 									<input type="button" onclick="nb =document.getElementById('.$index.').value;nb++;document.getElementById('.$index.').value= nb;submit()" value="+">
 									    
 									    

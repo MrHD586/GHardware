@@ -15,6 +15,7 @@ $newPanier;
 $panierManager = new PanierManager();
 
 $iduser = $panierManager->getUserName($userLogin);
+echo $iduser;
 $cookie = unserialize($_COOKIE['Panier']);
 foreach($cookie as $value){
 $idarticle = $value;

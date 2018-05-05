@@ -21,4 +21,5 @@ $idarticle = $value;
 $panierManager->setNewPanier($idarticle, $iduser);
 }
 setcookie('Panier',serialize($newPanier));
+echo 'cc';
 ?>

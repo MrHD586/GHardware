@@ -46,7 +46,8 @@
     			    $_SESSION['userIsAdmin'] = TRUE; 
     			    header($urlToAdmin);
     			}else{
-    			    if($_GET['Paniercookie']==1){
+    			    if($_POST['Paniercookie']==1){
+    			    echo ' 1234';
     			    header('index.php?controller=Cart&action=CookieToBdd');
     			    }else{
     			    header($urlToHome);

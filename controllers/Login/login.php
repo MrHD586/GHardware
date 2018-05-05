@@ -48,7 +48,7 @@
     			}else{
     			    if($_POST['Paniercookie']==1){
     			    echo ' 1234';
-    			    header('index.php?controller=Cart&action=CookieToBdd');
+    			    header('location:index.php?controller=Cart&action=CookieToBdd');
     			    }else{
     			    header($urlToHome);
     			    }

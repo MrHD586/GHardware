@@ -15,13 +15,11 @@ $newPanier;
 $panierManager = new PanierManager();
 
 $iduser = $panierManager->getUserName($userLogin);
-foreach($iduser as $value){
-    echo $value['idUser'];
-}
+
 $cookie = unserialize($_COOKIE['Panier']);
 foreach($cookie as $value){
 $idarticle = $value;
-$PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser);
+$PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser['idUser']);
 echo 'cc';
 }
 setcookie('Panier',serialize($newPanier));

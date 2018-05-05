@@ -32,5 +32,10 @@ class PanierBddManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
+    public function getUserName($userLogin){
+        $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat;
+    }
     
 }

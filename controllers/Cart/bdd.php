@@ -10,13 +10,14 @@ include 'models/PanierBddManager.php';
 
 session_start();
 
+$panierBddManager = new PanierBddManager();
+
 $userLogin = $_SESSION['user_name'];
-$user = $panierManager->getUserName($userLogin);
+
+$user = $panierBddManager->getUserName($userLogin);
 foreach($user as $value){
     $iduser = $value['idUser'];
 }
-
-$panierBddManager = new PanierBddManager();
 
 $articles = $panierBddManager->getPanier($iduser);
 

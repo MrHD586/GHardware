@@ -23,7 +23,7 @@ class PanierManager {
     
     // execute une requ�te
     public function setNewPanier($Fk_Articles, $Fk_User) {
-            $sql = "INSERT INTO t_user (Fk_Articles, Fk_User)
+            $sql = "INSERT INTO t_panier (Fk_Articles, Fk_User)
                     VALUES ('$Fk_Articles', '$Fk_User')";
             $this->dbManager->Query($sql);
     }

@@ -10,16 +10,17 @@ include 'models/PanierManager.php';
 
 session_start();
 
-$userLogin =$_SESSION['user_name'];
-
+$userLogin = $_SESSION['user_name'];
+$newPanier;
 $panierManager = new PanierManager();
 
 $iduser = $panierManager->getUserName($userLogin);
 $cookie = unserialize($_COOKIE['Panier']);
-foreach($cookie as $value){    
+foreach($cookie as $value){
+echo 'cc';
 $idarticle = $value;
 $PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser);
 }
 setcookie('Panier',serialize($newPanier));
-echo 'cc';
+
 ?>

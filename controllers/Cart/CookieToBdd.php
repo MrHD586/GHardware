@@ -14,12 +14,14 @@ $userLogin = $_SESSION['user_name'];
 $newPanier;
 $panierManager = new PanierManager();
 
-$iduser = $panierManager->getUserName($userLogin);
-
+$user = $panierManager->getUserName($userLogin);
+foreach($iduser as $value){
+    $iduser = $value['idUser'];
+}
 $cookie = unserialize($_COOKIE['Panier']);
 foreach($cookie as $value){
 $idarticle = $value;
-$PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser['idUser']);
+$PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser);
 echo 'cc';
 }
 setcookie('Panier',serialize($newPanier));

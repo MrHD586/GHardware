@@ -47,7 +47,6 @@
     			    header($urlToAdmin);
     			}else{
     			    if($_POST['Paniercookie']==1){
-    			    echo ' 1234';
     			    header('location:index.php?controller=Cart&action=CookieToBdd');
     			    }else{
     			    header($urlToHome);

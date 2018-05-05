@@ -18,7 +18,7 @@ $iduser = $panierManager->getUserName($userLogin);
 $cookie = unserialize($_COOKIE['Panier']);
 foreach($cookie as $value){    
 $idarticle = $value;
-$panierManager->setNewPanier($idarticle, $iduser);
+$PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser);
 }
 setcookie('Panier',serialize($newPanier));
 echo 'cc';

@@ -25,7 +25,7 @@ echo'
     
 		<!-- ARTICLES -->';
 echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">';
-Foreach($articles as $value){
+Foreach($articlesbb as $value){
     foreach($value as $value){
         $index = $value['idArticle'];
         $prixtotal = $value['APrix'] * $PanierNb[$index];

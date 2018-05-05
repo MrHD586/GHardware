@@ -35,6 +35,6 @@ foreach($articlesNoDouble as $value){
     //stockage du nombre du même articles voulu avec l'id de l'articles pour le retrouver facilement
     $articlesNb[$index] = $Nombre[$index];
     //stockage des donnée de la db sur l'article avec l'id de l'articles pour le retrouver facilement
-    $articles[$index] = $panierBddManager->getArticlesbdd($index);
+    $articlesbdd[$index] = $panierBddManager->getArticlesbdd($index);
 }
 include 'views/Cart/cartbdd.php';

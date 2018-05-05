@@ -19,8 +19,12 @@ foreach($user as $value){
     $iduser = $value['idUser'];
 }
 
-$articles = $panierBddManager->getPanier($iduser);
-
+$articlesarray = $panierBddManager->getPanier($iduser);
+$i=0;
+foreach($articlesarray as $value){
+$articles[$i]=$value;
+$i++;  
+}
 $Nombre = array_count_values($articles);
 //déduplication du tableaux pour avoir le nombre d'article
 $articlesNoDouble = array_unique($articles);

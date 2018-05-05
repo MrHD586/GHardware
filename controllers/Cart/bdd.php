@@ -23,6 +23,7 @@ $articlesarray = $panierBddManager->getPanier($iduser);
 $i=0;
 foreach($articlesarray as $value){
 $articles[$i]=$value;
+echo $articles[$i];
 $i++;  
 }
 $Nombre = array_count_values($articles);

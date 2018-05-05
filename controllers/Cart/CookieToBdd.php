@@ -22,8 +22,8 @@ $cookie = unserialize($_COOKIE['Panier']);
 foreach($cookie as $value){
 $idarticle = $value;
 $PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser);
-echo 'cc';
 }
 setcookie('Panier',serialize($newPanier));
+header('location:index.php');
 
 ?>

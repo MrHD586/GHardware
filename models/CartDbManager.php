@@ -23,7 +23,7 @@ class CartDbManager {
     
     // execute une requête
     public function getPanier($iduser) {
-        $sql = "SELECT Fk_Articles FROM t_panier WHERE Fk_User='$iduser'";
+        $sql = "SELECT * FROM t_panier WHERE Fk_User='$iduser'";
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }

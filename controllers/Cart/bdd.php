@@ -22,13 +22,10 @@ foreach($user as $value){
 $articlesarray = $panierBddManager->getPanier($iduser);
 $i=0;
 foreach($articlesarray as $value){
-$articles[$i]=$value['Fk_Articles'];
-$i++;  
+$articles[$i] = $value['Fk_Articles'];
+$nombre[''.$articles.''] = $value['PNombre'];
+$i++;
 }
-$Nombre = array_count_values($articles);
-//déduplication du tableaux pour avoir le nombre d'article
-$articlesNoDouble = array_unique($articles);
-//pour chaque articles présent dans le tableau
 foreach($articlesNoDouble as $value){
     //stockage de l'id d'article pour l'indexation et la requète db
     $index = $value;

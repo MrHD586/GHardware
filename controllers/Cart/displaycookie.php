@@ -2,7 +2,7 @@
 ################################################################################
 #### Auteur : Viquerat Killian
 #### Date : 13 Mars 2018
-#### Page controllers/Cart/affichecookie.php:
+#### Page controllers/Cart/displayCookie.php:
 #### Gestions des donn�es des articles dans le cookie pour le Panier
 ################################################################################
 //inclusion du fichier pour les requête a la base de donnée

@@ -33,4 +33,4 @@ foreach($PanierNoDouble as $value){
 //rafraichissement des valeurs dans le cookie
 setcookie('Panier',serialize($newPanier));
 //redirection vers l'affichage des articles dans le panier
-header("location:index.php?controller=Cart&action=affichecookie");
+header("location:index.php?controller=Cart&action=displayCookie");

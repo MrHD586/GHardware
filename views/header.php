@@ -55,7 +55,7 @@
                     $Nombre = NULL;
                 }
                 //si il n'est pas connecté utilisation du panier avec les cookies
-                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=affichecookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
+                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=displayCookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
             }
           echo' 
 		  

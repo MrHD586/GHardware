@@ -22,11 +22,9 @@ foreach($user as $value){
 $articlesarray = $panierBddManager->getPanier($iduser);
 $i=0;
 foreach($articlesarray as $value){
-    foreach($value as $value){
         $articles[$i] = $value['Fk_Articles'];
         $nombre[''.$articles.''] = $value['PNombre'];
         $i++;
-    }
 }
 foreach($articles as $value){
     //stockage de l'id d'article pour l'indexation et la requète db

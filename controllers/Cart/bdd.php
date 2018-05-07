@@ -23,7 +23,7 @@ $articlesarray = $panierBddManager->getPanier($iduser);
 $i=0;
 foreach($articlesarray as $value){
         $articles[$i] = $value['Fk_Articles'];
-        $nombre[''.$articles.''] = $value['PNombre'];
+        $nombre[''.$articles[$i].''] = $value['PNombre'];
         $i++;
 }
 foreach($articles as $value){

@@ -22,15 +22,15 @@ foreach($user as $value){
 $articlesarray = $panierBddManager->getPanier($iduser);
 $i=0;
 foreach($articlesarray as $value){
-$articles[$i] = $value['Fk_Articles'];
-$nombre[''.$articles.''] = $value['PNombre'];
-$i++;
+    foreach($value as $value){
+        $articles[$i] = $value['Fk_Articles'];
+        $nombre[''.$articles.''] = $value['PNombre'];
+        $i++;
+    }
 }
-foreach($articlesNoDouble as $value){
+foreach($articles as $value){
     //stockage de l'id d'article pour l'indexation et la requète db
     $index = $value;
-    //stockage du nombre du même articles voulu avec l'id de l'articles pour le retrouver facilement
-    $articlesNb[$index] = $Nombre[$index];
     //stockage des donnée de la db sur l'article avec l'id de l'articles pour le retrouver facilement
     $articlesbdd[$index] = $panierBddManager->getArticlesbdd($index);
 }

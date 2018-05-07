@@ -1,13 +1,19 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 Février 2018
-    #### Page views/Site/home.php:
-    #### 	  Page Home par défaut
+    #### Date : 07 Mai 2018
+    #### Page views/Admin/home.php:
+    #### 	  Page d'accueil pour les admins
     ################################################################################
     
 
-	
+    //links
+    $userAdmin = "index.php?controller=Admin&action=user";
+    $articleAdmin = "index.php?controller=Admin&action=article";
+    $brandAdmin = "index.php?controller=Admin&action=brand";
+    $categoryAdmin = "index.php?controller=Admin&action=category";
+    
+
 	echo '
 		
 			<div class="col-lg-9">
@@ -20,12 +26,12 @@
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">
-					<a id="categorylink" href="#">
+					<a id="categorylink" href="'.$userAdmin.'">
 					
 							<div class="col-xl-12">
 								<center>Nouvel Utilisateur</center>
 							</div>
-													<div class="col-xl-12">
+								<div class="col-xl-12">
 								<img class="img-responsive" src="images/adduser.png">
 							</div>
 							
@@ -38,7 +44,7 @@
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">
-					<a id="categorylink" href="#">
+					<a id="categorylink" href="'.$articleAdmin.'">
 					
 							<div class="col-xl-12">
 								<center>Nouvel Article</center>
@@ -56,7 +62,7 @@
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">
-					<a id="categorylink" href="#">
+					<a id="categorylink" href="'.$brandAdmin.'">
 					
 							<div class="col-xl-12">
 								<center>Nouvelle Marque</center>
@@ -74,7 +80,7 @@
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				
 				<div class="articlebox">
-					<a id="categorylink" href="#">
+					<a id="categorylink" href="'.$categoryAdmin.'">
 					
 							<div class="col-xl-12">
 								<center>Nouvelle Catégorie</center>

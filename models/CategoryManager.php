@@ -11,7 +11,7 @@
     include("models/DbManager.php");
     $Categorie=$_GET['categorie'];
     
-    class CategorieManager {
+    class CategoryManager {
         
         private $dbManager;
         

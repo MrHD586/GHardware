@@ -17,7 +17,7 @@ echo'
 				
 		<!-- Discard the shopping cart button -->
 					<div class="col-sm-4" id="carticon">
-						<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">
+						<form action="index.php?controller=Cart&action=DeleteArticle" method="POST">
 							<input type="submit" name="vider" value="Vider le panier">
 						</form>
 					</div>
@@ -25,7 +25,7 @@ echo'
 			</div>
 		
 		<!-- ARTICLES -->';
-        echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">';
+        echo '<form action="index.php?controller=Cart&action=DeleteArticle" method="POST">';
         Foreach($articles as $value){
             foreach($value as $value){
                 $index = $value['idArticle'];

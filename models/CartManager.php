@@ -11,7 +11,7 @@
 include("models/DbManager.php");
 
 
-class PanierManager {
+class CartManager {
     
     private $dbManager;
     

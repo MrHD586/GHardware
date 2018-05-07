@@ -1,20 +1,20 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 Février 2018
+    #### Date : 27 Fï¿½vrier 2018
     #### Page controllers/Article/list.php:
-    #### 		  Gestions des données des articles
+    #### 		  Gestions des donnï¿½es des articles
     ################################################################################
     
-    include 'models/CategorieManager.php';
+    include 'models/CategoryManager.php';
     
     session_start();
     
-    $categorieManager = new CategorieManager();
+    $categorieManager = new CategoryManager();
     
     $Categoriearticles = $categorieManager->getArticlesCategorie($Categorie);
     
     $aside = $categorieManager->getCategories();
     
     include 'views/aside.php';
-    include 'views/Article/CategorieList.php';
+    include 'views/Article/categoryList.php';

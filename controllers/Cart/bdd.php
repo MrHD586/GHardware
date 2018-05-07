@@ -6,11 +6,11 @@
 #### Gestions des données du panier
 ################################################################################
 
-include 'models/PanierBddManager.php';
+include 'models/CartDbManager.php';
 
 session_start();
 
-$panierBddManager = new PanierBddManager();
+$panierBddManager = new CartDbManager();
 
 $userLogin = $_SESSION['user_name'];
 

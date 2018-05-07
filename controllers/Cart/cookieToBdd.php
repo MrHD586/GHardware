@@ -6,13 +6,13 @@
 #### 		  Gestions des données des articles
 ################################################################################
 
-include 'models/PanierManager.php';
+include 'models/CartManager.php';
 
 session_start();
 
 $userLogin = $_SESSION['user_name'];
 $newPanier;
-$panierManager = new PanierManager();
+$panierManager = new CartManager();
 
 $user = $panierManager->getUserName($userLogin);
 foreach($user as $value){

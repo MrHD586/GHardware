@@ -6,10 +6,10 @@
 #### Gestions des donn�es des articles dans le cookie pour le Panier
 ################################################################################
 //inclusion du fichier pour les requête a la base de donnée
-include 'models/PanierCookieManager.php';
+include 'models/CartCookieManager.php';
 session_start();
 //initialisation de la class PanierCookieManager
-$panierCookieManager = new PanierCookieManager();
+$panierCookieManager = new CartCookieManager();
 //recuperation du tableau stocker dans le cookie
 $Panier = unserialize($_COOKIE['Panier']);
 //recuperation du nombre de valeur présente dans le tableau

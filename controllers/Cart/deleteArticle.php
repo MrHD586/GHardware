@@ -22,7 +22,7 @@ foreach($PanierNoDouble as $value){
         $nombrearticles=$_POST[''.$value.''];
         //pour chaque nombre d'articles 
         for($i=1;$i<=$nombrearticles;$i++){
-            //Ajout dans le tableau du panier avec l'indexation de la variable inistialiser au début
+            //Ajout dans le tableau du panier avec l'indexation de la variable initialiser au début
             $newPanier[$nbtableau]=$value;
             //Augmentation de la variable pour rester toujours a l'index suivant pour éviter de supprimer des valeurs
             $nbtableau++;

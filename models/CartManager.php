@@ -22,9 +22,9 @@ class CartManager {
     
     
     // execute une requ�te
-    public function setNewPanier($Fk_Articles, $Fk_User) {
-            $sql = "INSERT INTO t_panier (Fk_Articles, Fk_User)
-                    VALUES ('$Fk_Articles', '$Fk_User')";
+    public function setNewPanier($Fk_Articles, $Fk_User, $PNombre) {
+            $sql = "INSERT INTO t_panier (Fk_Articles, Fk_User, PNombre)
+                    VALUES ('$Fk_Articles', '$Fk_User', '$PNombre')";
             $this->dbManager->Query($sql);
     }
     

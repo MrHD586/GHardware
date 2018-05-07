@@ -19,9 +19,12 @@ foreach($user as $value){
      $iduser = $value['idUser'];
 }
 $cookie = unserialize($_COOKIE['Panier']);
-foreach($cookie as $value){
+$nombre = array_count_values($cookie);
+$cookienodouble = array_unique($cookie);
+foreach($cookienodouble as $value){
 $idarticle = $value;
-$PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser);
+$nombredb = $nombre[''.$value.''];
+$PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser, $nombredb);
 }
 setcookie('Panier',serialize($newPanier));
 header('location:index.php');

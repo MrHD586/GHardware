@@ -9,6 +9,7 @@
     echo '
 
 	<!-- SIDE MENU -->
+	<div class="sidemenu">
 		<div class="col-lg-3">
 		
 		
@@ -52,6 +53,6 @@
 			
 		
 		</div>
-		
+	</div>	
 	';
 ?>

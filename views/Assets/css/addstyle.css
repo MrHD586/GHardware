@@ -50,13 +50,20 @@ label{
     box-sizing: border-box;
 }
 
+
+
 header{
 	padding-top:10px;
+	padding-bottom:20px;
 }
 
 section{
 	padding-top:20px;
 	padding-bottom:20px;
+}
+
+.headerbuttons{
+	margin-top : 19px;
 }
 
 .container {
@@ -258,7 +265,6 @@ textarea{
 }
 
 .dropdown {
-    float: right;
     position: relative;
     display: inline-block;
     
@@ -273,6 +279,10 @@ textarea{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     right: 0;
     z-index: 1;
+}
+
+.sidemenu{
+	margin-bottom:15px;
 }
 
 .dropdown-content a {

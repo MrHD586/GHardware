@@ -32,12 +32,12 @@
           	<header>
         		<div class="row">
         			<div class="col-sm-3"><a href="index.php"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
-        			<div class="col-sm-9">
-        			<div class="col-sm-8">
+        			<div class="col-sm-6">
         	   <!-- Navigation (Logo + Search + Panier) -->
         					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
         				</div>
-        				  <div class="col-sm-1">';
+						<div class="headerbuttons">	
+        				  <div class="col-sm-3">';
         	//test pour savoir si l'utilisateur est connecté			  
             if($_SESSION['UserSession']==TRUE){
                 //si il est connecté utilisation du manager pour le panier bdd
@@ -57,12 +57,7 @@
                 //si il n'est pas connecté utilisation du panier avec les cookies
                 echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=displayCookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
             }
-          echo' 
-		  
-		  </div>
-		  
-		  <div class="col-sm-3">';
-		  
+          
             //titre et fonction du bouton
             if($_SESSION['user_name'] != null){
                 $loginButtonText = $_SESSION['user_name'];
@@ -90,6 +85,7 @@
                         <a href="">Liste de souhaits</a>
                         <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
 				    </div>
+			</div>
 			</div>
         			</div>
         		</div>

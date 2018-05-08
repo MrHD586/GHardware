@@ -43,7 +43,8 @@
             '.$errorEmptyField.'
             '.$errorUserName.'
             '.$errorPassword.'
-            '.$errorEmail.'
+            '.$errorEmail bonjour .'
+
             <p>
     			<label for="Login_User">Login</label>
     			<input type="text" name="Login"/>

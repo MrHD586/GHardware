@@ -39,10 +39,11 @@
 						<div class="headerbuttons">	
         				  <div class="col-sm-3">';
         	//test pour savoir si l'utilisateur est connecté			  
-            if($_SESSION['UserSession']==TRUE){
-                //si il est connecté utilisation du manager pour le panier bdd
-                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success"></span></a>';
-                
+            if($_SESSION['UserSession'] == TRUE){
+                if($_SESSION['userIsAdmin'] != TRUE){
+                    //si il est connecté utilisation du manager pour le panier bdd
+                    echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success"></span></a>';
+                }
             }else{
                 //recuperation du cookie
                 $Panier = unserialize($_COOKIE['Panier']);
@@ -54,8 +55,11 @@
                     //attribution d'aucun valeur pour que rien ne s'affiche a cote du bonton
                     $Nombre = NULL;
                 }
-                //si il n'est pas connecté utilisation du panier avec les cookies
-                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=displayCookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
+                
+                if($_SESSION['userIsAdmin'] != TRUE){
+                    //si il n'est pas connecté utilisation du panier avec les cookies
+                    echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=displayCookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
+                }
             }
           
             //titre et fonction du bouton
@@ -63,10 +67,8 @@
                 $loginButtonText = $_SESSION['user_name'];
                 $loginButtonHref ="DropdownButtonFonction()";
                
-                if($_SESSION['userIsAdmin']){
+                if($_SESSION['userIsAdmin'] == TRUE){
                    $adminDropdown = '<a href="index.php?controller=Admin&action=home">Administration</a>'; 
-                }else{
-                    $panierDropdown = '<a href="index.php?controller=Cart&action=bdd">Panier</a>';
                 }
             }else{
                 $loginButtonText = "Login";
@@ -80,7 +82,6 @@
 				  <div id="myDropdown" class="dropdown-content">	
                         '.$adminDropdown.'
     					<a href="index.php?controller=Site&action=profil">Profil</a>
-    					'.$panierDropdown.'
                         <a href="">Commandes</a>
                         <a href="">Liste de souhaits</a>
                         <a href="index.php?controller=Login&action=logout"> Deconnexion</a>

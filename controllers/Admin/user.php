@@ -1,69 +1,91 @@
 <?php
-################################################################################
-#### Auteur : Butticaz Yvann
-#### Date : 27 Février 2018
-#### Page controllers/Login/login.php:
-#### 	  control du login
-################################################################################
-
+    ################################################################################
+    #### Auteur : Butticaz Yvann
+    #### Date : 08 Mai 2018
+    #### Page controllers/Admin/user.php:
+    #### 	  Page de managment des utilisateurs avec formulaire et tableau
+    ################################################################################
+    
     //include de la classe DbManager
-    include("models/LoginManager.php");
+    include("models/UserCreationManager.php");
     
     session_start();
     
-    // ----- LIEN POUR REDIRECTION -----
+    // ----- LIEN POUR REDIRECTION ----- //
     //redirection sur login si erreurs
+    $urlToCreation = "location:index.php?controller=User&action=creation";
+    //login
     $urlToLogin = "location:index.php?controller=Login&action=login";
-    //home
-    $urlToHome = "location:index.php?controller=Site&action=home";
-    //page d'administration
-    $urlToAdmin = "location:index.php?controller=Admin&action=home";
     
-    //si true le user est connecté
-    $_SESSION['UserSession'] = NULL;
+    //variable d'erreure
+    $hasError = NULL;
     
-    if(isset($_POST['submit'])) {
+    //si le formulaire est envoyé
+    if(isset($_POST['submit'])){
         
         $userLogin = $_POST['Login'];
         $userPassword = md5($_POST['Password']);
+        $userPasswordVerif = md5($_POST['PasswordVerif']);
+        $userFirstname = $_POST['Firstname'];
+        $userLastname = $_POST['Lastname'];
+        $userEmail = $_POST['Email'];
+        $userBirthdate = $_POST['Birthdate'];
+        $userFkPicUser = 1; // 1 = avatar par défaut
+        define("userIsAdmin", 0); //les users ne sont pas par défaut admin
         
-        //si un champ ne sont pas vides
-        if($userLogin != null && $userPassword != null){
+        //si un champ est vides
+        if($userLogin == null || $userPassword == null || $userFirstname == null || $userLastname == null || $userEmail == null || $userBirthdate == null){
+            $_SESSION["errorEmptyField"] = "";
+            $hasError = TRUE;
+        }else{
+            
+            $_SESSION["errorEmptyField"] = null;
+            
             //instantiation de la classe LoginManager
-            $loginManager = new LoginManager();
-            $userLoginDb = $loginManager->getLogin($userLogin);
+            $creationManager = new UserCreationManager();
             
-            $row = $userLoginDb->fetch();
+            //recherche d'un user name correspondant au login entré
+            $checkByUserName = $creationManager->getUserName($userLogin);
             
-            //verification du password hashé
-            $isValid = password_verify($userPassword, $row['UPassword']);
-            
-            if($userLogin == $row['ULogin'] && $isValid){
-                $_SESSION['UserSession'] = TRUE;
-                $_SESSION['user_name'] = $userLogin;
-                
-                if($row['isAdmin'] == 1){
-                    $_SESSION['userIsAdmin'] = TRUE;
-                    header($urlToAdmin);
-                }else{
-                    if($_POST['Paniercookie']==1){
-                        header('location:index.php?controller=Cart&action=CookieToBdd');
-                    }else{
-                        header($urlToHome);
-                    }
-                }
-            }else{
-                $_SESSION['message_erreur'] = "Le login ou le mot de passe est incorrect";
-                die(header($urlToLogin));
+            foreach($checkByUserName as $checkByUserName){
+                $loginAlreadyExsist = $checkByUserName['ULogin'];
             }
             
-        }else{
-            $_SESSION["message_erreur"] = "Veuillez remplir tous les champs";
-            header($urlToLogin);
+            //si le login est égal au login retourné par la requête
+            if($userLogin == $loginAlreadyExsist){
+                $_SESSION["errorUserName"] = "Le nom d'utilisateur est déjà utilisé";
+                $hasError = TRUE;
+            }else{
+                $_SESSION["errorUserName"] = null;
+            }
+            
+            //Si les deux champs password correspondent
+            if($userPassword != $userPasswordVerif){
+                $_SESSION["errorPassword"] = "Les mots de passes ne sont pas identiques";
+                $hasError = TRUE;
+            }else{
+                $_SESSION["errorPassword"] = null;
+            }
+            
+            //^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
+            if(!preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
+                $_SESSION["errorEmail"] = "L'email n'est pas correct";
+                $hasError = TRUE;
+            }else{
+                $_SESSION["errorEmail"] = null;
+            }
+            
+            //s'il n'y a pas d'erreurs
+            if($hasError == TRUE){
+                header($urlToCreation);
+            }else{
+                //hash du password
+                $hash = password_hash($userPassword, PASSWORD_DEFAULT);
+                //requête pour la création de l'utilisateur
+                $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, $userFkPicUser, userIsAdmin);
+                header($urlToLogin);
+            }
         }
-        
     }
     
-    
-    include 'views/Login/login.php';
-
+    include 'views/User/creation.php';

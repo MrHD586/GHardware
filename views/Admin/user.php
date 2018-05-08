@@ -6,8 +6,11 @@
     #### 	  Page de managment des utilisateurs avec formulaire et tableau
     ################################################################################
     
+    //titre du formulaire
+    $formTitle = "Création de compte";
     
-    //message d'erreurs champs vide
+
+    //message d'erreurs champs vides
     if($_SESSION['errorEmptyField'] != null){
         $errorEmptyField = $_SESSION['errorEmptyField']."<br/>";
     }else{
@@ -36,14 +39,13 @@
     }
     
     //FORMULAIRE//
-    echo ' <h3>Création de compte compte
-            LAAAAAAAAAAAAAAAAAAA BIIIIIIIIIIIIIIIIIIIIITTTTTTTTTTTTTTTTTTEEEEEEEEEEEEEEE</h3><br/>';
+    echo ' <h3>'.$formTitle.'</h3><br/>';
     
     echo'<form method="post" action="">
             '.$errorEmptyField.'
             '.$errorUserName.'
             '.$errorPassword.'
-            '.$errorEmail bonjour .'
+            '.$errorEmail.'
 
             <p>
     			<label for="Login_User">Login</label>
@@ -78,6 +80,12 @@
             <p>
     			<label for="Birthdate">Date de naissance</label>
     			<input type="date" name="Birthdate" />
+    		</p>
+            
+             <p>
+    			<label for="Right">Droit</label></br>
+    		    <input type="radio" name="IsAdmin">Administrateur</input></br>
+                <input type="radio" name="IsAdmin">Utilisateur</input>
     		</p>
                   
     	    <p>

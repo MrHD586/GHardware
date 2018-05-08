@@ -12,7 +12,7 @@
     session_start();
     
     // ----- LIEN POUR REDIRECTION ----- //
-    //redirection sur login si erreurs
+    //redirection sur création si erreurs
     $urlToCreation = "location:index.php?controller=User&action=creation";
     //login
     $urlToLogin = "location:index.php?controller=Login&action=login";

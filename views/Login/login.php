@@ -1,30 +1,28 @@
 <?php 
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 F�vrier 2018
+    #### Date : 27 Février 2018
     #### Page views/Login/login.php:
     #### 	  Formulaire de login
     ################################################################################
     
 	echo'
-	
-	<div class="row">
-		<div class="col-xs-offset-1 col-lg-8">
-			';
-				 //message d'erreurs
-			if($_SESSION['message_erreur'] != null){
-				$formErrors = $_SESSION['message_erreur'];
-			}else{
-				$formErrors = null;
-			}
-			if($_GET['Paniercookie']==1){
-				echo '<h2>Veuillez-vous connecter ou crée un compte avant de pouvoir commander</h2><br/>';
-			}else{
-				echo ' <h2>Connexion</h2><br/>';
-			}     
-			echo'
-			
-		</div>
+	   <div class="row">
+	       <div class="col-xs-offset-1 col-lg-8">
+	';
+				//message d'erreurs
+    			if($_SESSION['message_erreur'] != null){
+    				$formErrors = $_SESSION['message_erreur'];
+    			}else{
+    				$formErrors = null;
+    			}
+    			if($_GET['Paniercookie']==1){
+    				echo '<h2>Veuillez-vous connecter ou crée un compte avant de pouvoir commander</h2><br/>';
+    			}else{
+    				echo ' <h2>Connexion</h2><br/>';
+    			}     
+            echo'
+            </div>
 	</div>
 	
 	<div class="row">

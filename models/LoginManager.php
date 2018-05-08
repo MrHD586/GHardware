@@ -1,31 +1,31 @@
 <?php
-################################################################################
-#### Auteur : Butticaz Yvann
-#### Date : 11 Mars 2018
-#### Classe LoginManager :
-#### 		Cette classe possède une fonctions recherchant les infos
-####		de l'utilisateur correspondante au login entré dans
-####        le formulaire de connexion. 
-################################################################################
-
-//include de la classe DbManager
-include("models/DbManager.php");
-
-class LoginManager {
+    ################################################################################
+    #### Auteur : Butticaz Yvann
+    #### Date : 11 Mars 2018
+    #### Classe LoginManager :
+    #### 		Cette classe possï¿½de une fonctions recherchant les infos
+    ####		de l'utilisateur correspondante au login entrï¿½ dans
+    ####        le formulaire de connexion. 
+    ################################################################################
     
-    private $dbManager;
+    //include de la classe DbManager
+    include("models/DbManager.php");
     
-    function __construct(){
-        //instantiation de la classe DbManager
-        $this->dbManager = new DbManager();
+    class LoginManager {
+        
+        private $dbManager;
+        
+        function __construct(){
+            //instantiation de la classe DbManager
+            $this->dbManager = new DbManager();
+        }
+        
+        // execute une requï¿½te
+        public function getLogin($userLogin){
+            $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
+            $resultat = $this->dbManager->Query($sql);
+            return $resultat;
+        }
     }
-    
-    // execute une requête
-    public function getLogin($userLogin){
-        $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
-        $resultat = $this->dbManager->Query($sql);
-        return $resultat;
-    }
-}
 
 

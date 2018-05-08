@@ -30,6 +30,8 @@
 	    $userLastname = $_POST['Lastname'];
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
+	    $userFkPicUser = 1; // 1 = avatar par défaut
+	    define("userIsAdmin", 0); //les users ne sont pas par défaut admin
 	   
 	    //si un champ est vides
 	    if($userLogin == null || $userPassword == null || $userFirstname == null || $userLastname == null || $userEmail == null || $userBirthdate == null){
@@ -80,7 +82,7 @@
                 //hash du password
                 $hash = password_hash($userPassword, PASSWORD_DEFAULT);
                 //requête pour la création de l'utilisateur
-                $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, $userFkPicUser, $userisAdmin);
+                $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, $userFkPicUser, userIsAdmin);
                 header($urlToLogin);
             }
 	    }

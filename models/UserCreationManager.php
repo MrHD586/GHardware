@@ -1,10 +1,10 @@
 <?php
 	################################################################################
 	#### Auteur : Butticaz Yvann   
-	#### Date : 26 F�vrier 2018
+	#### Date : 26 Février 2018
     #### Classe UserCreationManager :
-    #### 		Cette classe poss�de des fonctions effectuants
-    ####		des requ�tes souvant utilis�es.
+    #### 		Cette classe possède des fonctions effectuants
+    ####		des requêtes souvant utilisées.
 	################################################################################
 
 	//include de la classe DbManager
@@ -21,17 +21,15 @@
 		}
 		
 		
-		// execute une requ�te
+		// execute une requète
 		public function setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, 
 		                        $userFkPicUser, $userisAdmin) {
-		    //valeurs par d�faut
+		    //valeurs par défaut
 		    $isActive = 1;  //les users sont par défaut actifs
-            $fkPicUser = 1; //l'avatar par défaut
-            $isAdmin = 0;   //les users ne sont pas par défaut admin
             
 			$sql = "INSERT INTO t_user (ULogin, UPassword, UFirstName, ULastName, UEmail, UBirthdate, isActive, FK_PicUser, isAdmin)
                     VALUES ('$userLogin', '$userPassword', '$userFirstname', '$userLastName', '$userEmail', '$userBirthdate', 
-                            b'$isActive', '$fkPicUser', b'$isAdmin')"; 
+                            b'$isActive', '$userFkPicUser', b'$userisAdmin')"; 
 			$this->dbManager->Query($sql);
 		}
 		

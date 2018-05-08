@@ -1,7 +1,7 @@
 <?php 
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 F�vrier 2018
+    #### Date : 27 Février 2018
     #### Page controllers/Login/login.php:
     #### 	  control du login
     ################################################################################
@@ -19,7 +19,7 @@
     //page d'administration
     $urlToAdmin = "location:index.php?controller=Admin&action=home";
     
-    //si true le user est connect�
+    //si true le user est connecté
     $_SESSION['UserSession'] = NULL;
     
 	if(isset($_POST['submit'])) {
@@ -68,4 +68,3 @@
 	include 'views/Login/login.php';
 							
 			
-?>

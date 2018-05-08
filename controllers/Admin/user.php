@@ -88,4 +88,4 @@
         }
     }
     
-    include 'views/User/creation.php';
+    include 'views/Admin/user.php';

@@ -34,50 +34,52 @@
     }else{
         $errorEmail = null;
     }
-    echo ' <h2>Création de votre compte</h2><br/>';
+    
+    //FORMULAIRE//
+    echo ' <h3>Création de compte compte</h3><br/>';
     
     echo'<form method="post" action="">
-    		      '.$errorEmptyField.'
-                  '.$errorUserName.'
-                  '.$errorPassword.'
-                  '.$errorEmail.'
-    			<p>
-    				<label for="Login_User">Votre Login</label>
-    				<input type="text" name="Login"/>
-    			</p>
-                      
-    			<p>
-    				<label for="Password">Votre mot de passe</label>
-    				<input type="password" name="Password" />
-    			</p>
-                      
-                <p>
-    				<label for="PasswordVerif">Confirmation du mot de passe</label>
-    				<input type="password" name="PasswordVerif" />
-    			</p>
-                      
-                <p>
-    				<label for="Firstname">Votre prénom</label>
-    				<input type="text" name="Firstname" />
-    			</p>
-                      
-                <p>
-    				<label for="Lastname">Votre nom</label>
-    				<input type="text" name="Lastname" />
-    			</p>
-                      
-                <p>
-    				<label for="Email">Votre email</label>
-    				<input type="email" name="Email" />
-    			</p>
-                      
-                <p>
-    				<label for="Birthdate">Votre date de naissance</label>
-    				<input type="date" name="Birthdate" />
-    			</p>
-                      
-    		    <p>
-    			    <input type="submit" name="submit" value="Envoyer"/>
-    		    </p>
-    		</form>
+            '.$errorEmptyField.'
+            '.$errorUserName.'
+            '.$errorPassword.'
+            '.$errorEmail.'
+            <p>
+    			<label for="Login_User">Login</label>
+    			<input type="text" name="Login"/>
+    		</p>
+                  
+    		<p>
+    			<label for="Password">Mot de passe</label>
+    			<input type="password" name="Password" />
+    		</p>
+                  
+            <p>
+    			<label for="PasswordVerif">Confirmation du mot de passe</label>
+    			<input type="password" name="PasswordVerif" />
+    		</p>
+                  
+            <p>
+    			<label for="Firstname">Prénom</label>
+    			<input type="text" name="Firstname" />
+    		</p>
+                  
+            <p>
+    			<label for="Lastname">Nom</label>
+    			<input type="text" name="Lastname" />
+    		</p>
+                  
+            <p>
+    			<label for="Email">Email</label>
+    			<input type="email" name="Email" />
+    		</p>
+                  
+            <p>
+    			<label for="Birthdate">Date de naissance</label>
+    			<input type="date" name="Birthdate" />
+    		</p>
+                  
+    	    <p>
+    		    <input type="submit" name="submit" value="Envoyer"/>
+    	    </p>
+    	</form>
         ';

@@ -24,7 +24,7 @@ echo'
 			</div>
     
 		<!-- ARTICLES -->';
-echo '<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">';
+echo '<form action="index.php?controller=Cart&action=AddDeletebdd" method="POST">';
 Foreach($articlesbdd as $value){
     foreach($value as $value){
         $index = $value['idArticle'];

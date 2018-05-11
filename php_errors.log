@@ -285,3 +285,8 @@ Stack trace:
 [22-Mar-2018 13:31:45 Europe/Zurich] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 100663304 bytes) in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 9
 [22-Mar-2018 15:49:56 Europe/Zurich] PHP Parse error:  syntax error, unexpected end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 27
 [23-Mar-2018 10:26:29 Europe/Zurich] PHP Parse error:  syntax error, unexpected end of file in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\SupprimerArticles.php on line 30
+[11-May-2018 16:11:11 Europe/Zurich] PHP Fatal error:  Uncaught Error: Call to a member function getUserName() on null in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\AddDeletebdd.php:17
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(49): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\AddDeletebdd.php on line 17

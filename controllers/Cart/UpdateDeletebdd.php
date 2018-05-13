@@ -11,14 +11,23 @@ include 'models/DeleteAddCartManager.php';
 session_start();
 
 $deleteaddcartManager = new DeleteAddCartManager();
-
+$articles = $_POST['Articles'];
 $userLogin = $_SESSION['user_name'];
 
 $user = $deleteaddcartManager->getUserName($userLogin);
 foreach($user as $value){
     $iduser = $value['idUser'];
 }
-if(isset($_POST[''.$value.''])){
-    
+if($_POST['vider']!= NULL){
+    $deletepanierbdd = $deleteaddcartManager->deletePanier($iduser);
+}else{
+    if(isset($_POST[''.$articles.''])){
+        $nombrearticles= $_POST[''.$articles.''];
+            if($nombrearticles<= 0){
+                $deleteartbdd = $deleteaddcartManager->deleteValuePanier($iduser,$articles);
+            }else{
+                $updateartbdd = $deleteaddcartManager->updateValuePanier($iduser,$articles,$nombrearticles);
+            }
+    }
 }
-$deletebdd = $deleteaddcartManager->deleteValuePanier($articles,$iduser);
+header("location:index.php?controller=Cart&action=bdd");

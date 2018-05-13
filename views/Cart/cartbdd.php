@@ -9,14 +9,14 @@ echo'
 				<div class="cartmenu">
 		<!-- Order the cart content button -->
 			<div class="col-sm-offset-2 col-sm-4" id="carticon" >
-                <form action="index.php?controller=Login&action=login&Paniercookie=1" method="POST">
+                <form action="" method="POST">
 					<input type="submit" name="commande" value="Passer la commande">
                 </form>
 			</div>
     
 		<!-- Discard the shopping cart button -->
 					<div class="col-sm-4" id="carticon">
-						<form action="index.php?controller=Cart&action=SupprimerArticles" method="POST">
+						<form action="index.php?controller=Cart&action=AddDeletebdd" method="POST">
 							<input type="submit" name="vider" value="Vider le panier">
 						</form>
 					</div>
@@ -24,7 +24,6 @@ echo'
 			</div>
     
 		<!-- ARTICLES -->';
-echo '<form action="index.php?controller=Cart&action=AddDeletebdd" method="POST">';
 Foreach($articlesbdd as $value){
     foreach($value as $value){
         $index = $value['idArticle'];
@@ -53,10 +52,12 @@ Foreach($articlesbdd as $value){
 					<div class="row">
 						    
 				<!-- + and - Buttons -->
+                <form action="index.php?controller=Cart&action=UpdateDeletebdd" method="POST">
 							<input type="button" onclick="nb =document.getElementById('.$index.').value;nb--;document.getElementById('.$index.').value= nb;submit()" value="-">
 								<input type="number" value="'.$nombre[$index].'" onchange="submit()" name="'.$index.'" id="'.$index.'"min="0" max="99">
 									<input type="button" onclick="nb =document.getElementById('.$index.').value;nb++;document.getElementById('.$index.').value= nb;submit()" value="+">
-									    
+									<input type="hidden" name="Articles" value="'.$index.'">
+                </form>  
 									    
 					</div>
 									    
@@ -90,7 +91,6 @@ Foreach($articlesbdd as $value){
 			</div>';
     }
 }
-echo'</form>';
 
 echo '
 		<!-- FIN ARTICLE -->

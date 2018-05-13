@@ -13,23 +13,50 @@ session_start();
 $panierBddManager = new CartDbManager();
 
 $userLogin = $_SESSION['user_name'];
+$idarticle=$_GET['id'];
+$categorie=$_GET['categorie'];
+$ArticleNombre=0;
+//function pour compter les éléments du panier
+function Compteur($iduser, $ArticleNombre, $panierBddManager){
+    $articlesarrays = $panierBddManager->getPanier($iduser);
+    foreach($articlesarrays as $value){
+        $nb=$value['PNombre'];
+        $ArticleNombre+=$nb;
+    }
+    $_SESSION['nbarticle'] = $ArticleNombre;
+}
 
 $user = $panierBddManager->getUserName($userLogin);
 foreach($user as $value){
     $iduser = $value['idUser'];
 }
+$Nb = $panierBddManager->getNombreArticles($iduser,$idarticle);
+foreach($Nb as $value){
+    $PNombre= $value['PNombre'];
+}
 
-$articlesarray = $panierBddManager->getPanier($iduser);
-$i=0;
-foreach($articlesarray as $value){
+if(isset($_GET['id'])){
+$PNombre++;
+$addarticles = $panierBddManager->setNewPanier($idarticle, $iduser, $PNombre);
+Compteur($iduser, $ArticleNombre, $panierBddManager);
+    if(isset($_GET['categorie'])){
+        //header("location:index.php?controller=Categorie&action=list&categorie=$categorie");
+    }else{
+        //header("location:index.php?controller=Article&action=article&id=$idarticle");
+    }
+}else{
+    $articlesarray = $panierBddManager->getPanier($iduser);
+    $i=0;
+    foreach($articlesarray as $value){
         $articles[$i] = $value['Fk_Articles'];
         $nombre[''.$articles[$i].''] = $value['PNombre'];
         $i++;
+    }
+    foreach($articles as $value){
+        //stockage de l'id d'article pour l'indexation et la requète db
+        $index = $value;
+        $articlesbdd[$index] = $panierBddManager->getArticlesbdd($index);
+    }
+    Compteur($iduser, $ArticleNombre, $panierBddManager);
+    //include 'views/Cart/cartbdd.php';
 }
-foreach($articles as $value){
-    //stockage de l'id d'article pour l'indexation et la requète db
-    $index = $value;
-    //stockage des donnée de la db sur l'article avec l'id de l'articles pour le retrouver facilement
-    $articlesbdd[$index] = $panierBddManager->getArticlesbdd($index);
-}
-include 'views/Cart/cartbdd.php';

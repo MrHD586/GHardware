@@ -32,6 +32,16 @@ class CartDbManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
+    public function getNombreArticles($Fk_User,$Fk_Articles) {
+        $sql = "SELECT * FROM t_panier WHERE Fk_User='$Fk_User' AND Fk_Articles='$Fk_Articles'";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
+    }
+    public function setNewPanier($Fk_Articles, $Fk_User, $PNombre) {
+        $sql = "INSERT INTO t_panier (Fk_Articles, Fk_User, PNombre)
+                    VALUES ('$Fk_Articles', '$Fk_User', '$PNombre')";
+        $this->dbManager->Query($sql);
+    }
     public function getUserName($userLogin){
         $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
         $resultat = $this->dbManager->Query($sql);

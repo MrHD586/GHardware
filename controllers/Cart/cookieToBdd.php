@@ -12,7 +12,7 @@ session_start();
 
 $userLogin = $_SESSION['user_name'];
 $newPanier;
-$panierManager = new CartManager();
+$panierManager = new CartDbManager();
 
 $user = $panierManager->getUserName($userLogin);
 foreach($user as $value){

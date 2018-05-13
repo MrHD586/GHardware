@@ -20,19 +20,19 @@ class DeleteAddCartManager {
         $this->dbManager = new DbManager();
     }
     
-    
     // execute une requ�te
-    public function setValuePanier($PNombre) {
-            $sql = "INSERT INTO t_panier (PNombre)
-                    VALUES ('$PNombre')";
-            $this->dbManager->Query($sql);
-    }
-    // execute une requ�te
-    public function deleteValuePanier($Fk_Articles, $Fk_User) {
-        $sql = "DELETE FROM t_panier WHERE Fk_Articles='$Fk_Articles' AND Fk_User='$Fk_User'";
+    public function updateValuePanier($Fk_User,$Fk_Articles,$PNombre) {
+        $sql = "UPDATE t_panier SET PNombre='$PNombre' WHERE Fk_User='$Fk_User' AND Fk_Articles='$Fk_Articles'";
         $this->dbManager->Query($sql);
     }
-    
+    public function deleteValuePanier($Fk_User,$Fk_Articles) {
+        $sql = "DELETE FROM t_panier WHERE Fk_User='$Fk_User' AND Fk_Articles='$Fk_Articles'";
+        $this->dbManager->Query($sql);
+    }
+    public function deletePanier($Fk_User) {
+        $sql = "DELETE FROM t_panier WHERE Fk_User='$Fk_User'";
+        $this->dbManager->Query($sql);
+    }  
     public function getUserName($userLogin){
         $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
         $resultat = $this->dbManager->Query($sql);

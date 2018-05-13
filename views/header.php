@@ -6,8 +6,7 @@
     ####       Ceci est le header qui est include dans le index.php
     ################################################################################
         
-    session_start();
-    
+    session_start(); 
     echo '
         <!DOCTYPE html>
         <html>
@@ -42,7 +41,9 @@
             if($_SESSION['UserSession'] == TRUE){
                 if($_SESSION['userIsAdmin'] != TRUE){
                     //si il est connecté utilisation du manager pour le panier bdd
-                    echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success"></span></a>';
+                    $Nombre= 0;
+                    $Nombre=$_SESSION['nbarticle'];
+                    echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
                 }
             }else{
                 //recuperation du cookie

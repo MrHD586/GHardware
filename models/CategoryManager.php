@@ -3,8 +3,8 @@
 #### Auteur : Viquerat Killian
 #### Date : 9 Mars 2018
 #### Classe CategorieManager :
-#### 		Cette classe poss�de des fonctions effectuants
-####		des requ�tes souvant utilis�es.
+#### 		Cette classe possède des fonctions effectuants
+####		des requêtes souvant utilisées.
 ################################################################################
 
     //include de la classe DbManager
@@ -21,7 +21,7 @@
         }
         
         
-        // execute une requ�te
+        // execute une requête
         public function getArticlesCategorie($Categorie) {
             $sql = "SELECT *
                     FROM t_articles
@@ -30,11 +30,25 @@
             return $resultat->fetchAll();
         }
         
-        // execute une requ�te
+        //récupère les catègories
         public function getCategories() {
             $sql = "SELECT Ccategorie 
                     FROM t_categories";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
+        }
+        
+        //Crée une nouvelle catègorie
+        public function setNewCategory($categoryName, $categoryIsActive) {
+                $sql = "INSERT INTO t_categories (Ccategorie, isActive)
+                        VALUES ('$categoryName', '$categoryIsActive')";
+                $this->dbManager->Query($sql);
+        }
+        
+        //Récupère catègorie par nom
+        public function getCategoryName($categoryName){
+            $sql = "SELECT * FROM t_categories WHERE Ccategorie = '$categoryName'";
+            $resultat = $this->dbManager->Query($sql);
+            return $resultat;
         }
     }

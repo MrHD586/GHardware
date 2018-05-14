@@ -32,10 +32,11 @@
 	    $userBirthdate = $_POST['Birthdate'];
 	    $userFkPicUser = 1; // 1 = avatar par défaut
 	    define("userIsAdmin", 0); //les users ne sont pas par défaut admin
+	    define("userIsActive", 1); //les users sont par défaut actifs
 	   
 	    //si un champ est vides
 	    if($userLogin == null || $userPassword == null || $userFirstname == null || $userLastname == null || $userEmail == null || $userBirthdate == null){
-	        $_SESSION["errorEmptyField"] = "";
+	        $_SESSION["errorEmptyField"] = "Veuillez remplir tous les champs";
 	        $hasError = TRUE;
 	    }else{
 	        
@@ -74,17 +75,17 @@
             }else{
                 $_SESSION["errorEmail"] = null;
             }
-         	
-            //s'il n'y a pas d'erreurs
-            if($hasError == TRUE){
-                header($urlToCreation);
-            }else{
-                //hash du password
-                $hash = password_hash($userPassword, PASSWORD_DEFAULT);
-                //requête pour la création de l'utilisateur
-                $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, $userFkPicUser, userIsAdmin);
-                header($urlToLogin);
-            }
+	    }
+	    
+	    //s'il y a une/des d'erreur/s
+	    if($hasError == TRUE){
+	        header($urlToCreation);
+	    }else{
+	        //hash du password
+	        $hash = password_hash($userPassword, PASSWORD_DEFAULT);
+	        //requête pour la création de l'utilisateur
+	        $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, userIsActive, $userFkPicUser, userIsAdmin);
+	        header($urlToLogin);
 	    }
 	}
 		

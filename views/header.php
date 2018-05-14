@@ -39,6 +39,8 @@
         				  <div class="col-sm-3">';
         	//test pour savoir si l'utilisateur est connecté			  
             if($_SESSION['UserSession'] == TRUE){
+                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Admin&action=home" role="button">Administration</a>';
+                
                 if($_SESSION['userIsAdmin'] != TRUE){
                     //si il est connecté utilisation du manager pour le panier bdd
                     $Nombre= 0;

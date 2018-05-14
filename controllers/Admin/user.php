@@ -36,7 +36,7 @@
         //si un champ est vides
         if($userLogin == null || $userPassword == null || $userFirstName == null || $userLastName == null || $userEmail == null || $userBirthdate == null){
             $_SESSION["user_ErrorEmptyField"] = "Veuillez remplir tous les champs";
-            $errors[] = "Veuillez remplir tous les champs";
+            $erros[] = "Veuillez remplir tous les champs";
             $hasError = TRUE;
         }else{
             
@@ -47,9 +47,9 @@
             
             //recherche d'un user name correspondant au login entré
             $checkByUserName = $creationManager->userExists($userLogin);
-                        
+            
             //si le login est égal au login retourné par la requête
-            if($loginAlreadyExsist == TRUE){
+            if($checkByUserName == TRUE){
                 $errors[] = "Le nom d'utilisateur est déjà utilisé";
                 $hasError = TRUE;
             }else{

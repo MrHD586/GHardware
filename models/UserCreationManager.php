@@ -35,8 +35,18 @@
 		
 		//Récupère user par login
 		public function userExists($userLogin){
-		    $sql = "SELECT COUNT(*) AS Result FROM t_user WHERE ULogin = '$userLogin'";
+		    $sql = "SELECT COUNT(*) AS userExist FROM t_user WHERE ULogin = '$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
+		    $donnees = $resultat->fetch();
+		    $resultat->closeCursor();
+		    $resultOfCount = $donnees['userExist'];
+		    
+		    if($resultOfCount != 0){
+		        $resultat = TRUE;
+		    }else{
+		        $resultat = FALSE;
+		    }
+		    
 		    return $resultat;
 		}
 		

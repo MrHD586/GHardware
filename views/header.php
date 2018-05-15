@@ -38,14 +38,14 @@
 						<div class="headerbuttons">	
         				  <div class="col-sm-3">';
         	//test pour savoir si l'utilisateur est connecté			  
-            if($_SESSION['UserSession'] == TRUE){
-                echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Admin&action=home" role="button">Administration</a>';
-                
+            if($_SESSION['UserSession'] == TRUE){               
                 if($_SESSION['userIsAdmin'] != TRUE){
                     //si il est connecté utilisation du manager pour le panier bdd
                     $Nombre= 0;
                     $Nombre=$_SESSION['nbarticle'];
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
+                }else{
+                    echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Admin&action=home" role="button">Administration</a>';
                 }
             }else{
                 //recuperation du cookie
@@ -66,12 +66,13 @@
             }
           
             //titre et fonction du bouton
-            if($_SESSION['user_name'] != null){
-                $loginButtonText = $_SESSION['user_name'];
-                $loginButtonHref ="DropdownButtonFonction()";
-               
+            if($_SESSION['UserSession'] != null){
+             
                 if($_SESSION['userIsAdmin'] == TRUE){
                    $adminDropdown = '<a href="index.php?controller=Admin&action=home">Administration</a>'; 
+                }else{
+                    $loginButtonText = $_SESSION['user_name'];
+                    $loginButtonHref ="DropdownButtonFonction()";
                 }
             }else{
                 $loginButtonText = "Login";

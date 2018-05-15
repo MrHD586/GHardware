@@ -6,44 +6,21 @@
     #### 	  Formulaire de création de compte utilisateur
     ################################################################################
     
-   
-    //message d'erreurs champs vide
-    if($_SESSION['errorEmptyField'] != null){
-        $errorEmptyField = $_SESSION['errorEmptyField']."<br/>";
-    }else{
-        $errorEmptyField = null;
-    }
-
-    //message d'erreurs nom d'utilisateur
-    if($_SESSION['errorUserName'] != null){
-        $errorUserName = $_SESSION['errorUserName']."<br/>";
-    }else{
-        $errorUserName = null;
-    }
-       
-    //message d'erreurs mot de passe
-    if($_SESSION['errorPassword'] != null){
-        $errorPassword = $_SESSION['errorPassword']."<br/>";
-    }else{
-        $errorPassword = null;
-    }
+    //titre du formulaire
+    $formTitle = "Gestion de compte";
     
-    //message d'erreurs email
-    if($_SESSION['errorEmail'] != null){
-        $errorEmail = $_SESSION['errorEmail']."<br/>";
-    }else{
-        $errorEmail = null;
-    }
-    echo ' <h2>Création de votre compte</h2><br/>';
-     
-		echo'<form method="post" action="">
-		      '.$errorEmptyField.'
-              '.$errorUserName.'
-              '.$errorPassword.'
-              '.$errorEmail.'
+    echo ' <h2>'.$formTitle.'</h2><br/>';
+    
+    //affichage des messages d'erreures contenus dans le tableau errorsArray
+    foreach ($errorsArray as $key => $val) {
+        echo '<p style="color:red;">'.$val.'</p>';
+    }   
+	
+	echo'<form method="post" action="">
+		      
 			<p>
 				<label for="Login_User">Votre Login</label>
-				<input type="text" name="Login"/>
+				<input type="text" name="Login" value="'.$formUserLoginValue.'"/>
 			</p>
 		          
 			<p>
@@ -58,22 +35,22 @@
 
             <p>
 				<label for="Firstname">Votre prénom</label>
-				<input type="text" name="Firstname" />
+				<input type="text" name="Firstname" value="'.$formUserFirstNameValue.'"/>
 			</p>
 
             <p>
 				<label for="Lastname">Votre nom</label>
-				<input type="text" name="Lastname" />
+				<input type="text" name="Lastname" value="'.$formUserLastNameValue.'"/>
 			</p>
 
             <p>
 				<label for="Email">Votre email</label>
-				<input type="email" name="Email" />
+				<input type="email" name="Email" value="'.$formUserEmailValue.'"/>
 			</p>
 
             <p>
 				<label for="Birthdate">Votre date de naissance</label>
-				<input type="date" name="Birthdate" />
+				<input type="date" name="Birthdate" value="'.$formUserBirthdateValue.'"/>
 			</p>
        
 		    <p>

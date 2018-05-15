@@ -9,38 +9,29 @@
     //include de la classe DbManager
     include("models/UserCreationManager.php");
     
-    session_start();
-        
-    //variable d'erreure
-    $hasError = NULL;
+    //tableau contenant les erreurs
+    $errors = array();
     
-    $erros = array();
-    
-    class adminUser {
-        
-    }
     //si le formulaire est envoyé
     if(isset($_POST['submit'])){
-        print_r("hello");
         $userLogin = $_POST['Login'];
-        $userPassword = md5($_POST['Password']);
-        $userPasswordVerif = md5($_POST['PasswordVerif']);
+        $userPasswordRaw = $_POST['Password'];
+        $userPasswordVerifRaw = $_POST['PasswordVerif'];
         $userFirstName = $_POST['Firstname'];
         $userLastName = $_POST['Lastname'];
         $userEmail = $_POST['Email'];
         $userBirthdate = $_POST['Birthdate'];
         $userFkPicUser = 1; // 1 = avatar par défaut
-        $userIsAdmin = $_POST['IsAdmin'];
-        $userIsActive =$_POST['IsActive'];
+        $userIsAdmin = $_POST['isAdmin'];
+        $userIsActive =$_POST['isActive'];
                
         //si un champ est vides
-        if($userLogin == null || $userPassword == null || $userFirstName == null || $userLastName == null || $userEmail == null || $userBirthdate == null){
-            $_SESSION["user_ErrorEmptyField"] = "Veuillez remplir tous les champs";
-            $erros[] = "Veuillez remplir tous les champs";
-            $hasError = TRUE;
-        }else{
-            
-            $_SESSION["user_ErrorEmptyField"] = null;
+        if(empty($userLogin) || empty($userPasswordRaw) || empty($userPasswordVerifRaw) || empty($userFirstName)|| empty($userLastName) || empty($userEmail) || empty($userBirthdate)){
+            $errors[] = "Veuillez remplir tous les champs";
+       
+        }else{          
+            $userPasswordMD5 = md5($userPasswordRaw);
+            $userPasswordVerifMD5 = md5($userPasswordVerifRaw);
             
             //instantiation de la classe LoginManager
             $creationManager = new UserCreationManager();
@@ -51,38 +42,34 @@
             //si le login est égal au login retourné par la requête
             if($checkByUserName == TRUE){
                 $errors[] = "Le nom d'utilisateur est déjà utilisé";
-                $hasError = TRUE;
-            }else{
-                $_SESSION["user_ErrorUserName"] = null;
             }
             
             //Si les deux champs password correspondent
-            if($userPassword != $userPasswordVerif){
-                $_SESSION["user_ErrorPassword"] = "Les mots de passes ne sont pas identiques";
-                $hasError = TRUE;
-            }else{
-                $_SESSION["user_ErrorPassword"] = null;
+            if($userPasswordMD5 != $userPasswordVerifMD5){
+                $errors[] = "Les mots de passes ne sont pas identiques";
             }
             
             //^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
             if(!preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
-                $_SESSION["user_ErrorEmail"] = "L'email n'est pas correct";
-                $hasError = TRUE;
-            }else{
-                $_SESSION["user_ErrorEmail"] = null;
+                $errors[] = "L'email n'est pas correct";
             }
         }
         
+        //array_filter() permet d'utiliser ensuite empty() sur le tableau d'erreurs
+        $errorsArray = array_filter($errors);
+        
         //s'il y a une/des d'erreur/s
-        if($hasError == TRUE){
-            //valeurs pour reremplire le formulaire
+        if(!empty($errorsArray)){
+            //valeurs pour repopuler le formulaire
             $formUserLoginValue = $userLogin;
             $formUserFirstNameValue = $userFirstName;
             $formUserLastNameValue = $userLastName;
             $formUserEmailValue = $userEmail;
             $formUserBirthdateValue = $userBirthdate;
             
+            //message de confirmation de la création -> vide
             $_SESSION["user_CreationSucces"] = null;
+            
         }else{
             //hash du password
             $hash = password_hash($userPassword, PASSWORD_DEFAULT);

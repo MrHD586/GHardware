@@ -25,7 +25,7 @@
             //instantiation de la classe CategoryManager
             $brandManager = new BrandManager();
             
-            //recherche d'un user name correspondant au login entré
+            //recherche d'un brand name correspondant au brand name entré
             $checkByBrandName = $brandManager->brandExists($brandName);
             
             //si le nom est égal au nom retourné par la requête
@@ -46,7 +46,7 @@
             $_SESSION["br_CreationSucces"] = null;
             
         }else{
-            //requête pour la création de la category
+            //requête pour la création de la marque
             $brandCreationDb = $brandManager->setNewBrands($brandName, $brandIsActive);
             $_SESSION["br_CreationSucces"] = "<p style='color:green;'>Catégorie ajoutée !</p>";
         }

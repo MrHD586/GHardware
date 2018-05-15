@@ -47,5 +47,9 @@ class CartDbManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat;
     }
+    public function updateValuePanier($Fk_User,$Fk_Articles,$PNombre) {
+        $sql = "UPDATE t_panier SET PNombre='$PNombre' WHERE Fk_User='$Fk_User' AND Fk_Articles='$Fk_Articles'";
+        $this->dbManager->Query($sql);
+    }
     
 }

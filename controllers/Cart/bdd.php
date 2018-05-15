@@ -36,13 +36,19 @@ foreach($Nb as $value){
 }
 
 if(isset($_GET['id'])){
-$PNombre++;
-$addarticles = $panierBddManager->setNewPanier($idarticle, $iduser, $PNombre);
+    if($PNombre==NULL){
+        $PNombre++;
+        $addarticles = $panierBddManager->setNewPanier($idarticle, $iduser, $PNombre);
+    }else{
+        $PNombre++;
+        $updatenombre = $panierBddManager->updateValuePanier($iduser, $idarticle, $PNombre);
+    }
+
 Compteur($iduser, $ArticleNombre, $panierBddManager);
     if(isset($_GET['categorie'])){
-        //header("location:index.php?controller=Categorie&action=list&categorie=$categorie");
+        header("location:index.php?controller=Categorie&action=list&categorie=$categorie");
     }else{
-        //header("location:index.php?controller=Article&action=article&id=$idarticle");
+        header("location:index.php?controller=Article&action=article&id=$idarticle");
     }
 }else{
     $articlesarray = $panierBddManager->getPanier($iduser);
@@ -58,5 +64,5 @@ Compteur($iduser, $ArticleNombre, $panierBddManager);
         $articlesbdd[$index] = $panierBddManager->getArticlesbdd($index);
     }
     Compteur($iduser, $ArticleNombre, $panierBddManager);
-    //include 'views/Cart/cartbdd.php';
+    include 'views/Cart/cartbdd.php';
 }

@@ -57,22 +57,21 @@
                 }else{
                     //attribution d'aucun valeur pour que rien ne s'affiche a cote du bonton
                     $Nombre = NULL;
-                }
+                }   
                 
                 if($_SESSION['userIsAdmin'] != TRUE){
                     //si il n'est pas connecté utilisation du panier avec les cookies
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=displayCookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
                 }
             }
-          
+            
             //titre et fonction du bouton
             if($_SESSION['UserSession'] != null){
-             
+                $loginButtonText = $_SESSION['user_name'];
+                $loginButtonHref ="DropdownButtonFonction()";
+                
                 if($_SESSION['userIsAdmin'] == TRUE){
                    $adminDropdown = '<a href="index.php?controller=Admin&action=home">Administration</a>'; 
-                }else{
-                    $loginButtonText = $_SESSION['user_name'];
-                    $loginButtonHref ="DropdownButtonFonction()";
                 }
             }else{
                 $loginButtonText = "Login";
@@ -82,7 +81,7 @@
                 
 		 echo'
 		  <div class="dropdown">
-				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="images/defaultavatar.png"></button> 
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.'<img id="avatarmenu" width="20" height="20" src="images/defaultavatar.png"></button> 
 				  <div id="myDropdown" class="dropdown-content">	
                         '.$adminDropdown.'
     					<a href="index.php?controller=Site&action=profil">Profil</a>

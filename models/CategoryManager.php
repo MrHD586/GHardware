@@ -41,14 +41,24 @@
         //Crée une nouvelle catègorie
         public function setNewCategory($categoryName, $categoryIsActive) {
                 $sql = "INSERT INTO t_categories (Ccategorie, isActive)
-                        VALUES ('$categoryName', '$categoryIsActive')";
+                        VALUES ('$categoryName', b'$categoryIsActive')";
                 $this->dbManager->Query($sql);
         }
         
         //Récupère catègorie par nom
-        public function getCategoryName($categoryName){
-            $sql = "SELECT * FROM t_categories WHERE Ccategorie = '$categoryName'";
+        public function categoryExists($categoryName){
+            $sql = "SELECT COUNT(*) AS categoryExists FROM t_categories WHERE Ccategorie = '$categoryName'";
             $resultat = $this->dbManager->Query($sql);
+            $donnees = $resultat->fetch();
+            $resultat->closeCursor();
+            $resultOfCount = $donnees['categoryExists'];
+            
+            if($resultOfCount != 0){
+                $resultat = TRUE;
+            }else{
+                $resultat = FALSE;
+            }
+            
             return $resultat;
         }
     }

@@ -8,57 +8,47 @@
     
     //include de la classe DbManager
     include("models/CategoryManager.php");
-    
-    session_start();
-    
-    // ----- LIEN POUR REDIRECTION ----- //
-    $urlToCreation = "location:index.php?controller=Admin&action=category";
-    
-    //variable d'erreure
-    $hasError = NULL;
+        
+    //tableau contenant les erreurs
+    $errors = array();
     
     //si le formulaire est envoyé
     if(isset($_POST['submit'])){
         
         $categoryName = $_POST['Name'];
+        $categoryIsActive = $_POST['isActive'];
         
         //si un champ est vides
-        if($userLogin == null){
-            $_SESSION["cat_ErrorEmptyField"] = "Veuillez remplir tous les champs";
-            $hasError = TRUE;
-        }else{
-            
-            $_SESSION["cat_ErrorEmptyField"] = null;
-            
+        if(empty($categoryName)){
+            $errors[] = "Veuillez remplir tous les champs";
+        }else{                       
             //instantiation de la classe CategoryManager
             $categoryManager = new CategoryManager();
             
             //recherche d'un user name correspondant au login entré
-            $checkByCategoryName = $categoryManager->getCategoryName($categoryName);
-            
-            foreach($checkByCategoryName as $checkByCategoryName){
-                $categoryAlreadyExsist = $checkByCategoryName['Ccategorie'];
-            }
+            $checkByCategoryName = $categoryManager->categoryExists($categoryName);
             
             //si le nom est égal au nom retourné par la requête
-            if($categoryName == $categoryAlreadyExsist){
-                $_SESSION["cat_ErrorName"] = "Le nom d'utilisateur est déjà utilisé";
-                $hasError = TRUE;
-            }else{
-                $_SESSION["cat_ErrorName"] = null;
+            if($checkByCategoryName == TRUE){
+                $errors[] = "Le nom de catégorie est déjà utilisé";
             }
-            
         }
         
+        //array_filter() permet d'utiliser ensuite empty() sur le tableau d'erreurs
+        $errorsArray = array_filter($errors);
+        
         //s'il y a une/des d'erreur/s
-        if($hasError == TRUE){
+        if(!empty($errorsArray)){
+            //valeurs pour repopuler le formulaire
+            $formCategoryNameValue = $categoryName;
+            
+            //message de confirmation de la création -> vide
             $_SESSION["cat_CreationSucces"] = null;
-            header($urlToCreation);
+            
         }else{
             //requête pour la création de la category
             $categoryCreationDb = $categoryManager->setNewCategory($categoryName, $categoryIsActive);
-            $_SESSION["cat_CreationSucces"] = "<p style='color:green;'>Compte utilisateur créé !</p>";
-            header($urlToCreation);
+            $_SESSION["cat_CreationSucces"] = "<p style='color:green;'>Catégorie ajoutée !</p>";
         }
     }
     

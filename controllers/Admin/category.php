@@ -6,7 +6,7 @@
     #### 	  Page de managment des categories avec formulaire et tableau
     ################################################################################
     
-    //include de la classe DbManager
+    //include de la classe CategoryManager
     include("models/CategoryManager.php");
         
     //tableau contenant les erreurs

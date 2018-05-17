@@ -11,7 +11,7 @@ include 'models/CartDbManager.php';
 session_start();
 
 $panierBddManager = new CartDbManager();
-
+$aside = $panierBddManager->getCategories();
 $userLogin = $_SESSION['user_name'];
 $idarticle=$_GET['id'];
 $categorie=$_GET['categorie'];
@@ -64,5 +64,8 @@ Compteur($iduser, $ArticleNombre, $panierBddManager);
         $articlesbdd[$index] = $panierBddManager->getArticlesbdd($index);
     }
     Compteur($iduser, $ArticleNombre, $panierBddManager);
+    //inclusion du fichier des catégorie
+    include 'views/aside.php';
     include 'views/Cart/cartbdd.php';
+    
 }

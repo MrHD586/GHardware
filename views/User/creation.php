@@ -7,9 +7,12 @@
     ################################################################################
     
     //titre du formulaire
-    $formTitle = "Gestion de compte";
+    $formTitle = "Création de compte";
     
-    echo ' <h2>'.$formTitle.'</h2><br/>';
+    echo ' <div class="row">
+		<div class="col-xs-offset-1 col-lg-8"> 
+		
+		<h3>'.$formTitle.'</h3><br/>';
     
     //affichage des messages d'erreures contenus dans le tableau errorsArray
     foreach ($errorsArray as $key => $val) {
@@ -19,42 +22,44 @@
 	echo'<form method="post" action="">
 		      
 			<p>
-				<label for="Login_User">Votre Login</label>
-				<input type="text" name="Login" value="'.$formUserLoginValue.'"/>
+				<div class="col-lg-4"><label for="Login_User">Votre Login</label></div>
+				<div class="col-lg-8"><input type="text" name="Login" value="'.$formUserLoginValue.'"/></div>
 			</p>
 		          
 			<p>
-				<label for="Password">Votre mot de passe</label>
-				<input type="password" name="Password" />
+				<div class="col-lg-4"><label for="Password">Votre mot de passe</label></div>
+				<div class="col-lg-8"><input type="password" name="Password" /></div>
 			</p>
 
             <p>
-				<label for="PasswordVerif">Confirmation du mot de passe</label>
-				<input type="password" name="PasswordVerif" />
+				<div class="col-lg-4"><label for="PasswordVerif">Confirmation MDP</label></div>
+				<div class="col-lg-8"><input type="password" name="PasswordVerif" /></div>
 			</p>
 
             <p>
-				<label for="Firstname">Votre prénom</label>
-				<input type="text" name="Firstname" value="'.$formUserFirstNameValue.'"/>
+				<div class="col-lg-4"><label for="Firstname">Votre prénom</label></div>
+				<div class="col-lg-8"><input type="text" name="Firstname" value="'.$formUserFirstNameValue.'"/></div>
 			</p>
 
             <p>
-				<label for="Lastname">Votre nom</label>
-				<input type="text" name="Lastname" value="'.$formUserLastNameValue.'"/>
+				<div class="col-lg-4"><label for="Lastname">Votre nom</label></div>
+				<div class="col-lg-8"><input type="text" name="Lastname" value="'.$formUserLastNameValue.'"/></div>
 			</p>
 
             <p>
-				<label for="Email">Votre email</label>
-				<input type="email" name="Email" value="'.$formUserEmailValue.'"/>
+				<div class="col-lg-4"><label for="Email">Votre email</label></div>
+				<div class="col-lg-8"><input type="email" name="Email" value="'.$formUserEmailValue.'"/></div>
 			</p>
 
             <p>
-				<label for="Birthdate">Votre date de naissance</label>
-				<input type="date" name="Birthdate" value="'.$formUserBirthdateValue.'"/>
+				<div class="col-lg-4"><label for="Birthdate">Votre date de naissance</label></div>
+				<div class="col-lg-8"><input type="date" name="Birthdate" value="'.$formUserBirthdateValue.'"/></div>
 			</p>
        
 		    <p>
-			    <input type="submit" name="submit" value="Envoyer"/>
+			    <div class=" col-lg-12"><input type="submit" name="submit" value="Envoyer"/></div>
 		    </p>
 		</form>
+	</div>
+		</div>
     ';

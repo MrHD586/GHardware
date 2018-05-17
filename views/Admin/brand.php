@@ -20,6 +20,51 @@
     echo ' 
 		<div class="row">
 			<div class="col-xs-offset-1 col-lg-8"> 
+			
+		<div class="col-lg-12">
+			<table id="tabadmin">
+			  <tr>
+				<th>ID</th>
+				<th>Login</th>
+				<th>Prénom</th>
+				<th>Nom</th>
+				<th>E-Mail</th>
+				<th>Date de naissance</th>
+				<th>Droits</th>
+				<th>Actif</th>
+			  </tr>
+			  <tr>
+				<td>1</td>
+				<td>Login</td>
+				<td>Prénom</td>
+				<td>Nom</td>
+				<td>E-Mail</td>
+				<td>Date de naissance</td>
+				<td>Droits</td>
+				<td>Actif</td>
+			  </tr>
+			  <tr>
+				<td>2</td>
+				<td>Login</td>
+				<td>Prénom</td>
+				<td>Nom</td>
+				<td>E-Mail</td>
+				<td>Date de naissance</td>
+				<td>Droits</td>
+				<td>Actif</td>
+			  </tr>
+			  <tr>
+				<td>3</td>
+				<td>Login</td>
+				<td>Prénom</td>
+				<td>Nom</td>
+				<td>E-Mail</td>
+				<td>Date de naissance</td>
+				<td>Droits</td>
+				<td>Actif</td>
+			  </tr>
+			</table>
+		</div>
 		
 		<h3>'.$formTitle.'</h3><br/>';
     

@@ -72,6 +72,8 @@ label{
 
 
 
+
+
 header{
 	padding-top:10px;
 	padding-bottom:20px;
@@ -320,3 +322,37 @@ textarea{
 .dropdown a:hover {background-color: #ddd}
 
 .show {display:block;}
+
+#tabadmin {
+    border-collapse: collapse;
+    width: 100%;
+	margin-bottom: 50px;
+}
+
+#tabadmin td, #tabadmin th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tabadmin tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabadmin tr:hover {background-color: #ddd;}
+
+#tabadmin th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    background-color: #286090;
+    color: white;
+}
+
+@media screen and (max-width: 640px) {
+  table,
+  tbody,
+  th,
+  tr,
+  td {
+    display: block;
+    width: auto;
+  }
+}

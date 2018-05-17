@@ -9,7 +9,9 @@
 
     //include de la classe DbManager
     include("models/DbManager.php");
-    $Categorie=$_GET['categorie'];
+    
+    //paramêtre de catégorie dans l'url
+    $Categorie = $_GET['categorie'];
     
     class CategoryManager {
         
@@ -21,7 +23,7 @@
         }
         
         
-        // execute une requête
+        //Récupère tous les articles selon une catégorie
         public function getArticlesCategorie($Categorie) {
             $sql = "SELECT *
                     FROM t_articles

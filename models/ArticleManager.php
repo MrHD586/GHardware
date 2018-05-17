@@ -34,4 +34,28 @@
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
+		
+		//Crée un nouvel article
+		public function setNewArticle($articleName, $articleIsActive) {
+		    $sql = "INSERT INTO t_articles (AName, isActive)
+                            VALUES ('$articleName', b'$articleIsActive')";
+		    $this->dbManager->Query($sql);
+		}
+		
+		//Récupère arts par nom
+		public function articleExists($articleName){
+		    $sql = "SELECT COUNT(*) AS articleExists FROM t_articles WHERE AName = '$articleName'";
+		    $resultat = $this->dbManager->Query($sql);
+		    $donnees = $resultat->fetch();
+		    $resultat->closeCursor();
+		    $resultOfCount = $donnees['articleExists'];
+		    
+		    if($resultOfCount != 0){
+		        $resultat = TRUE;
+		    }else{
+		        $resultat = FALSE;
+		    }
+		    
+		    return $resultat;
+		}
 	}

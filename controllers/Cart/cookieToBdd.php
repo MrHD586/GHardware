@@ -6,7 +6,7 @@
 #### 		  Gestions des données des articles
 ################################################################################
 
-include 'models/CartManager.php';
+include 'models/CartDbManager.php';
 
 session_start();
 

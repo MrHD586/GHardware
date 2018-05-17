@@ -6,7 +6,7 @@
     #### 	  Page de managment des categories avec formulaire et tableau
     ################################################################################
     
-    //include de la classe DbManager
+    //include de la classe CategoryManager
     include("models/CategoryManager.php");
         
     //tableau contenant les erreurs
@@ -25,7 +25,7 @@
             //instantiation de la classe CategoryManager
             $categoryManager = new CategoryManager();
             
-            //recherche d'un user name correspondant au login entré
+            //recherche d'un category name correspondant au category name entré
             $checkByCategoryName = $categoryManager->categoryExists($categoryName);
             
             //si le nom est égal au nom retourné par la requête

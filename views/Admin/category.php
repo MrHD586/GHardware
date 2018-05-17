@@ -17,7 +17,10 @@
     }
     
     //FORMULAIRE//
-    echo ' <h3>'.$formTitle.'</h3><br/>';
+    echo ' <div class="row">
+		<div class="col-xs-offset-1 col-lg-8"> 
+	
+			<h3>'.$formTitle.'</h3><br/>';
     
     //affichage des messages d'erreures contenus dans le tableau errorsArray
     foreach ($errorsArray as $key => $val) {
@@ -28,18 +31,21 @@
                 '.$cat_CreationSucces.'
                     
                 <p>
-        			<label for="Name">Nom</label>
-        			<input type="text" name="Name" value="'.$formCategoryNameValue.'"/>
+        			<div class="col-lg-2"><label for="Name">Nom</label></div>
+        			<div class="col-lg-10"><input type="text" name="Name" value="'.$formCategoryNameValue.'"/></div>
         		</p>
 
                 <p>
-    			    <label for="IsActive">Actif</label></br>
-    		        <input type="radio" name="isActive" value="1" checked="checked">Oui</input></br>
-                    <input type="radio" name="isActive" value="0">Non</input>
+    			    <div class="col-lg-2"><label for="IsActive">Actif</label></br></div>
+    		        <div class="col-lg-12"><input type="radio" name="isActive" value="1" checked="checked">Oui</input></br></div>
+                    <div class="col-lg-12"><input type="radio" name="isActive" value="0">Non</input></div>
     		    </p>
                     
         	    <p>
-        		    <input type="submit" name="submit" value="Envoyer"/>
+        		    <div class="col-lg-4"><input type="submit" name="submit" value="Envoyer"/></div>
         	    </p>
         	</form>
+			
+			</div>
+				</div>
             ';

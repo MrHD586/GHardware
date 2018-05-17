@@ -290,3 +290,8 @@ Stack trace:
 #0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(49): include()
 #1 {main}
   thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\AddDeletebdd.php on line 17
+[17-May-2018 09:59:53 Europe/Zurich] PHP Fatal error:  Uncaught Error: Class 'CartDbManager' not found in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\cookieToBdd.php:15
+Stack trace:
+#0 C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\index.php(49): include()
+#1 {main}
+  thrown in C:\uWamp-EPSIC\uWamp-EPSIC\www\GHardware\controllers\Cart\cookieToBdd.php on line 15

@@ -43,7 +43,12 @@
 	//$filePathAside = "./controllers/Aside/aside.php";
 	
 	if(!$fileTest){
-	    echo "<h2>la page souhaitée n'a pas été trouvée</h2>";
+	    echo '<div class="row">
+			<div class="col-xs-offset-1 col-lg-8"> 
+			<h2>La page souhaitée n\'a pas été trouvée</h2>
+			</div>
+				</div>
+			';
 	}elseif ($fileTest){
 	    //include $filePathAside;
 		include $filePath; 

@@ -39,7 +39,7 @@
 				   
 				   <!-- Comment Space -->';
     			   foreach($Commentaire as $commentaire){
-    			       $id=$value['idT_Commentaire'];
+    			       $id=$commentaire['idT_Commentaire'];
     			   
     				echo'<div class="row">
     							<div class="col-lg-10">

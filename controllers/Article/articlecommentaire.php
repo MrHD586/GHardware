@@ -25,9 +25,9 @@
         $Utilisateurid=$value['Fk_User'];
         $UtilisateurName = $articlesManager->getUserName($Utilisateurid);
         
-        foreach($UtilisateurName as $value)
+        foreach($UtilisateurName as $values)
         {
-            $NomUtilisateur[$id]= $value['Ulogin'];
+            $NomUtilisateur[$id]= $values['ULogin'];
         } 
     }
     include 'views/aside.php';

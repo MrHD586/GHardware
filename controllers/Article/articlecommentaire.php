@@ -19,13 +19,15 @@
     $aside = $articlesManager->getCategories();
     
     $Commentaire = $articlesManager->getCommentaire($idarticle);
+    
     foreach($Commentaire as $value){
         $id=$value['idT_Commentaire'];
         $Utilisateurid=$value['Fk_User'];
         $UtilisateurName = $articlesManager->getUserName($Utilisateurid);
+        
         foreach($UtilisateurName as $value)
         {
-            $NomUtilisateur[$id]= $value;
+            $NomUtilisateur[$id]= $value['Ulogin'];
         } 
     }
     include 'views/aside.php';

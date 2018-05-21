@@ -39,7 +39,7 @@
 				   
 				   <!-- Comment Space -->';
     			   foreach($Commentaire as $commentaire){
-    			     
+    			       $id=$value['idT_Commentaire'];
     			   
     				echo'<div class="row">
     							<div class="col-lg-10">
@@ -56,7 +56,7 @@
     											<div class="col-xs-9">
     												<div class="commentpseudo">
     													<b>
-    												    '.$NomUtilisateur[$commentaire['idT_Commentaire']].'
+    												    '.$NomUtilisateur[$id].'
     													</b>
     												</div>
     											</div>
@@ -69,7 +69,7 @@
     									<!-- Comment -->
     										<div class="col-xs-10 col-xs-offset-1">
     											<div class="jumbotron">
-    												   '.$commentaire[''].'
+    												   '.$commentaire['CTexte'].'
     											   </div>
     										</div>
     									</div>';

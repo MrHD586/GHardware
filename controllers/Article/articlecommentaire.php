@@ -16,7 +16,7 @@
     
     $articles = $articlesManager->getArticles($idarticle);
     
-    $aside = $articlesManager->getCategories();
+    $aside = $articlesManager->getCategoriesName();
     
     $Commentaire = $articlesManager->getCommentaire($idarticle);
     

@@ -28,9 +28,9 @@
 			return $resultat->fetchAll();
 		}
 		
-		// execute une requête
-		public function getCategories() {
-		    $sql = "SELECT Ccategorie FROM t_categories";
+		//Récupère toutes les catègories
+		public function getCategoriesName() {
+		    $sql = "SELECT Ccategorie FROM t_categories ORDER BY Ccategorie";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
@@ -58,16 +58,19 @@
 		    
 		    return $resultat;
 		}
+		
 		public function getCommentaire($idarticle) {
 		    $sql = "SELECT * FROM t_commentaire WHERE Fk_Article='$idarticle' AND CEtat=3";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
+		
 		public function getUserName($userLogin){
 		    $sql = "SELECT * FROM t_user WHERE idUser = '$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}
+		
 		public function setNewCommentaire($CEtat, $CTexte, $Fk_User, $Fk_Article) {
 		    $sql = "INSERT INTO t_commentaire (CEtat, CTexte, Fk_User, Fk_Article)
                     VALUES ('$CEtat', '$CTexte', 'Fk_User', 'Fk_Article')";

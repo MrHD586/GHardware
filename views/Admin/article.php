@@ -105,7 +105,10 @@
             			<div class="col-lg-4"><label for="Category">Catégorie</label></div>
             			<div class="col-lg-12">
                             <select name="category">
-                                <option value="'.$formArticleCategoryValue.'">À remplir'.$formArticleCategoryValue.'</option>
+                                '; foreach($categoryNameSelect as $value){
+                                echo '<option value="'.$value['Ccategorie'].'">'.$value['Ccategorie'].'</option>';
+                                   }
+                            echo '
                             </select>
                         </div>
             		  </p>
@@ -114,7 +117,10 @@
             			<div class="col-lg-4"><label for="Brand">Marque</label></div>
             			<div class="col-lg-12">
                             <select name="Brand">
-                                <option value="'.$formArticleBrandValue.'">À remplir'.$formArticleBrandValue.'</option>
+                                '; foreach($brandName as $value){
+                                        echo '<option value="'.$value.'">'.$value.'</option>';
+                                   }
+                            echo '
                             </select>
                         </div>
             		  </p>
@@ -123,7 +129,10 @@
             			<div class="col-lg-4"><label for="PicArticle">Images</label></div>
             			<div class="col-lg-12">
                             <select name="PicArticle">
-                                <option value="'.$formArticlePicValue.'">À remplir'.$formArticlePicValue.'</option>
+                                '; foreach($picArticle as $value){
+                                        echo '<option value="'.$value.'">'.$value.'</option>';
+                                   }
+                            echo '
                             </select>
                         </div>
             		  </p>

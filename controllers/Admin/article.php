@@ -18,10 +18,16 @@
     //Si l'utilisateur n'est pas un admin il se fait rediriger sur la page home
     if($sessionAdminUser != TRUE){
         header($redirectToHome);
-        
+                
     }else{
         //tableau contenant les erreurs
         $errors = array();
+        
+        //instantiation de la classe CategoryManager
+        $articleManager = new ArticleManager();
+        
+        //catégories pour le Select
+        $categoryNameSelect = $articleManager->getCategoriesName();
         
         //si le formulaire est envoyé
         if(isset($_POST['submit'])){
@@ -32,10 +38,8 @@
             //si un champ est vides
             if(empty($articleName)){
                 $errors[] = "Veuillez remplir tous les champs";
-            }else{
-                //instantiation de la classe CategoryManager
-                $articleManager = new ArticleManager();
                 
+            }else{ 
                 //recherche d'un article name correspondant au article name entré
                 $checkByArticleName = $articleManager->articleExists($articleName);
                 

@@ -33,9 +33,8 @@
         }
         
         //récupère les catègories
-        public function getCategories() {
-            $sql = "SELECT Ccategorie 
-                    FROM t_categories";
+        public function getCategoriesName() {
+            $sql = "SELECT Ccategorie FROM t_categories ORDER BY Ccategorie";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }

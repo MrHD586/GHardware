@@ -1,10 +1,10 @@
 <?php
 	################################################################################
 	#### Auteur : Butticaz Yvann   
-	#### Date : 26 Février 2018
+	#### Date : 26 Fï¿½vrier 2018
 	#### Classe ArticleManager :
-	#### 		Cette classe possède des fonctions effectuants
-    ####		des requêtes souvant utilisées.
+	#### 		Cette classe possï¿½de des fonctions effectuants
+    ####		des requï¿½tes souvant utilisï¿½es.
 	################################################################################
 
 	//include de la classe DbManager
@@ -19,9 +19,9 @@
 			 $this->dbManager = new DbManager();
 		}
 		
-		// execute une requête
+		// execute une requï¿½te
 		public function getCategories() {
-		    $sql = "SELECT Ccategorie FROM t_categories";
+		    $sql = "SELECT Ccategorie FROM t_categories ORDER BY Ccategorie";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}

@@ -11,7 +11,7 @@
     session_start();
     //déclaration des variables
     $panierBddManager = new CartDbManager();
-    $aside = $panierBddManager->getCategories();
+    $aside = $panierBddManager->getCategoriesName();
     $userLogin = $_SESSION['user_name'];
     $idarticle=$_GET['id'];
     $categorie=$_GET['categorie'];

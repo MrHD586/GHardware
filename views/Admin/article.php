@@ -88,25 +88,30 @@
 
                       <p>
             			<div class="col-lg-4"><label for="Stock">Stock</label></div>
-            			<div class="col-lg-8"><input type="text" name="stock" value="'.$formArticleStockValue.'"/></div>
+            			<div class="col-lg-8"><input type="text" name="Stock" value="'.$formArticleStockValue.'"/></div>
             		  </p>
 
                       <p>
             			<div class="col-lg-4"><label for="Price">Prix</label></div>
-            			<div class="col-lg-8"><input type="text" name="price" value="'.$formArticlePriceValue.'"/></div>
+            			<div class="col-lg-8"><input type="text" name="Price" value="'.$formArticlePriceValue.'"/></div>
             		  </p>
                       
                       <p>
             			<div class="col-lg-4"><label for="Description">Déscription</label></div>
-            			<div class="col-lg-8"><input type="text" name="description" value="'.$formArticleDescriptionValue.'"/></div>
+            			<div class="col-lg-8"><input type="text" name="Description" value="'.$formArticleDescriptionValue.'"/></div>
             		  </p>
                       
                       <p>
             			<div class="col-lg-4"><label for="Category">Catégorie</label></div>
             			<div class="col-lg-12">
-                            <select name="category">
+                            <select name="Category">
+                                <option style="display:none;" selected label="Veulliez choisir une catégorie" value="0">
                                 '; foreach($categoryNameSelect as $value){
-                                echo '<option value="'.$value['Ccategorie'].'">'.$value['Ccategorie'].'</option>';
+                                        if($formArticleCategoryValue == $value['idCategories']){
+                                           echo '<option selected="selected" value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                                        }else{
+                                            echo '<option value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                                        }
                                    }
                             echo '
                             </select>
@@ -117,9 +122,14 @@
             			<div class="col-lg-4"><label for="Brand">Marque</label></div>
             			<div class="col-lg-12">
                             <select name="Brand">
-                                '; foreach($brandName as $value){
-                                        echo '<option value="'.$value.'">'.$value.'</option>';
-                                   }
+                                <option style="display:none;" selected label="Veulliez choisir une marque" value="0">
+                                '; foreach($brandNameSelect as $value){
+                                        if($formArticleBrandValue == $value['idT_Marque']){
+                                            echo '<option selected="selected" value="'.$value['idT_Marque'].'">'.$value['MMarque'].'</option>';
+                                        }else{
+                                            echo '<option value="'.$value['idT_Marque'].'">'.$value['MMarque'].'</option>';
+                                        }
+                                  }
                             echo '
                             </select>
                         </div>
@@ -129,8 +139,13 @@
             			<div class="col-lg-4"><label for="PicArticle">Images</label></div>
             			<div class="col-lg-12">
                             <select name="PicArticle">
-                                '; foreach($picArticle as $value){
-                                        echo '<option value="'.$value.'">'.$value.'</option>';
+                                <option style="display:none;" selected label="Veulliez choisir une image" value="0">
+                                '; foreach($picArticleSelect as $value){
+                                        if($formArticlePicArticleValue == $value['idT_PicArticles']){
+                                            echo '<option selected="selected" value="'.$value['idT_PicArticles'].'">'.$value['PPicArticles'].'</option>';
+                                        }else{
+                                            echo '<option value="'.$value['idT_PicArticles'].'">'.$value['PPicArticles'].'</option>';
+                                        }
                                    }
                             echo '
                             </select>

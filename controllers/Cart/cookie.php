@@ -12,7 +12,7 @@
     $Panier = $id;
     
     //url des redirection sois sur l'articles ou la liste des articles par catégorie
-    $urlToarticle = "location:index.php?controller=Article&action=article&id=".$id."";
+    $urlToarticle = "location:index.php?controller=Article&action=articlecommentaire&id=".$id."";
     $urlTocategorie = "location:index.php?controller=Categorie&action=list&categorie=".$_GET['categorie']."";
     
     //Récuperation du cookie pour un test 

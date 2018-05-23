@@ -63,7 +63,7 @@
             header("location:index.php?controller=Categorie&action=list&categorie=$categorie");
         }else{
             //direction la page de l'article
-            header("location:index.php?controller=Article&action=article&id=$idarticle");
+            header("location:index.php?controller=Article&action=articlecommentaire&id=$idarticle");
         }
     }else{
         //récuperation des donnée du panier de l'utilisateur connecter

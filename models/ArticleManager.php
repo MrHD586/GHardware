@@ -21,11 +21,18 @@
 		}
 		
 		
-		// execute une requête
+		//Récupère les articles par id
 		public function getArticles($idarticle) {
 			$sql = "SELECT * FROM t_articles WHERE idArticle='$idarticle'"; 
 			$resultat = $this->dbManager->Query($sql);
 			return $resultat->fetchAll();
+		}
+		
+		//Récupère tous les articles
+		public function getArticlesAll(){
+		    $sql = "SELECT * FROM t_articles";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
 		}
 		
 		//Récupère toutes les catègories

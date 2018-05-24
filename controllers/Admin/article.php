@@ -26,6 +26,9 @@
         //instantiation de la classe CategoryManager
         $articleManager = new ArticleManager();
         
+        //articles de la base pour le Select
+        $articleTable = $articleManager->getArticlesAll();
+        
         //catégories pour le Select
         $categoryNameSelect = $articleManager->getCategorieAll();
         
@@ -35,6 +38,29 @@
         //image pour le Select
         $picArticleSelect = $articleManager->getPicArticleAll();
         
+        
+        
+        //tableau contenant les articles actifs
+        $arrayActive = array();
+        
+        //tableau contenant les articles inactifs
+        $arrayNotActive = array();
+      
+        
+        //-- Filtrage des actifs --//
+        $filteredArray = array_filter($articleTable, 'filterActives');
+        //ajout des articles actif dans l'array d'affichage
+        $arrayActive[] = $filteredArray;
+        
+        //-- Filtrage des inactifs --//
+        $filteredArray = array_filter($articleTable, 'filterNotActives');
+        //ajout des articles inactifs dans l'array d'affichage
+        $arrayNotActive[] = $filteredArray;
+        
+            
+       
+        
+        //--- Envois Formulaire ---//
         
         //si le formulaire est envoyé
         if(isset($_POST['submit'])){
@@ -101,4 +127,20 @@
         }
         
         include 'views/Admin/article.php';
+    }
+    
+    
+   
+    
+    
+    //------ FONCTIONS ------//
+    
+    //Fonction pour filtrer les articles actifs
+    function filterActives($value){
+        return ($value == 1);
+    }
+    
+    //Fonction pour filtrer les articles inactifs
+    function filterNotActives($value){
+        return ($value == 0);
     }

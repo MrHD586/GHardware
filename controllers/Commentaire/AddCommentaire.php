@@ -22,5 +22,6 @@ if(empty($CTexte)){
     
 }else{
     $addCommentaire = $commentaireManager->setNewCommentaire($CEtat, $CTexte, $Fk_User, $Fk_Article);
+    header("location:index.php?controller=Article&action=articlecommentaire&id=$Fk_Article");
 }
 

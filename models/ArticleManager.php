@@ -64,7 +64,7 @@
 		    return $resultat->fetchAll();
 		}
 		public function getUserName($userLogin){
-		    $sql = "SELECT * FROM t_user WHERE idUser = '$userLogin'";
+		    $sql = "SELECT * FROM t_user WHERE idUser ='$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}

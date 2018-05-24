@@ -47,26 +47,7 @@
         				<td>Droits</td>
         				<td>Actif</td>
         			  </tr>
-        			  <tr>
-        				<td>2</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-        			  <tr>
-        				<td>3</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
+        			  
 			        </table>
 		        </div> ';
     

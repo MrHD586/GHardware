@@ -74,11 +74,12 @@
     										</div>
     									</div>';
 			      }	
+			      if($_SESSION['UserSession']==TRUE){
 										echo'<!-- New Comment Writing -->
     									
     									<div class="commentform">
     										<div class="col-xs-10 col-xs-offset-1">
-    											<form method="post" action="Location:index.php?controller=Commentaire&action=AddCommentaire&id='.$_GET['id'].'">
+    											<form method="POST" action="index.php?controller=Commentaire&action=AddCommentaire&id='.$_GET['id'].'">
 														<textarea class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire">
 														
 														</textarea>
@@ -86,8 +87,8 @@
     											</form>
     										</div>
     									</div>
-    									
-    								</div>
+    			';}
+    								echo'</div>
     								
     								
     							</div>

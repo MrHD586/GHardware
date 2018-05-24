@@ -43,6 +43,9 @@
                     //si il est connecté utilisation du manager pour le panier bdd
                     $Nombre= 0;
                     $Nombre=$_SESSION['nbarticle'];
+                    if ($Nombre==0){
+                    $Nombre=NULL;
+                    }
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
                 }else{
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Admin&action=home" role="button">Administration</a>';

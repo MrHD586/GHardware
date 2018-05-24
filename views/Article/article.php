@@ -37,9 +37,11 @@
         	       </div> 
 				   
 				   
-				   <!-- Comment Space -->
+				   <!-- Comment Space -->';
+    			   foreach($Commentaire as $commentaire){
+    			       $id=$commentaire['idT_Commentaire'];
     			   
-    					   <div class="row">
+    				echo'<div class="row">
     							<div class="col-lg-10">
     								
     								<div class="commentarticle">
@@ -54,7 +56,7 @@
     											<div class="col-xs-9">
     												<div class="commentpseudo">
     													<b>
-    													xXD4rKnight69Xx
+    												    '.$NomUtilisateur[$id].'
     													</b>
     												</div>
     											</div>
@@ -67,12 +69,12 @@
     									<!-- Comment -->
     										<div class="col-xs-10 col-xs-offset-1">
     											<div class="jumbotron">
-    												   C\'est d\'la MERDE !!!
+    												   '.$commentaire['CTexte'].'
     											   </div>
     										</div>
-    									</div>
-										
-										<!-- New Comment Writing -->
+    									</div>';
+			      }	
+										echo'<!-- New Comment Writing -->
     									
     									<div class="commentform">
     										<div class="col-xs-10 col-xs-offset-1">

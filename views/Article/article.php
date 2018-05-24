@@ -74,20 +74,22 @@
     										</div>
     									</div>';
 			      }	
+			      if($_SESSION['UserSession']==TRUE){
 										echo'<!-- New Comment Writing -->
     									
     									<div class="commentform">
     										<div class="col-xs-10 col-xs-offset-1">
-    											<form method="post" action="#">
-														<textarea class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire">
-															<!-- Text Space -->
-														</textarea>
+    											<form method="POST" action="index.php?controller=Commentaire&action=AddCommentaire&id='.$_GET['id'].'">
+                                                        ';if($error==1){
+                                                        echo '<p style="color:red;">Veuillez remplir le champs texte pour poster un commentaire</p>';
+										                  }echo'
+														<input class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"/>
     												<br><button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
     											</form>
     										</div>
     									</div>
-    									
-    								</div>
+    			';}
+    								echo'</div>
     								
     								
     							</div>

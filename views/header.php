@@ -17,7 +17,7 @@
         	<link <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
             <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-          	<link href="views/assets/css/addstyle.css" rel="stylesheet">
+          	<link href="views/Assets/css/addstyle.css" rel="stylesheet">
             <link href="views/Assets/css/bootstrap.css" rel="stylesheet">
         
           </head>
@@ -43,6 +43,9 @@
                     //si il est connecté utilisation du manager pour le panier bdd
                     $Nombre= 0;
                     $Nombre=$_SESSION['nbarticle'];
+                    if ($Nombre==0){
+                    $Nombre=NULL;
+                    }
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
                 }else{
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Admin&action=home" role="button">Administration</a>';
@@ -84,9 +87,8 @@
 				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="images/defaultavatar.png"></button> 
 				  <div id="myDropdown" class="dropdown-content">	
                         '.$adminDropdown.'
-    					<a href="index.php?controller=Site&action=profil">Profil</a>
+    					<a href="index.php?controller=User&action=profile">Profil</a>
                         <a href="">Commandes</a>
-                        <a href="">Liste de souhaits</a>
                         <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
 				    </div>
 			</div>

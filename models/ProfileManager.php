@@ -1,16 +1,16 @@
 <?php
 	################################################################################
 	#### Auteur : Butticaz Yvann   
-	#### Date : 26 Février 2018
-    #### Classe HomeManager :
-	#### 		Cette classe possède des fonctions effectuants
+	#### Date : 24 Mai 2018
+    #### Classe ProfileManager :
+	#### 		Cette classe posè�de des fonctions effectuants
     ####		des requêtes souvant utilisées.
 	################################################################################
 
 	//include de la classe DbManager
 	include("models/DbManager.php");
 	
-	class HomeManager {
+	class ProfileManager {
 		
 		private $dbManager;
 		
@@ -19,7 +19,7 @@
 			 $this->dbManager = new DbManager();
 		}
 		
-		// execute une requ�te
+		// execute une requête
 		public function getCategories() {
 		    $sql = "SELECT Ccategorie FROM t_categories ORDER BY Ccategorie";
 		    $resultat = $this->dbManager->Query($sql);

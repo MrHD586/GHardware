@@ -26,7 +26,7 @@ foreach($PanierNoDouble as $value){
     $articles[$index] = $panierCookieManager->getArticlesCookie($index);
 }
 
-$aside = $panierCookieManager->getCategories();
+$aside = $panierCookieManager->getCategoriesName();
 //inclusion du fichier des catégorie
 include 'views/aside.php';
 //inclusion du fichier du panier

@@ -15,61 +15,61 @@
     }else{
         $ar_CreationSucces = null;
     }
+     
     
     //------ Haut de page ------//
     echo '
         <div class="row">
 			<div class="col-xs-offset-1 col-lg-8">
                 <h3>'.$pageTitle.'</h3><br/>';
-    
+       
     
     //------ TABLEAU ------//
     echo '
-		        <div class="col-lg-12">
-			        <table id="tabadmin">
-        			  <tr>
-        				<th>ID</th>
-        				<th>Login</th>
-        				<th>Prénom</th>
-        				<th>Nom</th>
-        				<th>E-Mail</th>
-        				<th>Date de naissance</th>
-        				<th>Droits</th>
-        				<th>Actif</th>
-        			  </tr>
-        			  <tr>
-        				<td>1</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-        			  <tr>
-        				<td>2</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-        			  <tr>
-        				<td>3</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-			        </table>
-		        </div> ';
+        <div class="col-lg-12">
+            <table id="articleTable">
+    		  <tr>
+    			<th>ID</th>
+    			<th>Nom</th>
+    			<th>Stock</th>
+    			<th>Prix</th>
+    			<th>Description</th>
+    			<th>Catégorie</th>
+                <th>Marque</th>
+                <th>Image</th>
+                <th>Actif</th>
+    		  </tr>
+    ';
     
+    //affichage de toutes les données articles dans le form
+    foreach ($arrayActive['data'] as $value) {
+        echo '
+              <tr>
+        		<td>'.$value["idArticle"].'</td>
+        		<td>'.$value["AName"].'</td>
+        		<td>'.$value["AStock"].'</td>
+        		<td>'.$value["APrix"].'</td>
+        		<td>'.$value["ADescription"].'</td>
+        		<td>'.$value["Fk_Categories"].'</td>
+                <td>'.$value["Fk_Marque"].'</td>
+        		<td>'.$value["Fk_PicArticles"].'</td>
+                <td>Action</td>
+         ';
+                if($value["isActive"] == 1){
+                    echo '<td>Oui</td>';
+                }else{
+                    echo '<td>Non</td>';
+                }
+                    
+        echo '
+        	  </tr>
+        ';
+    }
+        			  
+	echo '  </table>     
+		</div> ';
+    
+	
     
     //affichage des messages d'erreures contenus dans le tableau errorsArray
     foreach ($errorsArray as $key => $val) {
@@ -88,24 +88,32 @@
 
                       <p>
             			<div class="col-lg-4"><label for="Stock">Stock</label></div>
-            			<div class="col-lg-8"><input type="text" name="stock" value="'.$formArticleStockValue.'"/></div>
+            			<div class="col-lg-8"><input type="text" name="Stock" value="'.$formArticleStockValue.'"/></div>
             		  </p>
 
                       <p>
             			<div class="col-lg-4"><label for="Price">Prix</label></div>
-            			<div class="col-lg-8"><input type="text" name="price" value="'.$formArticlePriceValue.'"/></div>
+            			<div class="col-lg-8"><input type="text" name="Price" value="'.$formArticlePriceValue.'"/></div>
             		  </p>
                       
                       <p>
             			<div class="col-lg-4"><label for="Description">Déscription</label></div>
-            			<div class="col-lg-8"><input type="text" name="description" value="'.$formArticleDescriptionValue.'"/></div>
+            			<div class="col-lg-8"><input type="text" name="Description" value="'.$formArticleDescriptionValue.'"/></div>
             		  </p>
                       
                       <p>
             			<div class="col-lg-4"><label for="Category">Catégorie</label></div>
             			<div class="col-lg-12">
-                            <select name="category">
-                                <option value="'.$formArticleCategoryValue.'">À remplir'.$formArticleCategoryValue.'</option>
+                            <select name="Category">
+                                <option style="display:none;" selected label="Veulliez choisir une catégorie" value="0">
+                                '; foreach($categoryNameSelect as $value){
+                                        if($formArticleCategoryValue == $value['idCategories']){
+                                           echo '<option selected="selected" value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                                        }else{
+                                            echo '<option value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                                        }
+                                   }
+                            echo '
                             </select>
                         </div>
             		  </p>
@@ -114,7 +122,15 @@
             			<div class="col-lg-4"><label for="Brand">Marque</label></div>
             			<div class="col-lg-12">
                             <select name="Brand">
-                                <option value="'.$formArticleBrandValue.'">À remplir'.$formArticleBrandValue.'</option>
+                                <option style="display:none;" selected label="Veulliez choisir une marque" value="0">
+                                '; foreach($brandNameSelect as $value){
+                                        if($formArticleBrandValue == $value['idT_Marque']){
+                                            echo '<option selected="selected" value="'.$value['idT_Marque'].'">'.$value['MMarque'].'</option>';
+                                        }else{
+                                            echo '<option value="'.$value['idT_Marque'].'">'.$value['MMarque'].'</option>';
+                                        }
+                                  }
+                            echo '
                             </select>
                         </div>
             		  </p>
@@ -123,7 +139,15 @@
             			<div class="col-lg-4"><label for="PicArticle">Images</label></div>
             			<div class="col-lg-12">
                             <select name="PicArticle">
-                                <option value="'.$formArticlePicValue.'">À remplir'.$formArticlePicValue.'</option>
+                                <option style="display:none;" selected label="Veulliez choisir une image" value="0">
+                                '; foreach($picArticleSelect as $value){
+                                        if($formArticlePicArticleValue == $value['idT_PicArticles']){
+                                            echo '<option selected="selected" value="'.$value['idT_PicArticles'].'">'.$value['PPicArticles'].'</option>';
+                                        }else{
+                                            echo '<option value="'.$value['idT_PicArticles'].'">'.$value['PPicArticles'].'</option>';
+                                        }
+                                   }
+                            echo '
                             </select>
                         </div>
             		  </p>

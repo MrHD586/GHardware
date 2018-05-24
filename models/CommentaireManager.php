@@ -23,7 +23,7 @@ class CommentaireManager {
     
     // execute une requête
     public function setNewCommentaire($CEtat, $CTexte, $Fk_User, $Fk_Article) {
-        $sql = "INSERT INTO t_panier (CEtat, CTexte, Fk_User, Fk_Article)
+        $sql = "INSERT INTO t_commentaire (CEtat, CTexte, Fk_User, Fk_Article)
                         VALUES ('$CEtat', '$CTexte', '$Fk_User', '$Fk_Article')";
         $this->dbManager->Query($sql);
     }

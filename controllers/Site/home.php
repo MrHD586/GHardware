@@ -1,9 +1,9 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 27 Février 2018
-    #### Page controllers/Article/list.php:
-    #### 		  Gestions des données de la page home
+    #### Date : 27 FÃ©vrier 2018
+    #### Page controllers/Site/home.php:
+    #### 		  Gestions des donnÃ©es de la page home
     ################################################################################
    
     include 'models/HomeManager.php';

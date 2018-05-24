@@ -90,8 +90,13 @@
 		    return $resultat;
 		}
 		
-		public function getCommentaire($idarticle) {
+		public function getarticleCommentaire($idarticle) {
 		    $sql = "SELECT * FROM t_commentaire WHERE Fk_Article='$idarticle' AND CEtat=3";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		public function getuserCommentaire($iduser) {
+		    $sql = "SELECT * FROM t_commentaire WHERE Fk_User='$iduser'";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
@@ -106,5 +111,10 @@
 		    $sql = "INSERT INTO t_commentaire (CEtat, CTexte, Fk_User, Fk_Article)
                     VALUES ('$CEtat', '$CTexte', 'Fk_User', 'Fk_Article')";
 		    $this->dbManager->Query($sql);
+		}
+		public function getidUserName($userLogin){
+		    $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat;
 		}
 	}

@@ -18,7 +18,7 @@
     
     $aside = $articlesManager->getCategoriesName();
     
-    $Commentaire = $articlesManager->getCommentaire($idarticle);
+    $Commentaire = $articlesManager->getarticleCommentaire($idarticle);
     $error=$_GET['error'];
     foreach($Commentaire as $value){
         $id=$value['idT_Commentaire'];

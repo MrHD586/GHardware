@@ -20,20 +20,6 @@ foreach($user as $value){
     $iduser = $value['idUser'];
 }
 
-
-
-
 $Commentaire = $articlesManager->getuserCommentaire($iduser);
-$error=$_GET['error'];
-foreach($Commentaire as $value){
-    $id=$value['idT_Commentaire'];
-    $Utilisateurid=$value['Fk_User'];
-    
-    
-    foreach($UtilisateurName as $values)
-    {
-        $NomUtilisateur[$id]= $values['ULogin'];
-    }
-}
 include 'views/aside.php';
 include 'views/User/commentaire.php';

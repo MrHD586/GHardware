@@ -12,6 +12,7 @@ $commentaireManager = new CommentaireManager();
 
 if(isset($_POST['Delete'])){
 $deletecommentaire = $commentaireManager->deleteValueCommentaire($_GET['id']);
+header("location:index.php?controller=User&action=commentaire");
 }else{
 $userLogin = $_SESSION['user_name'];
 $CTexte=$_POST['writecomment'];

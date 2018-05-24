@@ -44,7 +44,7 @@ echo'
 						</div>
 				</center>
     
-';      foreach($Commentaire as $value){
+';      foreach($Commentaire as $Commentaire){
             $Etat=$Commentaire['CEtat'];
             if($Etat==0){
                 $EtatTxt= 'En attente';

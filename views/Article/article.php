@@ -78,9 +78,9 @@
     									
     									<div class="commentform">
     										<div class="col-xs-10 col-xs-offset-1">
-    											<form method="post" action="#">
+    											<form method="post" action="Location:index.php?controller=Commentaire&action=AddCommentaire&id='.$_GET['id'].'">
 														<textarea class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire">
-															<!-- Text Space -->
+														
 														</textarea>
     												<br><button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
     											</form>

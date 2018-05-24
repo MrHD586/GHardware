@@ -7,7 +7,7 @@
 echo '	
 	<div class="col-lg-9">
 			<div class="row">
-                       <div class="col-sm-3 col-xs-offset-1">
+                       <div class="col-sm-3">
 							<div class="col-xs-12">
 								<img id="avatarmenu" width="135" height="135" src="images/defaultavatar.png">
 							</div>
@@ -17,7 +17,7 @@ echo '
 							</div>
 					   </div>
 					   
-					   <div	class="col-xs-8">
+					   <div	class="col-xs-9">
 					   
 							<div class="col-sm-12">
 								<div class="col-sm-6">

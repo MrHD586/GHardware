@@ -87,7 +87,7 @@
 				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="images/defaultavatar.png"></button> 
 				  <div id="myDropdown" class="dropdown-content">	
                         '.$adminDropdown.'
-    					<a href="index.php?controller=User&action=profil">Profil</a>
+    					<a href="index.php?controller=User&action=profile">Profil</a>
                         <a href="">Commandes</a>
                         <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
 				    </div>

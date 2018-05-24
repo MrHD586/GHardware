@@ -18,7 +18,7 @@ foreach($user as $value){
     $Fk_User = $value['idUser'];
 }
 if(empty($CTexte)){
-    header("location:index.php?controller=Article&action=articlecommentaire&id=$Fk_Article&error=1");
+    header("location:index.php?controller=Article&action=articlecommentaire&error=1&id=$Fk_Article");
     
 }else{
     $addCommentaire = $commentaireManager->setNewCommentaire($CEtat, $CTexte, $Fk_User, $Fk_Article);

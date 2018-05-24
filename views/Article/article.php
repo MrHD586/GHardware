@@ -83,9 +83,7 @@
                                                         ';if($error==1){
                                                         echo '<p style="color:red;">Veuillez remplir le champs texte pour poster un commentaire</p>';
 										                  }echo'
-														<textarea class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire">
-														
-														</textarea>
+														<input class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"/>
     												<br><button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
     											</form>
     										</div>

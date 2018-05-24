@@ -27,7 +27,7 @@ foreach($Commentaire as $value){
     
     $article = $articlesManager->getArticles($idarticle);
     foreach ($article as $value){
-        $article[$idCommentaire] = $value['	AName'];
+        $article[$idCommentaire] = $value['AName'];
     }
     
 }

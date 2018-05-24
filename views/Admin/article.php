@@ -15,42 +15,61 @@
     }else{
         $ar_CreationSucces = null;
     }
+     
     
     //------ Haut de page ------//
     echo '
         <div class="row">
 			<div class="col-xs-offset-1 col-lg-8">
                 <h3>'.$pageTitle.'</h3><br/>';
-    
+       
     
     //------ TABLEAU ------//
     echo '
-		        <div class="col-lg-12">
-			        <table id="tabadmin">
-        			  <tr>
-        				<th>ID</th>
-        				<th>Login</th>
-        				<th>Prénom</th>
-        				<th>Nom</th>
-        				<th>E-Mail</th>
-        				<th>Date de naissance</th>
-        				<th>Droits</th>
-        				<th>Actif</th>
-        			  </tr>
-        			  <tr>
-        				<td>1</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-        			  
-			        </table>
-		        </div> ';
+        <div class="col-lg-12">
+            <table id="articleTable">
+    		  <tr>
+    			<th>ID</th>
+    			<th>Nom</th>
+    			<th>Stock</th>
+    			<th>Prix</th>
+    			<th>Description</th>
+    			<th>Catégorie</th>
+                <th>Marque</th>
+                <th>Image</th>
+                <th>Actif</th>
+    		  </tr>
+    ';
     
+    //affichage de toutes les données articles dans le form
+    foreach ($arrayActive['data'] as $value) {
+        echo '
+              <tr>
+        		<td>'.$value["idArticle"].'</td>
+        		<td>'.$value["AName"].'</td>
+        		<td>'.$value["AStock"].'</td>
+        		<td>'.$value["APrix"].'</td>
+        		<td>'.$value["ADescription"].'</td>
+        		<td>'.$value["Fk_Categories"].'</td>
+                <td>'.$value["Fk_Marque"].'</td>
+        		<td>'.$value["Fk_PicArticles"].'</td>
+                <td>Action</td>
+         ';
+                if($value["isActive"] == 1){
+                    echo '<td>Oui</td>';
+                }else{
+                    echo '<td>Non</td>';
+                }
+                    
+        echo '
+        	  </tr>
+        ';
+    }
+        			  
+	echo '  </table>     
+		</div> ';
+    
+	
     
     //affichage des messages d'erreures contenus dans le tableau errorsArray
     foreach ($errorsArray as $key => $val) {

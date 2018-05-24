@@ -74,6 +74,7 @@
     										</div>
     									</div>';
 			      }	
+			      if($_SESSION['UserSession']==TRUE){
 										echo'<!-- New Comment Writing -->
     									
     									<div class="commentform">
@@ -86,8 +87,8 @@
     											</form>
     										</div>
     									</div>
-    									
-    								</div>
+    			';}
+    								echo'</div>
     								
     								
     							</div>

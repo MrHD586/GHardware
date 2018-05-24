@@ -64,7 +64,7 @@ echo'
                 $EtatTxt= 'Accepté et publié';
             }
 echo'		<div class="commandarticle">
-			    <a class="commandlink" href="index.php?controller=Article&action=article&id='.$Commentaire['Fk_Article'].'">
+			    <a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
 				<center>
 			<div class="row">
     

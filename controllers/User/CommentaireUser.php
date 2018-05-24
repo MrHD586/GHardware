@@ -21,5 +21,15 @@ foreach($user as $value){
 }
 
 $Commentaire = $articlesManager->getuserCommentaire($iduser);
+foreach($Commentaire as $value){
+    $idCommentaire=$value['idT_Commentaire'];
+    $idarticle=$value['Fk_Article'];
+    
+    $article = $articlesManager->getArticles($idarticle);
+    foreach ($article as $value){
+        $article[$idCommentaire] = $value['	AName'];
+    }
+    
+}
 include 'views/aside.php';
 include 'views/User/commentaire.php';

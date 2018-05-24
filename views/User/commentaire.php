@@ -32,7 +32,15 @@ echo'
 					</div>
 				</div>
     
+            <!-- Articles -->
     
+						<div class="col-md-2">
+							<div class="row">
+								<center>
+						<b>Article</b>
+								</center>
+							</div>
+						</div>
 			<!-- Etat -->
     
 						<div class="col-md-2">
@@ -42,9 +50,11 @@ echo'
 								</center>
 							</div>
 						</div>
+            
 				</center>
     
 ';      foreach($Commentaire as $Commentaire){
+        $idCommentaire=$Commentaire['idT_Commentaire'];
             $Etat=$Commentaire['CEtat'];
             if($Etat==0){
                 $EtatTxt= 'En attente';
@@ -54,7 +64,7 @@ echo'
                 $EtatTxt= 'Accepté et publié';
             }
 echo'		<div class="commandarticle">
-			<a class="commandlink" href="#">
+			    <a class="commandlink" href="#">
 				<center>
 			<div class="row">
     
@@ -63,7 +73,7 @@ echo'		<div class="commandarticle">
 				<div class="col-md-3">
 					<div class="row">
 						<center>
-						'.$Commentaire['idT_Commentaire'].'
+						'.$idCommentaire.'
 						</center>
 					</div>
 				</div>
@@ -75,7 +85,15 @@ echo'		<div class="commandarticle">
 						</center>
 					</div>
 				</div>
-    
+
+            <!-- Article -->
+				<div class="col-md-2">
+					<div class="row">
+						<center>
+						'.$article[$idCommentaire].'
+						</center>
+					</div>
+				</div>
     
 			<!-- Etat -->
     

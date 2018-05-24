@@ -117,4 +117,5 @@
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}
+		
 	}

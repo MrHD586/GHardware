@@ -9,6 +9,10 @@
 include 'models/CommentaireManager.php';
 session_start();
 $commentaireManager = new CommentaireManager();
+
+if(isset($_POST['Delete'])){
+$deletecommentaire = $commentaireManager->deleteValueCommentaire($_GET['id']);
+}else{
 $userLogin = $_SESSION['user_name'];
 $CTexte=$_POST['writecomment'];
 $Fk_Article=$_GET['id'];
@@ -24,4 +28,4 @@ if(empty($CTexte)){
     $addCommentaire = $commentaireManager->setNewCommentaire($CEtat, $CTexte, $Fk_User, $Fk_Article);
     header("location:index.php?controller=Article&action=articlecommentaire&id=$Fk_Article");
 }
-
+}

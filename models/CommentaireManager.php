@@ -32,4 +32,8 @@ class CommentaireManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat;
     }
+    public function deleteValueCommentaire($idcommentaire) {
+        $sql = "DELETE FROM t_commentaire WHERE idT_Commentaire='$idcommentaire'";
+        $this->dbManager->Query($sql);
+    }
 }

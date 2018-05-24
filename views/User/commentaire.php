@@ -52,6 +52,17 @@ echo'
 						</div>
             
 				</center>
+            <!-- Action -->
+    
+						<div class="col-md-2">
+							<div class="row">
+								<center>
+						<b>Action</b>
+								</center>
+							</div>
+						</div>
+            
+				</center>
     
 ';      foreach($Commentaire as $Commentaire){
         $idCommentaire=$Commentaire['idT_Commentaire'];
@@ -63,7 +74,9 @@ echo'
             }else{
                 $EtatTxt= 'Accepté et publié';
             }
-echo'		<div class="commandarticle">
+            
+echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>	
+        <div class="commandarticle">
 			    <a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
 				<center>
 			<div class="row">
@@ -105,9 +118,20 @@ echo'		<div class="commandarticle">
 								</center>
 							</div>
 						</div>
-				</center>
+				
+            <!-- Action -->
+    
+						<div class="col-md-2">
+							<div class="row">
+								<center>
+						<input type="submit" name="Delete" value="Supprimer le commentaire">
+								</center>
+							</div>
+						</div>
+                </center>
 			</a>
-		</div>';
+		</div>
+</form>';
 }echo'
     
 	</div>';

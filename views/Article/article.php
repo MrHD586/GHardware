@@ -79,7 +79,7 @@
     									
     									<div class="commentform">
     										<div class="col-xs-10 col-xs-offset-1">
-    											<form method="POST" action="index.php?controller=Commentaire&action=AddCommentaire&id='.$_GET['id'].'">
+    											<form method="POST" action="index.php?controller=Commentaire&action=AddDeleteCommentaire&id='.$_GET['id'].'">
                                                         ';if($error==1){
                                                         echo '<p style="color:red;">Veuillez remplir le champs texte pour poster un commentaire</p>';
 										                  }echo'

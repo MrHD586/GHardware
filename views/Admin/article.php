@@ -27,7 +27,7 @@
     //------ TABLEAU ------//
     echo '
         <div class="col-lg-12">
-            <table id="articleTable">
+            <table id="tabadmin">
     		  <tr>
     			<th>ID</th>
     			<th>Nom</th>
@@ -38,11 +38,13 @@
                 <th>Marque</th>
                 <th>Image</th>
                 <th>Actif</th>
+                <th>Action</th>
     		  </tr>
     ';
     
+  
     //affichage de toutes les données articles dans le form
-    foreach ($arrayActive['data'] as $value) {
+    foreach ($TableList as $value) {
         echo '
               <tr>
         		<td>'.$value["idArticle"].'</td>
@@ -53,15 +55,26 @@
         		<td>'.$value["Fk_Categories"].'</td>
                 <td>'.$value["Fk_Marque"].'</td>
         		<td>'.$value["Fk_PicArticles"].'</td>
-                <td>Action</td>
          ';
                 if($value["isActive"] == 1){
                     echo '<td>Oui</td>';
                 }else{
                     echo '<td>Non</td>';
                 }
-                    
+                
+                //Bouton d'édition
+                $editButton = '<a href="index.php?controller=Admin&action=article&id='.$value["idArticle"].'">
+                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                
+                //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
+                if(!$inActiveParam){
+                    $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$value["idArticle"].'" onclick="return confirm("Voulez-vous vraiment archiver cet élément ?")">
+                                      <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
+                }
+                
+                
         echo '
+                <td>'.$editButton.$archiveButton.'</td>
         	  </tr>
         ';
     }

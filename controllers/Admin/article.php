@@ -15,6 +15,8 @@
     //Lien Home
     $redirectToHome = "location:index.php?controller=Site&action=home";
     
+    $inActiveParam = $_GET['inActive'];
+    
     //Si l'utilisateur n'est pas un admin il se fait rediriger sur la page home
     if($sessionAdminUser != TRUE){
         header($redirectToHome);
@@ -23,43 +25,41 @@
         //tableau contenant les erreurs
         $errors = array();
         
+        //Liste pour le tableau elle contient soit les actfis soit les inactifs
+        $TableList;
+        
+        
         //instantiation de la classe CategoryManager
         $articleManager = new ArticleManager();
         
-        //articles de la base pour le Select
-        $articleTable = $articleManager->getArticlesAll();
+        
+        //Liste des articles actifs pour le tableau
+        $ActiveArticleTable = $articleManager->ListArticleActive();
+        
+        //Liste des articles inactifs pour le tableau
+        $InactiveArticleTable = $articleManager->ListArticleInactive();
+                
         
         //catégories pour le Select
-        $categoryNameSelect = $articleManager->getCategorieAll();
+        $categoryNameSelect = $articleManager->getCategoriesName();
         
         //marques pour le Select
         $brandNameSelect = $articleManager->getBrandNameAll();
         
         //image pour le Select
         $picArticleSelect = $articleManager->getPicArticleAll();
-        
-        
-        
-        //tableau contenant les articles actifs
-        $arrayActive = array();
-        
-        //tableau contenant les articles inactifs
-        $arrayNotActive = array();
+          
       
+     
+        //Défini la liste à afficher selon le paramêtre dans l'url
+        if($inActiveParam == TRUE){
+            $TableList = $InactiveArticleTable;
+        }else{
+            $TableList = $ActiveArticleTable;
+        }
         
-        //-- Filtrage des actifs --//
-        $filteredArray = array_filter($articleTable, 'filterActives');
-        //ajout des articles actif dans l'array d'affichage
-        $arrayActive[] = $filteredArray;
         
-        //-- Filtrage des inactifs --//
-        $filteredArray = array_filter($articleTable, 'filterNotActives');
-        //ajout des articles inactifs dans l'array d'affichage
-        $arrayNotActive[] = $filteredArray;
-        
-            
        
-        
         //--- Envois Formulaire ---//
         
         //si le formulaire est envoyé

@@ -28,26 +28,28 @@
 			return $resultat->fetchAll();
 		}
 		
-		//Récupère tous les articles
-		public function getArticlesAll(){
-		    $sql = "SELECT * FROM t_articles";
+		//Récupère toutes les catègories
+		public function ListArticleActive() {
+		    $sql = "SELECT * FROM t_articles WHERE isActive = 1 ORDER BY idArticle";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
+		
+		//Récupère toutes les catègories
+		public function ListArticleInactive() {
+		    $sql = "SELECT * FROM t_articles WHERE isActive = 0 ORDER BY idArticle";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
 		
 		//Récupère toutes les catègories
 		public function getCategoriesName() {
-		    $sql = "SELECT CCategorie FROM t_categories ORDER BY CCategorie";
+		    $sql = "SELECT CCategorie FROM t_categories WHERE isActive = 1 ORDER BY CCategorie";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
-		//Récupère toutes les catègories
-		public function getCategorieAll() {
-		    $sql = "SELECT * FROM t_categories ORDER BY CCategorie";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
 		
 		//Récupère toutes les marques
 		public function getBrandNameAll() {
@@ -55,6 +57,7 @@
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
+		
 		
 		//Récupère toutes les images
 		public function getPicArticleAll() {

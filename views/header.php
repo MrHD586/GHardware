@@ -33,7 +33,7 @@
         			<div class="col-sm-3"><a href="index.php"><img class="img-responsive" src="images/GHardwareLogoB.png"></a></div>
         			<div class="col-sm-6">
         	   <!-- Navigation (Logo + Search + Panier) -->
-        					<form method="post" action="#"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
+        					<form method="post" action="index.php?controller=Search&action=search"><br><input class="searchbar" type="search" name="search" placeholder="Recherche"><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button></form>
         				</div>
 						<div class="headerbuttons">	
         				  <div class="col-sm-3">';

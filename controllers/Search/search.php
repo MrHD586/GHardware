@@ -14,7 +14,7 @@ $article =$_POST['search'];
 
 $searchManager = new SearchManager();
 
-$articles = $searchManager->Search($article);
+$Categoriearticles = $searchManager->Search($article);
 
 $aside = $searchManager->getCategoriesName();
 

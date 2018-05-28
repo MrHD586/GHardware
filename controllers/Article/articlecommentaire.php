@@ -8,8 +8,6 @@
     
     include 'models/ArticleManager.php';
     
-    session_start();
-    
     $idarticle =$_GET['id'];
     
     $articlesManager = new ArticleManager();
@@ -19,16 +17,18 @@
     $aside = $articlesManager->getCategoriesName();
     
     $Commentaire = $articlesManager->getarticleCommentaire($idarticle);
+   
     $error=$_GET['error'];
+    
     foreach($Commentaire as $value){
-        $id=$value['idT_Commentaire'];
-        $Utilisateurid=$value['Fk_User'];
+        $id = $value['idT_Commentaire'];
+        $Utilisateurid = $value['Fk_User'];
         $UtilisateurName = $articlesManager->getUserName($Utilisateurid);
         
-        foreach($UtilisateurName as $values)
-        {
-            $NomUtilisateur[$id]= $values['ULogin'];
+        foreach($UtilisateurName as $values){
+            $NomUtilisateur[$id] = $values['ULogin'];
         } 
     }
+    
     include 'views/aside.php';
     include 'views/Article/article.php';

@@ -8,9 +8,9 @@
    
     include 'models/HomeManager.php';
     
-    session_start();
     
     $homeManager = new HomeManager();
-    $aside = $homeManager->getCategories();
+    $aside = $homeManager->getCategoriesName();
+    
     include 'views/aside.php';
     include 'views/Site/home.php';

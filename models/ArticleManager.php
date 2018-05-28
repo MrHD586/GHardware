@@ -28,52 +28,26 @@
 			return $resultat->fetchAll();
 		}
 		
-		//Récupère toutes les catègories
-		public function ListArticleActive() {
-		    $sql = "SELECT * FROM t_articles WHERE isActive = 1 ORDER BY idArticle";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
-		//Récupère toutes les catègories
-		public function ListArticleInactive() {
-		    $sql = "SELECT * FROM t_articles WHERE isActive = 0 ORDER BY idArticle";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
-		
-		//Récupère toutes les catègories
-		public function getCategoriesName() {
-		    $sql = "SELECT CCategorie FROM t_categories WHERE isActive = 1 ORDER BY CCategorie";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
-		
-		//Récupère toutes les marques
-		public function getBrandNameAll() {
-		    $sql = "SELECT * FROM t_marque ORDER BY MMarque";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
-		
-		//Récupère toutes les images
-		public function getPicArticleAll() {
-		    $sql = "SELECT * FROM t_picarticles ORDER BY PPicArticles";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
-		
 		//Crée un nouvel article
 		public function setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive) {
-		    $sql = "INSERT INTO t_articles (AName, AStock, APrix, ADescription,isActive, Fk_Categories, Fk_Marque, Fk_PicArticles)
+		        $sql = "INSERT INTO t_articles (AName, AStock, APrix, ADescription,isActive, Fk_Categories, Fk_Marque, Fk_PicArticles)
                             VALUES ('$articleName', '$articleStock', '$articlePrice', '$articleDescription',
 		                             b'$articleIsActive', '$articleCategory',' $articleBrand', '$articlePicArticle')";
-		    $this->dbManager->Query($sql);
+		        $this->dbManager->Query($sql);
+		}
+		
+		//Modifie un article existant
+		public function modifyArticle($idarticle, $articleName, $articleStock, $articlePrice, $articleDescription,
+		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive){
+		   /* $sql = "UPDATE t_articles SET AName = '$articleName', AStock ='$articleStock', APrix ='$articlePrice', ADescription = '$articleDescription',
+                                          isActive = '$articleIsActive', Fk_Categories ='$articleCategory', Fk_Marque ='$articleBrand', 
+                                          Fk_PicArticles ='$articlePicArticle' WHERE idArticle = '$idarticle'";*/
+		                                  
+          $sql = "UPDATE t_articles SET AName = 'test', AStock ='12', APrix ='123', ADescription = 'test',
+          isActive = b'1', Fk_Categories ='1', Fk_Marque ='1',
+          Fk_PicArticles ='1' WHERE idArticle = '12'";
+		    $resultat = $this->dbManager->Query($sql);
 		}
 		
 		//Récupère arts par nom
@@ -93,11 +67,62 @@
 		    return $resultat;
 		}
 		
+		//Récupère toutes les catègories
+		public function ListArticleActive() {
+		    $sql = "SELECT * FROM t_articles WHERE isActive = 1 ORDER BY idArticle";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		//Récupère toutes les catègories
+		public function ListArticleInactive() {
+		    $sql = "SELECT * FROM t_articles WHERE isActive = 0 ORDER BY idArticle";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		//Rend inactif les arcticles
+		public function setArticleInactive($idarticle) {
+		    $sql = "UPDATE t_articles SET isActive = b'0' WHERE idArticle = '$idarticle'";
+		    $resultat = $this->dbManager->Query($sql);
+		}		
+		
+		//Récupère les noms des catègories
+		public function getCategoriesName() {
+		    $sql = "SELECT CCategorie FROM t_categories WHERE isActive = 1 ORDER BY CCategorie";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		//Récupère tout des catégories
+		public function getCategoriesAll() {
+		    $sql = "SELECT * FROM t_categories WHERE isActive = 1 ORDER BY CCategorie";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		//Récupère toutes les marques
+		public function getBrandAll() {
+		    $sql = "SELECT * FROM t_marque WHERE isActive = 1 ORDER BY MMarque";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		
+		//Récupère toutes les images
+		public function getPicArticleAll() {
+		    $sql = "SELECT * FROM t_picarticles WHERE isActive = 1 ORDER BY PPicArticles";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		
 		public function getarticleCommentaire($idarticle) {
 		    $sql = "SELECT * FROM t_commentaire WHERE Fk_Article='$idarticle' AND CEtat=2";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
+		
 		public function getuserCommentaire($iduser) {
 		    $sql = "SELECT * FROM t_commentaire WHERE Fk_User='$iduser'";
 		    $resultat = $this->dbManager->Query($sql);

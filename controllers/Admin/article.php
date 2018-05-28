@@ -9,19 +9,38 @@
     //include de la classe ArticleManager
     include("models/ArticleManager.php");
     
+    
     //Variable contenant le paramêtre de session 'userIsAdmin'
     $sessionAdminUser = $_SESSION['userIsAdmin'];
     
     //Lien Home
     $redirectToHome = "location:index.php?controller=Site&action=home";
     
-    $inActiveParam = $_GET['inActive'];
+    //Lien AdminArticle "refresh"
+    $refresh ="location:index.php?controller=Admin&action=article";
+    
+    
+    
+    // ---- PARAMETRES URL ---- //
+    
+    //paramêtre utile pour l'affichage des inactifs
+    $inactiveParam = $_GET['inactive'];
+    
+    //paramêtre utile pour la modification d'un article
+    $modifParam = $_GET['modif'];
+    
+    //paramêtre utile pour la modification d'un article
+    $archiveParam = $_GET['archive'];
+    
+    
+    
     
     //Si l'utilisateur n'est pas un admin il se fait rediriger sur la page home
     if($sessionAdminUser != TRUE){
         header($redirectToHome);
                 
     }else{
+        
         //tableau contenant les erreurs
         $errors = array();
         
@@ -41,30 +60,55 @@
                 
         
         //catégories pour le Select
-        $categoryNameSelect = $articleManager->getCategoriesName();
+        $categoryNameSelect = $articleManager->getCategoriesAll();
         
         //marques pour le Select
-        $brandNameSelect = $articleManager->getBrandNameAll();
+        $brandNameSelect = $articleManager->getBrandAll();
         
         //image pour le Select
         $picArticleSelect = $articleManager->getPicArticleAll();
           
       
      
-        //Défini la liste à afficher selon le paramêtre dans l'url
-        if($inActiveParam == TRUE){
+        //Défini la liste à afficher dans le tableau selon le paramêtre dans l'url
+        // actif ou inactif
+        if($inactiveParam == TRUE){
             $TableList = $InactiveArticleTable;
         }else{
             $TableList = $ActiveArticleTable;
         }
+                
+        
+        
+        
+        //ÉDITION
+        if($modifParam != NULL && !empty($modifParam)){
+           $articleToModify = $articleManager->getArticles($modifParam);
+        }
+        
+        
+        //ARCHIVAGE
+        if($archiveParam != NULL && !empty($archiveParam) && $inactiveParam == NULL){
+            $articleManager->setArticleInactive($archiveParam);
+            header($refresh);
+        }
         
         
        
-        //--- Envois Formulaire ---//
+        
+      //--- Envois Formulaire ---//
         
         //si le formulaire est envoyé
         if(isset($_POST['submit'])){
             
+            $articleId = $_POST['hiddenId'];
+            
+            //edition -- si l'id caché dans le form > 0 récupération des données selon l'id
+            if($articleId > 0){
+                $articleToModify = $articleManager->getArticles($modifParam);
+            }
+            
+           
             $articleName = $_POST['Name'];
             $articleStock = $_POST['Stock'];
             $articlePrice = $_POST['Price'];
@@ -81,16 +125,19 @@
                 
                 $errors[] = "Veuillez remplir tous les champs";
                 
-            }else{ 
-                //recherche d'un article name correspondant au article name entré
-                $checkByArticleName = $articleManager->articleExists($articleName);
-                
-                //si le nom est égal au nom retourné par la requête
-                if($checkByArticleName == TRUE){
-                    $errors[] = "Le nom d'article est déjà utilisé";
+            }else{
+                                
+                if(empty($articleId) || $articleId == NULL){
+                    //recherche d'un article name correspondant au article name entré
+                    $checkByArticleName = $articleManager->articleExists($articleName);
+                    
+                    //si le nom est égal au nom retourné par la requête
+                    if($checkByArticleName == TRUE){
+                        $errors[] = "Le nom d'article est déjà utilisé";
+                    }
                 }
                 
-                //si le stock ne contient pas que des chiffres 
+                //si le stock ne contient pas que des chiffres
                 if(!preg_match('/^[0-9]+$/', $articleStock)){
                     $errors[] = "Le stock doit contenir uniquement des chiffres";
                 }
@@ -107,6 +154,7 @@
             //s'il y a une/des d'erreur/s
             if(!empty($errorsArray)){
                 //valeurs pour repopuler le formulaire
+                $formArticleIdValue = $articleId;
                 $formArticleNameValue = $articleName;
                 $formArticleStockValue = $articleStock;
                 $formArticlePriceValue = $articlePrice;
@@ -116,31 +164,30 @@
                 $formArticlePicArticleValue = $articlePicArticle;
                 
                 //message de confirmation de la création -> vide
-                $_SESSION["ar_CreationSucces"] = null;
+                $_SESSION["ar_CreationSucces"] = NULL;
                 
             }else{
-                //requête pour la création de l'article
-                $articleCreationDb = $articleManager->setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription, 
-                                                                    $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive);
-                $_SESSION["ar_CreationSucces"] = "<p style='color:green;'>Article ajouté !</p>";
+                //si l'on est pas en modif, on peut créer un nouvel article
+                if(!empty($articleId) || $articleId != NULL){
+                    //requête pour la création de l'article
+                    $articleManager->modifyArticle($idarticle, $articleName, $articleStock, $articlePrice, $articleDescription,
+                                                                        $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive);
+                    
+                    $_SESSION["ar_CreationSucces"] = "<p style='color:green;'>Article modifié !</p>";
+                    header($refresh);
+                }else{
+                    //requête pour la création de l'article
+                    $articleCreationDb = $articleManager->setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
+                                                                        $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive);
+                    $_SESSION["ar_CreationSucces"] = "<p style='color:green;'>Article ajouté !</p>";
+                    header($refresh);
+                }
             }
         }
         
+               
         include 'views/Admin/article.php';
     }
     
-    
    
     
-    
-    //------ FONCTIONS ------//
-    
-    //Fonction pour filtrer les articles actifs
-    function filterActives($value){
-        return ($value == 1);
-    }
-    
-    //Fonction pour filtrer les articles inactifs
-    function filterNotActives($value){
-        return ($value == 0);
-    }

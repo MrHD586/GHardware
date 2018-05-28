@@ -21,12 +21,20 @@
     echo '
         <div class="row">
 			<div class="col-xs-offset-1 col-lg-8">
-                <h3>'.$pageTitle.'</h3><br/>';
+                <h2>'.$pageTitle.'</h2><br/>';
        
     
     //------ TABLEAU ------//
     echo '
         <div class="col-lg-12">
+        ';
+        
+            if($_GET['inactive']){
+                echo '<a style="margin-left:590px;"href="index.php?controller=Admin&action=article">Affichage des actifs</a>';
+            }else{
+                echo '<a style="margin-left:580px;"href="index.php?controller=Admin&action=article&inactive=TRUE">Affichage des inactifs</a>';
+            }
+    echo '
             <table id="tabadmin">
     		  <tr>
     			<th>ID</th>
@@ -63,11 +71,11 @@
                 }
                 
                 //Bouton d'édition
-                $editButton = '<a href="index.php?controller=Admin&action=article&id='.$value["idArticle"].'">
+                $editButton = '<a href="index.php?controller=Admin&action=article&modif='.$value["idArticle"].'">
                                <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                 
                 //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
-                if(!$inActiveParam){
+                if(!$inactiveParam){
                     $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$value["idArticle"].'" onclick="return confirm("Voulez-vous vraiment archiver cet élément ?")">
                                       <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
                 }
@@ -84,15 +92,33 @@
     
 	
     
-    //affichage des messages d'erreures contenus dans le tableau errorsArray
-    foreach ($errorsArray as $key => $val) {
-        echo '<p style="color:red;">'.$val.'</p>';
+	//------ FORMULAIRE ------//
+        
+   
+    //titre du formulaire
+    if(!empty($modifParam)){
+        $formTitle = "Modification d'un article";
+        
+    }else{
+        $formTitle ="Saisie d'un nouvel article";
     }
     
-    //------ FORMULAIRE ------//
+    
     echo'
                 <form method="post" action="">
-                      '.$ar_CreationSucces.'
+                      <h3>'.$formTitle.'</h3>
+
+        ';
+                //affichage des messages d'erreures contenus dans le tableau errorsArray
+                foreach ($errorsArray as $key => $val) {
+                    echo '<p style="color:red;">'.$val.'</p>';
+                }
+    echo'            
+                      
+                      './/message de validation
+                        $ar_CreationSucces.'
+                        
+                      <input type="hidden" value="'.$formArticleIdValue.'" id="hiddenId" name="hiddenId"/>
                         
                       <p>
                 		<div class="col-lg-4"><label for="Name">Nom</label></div>
@@ -118,10 +144,10 @@
             			<div class="col-lg-4"><label for="Category">Catégorie</label></div>
             			<div class="col-lg-12">
                             <select name="Category">
-                                <option style="display:none;" selected label="Veulliez choisir une catégorie" value="0">
+                               <option style="display:none;" selected label="Veulliez choisir une catégorie " value="0">
                                 '; foreach($categoryNameSelect as $value){
                                         if($formArticleCategoryValue == $value['idCategories']){
-                                           echo '<option selected="selected" value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                                            echo '<option selected="selected" value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
                                         }else{
                                             echo '<option value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
                                         }
@@ -173,7 +199,10 @@
                 			    
                 	  <p>
                         <div class="col-lg-12"></div>
-                		<div class="col-xs-offset-2 col-lg-2"><input type="submit" name="submit" value="Envoyer"/></div>
+                		<div class="col-xs-offset-2 col-lg-2">
+                            <input type="submit" name="submit" value="Envoyer"/> 
+                            <input type="submit" name="reset" value="Annuler"/>
+                        </div>
                 	    <div class="col-lg-12"></div>
                       </p>
             	</form>

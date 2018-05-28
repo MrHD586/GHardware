@@ -17,7 +17,7 @@ echo'
 				
 		<!-- Discard the shopping cart button -->
 					<div class="col-sm-4" id="carticon">
-						<form action="index.php?controller=Cart&action=DeleteArticle" method="POST">
+						<form action="index.php?controller=Cart&action=DeleteArticlecookie" method="POST">
 							<input type="submit" name="vider" value="Vider le panier">
 						</form>
 					</div>

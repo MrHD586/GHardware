@@ -91,6 +91,7 @@
 		</div> ';
     
 	
+	
     
 	//------ FORMULAIRE ------//
         
@@ -103,6 +104,20 @@
         $formTitle ="Saisie d'un nouvel article";
     }
     
+    
+    //valeur des champs 
+    if($modifParam != NULL && !empty($modifParam)){
+        foreach($formFill as $key => $val){
+            $formArticleIdValue = $key;
+            $formArticleNameValue = $key;
+            $formArticleStockValue = $key;
+            $formArticleNameValue = $key;
+            $formArticlePriceValue = $key;
+            $formArticleNameValue = $val;
+            $formArticleNameValue = $val;
+            
+        }
+    }
     
     echo'
                 <form method="post" action="">
@@ -118,7 +133,7 @@
                       './/message de validation
                         $ar_CreationSucces.'
                         
-                      <input type="hidden" value="'.$formArticleIdValue.'" id="hiddenId" name="hiddenId"/>
+                      <input type="hidden" value="'.$formArticleIdValue.'" name="hiddenId"/>
                         
                       <p>
                 		<div class="col-lg-4"><label for="Name">Nom</label></div>

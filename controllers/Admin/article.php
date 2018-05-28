@@ -35,6 +35,7 @@
     
     
     
+    
     //Si l'utilisateur n'est pas un admin il se fait rediriger sur la page home
     if($sessionAdminUser != TRUE){
         header($redirectToHome);
@@ -77,22 +78,7 @@
         }else{
             $TableList = $ActiveArticleTable;
         }
-                
-        
-        
-        
-        //ÉDITION
-        if($modifParam != NULL && !empty($modifParam)){
-           $articleToModify = $articleManager->getArticles($modifParam);
-        }
-        
-        
-        //ARCHIVAGE
-        if($archiveParam != NULL && !empty($archiveParam) && $inactiveParam == NULL){
-            $articleManager->setArticleInactive($archiveParam);
-            header($refresh);
-        }
-        
+              
         
        
         
@@ -102,13 +88,6 @@
         if(isset($_POST['submit'])){
             
             $articleId = $_POST['hiddenId'];
-            
-            //edition -- si l'id caché dans le form > 0 récupération des données selon l'id
-            if($articleId > 0){
-                $articleToModify = $articleManager->getArticles($modifParam);
-            }
-            
-           
             $articleName = $_POST['Name'];
             $articleStock = $_POST['Stock'];
             $articlePrice = $_POST['Price'];
@@ -119,7 +98,7 @@
             $articleIsActive = $_POST['isActive'];
             
             
-            //si un champ est vides
+            //si un champ est vide
             if(empty($articleName) || empty($articleStock) || empty($articlePrice) || empty($articleDescription) || 
                $articleCategory == "0" || $articleBrand == "0" || $articlePicArticle == "0"){
                 
@@ -128,7 +107,7 @@
             }else{
                                 
                 if(empty($articleId) || $articleId == NULL){
-                    //recherche d'un article name correspondant au article name entré
+                    //recherche d'un article name correspondant à l'article name entré
                     $checkByArticleName = $articleManager->articleExists($articleName);
                     
                     //si le nom est égal au nom retourné par la requête
@@ -167,11 +146,11 @@
                 $_SESSION["ar_CreationSucces"] = NULL;
                 
             }else{
-                //si l'on est pas en modif, on peut créer un nouvel article
+                //si l'on est en modif
                 if(!empty($articleId) || $articleId != NULL){
                     //requête pour la création de l'article
-                    $articleManager->modifyArticle($idarticle, $articleName, $articleStock, $articlePrice, $articleDescription,
-                                                                        $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive);
+                    $articleManager->modifyArticle($articleId, $articleName, $articleStock, $articlePrice, $articleDescription,
+                                                   $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive);
                     
                     $_SESSION["ar_CreationSucces"] = "<p style='color:green;'>Article modifié !</p>";
                     header($refresh);
@@ -184,6 +163,33 @@
                 }
             }
         }
+        
+        
+        
+        //ÉDITION
+        if($modifParam != NULL && !empty($modifParam) && !isset($_POST['submit'])){
+            $articleToModify = $articleManager->getArticles($modifParam);
+            
+            foreach($articleToModify as $val){
+                $formArticleIdValue = $val['idArticle'];
+                $formArticleNameValue = $val['AName'];
+                $formArticleStockValue = $val['AStock'];
+                $formArticlePriceValue = $val['APrix'];
+                $formArticleDescriptionValue = $val['ADescription'];
+                $formArticleCategoryValue = $val['Fk_Categories'];
+                $formArticleBrandValue = $val['Fk_Marque'];
+                $formArticlePicArticleValue = $val['Fk_PicArticles'];
+            }
+        }
+        
+        
+        //ARCHIVAGE
+        if($archiveParam != NULL && !empty($archiveParam) && $inactiveParam == NULL){
+            $articleManager->setArticleInactive($archiveParam);
+            header($refresh);
+        }
+        
+        
         
                
         include 'views/Admin/article.php';

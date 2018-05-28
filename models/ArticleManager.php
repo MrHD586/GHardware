@@ -17,10 +17,9 @@
 		
 		function __construct(){
 			//instantiation de la classe DbManager
-			 $this->dbManager = new DbManager();
+            $this->dbManager = new DbManager();
 		}
-		
-		
+		 
 		//Récupère les articles par id
 		public function getArticles($idarticle) {
 			$sql = "SELECT * FROM t_articles WHERE idArticle='$idarticle'"; 
@@ -31,23 +30,20 @@
 		//Crée un nouvel article
 		public function setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive) {
-		        $sql = "INSERT INTO t_articles (AName, AStock, APrix, ADescription,isActive, Fk_Categories, Fk_Marque, Fk_PicArticles)
-                            VALUES ('$articleName', '$articleStock', '$articlePrice', '$articleDescription',
-		                             b'$articleIsActive', '$articleCategory',' $articleBrand', '$articlePicArticle')";
-		        $this->dbManager->Query($sql);
+		    $sql = "INSERT INTO t_articles (AName, AStock, APrix, ADescription,isActive, Fk_Categories, Fk_Marque, Fk_PicArticles)
+                    VALUES ('$articleName', '$articleStock', '$articlePrice', '$articleDescription',
+		                     b'$articleIsActive', '$articleCategory',' $articleBrand', '$articlePicArticle')";
+		    $this->dbManager->Query($sql);
 		}
 		
 		//Modifie un article existant
-		public function modifyArticle($idarticle, $articleName, $articleStock, $articlePrice, $articleDescription,
+		public function modifyArticle($articleId, $articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive){
-		   /* $sql = "UPDATE t_articles SET AName = '$articleName', AStock ='$articleStock', APrix ='$articlePrice', ADescription = '$articleDescription',
-                                          isActive = '$articleIsActive', Fk_Categories ='$articleCategory', Fk_Marque ='$articleBrand', 
-                                          Fk_PicArticles ='$articlePicArticle' WHERE idArticle = '$idarticle'";*/
-		                                  
-          $sql = "UPDATE t_articles SET AName = 'test', AStock ='12', APrix ='123', ADescription = 'test',
-          isActive = b'1', Fk_Categories ='1', Fk_Marque ='1',
-          Fk_PicArticles ='1' WHERE idArticle = '12'";
-		    $resultat = $this->dbManager->Query($sql);
+	       $sql = "UPDATE t_articles SET AName = '$articleName', AStock ='$articleStock', APrix ='$articlePrice', 
+                       ADescription = '$articleDescription', isActive = b'$articleIsActive',Fk_Categories ='$articleCategory', 
+                       Fk_Marque ='$articleBrand', Fk_PicArticles ='$articlePicArticle' 
+                       WHERE idArticle = '$articleId'";
+		  $resultat = $this->dbManager->Query($sql);
 		}
 		
 		//Récupère arts par nom

@@ -46,7 +46,7 @@
         $errors = array();
         
         //Liste pour le tableau elle contient soit les actfis soit les inactifs
-        $TableList;
+        $tableList;
         
         
         //instantiation de la classe CategoryManager
@@ -74,9 +74,9 @@
         //Défini la liste à afficher dans le tableau selon le paramêtre dans l'url
         // actif ou inactif
         if($inactiveParam == TRUE){
-            $TableList = $InactiveArticleTable;
+            $tableList = $InactiveArticleTable;
         }else{
-            $TableList = $ActiveArticleTable;
+            $tableList = $ActiveArticleTable;
         }
               
         
@@ -194,42 +194,6 @@
                
         include 'views/Admin/article.php';
     }
-    
-    
-    
-    
-    
-    $limit = 2;
-    
-    $total_results = count($TableList);
-    $total_pages = ceil($total_results/$limit);
-    
-    if (!isset($_GET['page'])) {
-        $page = 1;
-    } else{
-        $page = $_GET['page'];
-    }
-    
-    
-    
-    $starting_limit = ($page-1)*$limit;
-    
-    echo $starting_limit;
-    echo $limit;
-    
-    for($i == $starting_limit; $i == $limit; $i++){
-        $test = $TableList as $value;
-            echo $value['AName'];
-    }
-        
-    
-    while($res = $r->fetch(PDO::FETCH_ASSOC)):
-    echo '
-        <h4>'.$res['id'].'</h4>
-        <p>'.$res['nama_kat'].'</p>
-        <hr>
-        ';
-    endwhile;
     
     
     

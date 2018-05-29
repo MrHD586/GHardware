@@ -8,7 +8,7 @@
     
     //include de la classe ArticleManager
     include("models/ArticleManager.php");
-    
+        
     
     //Variable contenant le paramêtre de session 'userIsAdmin'
     $sessionAdminUser = $_SESSION['userIsAdmin'];
@@ -194,6 +194,59 @@
                
         include 'views/Admin/article.php';
     }
+    
+    
+    
+    
+    
+    $limit = 2;
+    
+    $total_results = count($TableList);
+    $total_pages = ceil($total_results/$limit);
+    
+    if (!isset($_GET['page'])) {
+        $page = 1;
+    } else{
+        $page = $_GET['page'];
+    }
+    
+    
+    
+    $starting_limit = ($page-1)*$limit;
+    
+    echo $starting_limit;
+    echo $limit;
+    
+    for($i == $starting_limit; $i == $limit; $i++){
+        $test = $TableList as $value;
+            echo $value['AName'];
+    }
+        
+    
+    while($res = $r->fetch(PDO::FETCH_ASSOC)):
+    echo '
+        <h4>'.$res['id'].'</h4>
+        <p>'.$res['nama_kat'].'</p>
+        <hr>
+        ';
+    endwhile;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
    
     

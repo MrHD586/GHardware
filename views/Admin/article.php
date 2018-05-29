@@ -27,12 +27,37 @@
     //------ TABLEAU ------//
     echo '
         <div class="col-lg-12">
-        ';
+
         
+
+        <select name="Category">
+               <option style="display:none;" selected label="Veulliez choisir une catégorie " value="0">
+                '; foreach($categoryNameSelect as $value){
+                        if($formArticleCategoryValue == $value['idCategories']){
+                            echo '<option selected="selected" value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                        }else{
+                            echo '<option value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                        }
+                   }
+    echo '
+        </select>
+
+
+
+        <select>
+            <option></option>
+
+
+        </select>
+
+
+
+';
+       
             if($_GET['inactive']){
                 echo '<a style="margin-left:590px;"href="index.php?controller=Admin&action=article">Affichage des actifs</a>';
             }else{
-                echo '<a style="margin-left:580px;"href="index.php?controller=Admin&action=article&inactive=TRUE">Affichage des inactifs</a>';
+                echo '<a style="margin-left:540px;"href="index.php?controller=Admin&action=article&inactive=TRUE">Affichage des inactifs</a>';
             }
     echo '
             <table id="tabadmin">
@@ -76,7 +101,7 @@
                 
                 //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
                 if(!$inactiveParam){
-                    $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$value["idArticle"].'" onclick="return confirm("Voulez-vous vraiment archiver cet élément ?")">
+                    $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$value["idArticle"].'" onclick="submitform()">
                                       <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
                 }
                 
@@ -223,3 +248,21 @@
             	</form>
             </div>
         </div>';
+                            
+                            
+//https://www.phpflow.com/php/simple-pagination-with-php-and-mysql-using-jquery/
+                            
+    echo'
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(\'.pagination\').pagination({
+                    items: $total_records,
+       				itemsOnPage: $limit,
+            		cssStyle: \'light-theme\',
+            		currentPage : $page,
+                    hrefTextPrefix : \'index.php?page=\'
+                });
+            });
+        </script>
+    ';
+                    

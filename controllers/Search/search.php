@@ -19,4 +19,4 @@ $Categoriearticles = $searchManager->Search($article);
 $aside = $searchManager->getCategoriesName();
 
 include 'views/aside.php';
-include 'views/Article/categoryList.php';
+include 'views/Search/search.php';

@@ -27,6 +27,12 @@
 			return $resultat->fetchAll();
 		}
 		
+		public function searchArticle($search_keyword){
+		    $sql = "SELECT * FROM t_articles WHERE AName LIKE :keyword OR AStock LIKE :keyword OR APrix LIKE :keyword ORDER BY idArticle DESC";
+		    $resultat = $this->dbManager->Query($sql, $search_keyword);
+		    return $resultat->fetchAll();
+		}
+		
 		//Crée un nouvel article
 		public function setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive) {

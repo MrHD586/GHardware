@@ -32,9 +32,14 @@
 		}
 		
 		// execute une requêtes
-		public function Query($query) {
+		public function Query($query, $search_keyword = NULL) {
 			$stmt = $this->dbGh->prepare($query);
-			$stmt->execute();
-			return $stmt;
+			
+			if($search_keyword != NULL){
+			    $stmt->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+			}
+			
+			$stmt->execute($query);
+    	    return $stmt;
 		}
 	}

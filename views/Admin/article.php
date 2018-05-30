@@ -6,6 +6,8 @@
     #### 	  Page de managment des articles avec formulaire et tableau
     ################################################################################
     
+ 
+    
     //titre du formulaire
     $pageTitle = "Gestion des articles";
     
@@ -24,97 +26,157 @@
                 <h2>'.$pageTitle.'</h2><br/>';
        
     
+    
+    
     //------ TABLEAU ------//
+    
+    // Option du choix d'affichage d'article par page
+    $choice = array("5","10","15","20","50");
+    
+    // Nombre de pages par défaut
+    $Nb_Tot_Page = 1;						
+    
+    //si le post select page est set ou diffèrent de 1 
+    if(isset($_POST['Page']) && ($_POST['Page'] > 1)){
+        $Page_Courante = $_POST['Page'];
+    }else{
+        // Numéro de la page courante par défaut(catalogue)
+        $Page_Courante = 1;
+    }
+    
+    // Récupération du nombre d'articles par page sélectionnés
+    if(isset($_POST['Nb_Article']) && ($_POST['Nb_Article'] > 1)){
+        $Nb_Art_Page = $_POST['Nb_Article'];
+    }else{
+        $Nb_Art_Page = $choice[0];	// Choix par défaut du nombre d'articles par page
+    }
+    
+    // Nombre d'articles totaux
+    $Nb_Art_Total = count($tableList);
+    
+    // Nombre total de pages
+    $Nb_Tot_Page = ceil($Nb_Art_Total / $Nb_Art_Page);
+    
+    // Nombre d'Items par articles
+    $Nb_Items_Art = count($tableList[0]);
+    
+    // Détection du nième passage et correction du dépassement de page en fonction du nombre d'articles par page
+    if (isset($_POST['Page_Courante'])){
+        if ($Page_Courante > $Nb_Tot_Page) {
+            $Page_Courante = 1;		// Numéro de la page courante par défaut(catalogue)
+        }
+    }
+    
+    // Calcul des intervalles pour les articles (catalogue)
+    $Dernier_Art_Page = ($Page_Courante * $Nb_Art_Page);
+    $Premier_Art_Page = ($Dernier_Art_Page - $Nb_Art_Page);
+    
+    // Détection de la fin de liste (page non complète)
+    if ($Dernier_Art_Page > $Nb_Art_Total){
+        $Dernier_Art_Page = $Nb_Art_Total;
+    }
+    
+    
+    
+    
+    
     echo '
         <div class="col-lg-12">
-
-        
-
-        <select name="Category">
-               <option style="display:none;" selected label="Veulliez choisir une catégorie " value="0">
-                '; foreach($categoryNameSelect as $value){
-                        if($formArticleCategoryValue == $value['idCategories']){
-                            echo '<option selected="selected" value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
-                        }else{
-                            echo '<option value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+            <form method="post" action="" name="Liste">
+                
+                <!-- select du nombre d\'articles par pages -->
+                Articles par page : <select name="Nb_Article" onchange="document.Liste.submit();">';
+    
+                    foreach($choice as $Nb_Art){
+                        echo '<option';
+                        
+                        // Affichage avec focus correct du nombre d'articles dans la liste
+                        if(isset($_POST['Nb_Article']) &&  ($_POST['Nb_Article'] == $Nb_Art)){
+                            echo ' selected';
+                        }elseif ($Nb_Art == $Nb_Art_Page) {
+                            echo ' selected';
                         }
-                   }
-    echo '
-        </select>
-
-
-
-        <select>
-            <option></option>
-
-
-        </select>
-
-
-
-';
-       
-            if($_GET['inactive']){
-                echo '<a style="margin-left:590px;"href="index.php?controller=Admin&action=article">Affichage des actifs</a>';
-            }else{
-                echo '<a style="margin-left:540px;"href="index.php?controller=Admin&action=article&inactive=TRUE">Affichage des inactifs</a>';
-            }
-    echo '
-            <table id="tabadmin">
-    		  <tr>
-    			<th>ID</th>
-    			<th>Nom</th>
-    			<th>Stock</th>
-    			<th>Prix</th>
-    			<th>Description</th>
-    			<th>Catégorie</th>
-                <th>Marque</th>
-                <th>Image</th>
-                <th>Actif</th>
-                <th>Action</th>
-    		  </tr>
-    ';
+                        
+                        echo'>'.$Nb_Art.'</option>';
+                    }
+                    
+                    echo '</select>
+                         
+                         <!-- select de la page à afficher -->
+                         Page : <select name="Page" onchange="document.Liste.submit();">
+                    ';
+                    
+                    for($Page=1; $Page <= $Nb_Tot_Page; $Page++){
+                        echo '<option';
+                        
+                        // Affichage avec focus correct du nombre de pages dans la liste
+                        if($Page == $Page_Courante){
+                            echo ' selected';
+                        }
+                        
+                        echo'>'.$Page.'</option>';
+                    }
+                    
+                        echo '</select>';
+                   
+                        //lien pour les affichages des actifs et inactifs
+                        if($_GET['inactive']){
+                            echo '<a style="margin-left:590px;"href="index.php?controller=Admin&action=article">Affichage des actifs</a>';
+                        }else{
+                            echo '<a style="margin-left:540px;"href="index.php?controller=Admin&action=article&inactive=TRUE">Affichage des inactifs</a>';
+                        }
+           echo '</form>';
+                        
+                    echo '
+                        <table id="tabadmin">
+                		  <tr>
+                			<th>ID</th>
+                			<th>Nom</th>
+                			<th>Stock</th>
+                			<th>Prix</th>
+                			<th>Description</th>
+                			<th>Catégorie</th>
+                            <th>Marque</th>
+                            <th>Image</th>
+                            <th>Actif</th>
+                            <th>Action</th>
+                		  </tr>
+                    ';
+                    
+                    
+                    
+                    
+                    // Affichage des articles
+                    echo'<tr>';
+                
+                
+                    for($Article = $Premier_Art_Page; $Article < $Dernier_Art_Page; $Article++){
+                        for( $Item=0; $Item < $Nb_Items_Art; $Item++){
+                            echo'<td>'.$tableList[$Article][$Item].'</td>';
+                        }
+                    
+                        //Bouton d'édition
+                        $editButton = '<a href="index.php?controller=Admin&action=article&modif='.$value["idArticle"].'">
+                            <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                        
+                        //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
+                        if(!$inactiveParam){
+                            $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$value["idArticle"].'" onclick="submitform()">
+                                <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
+                        }
+                        
+                        echo'<td>'.$editButton.$archiveButton.'</td>';
+                    
+                        echo'</tr>';
+                    }
+            
+                
+                   echo'</table>';
+                echo '<input type="hidden" name="Page_Courante" value="'.$Page_Courante.'">'; // Mémorisation de la page courante
+   echo'</div> ';
     
-  
-    //affichage de toutes les données articles dans le form
-    foreach ($tableList as $value) {
-        echo '
-              <tr>
-        		<td>'.$value["idArticle"].'</td>
-        		<td>'.$value["AName"].'</td>
-        		<td>'.$value["AStock"].'</td>
-        		<td>'.$value["APrix"].'</td>
-        		<td>'.$value["ADescription"].'</td>
-        		<td>'.$value["Fk_Categories"].'</td>
-                <td>'.$value["Fk_Marque"].'</td>
-        		<td>'.$value["Fk_PicArticles"].'</td>
-         ';
-                if($value["isActive"] == 1){
-                    echo '<td>Oui</td>';
-                }else{
-                    echo '<td>Non</td>';
-                }
-                
-                //Bouton d'édition
-                $editButton = '<a href="index.php?controller=Admin&action=article&modif='.$value["idArticle"].'">
-                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
-                
-                //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
-                if(!$inactiveParam){
-                    $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$value["idArticle"].'" onclick="submitform()">
-                                      <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
-                }
-                
-                
-        echo '
-                <td>'.$editButton.$archiveButton.'</td>
-        	  </tr>
-        ';
-    }
-        			  
-	echo '  </table>     
-		</div> ';
-    
+	
+	
 	
 	
     
@@ -248,319 +310,55 @@
             	</form>
             </div>
         </div>';
-                            
-                            
-                            
-//https://www.phpflow.com/php/simple-pagination-with-php-and-mysql-using-jquery/
-
-                            
-    echo'                        
-                            
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Stock</th>
-                </tr>
-            </thead>
-            <tbody>
-    ';
     
-        
-    
-        $limit = 4;
-        $paginationList = $tableList;
-        $row = count($paginationList); 
-       
-       
-        
-        $total_records = $row[0];  
-        $total_pages = ceil($total_records / $limit);  
-        
-        $pagLink = "<nav><ul class='pagination'>";  
-        
-        for ($i=1; $i<=$total_pages; $i++) {  
-            $pagLink .= "<li><a href='index.php?controller=Admin&action=article&page=".$i."'>".$i."</a></li>";  
-        }
-        
-        echo $pagLink . "</ul></nav>";
-        
-        foreach ($paginationList as $row) {
+ 
+         
+	
+                            
+        if(!empty($row_count)){
+            $per_page_html = "<div style='text-align:center;margin:20px 0px;'>";
+            $page_count = ceil($row_count/ROW_PER_PAGE);
             
-            echo'
-                    <tr>
-                    	<td>'.$row["AName"].'</td>
-                    	<td>'.$row["APrix"].'</td>
-                    	<td>'.$row["AStock"].'</td>
-                    </tr>';
-        }
-        echo'
-            </tbody>
-        </table>
-    ';
-                                
-        echo'
-            <script type="text/javascript">
-                $(document).ready(function(){
-                    $(\'.pagination\').pagination({
-                        items: $total_records,
-           				itemsOnPage: $limit,
-                		cssStyle: \'light-theme\',
-                		currentPage : $page,
-                        hrefTextPrefix : \'index.php?page=\'
-                    });
-                });
-            </script> ';
-   
-    
-    
-        
-        #################################################################
-        #
-        #	Programme:		index.php
-        #	Auteur:			Tony Favre-Bulle
-        #
-        #################################################################
-        #
-        # 	Date :			Novembre 2017
-        #	Version :		1.0 - Etape No 2 (Reprise)
-        #	Révisions :
-        #
-        #################################################################
-        #
-        #	Afficheur dynamique de données depuis un fichier CSV
-        #	(génération dynamique du code HTML)
-        #
-        #################################################################
-        
-        // Données pour les essais
-        $Titre_Liste = array();
-        $Liste = array();
-        
-        
-        // Initialisation des variables
-        $path_files='./Files/';					// Dossier des fichiers ressources
-        $data_file='voie_C.csv';				// Fichier de données
-        $database_titles=array();				// Titres des Items des la base
-        $database=array();						// Liste des utilisateurs pour authentification
-        $choice=array("5","10","20","50","100");// Option du choix d'affichage d'article par page
-        $Nb_Tot_Page = 1;						// Nombre total de page du catalogue
-        $window_title = "CATALOGUE";			// Titre de la fenêtre HTML
-        $sub_title = " Liste des produits";		// Titre de la page
-        $email = "administrateur@MonShop.ch";	// Afresse mai pour le contact
-        
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        // Chargement des données du fichier CSV en mémoire (dans un tableau multi-dimensionnel)
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        // Le dossier existe-t-il ?
-        if( is_dir($path_files) )
-        {
-            // Ouverture du dossier
-            if( $path = opendir($path_files) )
-            {
-                // Lecture des fichiers présents
-                while( ($file = readdir($path)) != FALSE )
-                {
-                    // Est-ce un fichier de données ?
-                    if( $file != '.' && $file != '..' )
-                    {
-                        // Est-ce le bon fichier de données ?
-                        if ( $file == $data_file )
-                        {
-                            // Ouverture du fichier en lecture
-                            $handle = fopen($path_files.$file, "r");
-                            
-                            // Récupération des titres des colonnes (Première ligne du fichier CSV)
-                            $database_titles=fgetcsv($handle, 1000, ";");
-                            
-                            // Récupération des données du fichier CSV (jusqu'à la fin du fichier)
-                            $index = 0;
-                            while ( ($data = fgetcsv($handle, 1000, ";")) !== FALSE )
-                            {
-                                // Mémorise le nombre d'Items par ligne de donnée
-                                $fields = count($data);
-                                
-                                foreach ($data as $key => $value)
-                                {
-                                    // Récupère les données dans un tableau à deux dimensions
-                                    $database[$index][$key]=$value;
-                                }
-                                
-                                // Incrémente compteur donnée suivante
-                                $index++;
-                            }
-                            
-                            // Fermeture du fichier
-                            fclose($handle);
-                        }
-                        else
-                        {
-                            // Message d'avertissement en cas d'echec
-                            echo 'Le fichier n\'existe pas ou n\'est pas disponible pour l\'instant...<br/>';
-                        }
+            if($page_count>1) {
+                for($i=1;$i<=$page_count;$i++){
+                    if($i==$page){
+                        $per_page_html = '<input type="submit" name="page" value="' . $i . '" class="btn-page current" />';
+                    }else{
+                        $per_page_html = '<input type="submit" name="page" value="' . $i . '" class="btn-page" />';
                     }
                 }
             }
-            
-            // Fermeture du dossier
-            closedir($path);
+            $per_page_html = "</div>";
         }
-        else
-        {
-            // Message d'avertissement en cas d'echec
-            echo 'Le dossier spécifié n\'existe pas...<br/>';
-        }
-        
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        // Traitement des informations transmises dans l'URL ($_POST) et calculs de formattage des pages
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        // Récupération de la page sélectionnée et Protection contre des injection malicieuses dans l'URL
-        if ( isset($_POST['Page']) && ($_POST['Page'] > 1) )
-        {
-            $Page_Courante = $_POST['Page'];
-        }
-        else
-        {
-            $Page_Courante = 1;			// Numéro de la page courante par défaut(catalogue)
-        }
-        
-        // Récupération du nombre d'articles par page sélectionnés et
-        //Protection contre des injection malicieuses dans l'URL
-        if ( isset($_POST['Nb_Article']) && ( $_POST['Nb_Article'] > 1 ) )
-        {
-            $Nb_Art_Page = $_POST['Nb_Article'];
-        }
-        else
-        {
-            $Nb_Art_Page = $choice[2];	// Choix par défaut du nombre d'articles par page
-        }
-        
-        // Nombre d'articles totaux (catalogue)
-        $Nb_Art_Total = count($database);
-        
-        // Nombre total de pages (catalogue)
-        $Nb_Tot_Page = ceil($Nb_Art_Total / $Nb_Art_Page);
-        
-        // Nombre d'Items par articles
-        $Nb_Items_Art = count($database[0]);
-        
-        // Détection du nième passage et correction du dépassement de page en fonction du nombre d'articles par page
-        if ( isset($_POST['Page_Courante']) )
-        {
-            if ( $Page_Courante > $Nb_Tot_Page )
-            {
-                $Page_Courante = 1;		// Numéro de la page courante par défaut(catalogue)
-            }
-        }
-        
-        // Calcul des intervalles pour les articles (catalogue)
-        $Dernier_Art_Page = ($Page_Courante * $Nb_Art_Page);
-        $Premier_Art_Page = ($Dernier_Art_Page - $Nb_Art_Page);
-        
-        // Détection de la fin de liste (page non complète)
-        if ( $Dernier_Art_Page > $Nb_Art_Total )
-        {
-            $Dernier_Art_Page = $Nb_Art_Total;
-        };
-        
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        // Génération de la partie HTML (dynamiquement)
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        echo '<!DOCTYPE html>
-	<html lang="fr">
-		<head>
-			<meta charset="iso-8859-1" />
-			<meta name="description" content="i-ct, module 133, web, css" />
-			<title>'.$window_title.'</title>
-		</head>
-		<body>
-			<h1>'.$sub_title.'</h1>
-		<hr>';
-        
-        // Envoi du script sur lui-même indépendament du nom du fichier( $_SERVER[PHP_SELF'] )
-        echo '<form method="post" action="'.$_SERVER['PHP_SELF'].'" name="Liste">
-		<table width="100%" align="center" border="0">
-		<tr>
-			<td>Articles par page : <select name="Nb_Article" onchange="document.Liste.submit();">';
-        foreach ($choice as $Nb_Art)
-        {
-            echo '<option';
-            
-            // Affichage avec focus correct du nombre d'articles dans la liste
-            if ( isset ($_POST['Nb_Article']) &&  ($_POST['Nb_Article'] == $Nb_Art) )
-            {
-                echo ' selected';
-            }elseif ($Nb_Art == $Nb_Art_Page )
-            {
-                echo ' selected';
-            }
-            echo'>'.$Nb_Art.'</option>';
-        }
-        echo '</select>';
-        
-        echo '</td>
-            
-			<td align="right">Page : <select name="Page" onchange="document.Liste.submit();">';
-        for ( $Page=1; $Page <= $Nb_Tot_Page; $Page++ )
-        {
-            echo '<option';
-            
-            // Affichage avec focus correct du nombre de pages dans la liste
-            if ( $Page==$Page_Courante )
-            {
-                echo ' selected';
-            }
-            echo'>'.$Page.'</option>';
-        }
-        echo '</select>';
-        echo '</td>
-		</tr>
-		</table>
-		</br>
-		<hr>';
-        
-        // Affichage du contenu de la page (articles du catalogue)
-        echo '<table width="100%" align="center" border="0" bgcolor="dcdcdc">';
-        
-        // Affichage des titres du tableau
-        echo '<tr>';
-        foreach ($database_titles as $Titre)
-        {
-            echo '<th align="left" bgcolor="dcdcdc">'.$Titre.'</th>';
-        }
-        echo '</tr>';
-        
-        // Affichage des articles
-        echo'<tr valign=center>';
-        for ($Article=$Premier_Art_Page; $Article < $Dernier_Art_Page; $Article++)
-        {
-            for ( $Item=0; $Item < $Nb_Items_Art; $Item++)
-            {
-                echo'<td align="left" bgcolor="ffffff">'.$database[$Article][$Item].'</td>';
-            }
-            echo'</tr>';
-        }
-        
-        echo'</table>';
-        
-        echo '<hr>';
-        echo '<input type="hidden" name="Page_Courante" value="'.$Page_Courante.'">'; // Mémorisation de la page courante
-        echo'</form>';
-        
-        // Affichage du pied de page
-        echo '<center>|&nbsp&nbsp<a href="javascript:window.print()">Imprimer la page</a>&nbsp&nbsp|&nbsp&nbsp<a
-			href="mailto:'.$email.'">Contact</a>&nbsp&nbsp|</center></br>';
-        
-        echo '</body>
-</html>';
-        //////////////////////////////////////////////////////////////////////////////////////////////////
-        // Fin du script
-        //////////////////////////////////////////////////////////////////////////////////////////////////
+
         ?>
-	
-    
-    
-    
-    
-                    
+        <form name='frmSearch' action='' method='post'>
+        <div ><input type='text' name='search[keyword]' value="<?php echo $search_keyword; ?>" id='keyword' maxlength='25'></div>
+        <table class='tbl-qa'>
+          <thead>
+        	<tr>
+        	  <th class='table-header' width='20%'>Title</th>
+        	  <th class='table-header' width='40%'>Description</th>
+        	  <th class='table-header' width='20%'>Date</th>
+        	</tr>
+          </thead>
+          <tbody id='table-body'>
+        	<?php
+        	if(!empty($pagination_statement)) { 
+        	    foreach($pagination_statement as $row) {
+        	?>
+        	  <tr class='table-row'>
+        		<td><?php echo $row['AName']; ?></td>
+        		<td><?php echo $row['ADescription']; ?></td>
+        		<td><?php echo $row['APrix']; ?></td>
+        	  </tr>
+            <?php
+        		}
+        	}
+        	?>
+          </tbody>
+        </table>
+        <?php echo $per_page_html; ?>
+        </form>
+        </body>
+        </html>

@@ -80,6 +80,63 @@
         }
               
         
+        
+        
+        
+        
+        
+        
+     //   https://phppot.com/php/php-search-and-pagination-using-pdo/
+        
+        //--- pagination ---//
+        
+        define("ROW_PER_PAGE",5);
+        
+        $search_keyword = '';
+        if(!empty($_POST['search'][''])) {
+            $search_keyword = $_POST['search']['keyword'];
+        }
+        
+        
+        $per_page_html = '';
+        $page = 1;
+        $start =0;
+        
+        if(!empty($_POST["page"])) {
+            $page = $_POST["page"];
+            $start = ($page-1) * ROW_PER_PAGE;
+        }
+        
+        $limit =" limit " . $start . "," . ROW_PER_PAGE;
+        $pagination_statement = $articleManager->searchArticle($search_keyword);
+        
+        $row_count = $pagination_statement;
+        
+       
+        
+        
+       
+        
+        
+        
+        /*$query = $sql.$limit;
+         $pdo_statement = $pdo_conn->prepare($query);
+         $pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+         $pdo_statement->execute();
+         $result = $pdo_statement->fetchAll();*/
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
        
         
       //--- Envois Formulaire ---//

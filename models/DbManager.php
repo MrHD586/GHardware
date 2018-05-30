@@ -37,9 +37,12 @@
 			
 			if($search_keyword != NULL){
 			    $stmt->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+			    $stmt->execute($query);
+			}else{
+			    $stmt->execute();
 			}
 			
-			$stmt->execute($query);
+			
     	    return $stmt;
 		}
 	}

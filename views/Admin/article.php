@@ -314,21 +314,21 @@
  
          
 	
-                            
+        echo $row_count;
         if(!empty($row_count)){
-            $per_page_html = "<div style='text-align:center;margin:20px 0px;'>";
+            $per_page_html .= "<div style='text-align:center;margin:20px 0px;'>";
             $page_count = ceil($row_count/ROW_PER_PAGE);
             
             if($page_count>1) {
                 for($i=1;$i<=$page_count;$i++){
                     if($i==$page){
-                        $per_page_html = '<input type="submit" name="page" value="' . $i . '" class="btn-page current" />';
+                        $per_page_html .= '<input type="submit" name="page" value="' . $i . '" class="btn-page current" />';
                     }else{
-                        $per_page_html = '<input type="submit" name="page" value="' . $i . '" class="btn-page" />';
+                        $per_page_html .= '<input type="submit" name="page" value="' . $i . '" class="btn-page" />';
                     }
                 }
             }
-            $per_page_html = "</div>";
+            $per_page_html .= "</div>";
         }
 
         ?>
@@ -344,8 +344,8 @@
           </thead>
           <tbody id='table-body'>
         	<?php
-        	if(!empty($pagination_statement)) { 
-        	    foreach($pagination_statement as $row) {
+        	if(!empty($result)) { 
+        	    foreach($result as $row) {
         	?>
         	  <tr class='table-row'>
         		<td><?php echo $row['AName']; ?></td>

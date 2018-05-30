@@ -27,11 +27,21 @@
 			return $resultat->fetchAll();
 		}
 		
-		public function searchArticle($search_keyword){
-		    $sql = "SELECT * FROM t_articles WHERE AName LIKE :keyword OR AStock LIKE :keyword OR APrix LIKE :keyword ORDER BY idArticle DESC";
-		    $resultat = $this->dbManager->Query($sql, $search_keyword);
-		    return $resultat->fetchAll();
-		}
+		
+		public function searchArticle($search_keyword, $limit = null){
+		    $sql = "SELECT * FROM t_articles WHERE AName LIKE :keyword OR AStock LIKE :keyword 
+                    OR APrix LIKE :keyword ORDER BY idArticle DESC";
+		    
+		    if(empty($limit) || $limit == NULL){
+		      $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);   
+		    }else{
+		      $sqlQuery = $sql.$limit;
+		      $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+		    }
+		    
+		    return $resultat;
+		}		
+		
 		
 		//Crée un nouvel article
 		public function setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,

@@ -23,6 +23,7 @@
 			$this->Connect();
 		}
 
+		
 		// connexion à la db
 		public function Connect() {
 		    $this->dbGh = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password, 
@@ -31,18 +32,22 @@
 			$this->dbGh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		
-		// execute une requêtes
-		public function Query($query, $search_keyword = NULL) {
+		
+		// execute les requêtes
+		public function Query($query) {
 			$stmt = $this->dbGh->prepare($query);
-			
-			if($search_keyword != NULL){
-			    $stmt->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
-			    $stmt->execute($query);
-			}else{
-			    $stmt->execute();
-			}
-			
+			$stmt->execute();
 			
     	    return $stmt;
+		}
+		
+		
+		// execute les requêtes des tableaux admin pagination
+		public function tablesQuery($query, $search_keyword) {
+		    $pagination_statement = $this->dbGh->prepare($query);
+		    $pagination_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
+		    $pagination_statement->execute();
+		    
+		    return $pagination_statement;
 		}
 	}

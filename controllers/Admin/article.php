@@ -86,6 +86,9 @@
         
         
         
+        
+        
+        
      //https://phppot.com/php/php-search-and-pagination-using-pdo/
         
         //--- pagination ---//
@@ -93,7 +96,7 @@
         define("ROW_PER_PAGE",5);
         
         $search_keyword = '';
-        if(!empty($_POST['search']['keyword'])){
+        if(isset($_POST['search']['keyword'])){
             $search_keyword = $_POST['search']['keyword'];
         }
         
@@ -103,7 +106,7 @@
         $start =0;
         
         
-        if(!empty($_POST["page"])) {
+        if(isset($_POST["page"])) {
             $page = $_POST["page"];
             $start = ($page-1) * ROW_PER_PAGE;
         }

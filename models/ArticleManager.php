@@ -30,7 +30,8 @@
 		
 		public function searchArticle($search_keyword, $limit = null){
 		    $sql = "SELECT * FROM t_articles WHERE AName LIKE :keyword OR AStock LIKE :keyword 
-                    OR APrix LIKE :keyword ORDER BY idArticle DESC";
+                    OR APrix LIKE :keyword OR ADescription LIKE :keyword OR APrix LIKE :keyword OR Fk_Categories LIKE :keyword 
+                    OR Fk_Marque LIKE :keyword OR Fk_PicArticles LIKE :keyword ORDER BY idArticle";
 		    
 		    if(empty($limit) || $limit == NULL){
 		      $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);   

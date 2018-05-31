@@ -16,8 +16,10 @@ echo'
 foreach($Categoriearticles as $value){
     $id = $value['idArticle'];
     $fkcategorie = $value['Fk_Categories'];
-    foreach ($categorieName[$fkcategorie] as $values){
-        $categorie=$values;
+    foreach ($aside as $values){
+        if($values['idCategories'] == $fkcategorie){
+            $categorie=$values;
+        }
     }
         
     echo'

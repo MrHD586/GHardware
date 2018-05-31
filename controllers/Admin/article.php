@@ -50,15 +50,7 @@
         
         
         //instantiation de la classe CategoryManager
-        $articleManager = new ArticleManager();
-        
-        
-        //Liste des articles actifs pour le tableau
-        $ActiveArticleTable = $articleManager->ListArticleActive();
-        
-        //Liste des articles inactifs pour le tableau
-        $InactiveArticleTable = $articleManager->ListArticleInactive();
-                
+        $articleManager = new ArticleManager();              
         
         //catégories pour le Select
         $categoryNameSelect = $articleManager->getCategoriesAll();
@@ -70,26 +62,12 @@
         $picArticleSelect = $articleManager->getPicArticleAll();
           
       
+        
      
-        //Défini la liste à afficher dans le tableau selon le paramêtre dans l'url
-        // actif ou inactif
-        if($inactiveParam == TRUE){
-            $tableList = $InactiveArticleTable;
-        }else{
-            $tableList = $ActiveArticleTable;
-        }
+        
               
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-     //https://phppot.com/php/php-search-and-pagination-using-pdo/
         
         //--- pagination ---//
         
@@ -98,8 +76,8 @@
         $search_keyword = '';
         if(isset($_POST['search']['keyword'])){
             $search_keyword = $_POST['search']['keyword'];
+            $_SESSION["ar_CreationSucces"] = NULL;
         }
-        
         
         $per_page_html = '';
         $page = 1;
@@ -109,34 +87,28 @@
         if(isset($_POST["page"])) {
             $page = $_POST["page"];
             $start = ($page-1) * ROW_PER_PAGE;
+            $_SESSION["ar_CreationSucces"] = NULL;
         }
         
         $limit =" limit " . $start . "," . ROW_PER_PAGE;
-        $pagination_statement = $articleManager->searchArticle($search_keyword);
+        
+        //Défini la liste à afficher dans le tableau selon le paramêtre dans l'url (actif ou inactif)
+        if($inactiveParam == TRUE){
+            $pagination_statement = $articleManager->searchInactiveArticle($search_keyword);
+            $pdo_statement = $articleManager->searchInactiveArticle($search_keyword, $limit);
+        }else{
+            $pagination_statement = $articleManager->searchActiveArticle($search_keyword);
+            $pdo_statement = $articleManager->searchActiveArticle($search_keyword, $limit);
+        } 
+        
         $row_count = $pagination_statement->rowCount();
-        
-        
-        
-       
-        
-        
-     
-         $pdo_statement = $articleManager->searchArticle($search_keyword, $limit);
-         $result = $pdo_statement->fetchAll();
+        $result = $pdo_statement->fetchAll();
         
         
         
         
         
         
-        
-        
-        
-        
-        
-        
-        
-       
         
       //--- Envois Formulaire ---//
         

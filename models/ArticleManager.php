@@ -28,16 +28,34 @@
 		}
 		
 		
-		public function searchArticle($search_keyword, $limit = null){
-		    $sql = "SELECT * FROM t_articles WHERE AName LIKE :keyword OR AStock LIKE :keyword 
+		//récupére et recherche les articles actifs
+		public function searchActiveArticle($search_keyword, $limit = null){
+		    $sql = "SELECT * FROM t_articles WHERE isActive = 1 AND (AName LIKE :keyword OR AStock LIKE :keyword 
                     OR APrix LIKE :keyword OR ADescription LIKE :keyword OR APrix LIKE :keyword OR Fk_Categories LIKE :keyword 
-                    OR Fk_Marque LIKE :keyword OR Fk_PicArticles LIKE :keyword ORDER BY idArticle";
+                    OR Fk_Marque LIKE :keyword OR Fk_PicArticles LIKE :keyword) ORDER BY idArticle";
 		    
 		    if(empty($limit) || $limit == NULL){
 		      $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);   
 		    }else{
 		      $sqlQuery = $sql.$limit;
 		      $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+		    }
+		    
+		    return $resultat;
+		}
+		
+		
+		//récupére et recherche les articles inactifs
+		public function searchInactiveArticle($search_keyword, $limit = null){
+		    $sql = "SELECT * FROM t_articles WHERE isActive = 0 AND (AName LIKE :keyword OR AStock LIKE :keyword
+                    OR APrix LIKE :keyword OR ADescription LIKE :keyword OR APrix LIKE :keyword OR Fk_Categories LIKE :keyword
+                    OR Fk_Marque LIKE :keyword OR Fk_PicArticles LIKE :keyword) ORDER BY idArticle";
+		    
+		    if(empty($limit) || $limit == NULL){
+		        $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);
+		    }else{
+		        $sqlQuery = $sql.$limit;
+		        $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
 		    }
 		    
 		    return $resultat;
@@ -63,7 +81,14 @@
 		  $resultat = $this->dbManager->Query($sql);
 		}
 		
-		//Récupère arts par nom
+		//Rend inactif les arcticles
+		public function setArticleInactive($idarticle) {
+		    $sql = "UPDATE t_articles SET isActive = b'0' WHERE idArticle = '$idarticle'";
+		    $resultat = $this->dbManager->Query($sql);
+		}	
+		
+		
+		//Récupère articles par nom
 		public function articleExists($articleName){
 		    $sql = "SELECT COUNT(*) AS articleExists FROM t_articles WHERE AName = '$articleName'";
 		    $resultat = $this->dbManager->Query($sql);
@@ -80,25 +105,6 @@
 		    return $resultat;
 		}
 		
-		//Récupère toutes les catègories
-		public function ListArticleActive() {
-		    $sql = "SELECT * FROM t_articles WHERE isActive = 1 ORDER BY idArticle";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
-		//Récupère toutes les catègories
-		public function ListArticleInactive() {
-		    $sql = "SELECT * FROM t_articles WHERE isActive = 0 ORDER BY idArticle";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
-		//Rend inactif les arcticles
-		public function setArticleInactive($idarticle) {
-		    $sql = "UPDATE t_articles SET isActive = b'0' WHERE idArticle = '$idarticle'";
-		    $resultat = $this->dbManager->Query($sql);
-		}		
 		
 		//Récupère les noms des catègories
 		public function getCategoriesName() {

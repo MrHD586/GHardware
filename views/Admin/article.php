@@ -65,6 +65,8 @@
                     <input class="searchbar"  type="search" name="search[keyword]" value="'.$search_keyword.'" id="keyword" 
                     placeholder="Recherche" style="width:30%;">
                 </div>
+
+                '.$linkForDisplayedList.'
                 
                 <table id="tabadmin">
                     <thead>
@@ -99,11 +101,16 @@
                                         <td>'.$row["isActive"].'</td>';
                                 
                                         //Bouton d'édition
-                                        $editButton = '<a href="index.php?controller=Admin&action=article&modif='.$row["idArticle"].'">
-                                                       <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                                        $editButton;
+                                        
+                                        if($inactiveParam == TRUE)
+                                            $editButton ='<a href="index.php?controller=Admin&action=article&inactive='.$inactiveParam.'&modif='.$row["idArticle"].'">
+                                                          <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                                         
                                         //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
                                         if(!$inactiveParam){
+                                            $editButton ='<a href="index.php?controller=Admin&action=article&modif='.$row["idArticle"].'">
+                                                          <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                                             $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$row["idArticle"].'" onclick="submitform()">
                                                               <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
                                         }
@@ -112,7 +119,7 @@
                                     </tr>';
                             }
                         }
-                        echo $linkForDisplayedList;
+                       
              echo ' </tbody>
                 </table>';
              

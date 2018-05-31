@@ -44,9 +44,9 @@
         
 
         //création d'un panier
-        public function setNewPanier($Fk_Article, $Fk_User, $Nombre, $isOrder) {
-            $sql = "INSERT INTO t_panier (Fk_Article, Fk_User, Number, isOrder)
-                        VALUES ('$Fk_Article', '$Fk_User', '$Nombre', '$isOrder')";
+        public function setNewPanier($Fk_Article, $Fk_User, $Nombre) {
+            $sql = "INSERT INTO t_panier (Fk_Article, Fk_User, Number)
+                        VALUES ('$Fk_Article', '$Fk_User', '$Nombre')";
             $this->dbManager->Query($sql);
         }
         

@@ -38,7 +38,7 @@
 
     							</div>
     							<div class="col-xl-12">
-    								'.$value['CName'].'
+    								'.$value['Name'].'
     							</div>
     							
     							</a>	

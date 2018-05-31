@@ -16,7 +16,10 @@ echo'
 foreach($Categoriearticles as $value){
     $id = $value['idArticle'];
     $fkcategorie = $value['Fk_Categories'];
-    foreach ($aside[$fkcategorie] as $values)
+    foreach ($aside[$fkcategorie] as $values){
+        $categorie=$values['CCategorie'];
+    }
+        
     echo'
         
     		<div class="col-xs-12 col-sm-6 col-md-4">
@@ -25,7 +28,7 @@ foreach($Categoriearticles as $value){
     					<a id="categorylink" href="index.php?controller=Article&action=articlecommentaire&id='.$id.'">
     						<!-- Category -->
     							<div class="col-xl-12">
-    								'.$values['CCategorie'].'
+    								'.$categorie.'
     							</div>
     								    
     						<!-- Image -->

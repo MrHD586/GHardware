@@ -7,7 +7,6 @@
 ################################################################################
 
 
-$categorie = $_GET['categorie'];
 
 echo'
     	<div class="col-lg-9">
@@ -16,7 +15,11 @@ echo'
 
 foreach($Categoriearticles as $value){
     $id = $value['idArticle'];
-    $categorie=$aside[$value['Fk_Categories']];
+    $fkcategorie = $value['Fk_Categories'];
+    foreach($fkcategorie as $fkcategorie ){
+        echo $fkcategorie;
+    }
+    $categorie=$aside[$fkcategorie];
     echo'
         
     		<div class="col-xs-12 col-sm-6 col-md-4">

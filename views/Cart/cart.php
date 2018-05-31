@@ -15,7 +15,7 @@ echo'
             }
             if($vide==1){
             echo'<form action="index.php?controller=Cart&action=displayCookie&vide=1" method="POST">
-					<input type="submit" name="commande" value="Passer la commande" disabled>
+					<input type="submit" name="commande" value="Passer la commande">
                 </form>';
             }else{
             echo'
@@ -37,6 +37,7 @@ echo'
 		<!-- ARTICLES -->';
         echo '<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">';
         Foreach($articles as $value){
+            foreach($value as $value){
                 $index = $value['idArticle'];
                 $prixtotal = $value['APrix'] * $PanierNb[$index];
         echo'
@@ -98,6 +99,7 @@ echo'
 					</div>
 				</center>
 			</div>';
+        }
         }
         echo'</form>';
          

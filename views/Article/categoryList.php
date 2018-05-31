@@ -33,7 +33,7 @@
     							</div>
     						<!-- Price and Text -->
     							<div class="col-xl-12">
-    								'.$value['APrix'].'
+    								'.$value['APrix'].'CHF
     							</div>
     							<div class="col-xl-12">
     								'.$value['AName'].'

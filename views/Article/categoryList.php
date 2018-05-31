@@ -31,11 +31,11 @@
     							</div>
     						<!-- Price and Text -->
     							<div class="col-xl-12">
-<<<<<<< HEAD
+
     								'.$value['Price'].'
-=======
+
     								'.$value['APrix'].'CHF
->>>>>>> a9f0f4384a9fdbd1f048de5e67de0b45bb887c19
+
     							</div>
     							<div class="col-xl-12">
     								'.$value['Name'].'

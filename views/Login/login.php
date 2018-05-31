@@ -16,6 +16,7 @@
     			}else{
     				$formErrors = null;
     			}
+    			//message différent si l'utilisateur passe par le panier
     			if($_GET['Paniercookie']==1){
     				echo '<h2>Veuillez-vous connecter ou crée un compte avant de pouvoir commander</h2><br/>';
     			}else{
@@ -47,8 +48,13 @@
 		
 		    <p>
 				<!-- Submit Button -->
-			    <div class="col-xs-offset-2 col-lg-2"><input type="submit" name="submit" value="Envoyer"/></div>
-                <div class="col-lg-5"><div id="forgotten"><a href="index.php?controller=User&action=creation">Vous n\'avez pas de compte ?</a></div></div>
+			    <div class="col-xs-offset-2 col-lg-2"><input type="submit" name="submit" value="Envoyer"/></div>';
+                if($_GET['Paniercookie']==1){
+    				echo '<div class="col-lg-5"><div id="forgotten"><a href="index.php?controller=User&action=creation&Paniercookie=1">Vous n\'avez pas de compte ?</a></div></div>';
+    			}else{
+    				echo ' <div class="col-lg-5"><div id="forgotten"><a href="index.php?controller=User&action=creation">Vous n\'avez pas de compte ?</a></div></div>';
+    			}
+                echo'
 		    </p>
 		</form>
 		</div>

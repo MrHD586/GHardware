@@ -15,7 +15,8 @@
     $urlToCreation = "location:index.php?controller=User&action=creation";
     //login
     $urlToLogin = "location:index.php?controller=Login&action=login";
-    
+    //login panier
+    $urlToLoginPanier = "location:index.php?controller=Login&action=login&Paniercookie=1";
     //tableau contenant les erreurs
     $errors = array();
         
@@ -80,7 +81,11 @@
 	        $hash = password_hash($userPasswordMD5, PASSWORD_DEFAULT);
 	        //requête pour la création de l'utilisateur
 	        $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, userIsActive, $userFkPicUser, userIsAdmin);
+	        if($_POST['Paniercookie']==1){
+	        header($urlToLoginPanier);
+	        }else{
 	        header($urlToLogin);
+	        }
 	    }
 	}
 		

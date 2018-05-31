@@ -27,7 +27,7 @@ echo'
 				
 		<!-- Discard the shopping cart button -->
 					<div class="col-sm-4" id="carticon">
-						<form action="index.php?controller=Cart&action=DeleteArticlecookie" method="POST">
+						<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">
 							<input type="submit" name="vider" value="Vider le panier">
 						</form>
 					</div>
@@ -39,6 +39,9 @@ echo'
         Foreach($articles as $value){
             foreach($value as $value){
                 $index = $value['idArticle'];
+                if($value['AStock'] < $PanierNb[$index]){
+                $PanierNb[$index]=$value['AStock'];
+                }
                 $prixtotal = $value['APrix'] * $PanierNb[$index];
         echo'
         

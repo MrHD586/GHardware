@@ -20,21 +20,21 @@
 				<div class="mySlides fade">
 				  <div class="numbertext">1 / 3</div>
 					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=13"><img src="images/Slide1.png" style="width:100%"></a>
-				  <div class="text">/div>
+				  <div class="text">1</div>
 				</div>
 			
 			<!-- Slide 2 -->
 				<div class="mySlides fade">
 				  <div class="numbertext">2 / 3</div>
 					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=8"><img src="images/Slide2.png" style="width:100%"></a>
-				  <div class="text"></div>
+				  <div class="text">2</div>
 				</div>
 			
 			<!-- Slide 3 -->
 				<div class="mySlides fade">
 				  <div class="numbertext">3 / 3</div>
 					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=16"><img src="images/Slide3.png" style="width:100%"></a>
-				  <div class="text"></div>
+				  <div class="text">3</div>
 				</div>
 
 			

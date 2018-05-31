@@ -11,7 +11,7 @@
     include("models/DbManager.php");
     
     //paramêtre de catégorie dans l'url
-    $Category = $_GET['categorie'];
+    //$Category = $_GET['categorie'];
     
     class CategoryManager {
         
@@ -25,7 +25,7 @@
         
         //Récupère tous les articles selon une catégorie
         public function getArticleByCategoryName($Category) {
-            $sql = "SELECT *FROM t_article
+            $sql = "SELECT * FROM t_article
                     INNER JOIN t_category ON t_article.Fk_Category = t_category.idCategory WHERE t_category.Name = '$Category'";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();

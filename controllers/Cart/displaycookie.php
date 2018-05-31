@@ -15,7 +15,7 @@ $Panier = unserialize($_COOKIE['Panier']);
 //recuperation de la valeur dans l'url
 $error=$_GET['vide'];
 //test pour savoir si le cookie est vide
-if($Panier==NULL){
+if(empty($Panier)){
 $Vide=1;
 }
 //recuperation du nombre de valeur présente dans le tableau

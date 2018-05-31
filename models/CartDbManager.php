@@ -40,9 +40,9 @@
             return $resultat->fetchAll();
         }
         
-        public function setNewPanier($Fk_Articles, $Fk_User, $PNombre) {
-            $sql = "INSERT INTO t_panier (Fk_Articles, Fk_User, PNombre)
-                        VALUES ('$Fk_Articles', '$Fk_User', '$PNombre')";
+        public function setNewPanier($Fk_Articles, $Fk_User, $PNombre, $isCommande) {
+            $sql = "INSERT INTO t_panier (Fk_Articles, Fk_User, PNombre, isCommande)
+                        VALUES ('$Fk_Articles', '$Fk_User', '$PNombre', '$isCommande')";
             $this->dbManager->Query($sql);
         }
         

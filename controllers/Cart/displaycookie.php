@@ -6,6 +6,8 @@
     #### Gestions des donn�es des articles dans le cookie pour le Panier
     ################################################################################
     
+    session_start();
+    
     //inclusion du fichier pour les requête a la base de donnée
     include 'models/CartCookieManager.php';
     

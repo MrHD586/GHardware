@@ -5,7 +5,9 @@
     #### Page controllers/Cart/SupprimerArticles.php:
     #### Suppression des articles ce trouvant dans le panier
     ################################################################################
-   
+    
+    session_start();
+
     //Récuperation du panier dans le cookie
     $Panier = unserialize($_COOKIE['Panier']);
     

@@ -6,7 +6,7 @@
     ####Création du cookie et ajout des articles sélectionner dans le panier	
     ################################################################################
    
-    
+    session_start();
     //recupère l'id de l'articles et le stock dans la variable id
     $id = $_GET['id'];
     $Panier = $id;

@@ -7,7 +7,8 @@
     ################################################################################
 
     include 'models/CartDbManager.php';
-
+    
+    session_start();
     
     //déclaration des variables
     $panierBddManager = new CartDbManager();
@@ -21,7 +22,7 @@
     function Compteur($iduser, $ArticleNombre, $panierBddManager){
        
         //récuperation du panier de l'utilisateur actuelle
-        $articlesarrays = $panierBddManager->getPanierByUserId($iduser);
+        $articlesarrays = $panierBddManager->get($iduser);
             
             //For pour assigner le nombre d'articles dans une variable pour chaque article présent dans le panier
             foreach($articlesarrays as $value){

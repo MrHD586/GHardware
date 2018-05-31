@@ -184,7 +184,7 @@
 		    $this->dbManager->Query($sql);
 		}
 		public function getUserByLogin($userLogin){
-		    $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
+		    $sql = "SELECT * FROM t_user WHERE Login = '$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}

@@ -26,7 +26,7 @@
         //Récupère tous les articles selon une catégorie
         public function getArticleByCategoryName($Category) {
             $sql = "SELECT * FROM t_article
-                    INNER JOIN t_category ON t_article.Fk_Category = t_category.idCategory WHERE t_category.Name = '$Category'";
+                    INNER JOIN t_category ON t_article.Fk_Category = t_category.idCategory WHERE t_category.CName = '$Category'";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }

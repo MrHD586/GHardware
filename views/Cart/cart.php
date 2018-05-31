@@ -35,7 +35,7 @@ echo'
 			</div>
 		
 		<!-- ARTICLES -->';
-        echo '<form action="index.php?controller=Cart&action=DeleteArticle" method="POST">';
+        echo '<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">';
         Foreach($articles as $value){
             foreach($value as $value){
                 $index = $value['idArticle'];

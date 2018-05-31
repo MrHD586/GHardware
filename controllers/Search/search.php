@@ -17,8 +17,8 @@
     
     $Categoriearticles = $searchManager->Search($article);
     
-    $aside = $searchManager->getCategoriesName();
-    $asides = $searchManager->getCategoriesNameAll();
+    $aside = $searchManager->getCategoryName();
+    $asides = $searchManager->getCategoryNameAll();
     
     include 'views/aside.php';
     include 'views/Search/search.php';

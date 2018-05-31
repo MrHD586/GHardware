@@ -33,21 +33,9 @@
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
+   
         
-    
-
-        // execute une requ�te
-        public function Search($search){
-            $sql = "SELECT * FROM t_article WHERE Name LIKE '%$search%'";
-            $resultat = $this->dbManager->Query($sql);
-            return $resultat;
-        }
-        public function getCategoriesName() {
-            $sql = "SELECT Name FROM t_category WHERE isActive = 1 ORDER BY Name";
-            $resultat = $this->dbManager->Query($sql);
-            return $resultat->fetchAll();
-        }
-        public function getCategoriesNameAll() {
+        public function getCategoryNameAll() {
             $sql = "SELECT * FROM t_category WHERE isActive = 1 ";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();

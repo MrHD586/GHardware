@@ -47,7 +47,7 @@
         
         //pour verification de l'existance d'un nom lors de la création
         public function categoryExists($categoryName){
-            $sql = "SELECT COUNT(*) AS categoryExists FROM t_category WHERE Name = '$categoryName'";
+            $sql = "SELECT COUNT(*) AS categoryExists FROM t_category WHERE CName = '$categoryName'";
             $resultat = $this->dbManager->Query($sql);
             $donnees = $resultat->fetch();
             $resultat->closeCursor();

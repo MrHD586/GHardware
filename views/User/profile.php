@@ -88,6 +88,57 @@ echo '
 							</div>
 							
 							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<b>Adresse : </b>
+								</div>
+								
+								<div class="col-sm-6">
+									Boulevard de Charmontey 36
+								</div>
+								
+								<div class="col-sm-12">
+									<a class="btn btn-default navbar-btn" href="#" role="button">Modifier</a>
+									<form method="post" action="#"><input class="searchbar" type="text" name="adresse" placeholder="Utilisateur"><button type="submit" class="btn btn-primary btn-sm">Valider</button></form>
+								</div>
+							
+								 
+							</div>
+							
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<b>Code Postal : </b>
+								</div>
+								
+								<div class="col-sm-6">
+									1800
+								</div>
+								
+								<div class="col-sm-12">
+									<a class="btn btn-default navbar-btn" href="#" role="button">Modifier</a>
+									<form method="post" action="#"><input class="searchbar" type="number" name="code" placeholder="Utilisateur"><button type="submit" class="btn btn-primary btn-sm">Valider</button></form>
+								</div>
+							
+								 
+							</div>
+							
+							<div class="col-sm-12">
+								<div class="col-sm-6">
+									<b>Ville : </b>
+								</div>
+								
+								<div class="col-sm-6">
+									Vevey
+								</div>
+								
+								<div class="col-sm-12">
+									<a class="btn btn-default navbar-btn" href="#" role="button">Modifier</a>
+									<form method="post" action="#"><input class="searchbar" type="text" name="city" placeholder="Utilisateur"><button type="submit" class="btn btn-primary btn-sm">Valider</button></form>
+								</div>
+							
+								 
+							</div>
+							
+							<div class="col-sm-12">
 								<div class="col-sm-12">
 									<b>Mot de passe : </b>
 								</div>

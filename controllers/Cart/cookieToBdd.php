@@ -46,5 +46,5 @@
         }
         //suppresion du cookie utilisé pour le panier hors ligne
         setcookie('Panier',serialize($newPanier));
-        header('location:index.php');
+        header('location:index.php?controller=Cart&action=bdd');
     }

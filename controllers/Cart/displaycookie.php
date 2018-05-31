@@ -12,6 +12,12 @@ session_start();
 $panierCookieManager = new CartCookieManager();
 //recuperation du tableau stocker dans le cookie
 $Panier = unserialize($_COOKIE['Panier']);
+//recuperation de la valeur dans l'url
+$error=$_GET['vide'];
+//test pour savoir si le cookie est vide
+if($Panier==NULL){
+$Vide=1;
+}
 //recuperation du nombre de valeur présente dans le tableau
 $Nombre = array_count_values($Panier);
 //déduplication du tableaux pour avoir le nombre d'article

@@ -167,7 +167,7 @@
 		}
 		
 		public function getCommentByUserId($idUser) {
-		    $sql = "SELECT * FROM t_comment WHERE Fk_User ='".intval($idUser); 
+		    $sql = "SELECT * FROM t_comment WHERE Fk_User =".intval($idUser); 
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
@@ -184,7 +184,7 @@
 		    $this->dbManager->Query($sql);
 		}
 		public function getUserByLogin($userLogin){
-		    $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
+		    $sql = "SELECT * FROM t_user WHERE Login = '$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}

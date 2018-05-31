@@ -65,7 +65,7 @@
         
         // récupération du nom ders catégories
         public function getCategoryName() {
-            $sql = "SELECT Name FROM t_category ORDER BY CName";
+            $sql = "SELECT CName FROM t_category ORDER BY CName";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }

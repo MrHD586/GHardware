@@ -37,7 +37,6 @@ echo'
 		<!-- ARTICLES -->';
         echo '<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">';
         Foreach($articles as $value){
-            foreach($value as $value){
                 $index = $value['idArticle'];
                 $prixtotal = $value['APrix'] * $PanierNb[$index];
         echo'
@@ -64,9 +63,9 @@ echo'
 					<div class="row">
 						
 				<!-- + and - Buttons -->	
-							<input type="button" onclick="nb =document.getElementById('.$index.').value;nb--;document.getElementById('.$index.').value= nb;submit()" value="-">
+							<input type="button" onclick="nb=document.getElementById('.$index.').value;nb--;document.getElementById('.$index.').value=nb;submit()" value="-">
 								<input id="cartnumber" type="number" value="'.$PanierNb[$index].'" onchange="submit()" name="'.$index.'" id="'.$index.'"min="0" max="99">
-									<input type="button" onclick="nb =document.getElementById('.$index.').value;nb++;document.getElementById('.$index.').value= nb;submit()" value="+">
+									<input type="button" onclick="nb=document.getElementById('.$index.').value;nb++;document.getElementById('.$index.').value=nb;submit()" value="+">
 						
 						
 					</div>
@@ -99,7 +98,6 @@ echo'
 					</div>
 				</center>
 			</div>';
-        }
         }
         echo'</form>';
          

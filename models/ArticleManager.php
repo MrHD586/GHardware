@@ -21,8 +21,8 @@
 		}
 		 
 		//Récupère les articles par id
-		public function getArticles($idarticle) {
-			$sql = "SELECT * FROM t_articles WHERE idArticle='$idarticle'"; 
+		public function getArticleById($idarticle) {
+			$sql = "SELECT * FROM t_articles WHERE idArticle=".intval($idarticle); 
 			$resultat = $this->dbManager->Query($sql);
 			return $resultat->fetchAll();
 		}
@@ -72,24 +72,24 @@
 		}
 		
 		//Modifie un article existant
-		public function modifyArticle($articleId, $articleName, $articleStock, $articlePrice, $articleDescription,
+		public function modifyArticleById($articleId, $articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive){
 	       $sql = "UPDATE t_articles SET AName = '$articleName', AStock ='$articleStock', APrix ='$articlePrice', 
                        ADescription = '$articleDescription', isActive = b'$articleIsActive',Fk_Categories ='$articleCategory', 
                        Fk_Marque ='$articleBrand', Fk_PicArticles ='$articlePicArticle' 
-                       WHERE idArticle = '$articleId'";
+                       WHERE idArticle =".intval($articleId); 
 		  $resultat = $this->dbManager->Query($sql);
 		}
 		
 		//Rend inactif les arcticles
-		public function setArticleInactive($idarticle) {
-		    $sql = "UPDATE t_articles SET isActive = b'0' WHERE idArticle = '$idarticle'";
+		public function setArticleInactiveById($idarticle) {
+		    $sql = "UPDATE t_articles SET isActive = b'0' WHERE idArticle =".intval($idarticle); 
 		    $resultat = $this->dbManager->Query($sql);
 		}	
 		
 		
 		//Récupère articles par nom
-		public function articleExists($articleName){
+		public function articleNameExists($articleName){
 		    $sql = "SELECT COUNT(*) AS articleExists FROM t_articles WHERE AName = '$articleName'";
 		    $resultat = $this->dbManager->Query($sql);
 		    $donnees = $resultat->fetch();
@@ -106,50 +106,74 @@
 		}
 		
 		
-		//Récupère les noms des catègories
-		public function getCategoriesName() {
-		    $sql = "SELECT Ccategorie FROM t_categories WHERE isActive = 1 ORDER BY Ccategorie";
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
-		}
-		
 		//Récupère tout des catégories
-		public function getCategoriesAll() {
+		public function getCategories() {
 		    $sql = "SELECT * FROM t_categories WHERE isActive = 1 ORDER BY CCategorie";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
+		//Récupère les noms des catègories
+		public function getCategoriesNames() {
+		    $sql = "SELECT Ccategorie FROM t_categories WHERE isActive = 1 ORDER BY Ccategorie";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+	
+		//Récupère tout des catégories
+		public function getCategoryNameById($idCategory) {
+		    $sql = "SELECT CCategorie FROM t_categories WHERE idCategories = '$idCategory'"; 
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetch();
+		}
+		
+		
+		
 		//Récupère toutes les marques
-		public function getBrandAll() {
+		public function getBrands() {
 		    $sql = "SELECT * FROM t_marque WHERE isActive = 1 ORDER BY MMarque";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
+		//Récupère toutes les marques
+		public function getBrandNameById($idBrand) {
+		    $sql = "SELECT MMarque FROM t_marque WHERE isActive = 1 AND idT_Marque =".intval($idBrand); ;
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetch();
+		}
+		
+		
 		
 		//Récupère toutes les images
-		public function getPicArticleAll() {
+		public function getPicArticles() {
 		    $sql = "SELECT * FROM t_picarticles WHERE isActive = 1 ORDER BY PPicArticles";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
+		//Récupère toutes les images
+		public function getPicArticleNameById($idPicArticle) {
+		    $sql = "SELECT PPicArticles FROM t_picarticles WHERE isActive = 1 AND idT_PicArticles = ".intval($idPicArticle); 
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetch();
+		}
 		
-		public function getarticleCommentaire($idarticle) {
-		    $sql = "SELECT * FROM t_commentaire WHERE Fk_Article='$idarticle' AND CEtat=2";
+		
+		public function getArticleCommentaireByID($idarticle) {
+		    $sql = "SELECT * FROM t_commentaire WHERE Fk_Article ='".intval($idarticle)."' AND CEtat=2";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
-		public function getuserCommentaire($iduser) {
-		    $sql = "SELECT * FROM t_commentaire WHERE Fk_User='$iduser'";
+		public function getUserCommentaireById($iduser) {
+		    $sql = "SELECT * FROM t_commentaire WHERE Fk_User ='".intval($iduser); 
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
-		public function getUserName($userLogin){
-		    $sql = "SELECT * FROM t_user WHERE idUser ='$userLogin'";
+		public function getUserById($userId){
+		    $sql = "SELECT * FROM t_user WHERE idUser =".intval($userId); 
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}
@@ -159,7 +183,7 @@
                     VALUES ('$CEtat', '$CTexte', 'Fk_User', 'Fk_Article')";
 		    $this->dbManager->Query($sql);
 		}
-		public function getidUserName($userLogin){
+		public function getUserByLogin($userLogin){
 		    $sql = "SELECT * FROM t_user WHERE ULogin = '$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;

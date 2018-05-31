@@ -12,18 +12,18 @@
     
     $articlesManager = new ArticleManager();
     
-    $articles = $articlesManager->getArticles($idarticle);
+    $articles = $articlesManager->getArticleById($idarticle);
     
-    $aside = $articlesManager->getCategoriesName();
+    $aside = $articlesManager->getCategoriesNames();
     
-    $Commentaire = $articlesManager->getarticleCommentaire($idarticle);
+    $Commentaire = $articlesManager->getArticleCommentaireByID($idarticle);
    
     $error=$_GET['error'];
     
     foreach($Commentaire as $value){
         $id = $value['idT_Commentaire'];
         $Utilisateurid = $value['Fk_User'];
-        $UtilisateurName = $articlesManager->getUserName($Utilisateurid);
+        $UtilisateurName = $articlesManager->getUserById($Utilisateurid);
         
         foreach($UtilisateurName as $values){
             $NomUtilisateur[$id] = $values['ULogin'];

@@ -17,7 +17,7 @@ $searchManager = new SearchManager();
 $Categoriearticles = $searchManager->Search($article);
 
 $aside = $searchManager->getCategoriesName();
-$categorieName = $searchManager->getCategoriesNameNoOrder();
+$aside = $searchManager->getCategoriesNameAll();
 
 include 'views/aside.php';
 include 'views/Search/search.php';

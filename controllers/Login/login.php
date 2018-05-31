@@ -31,14 +31,14 @@
 	    if($userLogin != null && $userPassword != null){	    
             //instantiation de la classe LoginManager   
             $loginManager = new LoginManager();
-            $userLoginDb = $loginManager->getLogin($userLogin);
+            $userLoginDb = $loginManager->getUserByLogin($userLogin);
             
             $row = $userLoginDb->fetch();
             
             //verification du password hashé
-            $isValid = password_verify($userPassword, $row['UPassword']);
+            $isValid = password_verify($userPassword, $row['Password']);
             
-            if($userLogin == $row['ULogin'] && $isValid){
+            if($userLogin == $row['Login'] && $isValid){
                 $_SESSION['UserSession'] = TRUE;
                 $_SESSION['user_name'] = $userLogin;
                                

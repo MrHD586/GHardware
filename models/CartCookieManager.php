@@ -21,16 +21,16 @@
         }
         
         
-        // execute une requ�te
-        public function getArticlesCookie($idarticle) {
-            $sql = "SELECT * FROM t_articles WHERE idArticle='$idarticle'";
+        // récupére les articles par id
+        public function getArticleById($idarticle) {
+            $sql = "SELECT * FROM t_article WHERE idArticle='$idarticle'";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
         
-        // execute une requ�te
-        public function getCategoriesName() {
-            $sql = "SELECT Ccategorie FROM t_categories ORDER BY Ccategorie";
+        // récupére les noms des catégories
+        public function getCategoryNames() {
+            $sql = "SELECT Name FROM t_category ORDER BY Name";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }

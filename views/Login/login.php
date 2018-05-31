@@ -16,12 +16,14 @@
     			}else{
     				$formErrors = null;
     			}
+    			
     			//message différent si l'utilisateur passe par le panier
     			if($_GET['Paniercookie']==1){
     				echo '<h2>Veuillez-vous connecter ou crée un compte avant de pouvoir commander</h2><br/>';
     			}else{
     				echo ' <h2>Connexion</h2><br/>';
     			}     
+    			
             echo'
             </div>
 	</div>

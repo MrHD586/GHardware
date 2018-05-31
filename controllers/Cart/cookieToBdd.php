@@ -26,7 +26,7 @@
         $newPanier;
         $panierManager = new CartDbManager();
         //recuperation des information de l'utilisateur connecter
-        $user = $panierManager->getUserName($userLogin);
+        $user = $panierManager->getUserByLogin($userLogin);
         // attribution de l'id de l'utilisateur a une variable
         foreach($user as $value){
              $iduser = $value['idUser'];

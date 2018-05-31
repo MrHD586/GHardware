@@ -91,13 +91,13 @@
                                 echo '
                                     <tr>
                                         <td>'.$row["idArticle"].'</td>
-                                        <td>'.$row["AName"].'</td>
-                                        <td>'.$row["AStock"].'</td>
-                                        <td>'.$row["APrix"].'</td>
-                                        <td>'.$row["ADescription"].'</td>
-                                        <td>'.$articleManager->getCategoryNameById($row["Fk_Categories"])['CCategorie'].'</td>
-                                        <td>'.$articleManager->getBrandNameById($row["Fk_Marque"])['MMarque'].'</td>
-                                        <td>'.$articleManager->getPicArticleNameById($row["Fk_PicArticles"])['PPicArticles'].'</td>';
+                                        <td>'.$row["Name"].'</td>
+                                        <td>'.$row["Stock"].'</td>
+                                        <td>'.$row["Price"].'</td>
+                                        <td>'.$row["Description"].'</td>
+                                        <td>'.$articleManager->getCategoryNameById($row["Fk_Category"])['Name'].'</td>
+                                        <td>'.$articleManager->getBrandNameById($row["Fk_Brand"])['Name'].'</td>
+                                        <td>'.$articleManager->getImageArticleNameById($row["Fk_ImageArticle"])['Link'].'</td>';
                                             
                                         if($row["isActive"] == 1){
                                             echo '<td>Oui</td>';
@@ -209,10 +209,10 @@
                             <select name="Category">
                                <option style="display:none;" selected label="Veulliez choisir une catégorie " value="0">
                                 '; foreach($categoryNameSelect as $value){
-                                        if($formArticleCategoryValue == $value['idCategories']){
-                                            echo '<option selected="selected" value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                                        if($formArticleCategoryValue == $value['idCategory']){
+                                            echo '<option selected="selected" value="'.$value['idCategory'].'">'.$value['Name'].'</option>';
                                         }else{
-                                            echo '<option value="'.$value['idCategories'].'">'.$value['CCategorie'].'</option>';
+                                            echo '<option value="'.$value['idCategory'].'">'.$value['Name'].'</option>';
                                         }
                                    }
                             echo '
@@ -226,10 +226,10 @@
                             <select name="Brand">
                                 <option style="display:none;" selected label="Veulliez choisir une marque" value="0">
                                 '; foreach($brandNameSelect as $value){
-                                        if($formArticleBrandValue == $value['idT_Marque']){
-                                            echo '<option selected="selected" value="'.$value['idT_Marque'].'">'.$value['MMarque'].'</option>';
+                                        if($formArticleBrandValue == $value['idBrand']){
+                                            echo '<option selected="selected" value="'.$value['idBrand'].'">'.$value['Name'].'</option>';
                                         }else{
-                                            echo '<option value="'.$value['idT_Marque'].'">'.$value['MMarque'].'</option>';
+                                            echo '<option value="'.$value['idBrand'].'">'.$value['Name'].'</option>';
                                         }
                                   }
                             echo '
@@ -243,10 +243,10 @@
                             <select name="PicArticle">
                                 <option style="display:none;" selected label="Veulliez choisir une image" value="0">
                                 '; foreach($picArticleSelect as $value){
-                                        if($formArticlePicArticleValue == $value['idT_PicArticles']){
-                                            echo '<option selected="selected" value="'.$value['idT_PicArticles'].'">'.$value['PPicArticles'].'</option>';
+                                        if($formArticlePicArticleValue == $value['idImageArticle']){
+                                            echo '<option selected="selected" value="'.$value['idImageArticle'].'">'.$value['Link'].'</option>';
                                         }else{
-                                            echo '<option value="'.$value['idT_PicArticles'].'">'.$value['PPicArticles'].'</option>';
+                                            echo '<option value="'.$value['idImageArticle'].'">'.$value['Link'].'</option>';
                                         }
                                    }
                             echo '

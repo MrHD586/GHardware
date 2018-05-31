@@ -10,11 +10,13 @@
     
     session_start();
     
-    $categorieManager = new CategoryManager();
+    $category = $_GET['categorie'];
     
-    $Categoriearticles = $categorieManager->getArticlesCategorie($Categorie);
+    $categoryManager = new CategoryManager();
     
-    $aside = $categorieManager->getCategoriesName();
+    $CategoryArticle = $categoryManager->getArticleByCategoryName($category);
+    
+    $aside = $categoryManager->getCategoryName();
     
     include 'views/aside.php';
     include 'views/Article/categoryList.php';

@@ -102,14 +102,3 @@
 
 
 	';
-?>
-
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>GHardware</title>
-	</head>
-
-	<body>
-	</body>
-</html>

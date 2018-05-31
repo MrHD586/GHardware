@@ -20,7 +20,7 @@
         $adminPageManager = new AdminPageManager();
                 
         //aside
-        $aside = $adminPageManager->getCategories();
+        $aside = $adminPageManager->getCategory();
         include 'views/aside.php';
     
         include 'views/Admin/home.php';    

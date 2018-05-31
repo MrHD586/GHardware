@@ -30,13 +30,18 @@
 	    $userLastName = $_POST['Lastname'];
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
+	    $userRoad = $_POST['Road'];
+	    $userNpa = $_POST['NPA'];
+	    $userTown = $_POST['Town'];
 	    $userFkPicUser = 1; // 1 = avatar par défaut
 	    define("userIsAdmin", 0); //les users ne sont pas par défaut admin
 	    define("userIsActive", 1); //les users sont par défaut actifs
 	   
 	    //si un champ est vides
-	    if(empty($userLogin) || empty($userPasswordRaw) || empty($userPasswordVerifRaw) || empty($userFirstName)|| empty($userLastName) || empty($userEmail) || empty($userBirthdate)){
-	        $errors[] = "Veuillez remplir tous les champs";
+	    if(empty($userLogin) || empty($userPasswordRaw) || empty($userPasswordVerifRaw) || empty($userFirstName)|| empty($userLastName) || 
+	        empty($userEmail) || empty($userBirthdate) || empty($userRoad) || empty($userNpa) || empty($userTown)){
+	       
+	            $errors[] = "Veuillez remplir tous les champs";
 	        
 	    }else{	 
 	        $userPasswordMD5 = md5($userPasswordRaw);
@@ -80,7 +85,8 @@
 	        //hash du password
 	        $hash = password_hash($userPasswordMD5, PASSWORD_DEFAULT);
 	        //requête pour la création de l'utilisateur
-	        $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate, userIsActive, $userFkPicUser, userIsAdmin);
+	        $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate,
+	                          $userRoad, $userNpa, $userTown, userIsActive, $userFkPicUser, userIsAdmin);
 	        if($_POST['Paniercookie']==1){
 	        header($urlToLoginPanier);
 	        }else{

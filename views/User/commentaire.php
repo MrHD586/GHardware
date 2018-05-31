@@ -65,8 +65,8 @@ echo'
 				</center>
     
 ';      foreach($Commentaire as $Commentaire){
-        $idCommentaire=$Commentaire['idT_Commentaire'];
-            $Etat=$Commentaire['CEtat'];
+        $idCommentaire=$Commentaire['idComment'];
+            $Etat=$Commentaire['State'];
             if($Etat==0){
                 $EtatTxt= 'En attente';
             }else if($Etat==1){
@@ -94,7 +94,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 				<div class="col-md-2">
 					<div class="row">
 						<center>
-						'.$Commentaire['CTexte'].'
+						'.$Commentaire['Text'].'
 						</center>
 					</div>
 				</div>

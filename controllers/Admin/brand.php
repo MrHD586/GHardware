@@ -37,7 +37,7 @@
                 $brandManager = new BrandManager();
                 
                 //recherche d'un brand name correspondant au brand name entré
-                $checkByBrandName = $brandManager->brandExists($brandName);
+                $checkByBrandName = $brandManager->brandNameExists($brandName);
                 
                 //si le nom est égal au nom retourné par la requête
                 if($checkByBrandName == TRUE){

@@ -19,9 +19,9 @@
 			 $this->dbManager = new DbManager();
 		}
 		
-		// execute une requête
-		public function getCategories() {
-		    $sql = "SELECT Ccategorie FROM t_categories ORDER BY Ccategorie";
+		// récupére les noms des catégories
+		public function getCategoryName() {
+		    $sql = "SELECT Name FROM t_category ORDER BY Name";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}

@@ -21,9 +21,9 @@
 		}
 		
 		
-		// execute une requête
-		public function getCategories() {
-		    $sql = "SELECT Ccategorie FROM t_categories";
+		// récupére les catégories par nom
+		public function getCategory() {
+		    $sql = "SELECT Name FROM t_category";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}

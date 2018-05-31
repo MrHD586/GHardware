@@ -7,14 +7,12 @@
     ################################################################################
     
 
-    $categorie = $_GET['categorie'];
+    
     
     echo'
-    	<div class="col-lg-9">
-    	
-    ';
+    	<div class="col-lg-9">';
     
-    foreach($Categoriearticles as $value){
+    foreach($CategoryArticle as $value){
         $id = $value['idArticle'];
         echo'
     			
@@ -24,7 +22,7 @@
     					<a id="categorylink" href="index.php?controller=Article&action=articlecommentaire&id='.$id.'">
     						<!-- Category -->
     							<div class="col-xl-12">
-    								'.$categorie.'
+    								'.$category.'
     							</div>
     						
     						<!-- Image -->
@@ -33,10 +31,10 @@
     							</div>
     						<!-- Price and Text -->
     							<div class="col-xl-12">
-    								'.$value['APrix'].'
+    								'.$value['Price'].'
     							</div>
     							<div class="col-xl-12">
-    								'.$value['AName'].'
+    								'.$value['Name'].'
     							</div>
     							
     							</a>	
@@ -49,9 +47,9 @@
     									</div><div class="col-xs-3">
                                             ';
                                         if($_SESSION['UserSession']==TRUE){
-                                            echo'<a href="index.php?controller=Cart&action=bdd&id='.$id.'&categorie='.$categorie.'"><img class="img-responsive" src="images/carticon.png"></a>';
+                                            echo'<a href="index.php?controller=Cart&action=bdd&id='.$id.'&categorie='.$category.'"><img class="img-responsive" src="images/carticon.png"></a>';
                                         }else{
-    										echo'<a href="index.php?controller=Cart&action=cookie&id='.$id.'&categorie='.$categorie.'"><img class="img-responsive" src="images/carticon.png"></a>';
+                                            echo'<a href="index.php?controller=Cart&action=cookie&id='.$id.'&categorie='.$category.'"><img class="img-responsive" src="images/carticon.png"></a>';
                                         }
     									echo'</div>
     								</div>

@@ -22,31 +22,29 @@
         
         //Récupère tous les articles selon une marque
         public function getArticlesBrand($brand) {
-            $sql = "SELECT *
-                        FROM t_articles
-                        INNER JOIN t_marque ON t_articles.FK_Marque = t_marque.idMarque WHERE t_marque.Mmarque = '$brand'";
+            $sql = "SELECT * FROM t_article
+                    INNER JOIN t_brand ON t_article.FK_Brand = t_brand.idBrand WHERE t_brand.Name = '$brand'";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
         
-        //récupère les marques
-        public function getBrands() {
-            $sql = "SELECT Mmarque
-                        FROM t_marque";
+        //récupère les nom des marques
+        public function getBrandsNames(){
+            $sql = "SELECT Name FROM t_brand";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
         
         //Crée une nouvelle marques
-        public function setNewBrands($brandName, $brandIsActive) {
-            $sql = "INSERT INTO t_marque (Mmarque, isActive)
+        public function setNewBrand($brandName, $brandIsActive) {
+            $sql = "INSERT INTO t_brand (Name, isActive)
                             VALUES ('$brandName', b'$brandIsActive')";
             $this->dbManager->Query($sql);
         }
         
-        //Récupère marques par nom
-        public function brandExists($brandName){
-            $sql = "SELECT COUNT(*) AS brandExists FROM t_marque WHERE Mmarque = '$brandName'";
+        //pour verification de l'existance d'un nom lors de la création
+        public function brandNameExists($brandName){
+            $sql = "SELECT COUNT(*) AS brandExists FROM t_brand WHERE Name = '$brandName'";
             $resultat = $this->dbManager->Query($sql);
             $donnees = $resultat->fetch();
             $resultat->closeCursor();

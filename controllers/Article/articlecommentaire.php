@@ -14,19 +14,19 @@
     
     $articles = $articlesManager->getArticleById($idarticle);
     
-    $aside = $articlesManager->getCategoriesNames();
+    $aside = $articlesManager->getCategoryName();
     
-    $Commentaire = $articlesManager->getArticleCommentaireByID($idarticle);
+    $Commentaire = $articlesManager->getArticleCommentByID($idarticle);
    
     $error=$_GET['error'];
     
     foreach($Commentaire as $value){
-        $id = $value['idT_Commentaire'];
+        $id = $value['idComment'];
         $Utilisateurid = $value['Fk_User'];
         $UtilisateurName = $articlesManager->getUserById($Utilisateurid);
         
         foreach($UtilisateurName as $values){
-            $NomUtilisateur[$id] = $values['ULogin'];
+            $NomUtilisateur[$id] = $values['Login'];
         } 
     }
     

@@ -10,7 +10,7 @@
     
     
     $homeManager = new HomeManager();
-    $aside = $homeManager->getCategoriesName();
+    $aside = $homeManager->getCategoryName();
     
     include 'views/aside.php';
     include 'views/Site/home.php';

@@ -23,19 +23,19 @@
 		
 		//Crée un nouvel utilisateur
 		public function setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, 
-		                           $userIsActive, $userFkPicUser, $userisAdmin) {
+		                           $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin) {
 		    //valeurs par défaut
 		    $isActive = 1;  //les users sont par défaut actifs
             
-			$sql = "INSERT INTO t_user (ULogin, UPassword, UFirstName, ULastName, UEmail, UBirthdate, isActive, FK_PicUser, isAdmin)
+			$sql = "INSERT INTO t_user (Login, Password, FirstName, LastName, Email, Birthdate, Road, NPA, Town, isActive, FK_PicUser, isAdmin)
                     VALUES ('$userLogin', '$userPassword', '$userFirstname', '$userLastName', '$userEmail', '$userBirthdate', 
-                            b'$userIsActive', '$userFkPicUser', b'$userisAdmin')"; 
+                            '$userRoad', '$userNpa', '$userTown', b'$userIsActive', '$userFkPicUser', b'$userisAdmin')"; 
 			$this->dbManager->Query($sql);
 		}
 		
 		//Récupère user par login
 		public function userExists($userLogin){
-		    $sql = "SELECT COUNT(*) AS userExist FROM t_user WHERE ULogin = '$userLogin'";
+		    $sql = "SELECT COUNT(*) AS userExist FROM t_user WHERE Login = '$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
 		    $donnees = $resultat->fetch();
 		    $resultat->closeCursor();

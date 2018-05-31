@@ -8,9 +8,9 @@
    
     include 'models/ProfileManager.php';
     
-    session_start();
     
     $profileManager = new ProfileManager();
-    $aside = $profileManager->getCategories();
+    $aside = $profileManager->getCategoryName();
+    
     include 'views/aside.php';
     include 'views/User/profile.php';

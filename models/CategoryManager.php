@@ -11,7 +11,7 @@
     include("models/DbManager.php");
     
     //paramêtre de catégorie dans l'url
-    $Categorie = $_GET['categorie'];
+    $Category = $_GET['categorie'];
     
     class CategoryManager {
         
@@ -24,31 +24,30 @@
         
         
         //Récupère tous les articles selon une catégorie
-        public function getArticlesCategorie($Categorie) {
-            $sql = "SELECT *
-                    FROM t_articles
-                    INNER JOIN t_categories ON t_articles.FK_Categories = t_categories.idCategories WHERE t_categories.Ccategorie = '$Categorie'";
+        public function getArticleByCategoryName($Category) {
+            $sql = "SELECT *FROM t_article
+                    INNER JOIN t_category ON t_article.Fk_Category = t_category.idCategory WHERE t_category.Name = '$Category'";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
         
-        //Récupère les noms des catègories
-        public function getCategoriesName() {
-            $sql = "SELECT Ccategorie FROM t_categories  WHERE isActive = 1 ORDER BY Ccategorie";
+        //Récupère les noms des catégories
+        public function getCategoryName() {
+            $sql = "SELECT Name FROM t_category  WHERE isActive = 1 ORDER BY Name";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
         
-        //Crée une nouvelle catègorie
+        //Crée une nouvelle catégorie
         public function setNewCategory($categoryName, $categoryIsActive) {
-                $sql = "INSERT INTO t_categories (Ccategorie, isActive)
+                $sql = "INSERT INTO t_category (Name, isActive)
                         VALUES ('$categoryName', b'$categoryIsActive')";
                 $this->dbManager->Query($sql);
         }
         
-        //Récupère catègorie par nom
+        //pour verification de l'existance d'un nom lors de la création
         public function categoryExists($categoryName){
-            $sql = "SELECT COUNT(*) AS categoryExists FROM t_categories WHERE Ccategorie = '$categoryName'";
+            $sql = "SELECT COUNT(*) AS categoryExists FROM t_category WHERE Name = '$categoryName'";
             $resultat = $this->dbManager->Query($sql);
             $donnees = $resultat->fetch();
             $resultat->closeCursor();

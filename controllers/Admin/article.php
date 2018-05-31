@@ -53,13 +53,13 @@
         $articleManager = new ArticleManager();              
         
         //catégories pour le Select
-        $categoryNameSelect = $articleManager->getCategories();
+        $categoryNameSelect = $articleManager->getCategory();
         
         //marques pour le Select
-        $brandNameSelect = $articleManager->getBrands();
+        $brandNameSelect = $articleManager->getBrand();
         
         //image pour le Select
-        $picArticleSelect = $articleManager->getPicArticles();
+        $picArticleSelect = $articleManager->getImageArticle();
           
       
         
@@ -195,13 +195,13 @@
             
             foreach($articleToModify as $val){
                 $formArticleIdValue = $val['idArticle'];
-                $formArticleNameValue = $val['AName'];
-                $formArticleStockValue = $val['AStock'];
-                $formArticlePriceValue = $val['APrix'];
-                $formArticleDescriptionValue = $val['ADescription'];
-                $formArticleCategoryValue = $val['Fk_Categories'];
-                $formArticleBrandValue = $val['Fk_Marque'];
-                $formArticlePicArticleValue = $val['Fk_PicArticles'];
+                $formArticleNameValue = $val['Name'];
+                $formArticleStockValue = $val['Stock'];
+                $formArticlePriceValue = $val['Price'];
+                $formArticleDescriptionValue = $val['Description'];
+                $formArticleCategoryValue = $val['Fk_Category'];
+                $formArticleBrandValue = $val['Fk_Brand'];
+                $formArticlePicArticleValue = $val['Fk_ImageArticle'];
             }
         }
         

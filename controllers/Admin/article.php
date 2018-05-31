@@ -53,23 +53,20 @@
         $articleManager = new ArticleManager();              
         
         //catégories pour le Select
-        $categoryNameSelect = $articleManager->getCategoriesAll();
+        $categoryNameSelect = $articleManager->getCategories();
         
         //marques pour le Select
-        $brandNameSelect = $articleManager->getBrandAll();
+        $brandNameSelect = $articleManager->getBrands();
         
         //image pour le Select
-        $picArticleSelect = $articleManager->getPicArticleAll();
+        $picArticleSelect = $articleManager->getPicArticles();
           
       
         
-     
-        
-              
+    
         
         
-        
-        //--- pagination ---//
+        //--- PAGINATION ---//
         
         define("ROW_PER_PAGE",5);
         
@@ -108,8 +105,6 @@
         
         
         
-        
-        
       //--- Envois Formulaire ---//
         
         //si le formulaire est envoyé
@@ -136,7 +131,7 @@
                                 
                 if(empty($articleId) || $articleId == NULL){
                     //recherche d'un article name correspondant à l'article name entré
-                    $checkByArticleName = $articleManager->articleExists($articleName);
+                    $checkByArticleName = $articleManager->articleNameExists($articleName);
                     
                     //si le nom est égal au nom retourné par la requête
                     if($checkByArticleName == TRUE){
@@ -177,7 +172,7 @@
                 //si l'on est en modif
                 if(!empty($articleId) || $articleId != NULL){
                     //requête pour la création de l'article
-                    $articleManager->modifyArticle($articleId, $articleName, $articleStock, $articlePrice, $articleDescription,
+                    $articleManager->modifyArticleById($articleId, $articleName, $articleStock, $articlePrice, $articleDescription,
                                                    $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive);
                     
                     $_SESSION["ar_CreationSucces"] = "<p style='color:green;'>Article modifié !</p>";
@@ -196,7 +191,7 @@
         
         //ÉDITION
         if($modifParam != NULL && !empty($modifParam) && !isset($_POST['submit'])){
-            $articleToModify = $articleManager->getArticles($modifParam);
+            $articleToModify = $articleManager->getArticleById($modifParam);
             
             foreach($articleToModify as $val){
                 $formArticleIdValue = $val['idArticle'];
@@ -213,7 +208,7 @@
         
         //ARCHIVAGE
         if($archiveParam != NULL && !empty($archiveParam) && $inactiveParam == NULL){
-            $articleManager->setArticleInactive($archiveParam);
+            $articleManager->setArticleInactiveById($archiveParam);
             header($refresh);
         }
         

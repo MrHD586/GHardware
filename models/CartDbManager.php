@@ -42,16 +42,16 @@
             return $resultat->fetchAll();
         }
         
-<<<<<<< HEAD
+
         //création d'un panier
         public function setNewPanier($Fk_Article, $Fk_User, $Number) {
             $sql = "INSERT INTO t_cart (Fk_Article, Fk_User, Number)
                         VALUES ('$Fk_Article', '$Fk_User', '$Number')";
-=======
+        }
+        
         public function setNewPanier($Fk_Articles, $Fk_User, $PNombre, $isCommande) {
             $sql = "INSERT INTO t_panier (Fk_Articles, Fk_User, PNombre, isCommande)
                         VALUES ('$Fk_Articles', '$Fk_User', '$PNombre', '$isCommande')";
->>>>>>> a9f0f4384a9fdbd1f048de5e67de0b45bb887c19
             $this->dbManager->Query($sql);
         }
         

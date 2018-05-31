@@ -16,9 +16,7 @@ echo'
 foreach($Categoriearticles as $value){
     $id = $value['idArticle'];
     $fkcategorie = $value['Fk_Categories'];
-    foreach($fkcategorie as $fkcategorie ){
         echo $fkcategorie;
-    }
     $categorie=$aside[$fkcategorie];
     echo'
         

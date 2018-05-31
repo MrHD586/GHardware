@@ -20,21 +20,21 @@
 				<div class="mySlides fade">
 				  <div class="numbertext">1 / 3</div>
 					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=13"><img src="images/Slide1.png" style="width:100%"></a>
-				  <div class="text">Caption Text</div>
+				  <div class="text">/div>
 				</div>
 			
 			<!-- Slide 2 -->
 				<div class="mySlides fade">
 				  <div class="numbertext">2 / 3</div>
 					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=8"><img src="images/Slide2.png" style="width:100%"></a>
-				  <div class="text">Caption Two</div>
+				  <div class="text"></div>
 				</div>
 			
 			<!-- Slide 3 -->
 				<div class="mySlides fade">
 				  <div class="numbertext">3 / 3</div>
 					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=16"><img src="images/Slide3.png" style="width:100%"></a>
-				  <div class="text">Caption Three</div>
+				  <div class="text"></div>
 				</div>
 
 			
@@ -45,10 +45,11 @@
 			<!-- Slider Nav -->
 
 			<div style="text-align:center">
-			  <span class="dot" onclick="currentSlide(1)"></span> 
-				<span class="dot" onclick="currentSlide(2)"></span> 
-					<span class="dot" onclick="currentSlide(3)"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
 			</div>
+
 			
 			<!-- Slider Script -->
 

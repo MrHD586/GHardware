@@ -70,6 +70,11 @@
 				<div class="col-lg-4"><label for="city">Ville</label></div>
 				<div class="col-lg-8"><input type="text" name="city" value="Vevey"/></div>
 			</p>
+            ';
+            if($_GET['Paniercookie']==1){
+                echo' <input type="hidden" name="Paniercookie" value="1">';
+            }
+            echo'
        
 		    <p>
 			    <div class=" col-lg-12"><input type="submit" name="submit" value="Envoyer"/></div>

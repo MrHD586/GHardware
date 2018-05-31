@@ -9,11 +9,21 @@ echo'
 				
 				<div class="cartmenu">
 		<!-- Order the cart content button -->
-			<div class="col-sm-offset-2 col-sm-4" id="carticon" >
+			<div class="col-sm-offset-2 col-sm-4" id="carticon" >';
+            if($error==1){
+            echo '<p style="color:red;">Vous ne pouvez pas passer une commande sans articles dans le panier</p>';
+            }
+            if($vide==1){
+            echo'<form action="index.php?controller=Cart&action=displayCookie&vide=1" method="POST">
+					<input type="submit" name="commande" value="Passer la commande" disabled>
+                </form>';
+            }else{
+            echo'
                 <form action="index.php?controller=Login&action=login&Paniercookie=1" method="POST">
 					<input type="submit" name="commande" value="Passer la commande">
-                </form>
-			</div>
+                </form>';
+            }
+			echo'</div>
 				
 		<!-- Discard the shopping cart button -->
 					<div class="col-sm-4" id="carticon">
@@ -25,7 +35,7 @@ echo'
 			</div>
 		
 		<!-- ARTICLES -->';
-        echo '<form action="index.php?controller=Cart&action=DeleteArticle" method="POST">';
+        echo '<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">';
         Foreach($articles as $value){
             foreach($value as $value){
                 $index = $value['idArticle'];

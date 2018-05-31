@@ -20,7 +20,7 @@ foreach($user as $value){
     $iduser = $value['idUser'];
 }
 
-$Commentaire = $articlesManager->getuserCommentaire($iduser);
+$Commentaire = $articlesManager->getUserCommentaireById($iduser);
 foreach($Commentaire as $value){
     $idCommentaire=$value['idT_Commentaire'];
     $idarticle=$value['Fk_Article'];

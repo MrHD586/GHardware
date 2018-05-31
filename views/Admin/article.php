@@ -95,10 +95,17 @@
                                         <td>'.$row["AStock"].'</td>
                                         <td>'.$row["APrix"].'</td>
                                         <td>'.$row["ADescription"].'</td>
-                                        <td>'.$row["Fk_Categories"].'</td>
-                                        <td>'.$row["Fk_Marque"].'</td>
-                                        <td>'.$row["Fk_PicArticles"].'</td>
-                                        <td>'.$row["isActive"].'</td>';
+                                        <td>'.$articleManager->getCategoryNameById($row["Fk_Categories"])['CCategorie'].'</td>
+                                        <td>'.$articleManager->getBrandNameById($row["Fk_Marque"])['MMarque'].'</td>
+                                        <td>'.$articleManager->getPicArticleNameById($row["Fk_PicArticles"])['PPicArticles'].'</td>';
+                                            
+                                        if($row["isActive"] == 1){
+                                            echo '<td>Oui</td>';
+                                        }else{
+                                            echo '<td>Non</td>';
+                                        }
+
+                                       
                                 
                                         //Bouton d'édition
                                         $editButton;

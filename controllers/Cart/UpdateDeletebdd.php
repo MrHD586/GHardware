@@ -8,6 +8,8 @@
     
     include 'models/DeleteAddCartManager.php';
     
+    session_start();
+    
     //declaration des variables
     $deleteaddcartManager = new DeleteAddCartManager();
     $articles = $_POST['Articles'];

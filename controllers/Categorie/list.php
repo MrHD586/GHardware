@@ -10,11 +10,11 @@
     
     session_start();
     
-    $categorie = $_GET['categorie'];
+    $category = $_GET['categorie'];
     
     $categoryManager = new CategoryManager();
     
-    $CategoryArticle = $categoryManager->getArticleByCategoryName($categorie);
+    $CategoryArticle = $categoryManager->getArticleByCategoryName($category);
     
     $aside = $categoryManager->getCategoryName();
     

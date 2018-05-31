@@ -16,8 +16,8 @@ echo'
 foreach($Categoriearticles as $value){
     $id = $value['idArticle'];
     $fkcategorie = $value['Fk_Categories'];
-        echo $fkcategorie;
-    $categorie=$aside[$fkcategorie];
+    echo $aside[$fkcategorie];
+    //$categorie=$aside[$fkcategorie];
     echo'
         
     		<div class="col-xs-12 col-sm-6 col-md-4">

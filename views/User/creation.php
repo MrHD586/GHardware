@@ -55,6 +55,21 @@
 				<div class="col-lg-4"><label for="Birthdate">Votre date de naissance</label></div>
 				<div class="col-lg-8"><input type="date" name="Birthdate" value="'.$formUserBirthdateValue.'"/></div>
 			</p>
+			
+			<p>
+				<div class="col-lg-4"><label for="Adress">Votre Adresse</label></div>
+				<div class="col-lg-8"><input type="text" name="Adress" value="Boulevard de Charmontey 36"/></div>
+			</p>
+			
+			<p>
+				<div class="col-lg-4"><label for="code">Code Postal</label></div>
+				<div class="col-lg-8"><input type="number" name="code" value="1800"/></div>
+			</p>
+			
+			<p>
+				<div class="col-lg-4"><label for="city">Ville</label></div>
+				<div class="col-lg-8"><input type="text" name="city" value="Vevey"/></div>
+			</p>
        
 		    <p>
 			    <div class=" col-lg-12"><input type="submit" name="submit" value="Envoyer"/></div>

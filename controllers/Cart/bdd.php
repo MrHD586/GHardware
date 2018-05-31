@@ -22,7 +22,7 @@
     function Compteur($iduser, $ArticleNombre, $panierBddManager){
        
         //récuperation du panier de l'utilisateur actuelle
-        $articlesarrays = $panierBddManager->get($iduser);
+        $articlesarrays = $panierBddManager->getPanierByUserId($iduser);
             
             //For pour assigner le nombre d'articles dans une variable pour chaque article présent dans le panier
             foreach($articlesarrays as $value){

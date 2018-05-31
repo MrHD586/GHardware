@@ -20,6 +20,8 @@
     if($sessionAdminUser == TRUE){
         header($redirectToHome);
         
+    //variable pour l'état d'être une commande ou non
+    $isCommande=0;
     }else{
         //recuperation du nom d'utilisateur
         $userLogin = $_SESSION['user_name'];
@@ -42,7 +44,7 @@
             $idarticle = $value;
             $nombredb = $nombre[''.$value.''];
             //ajout des données du panier cookie a la db
-            $PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser, $nombredb);
+            $PanierCreationDb = $panierManager->setNewPanier($idarticle, $iduser, $nombredb,  $isCommande);
         }
         //suppresion du cookie utilisé pour le panier hors ligne
         setcookie('Panier',serialize($newPanier));

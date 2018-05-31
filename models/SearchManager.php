@@ -11,6 +11,7 @@
     include("models/DbManager.php");
     
     
+<<<<<<< HEAD
     class SearchManager {
         
         private $dbManager;
@@ -35,3 +36,22 @@
         }
         
     }
+=======
+    // execute une requ�te
+    public function Search($search){
+        $sql = "SELECT * FROM t_articles WHERE AName LIKE '%$search%'";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat;
+    }
+    public function getCategoriesName() {
+        $sql = "SELECT Ccategorie FROM t_categories WHERE isActive = 1 ORDER BY Ccategorie";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
+    }
+    public function getCategoriesNameAll() {
+        $sql = "SELECT * FROM t_categories WHERE isActive = 1 ";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
+    }
+}
+>>>>>>> a9f0f4384a9fdbd1f048de5e67de0b45bb887c19

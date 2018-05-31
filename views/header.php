@@ -88,7 +88,7 @@
 				  <div id="myDropdown" class="dropdown-content">	
                         '.$adminDropdown.'
     					<a href="index.php?controller=User&action=profile">Profil</a>
-                        <a href="">Commandes</a>
+                        <a href="index.php?controller=User&action=AllCommande">Commandes</a>
                         <a href="index.php?controller=User&action=CommentaireUser">Commentaire</a>
                         <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
 				    </div>

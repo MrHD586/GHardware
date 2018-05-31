@@ -31,7 +31,7 @@ class SearchManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
-    public function getCategoriesName() {
+    public function getCategoriesNameAll() {
         $sql = "SELECT * FROM t_categories WHERE isActive = 1 ";
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();

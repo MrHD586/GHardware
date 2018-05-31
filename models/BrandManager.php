@@ -29,7 +29,7 @@
         }
         
         //récupère les nom des marques
-        public function getBrandsNames(){
+        public function getBrandName(){
             $sql = "SELECT Name FROM t_brand";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();

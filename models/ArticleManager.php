@@ -108,21 +108,21 @@
 		
 		//Récupère tout des catégories
 		public function getCategory() {
-		    $sql = "SELECT * FROM t_category WHERE isActive = 1 ORDER BY Name";
+		    $sql = "SELECT * FROM t_category WHERE isActive = 1 ORDER BY CName";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
 		//Récupère les noms des catègories
 		public function getCategoryName() {
-		    $sql = "SELECT Name FROM t_category WHERE isActive = 1 ORDER BY Name";
+		    $sql = "SELECT CName FROM t_category WHERE isActive = 1 ORDER BY CName";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 	
 		//Récupère tout des catégories
 		public function getCategoryNameById($idCategory) {
-		    $sql = "SELECT Name FROM t_category WHERE idCategory = '$idCategory'"; 
+		    $sql = "SELECT CName FROM t_category WHERE idCategory = '$idCategory'"; 
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetch();
 		}

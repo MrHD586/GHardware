@@ -44,13 +44,8 @@
         
 
         //création d'un panier
-        public function setNewPanier($Fk_Article, $Fk_User, $Number) {
-            $sql = "INSERT INTO t_cart (Fk_Article, Fk_User, Number)
-                        VALUES ('$Fk_Article', '$Fk_User', '$Number')";
-        }
-        
         public function setNewPanier($Fk_Article, $Fk_User, $Nombre, $isOrder) {
-            $sql = "INSERT INTO t_panier (Fk_Article, Fk_User, Nombre, isCommande)
+            $sql = "INSERT INTO t_panier (Fk_Article, Fk_User, Number, isOrder)
                         VALUES ('$Fk_Article', '$Fk_User', '$Nombre', '$isOrder')";
             $this->dbManager->Query($sql);
         }
@@ -70,7 +65,7 @@
         
         // récupération du nom ders catégories
         public function getCategoryName() {
-            $sql = "SELECT Name FROM t_category ORDER BY Name";
+            $sql = "SELECT Name FROM t_category ORDER BY CName";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }

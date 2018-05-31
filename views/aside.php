@@ -34,7 +34,7 @@
                 //affichage des catégories dans le menu
                 foreach($aside as $value){
                     echo '<li>
-                     <a href="index.php?controller=Categorie&action=list&categorie='.$value['Name'].'">'.$value['Name'].'</a>
+                     <a href="index.php?controller=Categorie&action=list&categorie='.$value['CName'].'">'.$value['CName'].'</a>
                      </li>';
                  }
                  echo'

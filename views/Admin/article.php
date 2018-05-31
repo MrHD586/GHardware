@@ -95,7 +95,7 @@
                                         <td>'.$row["Stock"].'</td>
                                         <td>'.$row["Price"].'</td>
                                         <td>'.$row["Description"].'</td>
-                                        <td>'.$articleManager->getCategoryNameById($row["Fk_Category"])['Name'].'</td>
+                                        <td>'.$articleManager->getCategoryNameById($row["Fk_Category"])['CName'].'</td>
                                         <td>'.$articleManager->getBrandNameById($row["Fk_Brand"])['Name'].'</td>
                                         <td>'.$articleManager->getImageArticleNameById($row["Fk_ImageArticle"])['Link'].'</td>';
                                             
@@ -210,9 +210,9 @@
                                <option style="display:none;" selected label="Veulliez choisir une catégorie " value="0">
                                 '; foreach($categoryNameSelect as $value){
                                         if($formArticleCategoryValue == $value['idCategory']){
-                                            echo '<option selected="selected" value="'.$value['idCategory'].'">'.$value['Name'].'</option>';
+                                            echo '<option selected="selected" value="'.$value['idCategory'].'">'.$value['CName'].'</option>';
                                         }else{
-                                            echo '<option value="'.$value['idCategory'].'">'.$value['Name'].'</option>';
+                                            echo '<option value="'.$value['idCategory'].'">'.$value['CName'].'</option>';
                                         }
                                    }
                             echo '

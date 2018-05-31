@@ -21,7 +21,7 @@
         					<a id="categorylink" href="index.php?controller=Article&action=articlecommentaire&id='.$id.'">
         						<!-- Category -->
         							<div class="col-xl-12">
-        								'.$categorie['Name'].'
+        								'.$categorie['CName'].'
         							</div>
         								    
         						<!-- Image -->

@@ -26,10 +26,13 @@ if(isset($_POST['continuer'])){
         $PayementState= 0;
         foreach($Panieruser as $value){
             $Fk_Cart=$value['idCart'];
+            $idarticle=$value['Fk_Article'];
             $Orderuser= $commandeManager->setNewOrder($Date, $NumberOrder, $State, $PayementMethod, $PayementState, $Fk_Cart);
             $UpdatePanier= $commandeManager->updateValuePanier($Fk_Cart);
-            $Article=$commandeManager->getArticleById($value['Fk_Article']);
-            $NewStock=$Article['Stock']-$value['Number'];
+            $Article=$commandeManager->getArticleById($idarticle);
+            foreach($Article as $values){
+                $NewStock=$values['Stock']-$value['Number'];
+            }
             $UpdateArticle= $commandeManager->updateValueArticle($NewStock,$value['Fk_Article']);
         }
     header("location:index.php?controller=User&action=AllCommande");

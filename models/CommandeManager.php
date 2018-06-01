@@ -55,7 +55,7 @@ class CommandeManager {
         return $resultat->fetchAll();
     }
     public function getArticleById($idarticle) {
-        $sql = "SELECT Stock FROM t_article WHERE idArticle=".intval($idarticle);
+        $sql = "SELECT * FROM t_article WHERE idArticle=".intval($idarticle);
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }

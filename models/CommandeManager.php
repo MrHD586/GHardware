@@ -45,7 +45,7 @@ class CommandeManager {
         $this->dbManager->Query($sql);
     }
     public function updateValuePanier($idCart) {
-        $sql = "UPDATE t_cart SET isOrder='1' WHERE idCart='$idCart'";
+        $sql = "UPDATE t_cart SET isOrder=1 WHERE idCart='$idCart'";
         $this->dbManager->Query($sql);
     }
     

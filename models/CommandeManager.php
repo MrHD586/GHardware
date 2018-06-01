@@ -26,6 +26,12 @@ class CommandeManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
+    //récupération du user par login
+    public function getUserByLogin($userLogin){
+        $sql = "SELECT * FROM t_user WHERE Login = '$userLogin'";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat;
+    }
     
  
 }

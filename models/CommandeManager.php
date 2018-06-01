@@ -44,6 +44,10 @@ class CommandeManager {
                         VALUES ('$Date', '$NumberOrder', '$State','$PayementMethod','$PayementState','$Fk_Cart')";
         $this->dbManager->Query($sql);
     }
+    public function updateValuePanier($idCart) {
+        $sql = "UPDATE t_cart SET isOrder='1' WHERE idCart='$idCart'";
+        $this->dbManager->Query($sql);
+    }
     
  
 }

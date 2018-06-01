@@ -23,7 +23,7 @@
         
         // récupération du panier celon l'id du user
         public function getPanierByUserId($iduser) {
-            $sql = "SELECT * FROM t_cart WHERE Fk_User='$iduser'";
+            $sql = "SELECT * FROM t_cart WHERE Fk_User='$iduser' AND isOrder=0";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
@@ -37,7 +37,7 @@
         
         // récupération du nombre d'article
         public function getNombreArticle($Fk_User,$Fk_Article) {
-            $sql = "SELECT * FROM t_cart WHERE Fk_User='$Fk_User' AND Fk_Article='$Fk_Article'";
+            $sql = "SELECT * FROM t_cart WHERE Fk_User='$Fk_User' AND Fk_Article='$Fk_Article' AND isOrder=0";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
@@ -59,7 +59,7 @@
         
         // mise à jours de la value du panier
         public function updateValuePanier($Fk_User,$Fk_Article,$Number) {
-            $sql = "UPDATE t_cart SET Number='$Number' WHERE Fk_User='$Fk_User' AND Fk_Article='$Fk_Article'";
+            $sql = "UPDATE t_cart SET Number='$Number' WHERE Fk_User='$Fk_User' AND Fk_Article='$Fk_Article' AND isOrder=0";
             $this->dbManager->Query($sql);
         }
         

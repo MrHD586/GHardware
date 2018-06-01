@@ -27,6 +27,7 @@ if(isset($_POST['continuer'])){
         foreach($Panieruser as $value){
             $Fk_Cart=$value['idCart'];
             $Orderuser= $commandeManager->setNewOrder($Date, $NumberOrder, $State, $PayementMethod, $PayementState, $Fk_Cart);
+            $UpdatePanier= $commandeManager->updateValuePanier($Fk_Cart);
         }
         
     }

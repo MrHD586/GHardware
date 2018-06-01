@@ -29,7 +29,7 @@ if(isset($_POST['continuer'])){
             $Orderuser= $commandeManager->setNewOrder($Date, $NumberOrder, $State, $PayementMethod, $PayementState, $Fk_Cart);
             $UpdatePanier= $commandeManager->updateValuePanier($Fk_Cart);
         }
-        
+    header("location:index.php?controller=User&action=AllCommande");
     }
 }else if(isset($_POST['annuler'])){
     header("location:index.php?controller=Cart&action=bdd");

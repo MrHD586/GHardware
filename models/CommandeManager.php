@@ -32,6 +32,18 @@ class CommandeManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat;
     }
+    // récupération du panier celon l'id du user
+    public function getPanierByUserId($iduser) {
+        $sql = "SELECT * FROM t_cart WHERE Fk_User='$iduser' AND isOrder=0" ;
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
+    }
+    //création d'une commande
+    public function setNewOrder($Date, $NumberOrder, $State, $PayementMethod, $PayementState, $Fk_Cart) {
+        $sql = "INSERT INTO t_order (Date, NumberOrder, State, PayementMethod, PayementState, Fk_Cart)
+                        VALUES ('$Date', '$NumberOrder', '$State','$PayementMethod','$PayementState','$Fk_Cart')";
+        $this->dbManager->Query($sql);
+    }
     
  
 }

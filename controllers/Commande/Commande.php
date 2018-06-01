@@ -16,13 +16,19 @@ $user = $commandeManager->getUserByLogin($userLogin);
 foreach($user as $value){
     $iduser = $value['idUser'];
 }
+$Panieruser = $commandeManager->getPanierByUserId($iduser);
 if(isset($_POST['continuer'])){
     if(isset($_POST['payment'])){
-        $payementmethod=$_POST['payment'];
+        $PayementMethod=$_POST['payment'];
         $NumberOrder=time();
         $Date=Date(Y-m-d);
-        //foreach()
-        //$Fk_Cart=
+        $State= 0;
+        $PayementState= 0;
+        foreach($Panieruser as $value){
+            $Fk_Cart=$value['idCart'];
+            $Orderuser= $commandeManager->setNewOrder($Date, $NumberOrder, $State, $PayementMethod, $PayementState, $Fk_Cart);
+        }
+        
     }
 }else if(isset($_POST['annuler'])){
     header("location:index.php?controller=Cart&action=bdd");

@@ -4,9 +4,7 @@
 #### Date : 24 Mai 2018
 #### Page de Commande (Affichage)
 ################################################################################
-
 echo'
-    
 	<div class="col-lg-10 col-lg-offset-1">
     
     
@@ -64,8 +62,30 @@ echo'
 						</div>
     
 					</div>
-				</center>
-    
+				</center>';
+$number=0;
+foreach($Order as $value){
+    if($value['NumberOrder'] == $number){
+        
+    }else{
+        $number= $value['NumberOrder'];
+        if($value['PayementState']==0){
+            $PayementState='En cour de traitement';
+        }else if($value['PayementState']==1){
+            $PayementState='Payer';
+        }else{
+            $PayementState='Payement refuser';
+        }
+        if($value['State']==0){
+            $State='En attente du payement';
+        }else if($value['State']==1){
+            $State='Envoyer';        
+        }else{
+            $State='Arriver à destination';
+        }
+       
+echo'
+       
     
 		<div class="commandarticle">
 			<a class="commandlink" href="#">
@@ -77,7 +97,7 @@ echo'
 				<div class="col-md-3">
 					<div class="row">
 						<center>
-						12.12.2017
+						'.$value['Date'].'
 						</center>
 					</div>
 				</div>
@@ -85,7 +105,7 @@ echo'
 				<div class="col-md-2">
 					<div class="row">
 						<center>
-						12345678
+						'.$value['NumberOrder'].'
 						</center>
 					</div>
 				</div>
@@ -96,7 +116,7 @@ echo'
 						<div class="col-md-2">
 							<div class="row">
 								<center>
-						Pas près d\'arriver
+						'.$State.'
 								</center>
 							</div>
 						</div>
@@ -106,17 +126,7 @@ echo'
 						<div class="col-md-2">
 							<div class="row">
 								<center>
-						Pas près d\'être payé
-								</center>
-							</div>
-						</div>
-    
-			<!-- Prix Total -->
-    
-						<div class="col-md-3">
-							<div class="row">
-								<center>
-						222.22
+						'.$PayementState.'
 								</center>
 							</div>
 						</div>
@@ -124,65 +134,7 @@ echo'
 					</div>
 				</center>
 			</a>
-		</div>
-    
-	<div class="commandarticle">
-			<a class="commandlink" href="#">
-				<center>
-			<div class="row">
-    
-			<!-- Date Commande -->
-    
-				<div class="col-md-3">
-					<div class="row">
-						<center>
-						12.12.2017
-						</center>
-					</div>
-				</div>
-			<!-- Commande N° -->
-				<div class="col-md-2">
-					<div class="row">
-						<center>
-						12345678
-						</center>
-					</div>
-				</div>
-    
-    
-			<!-- Etat livraison -->
-    
-						<div class="col-md-2">
-							<div class="row">
-								<center>
-						Pas près d\'arriver
-								</center>
-							</div>
-						</div>
-    
-			<!-- Etat paiement -->
-    
-						<div class="col-md-2">
-							<div class="row">
-								<center>
-						Pas près d\'être payé
-								</center>
-							</div>
-						</div>
-    
-			<!-- Prix Total -->
-    
-						<div class="col-md-3">
-							<div class="row">
-								<center>
-						222.22
-								</center>
-							</div>
-						</div>
-    
-					</div>
-				</center>
-			</a>
-		</div>
-    
-	</div>';
+		</div>';
+    }
+}    
+echo'</div>';

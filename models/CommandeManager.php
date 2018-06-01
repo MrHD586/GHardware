@@ -48,6 +48,12 @@ class CommandeManager {
         $sql = "UPDATE t_cart SET isOrder=1 WHERE idCart='$idCart'";
         $this->dbManager->Query($sql);
     }
+    //Récupère la commande
+    public function getOrder($Fk_User) {
+        $sql = "SELECT * FROM t_order INNER JOIN t_cart ON t_order.Fk_Cart = t_cart.idCart WHERE t_cart.Fk_User = '$Fk_User'";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
+    }
     
  
 }

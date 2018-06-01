@@ -21,7 +21,7 @@ if(isset($_POST['continuer'])){
     if(isset($_POST['payment'])){
         $PayementMethod=$_POST['payment'];
         $NumberOrder=time();
-        $Date=Date(Y-m-d);
+        $Date=Date("Y-m-d");
         $State= 0;
         $PayementState= 0;
         foreach($Panieruser as $value){

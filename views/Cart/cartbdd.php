@@ -27,6 +27,9 @@
             Foreach($articlesbdd as $value){
                 foreach($value as $value){
                     $index = $value['idArticle'];
+                    if($nombre[$index] > $value['Stock']){
+                        $nombre[$index]=$value['Stock'];
+                    }
                     $prixtotal = $value['Price'] * $nombre[$index];
                     echo'
                 

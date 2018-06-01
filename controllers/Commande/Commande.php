@@ -16,16 +16,8 @@ if(isset($_POST['continuer'])){
         
     }
 }else if(isset($_POST['annuler'])){
-    header('index.php?controller=Cart&action=bdd');
+    header("location:index.php?controller=Cart&action=bdd");
 }
-
-
-
-
-
-
-
-
 $aside = $commandeManager->getCategoryName();
 
 include 'views/aside.php';

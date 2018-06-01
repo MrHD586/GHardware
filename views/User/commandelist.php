@@ -50,17 +50,6 @@ echo'
 								</center>
 							</div>
 						</div>
-    
-			<!-- Prix Total -->
-    
-						<div class="col-md-3">
-							<div class="row">
-								<center>
-						<b>Prix Total</b>
-								</center>
-							</div>
-						</div>
-    
 					</div>
 				</center>';
 $number=0;

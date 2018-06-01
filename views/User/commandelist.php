@@ -54,8 +54,7 @@ echo'
 				</center>';
 $number=0;
 foreach($Order as $value){
-    if($value['NumberOrder'] == $number){
-        
+    if($value['NumberOrder'] == $number){       
     }else{
         $number= $value['NumberOrder'];
         if($value['PayementState']==0){
@@ -77,7 +76,7 @@ echo'
        
     
 		<div class="commandarticle">
-			<a class="commandlink" href="#">
+			<a class="commandlink" href="index.php?controller=User&action=Commande&commande='.$value['idOrder'].'">
 				<center>
 			<div class="row">
     

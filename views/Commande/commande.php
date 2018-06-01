@@ -11,5 +11,7 @@ echo '<h1>Moyen de payement</h1>
     <input type="radio" name="payment" value="0" checked>Nature<br>
     <input type="radio" name="payment" value="1" checked>Facture<br>
     <input type="submit" name="continuer" value="Continuer">
+</form>
+<form action="index.php?controller=Commande&action=Commande" method="POST">
     <input type="submit" name="annuler" value="Annuler">
 </form>';

@@ -11,6 +11,20 @@ include 'models/CommandeManager.php';
 session_start();
 
 $commandeManager = new CommandeManager();
+if(isset($_POST['continuer'])){
+    if(isset($_POST['payment'])){
+        
+    }
+}else if(isset($_POST['annuler'])){
+    header('index.php?controller=Cart&action=bdd');
+}
+
+
+
+
+
+
+
 
 $aside = $commandeManager->getCategoryName();
 

@@ -54,6 +54,13 @@ class CommandeManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
-    
- 
+    public function getArticleById($idarticle) {
+        $sql = "SELECT Stock FROM t_article WHERE idArticle=".intval($idarticle);
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
+    }
+    public function updateValueArticle($NewStock,$idArticle) {
+        $sql = "UPDATE t_article SET Stock='$NewStock' WHERE idArticle='$idArticle'";
+        $this->dbManager->Query($sql);
+    }
 }

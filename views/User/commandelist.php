@@ -54,27 +54,41 @@ echo'
 				</center>';
 $number=0;
 foreach($Order as $value){
-    if($value['NumberOrder'] == $number){       
+    
+    if($value['NumberOrder'] == $number){   
+        
     }else{
+        
         $number= $value['NumberOrder'];
+        
         if($value['PayementState']==0){
+            
             $PayementState='En cour de traitement';
+            
         }else if($value['PayementState']==1){
+            
             $PayementState='Payer';
+            
         }else{
+            
             $PayementState='Payement refuser';
         }
+        
         if($value['State']==0){
+            
             $State='En attente du payement';
+            
         }else if($value['State']==1){
-            $State='Envoyer';        
+            
+            $State='Envoyer';
+            
         }else{
+            
             $State='Arriver à destination';
+            
         }
        
-echo'
-       
-    
+echo'   
 		<div class="commandarticle">
 			<a class="commandlink" href="index.php?controller=User&action=Commande&commande='.$value['idOrder'].'">
 				<center>

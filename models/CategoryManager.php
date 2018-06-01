@@ -38,9 +38,16 @@
             return $resultat->fetchAll();
         }
         
+        //Récupère les catégories par id
+        public function getCategoryById($idCategory) {
+            $sql = "SELECT CName FROM t_category WHERE idCategory =".intval($idCategory);
+            $resultat = $this->dbManager->Query($sql);
+            return $resultat->fetchAll();
+        }
+        
         //Crée une nouvelle catégorie
         public function setNewCategory($categoryName, $categoryIsActive) {
-                $sql = "INSERT INTO t_category (Name, isActive)
+                $sql = "INSERT INTO t_category (CName, isActive)
                         VALUES ('$categoryName', b'$categoryIsActive')";
                 $this->dbManager->Query($sql);
         }
@@ -61,4 +68,47 @@
             
             return $resultat;
         }
+        
+        
+        //récupére et recherche les marques actives
+        public function searchActiveCategory($search_keyword, $limit = null){
+            $sql = "SELECT * FROM t_category WHERE isActive = 1 AND CName LIKE :keyword ORDER BY idCategory";
+            
+            if(empty($limit) || $limit == NULL){
+                $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);
+            }else{
+                $sqlQuery = $sql.$limit;
+                $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+            }
+            
+            return $resultat;
+        }
+        
+        
+        //récupére et recherche les marques inactives
+        public function searchInactiveCategory($search_keyword, $limit = null){
+            $sql = "SELECT * FROM t_category WHERE isActive = 0 AND CName LIKE :keyword ORDER BY idCategory";
+            
+            if(empty($limit) || $limit == NULL){
+                $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);
+            }else{
+                $sqlQuery = $sql.$limit;
+                $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+            }
+            
+            return $resultat;
+        }	
+        
+        //Modifie une categories existante
+        public function modifyCategoryById($categoryId, $categoryName, $categoryIsActive){
+            $sql = "UPDATE t_category SET CName = '$categoryName', isActive = b'$categoryIsActive'
+                       WHERE idCategory =".intval($categoryId);
+            $resultat = $this->dbManager->Query($sql);
+        }
+        
+        //Rend inactif les categories
+        public function setCategoryInactiveById($idCategory) {
+            $sql = "UPDATE t_category SET isActive = b'0' WHERE idCategory =".intval($idCategory);
+            $resultat = $this->dbManager->Query($sql);
+        }	
     }

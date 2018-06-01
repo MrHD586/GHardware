@@ -28,6 +28,59 @@
             return $resultat->fetchAll();
         }
         
+        
+        //Récupère les marques par id
+        public function getBrandById($idBrand) {
+            $sql = "SELECT * FROM t_brand WHERE idBrand=".intval($idBrand);
+            $resultat = $this->dbManager->Query($sql);
+            return $resultat->fetchAll();
+        }
+        
+        //récupére et recherche les marques actives
+        public function searchActiveBrand($search_keyword, $limit = null){
+            $sql = "SELECT * FROM t_brand WHERE isActive = 1 AND Name LIKE :keyword ORDER BY idBrand";
+            
+            if(empty($limit) || $limit == NULL){
+                $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);
+            }else{
+                $sqlQuery = $sql.$limit;
+                $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+            }
+            
+            return $resultat;
+        }
+        
+        
+        //récupére et recherche les marques inactives
+        public function searchInactiveBrand($search_keyword, $limit = null){
+            $sql = "SELECT * FROM t_brand WHERE isActive = 0 AND Name LIKE :keyword ORDER BY idBrand";
+            
+            if(empty($limit) || $limit == NULL){
+                $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);
+            }else{
+                $sqlQuery = $sql.$limit;
+                $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+            }
+            
+            return $resultat;
+        }	
+        
+        
+        
+        //Modifie une marque existante
+        public function modifyBrandById($brandId, $brandName, $brandIsActive){
+                $sql = "UPDATE t_brand SET Name = '$brandName', isActive = b'$brandIsActive'
+                       WHERE idBrand =".intval($brandId);
+                $resultat = $this->dbManager->Query($sql);
+        }
+        
+        //Rend inactif les arcticles
+        public function setBrandInactiveById($idBrand) {
+            $sql = "UPDATE t_brand SET isActive = b'0' WHERE idBrand =".intval($idBrand);
+            $resultat = $this->dbManager->Query($sql);
+        }	
+        
+        
         //récupère les nom des marques
         public function getBrandName(){
             $sql = "SELECT Name FROM t_brand";

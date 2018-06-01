@@ -161,8 +161,6 @@
             $formArticleStockValue = $key;
             $formArticleNameValue = $key;
             $formArticlePriceValue = $key;
-            $formArticleNameValue = $val;
-            $formArticleNameValue = $val;
             
         }
     }
@@ -170,8 +168,8 @@
     echo'
                 <form method="post" action="">
                       <h3>'.$formTitle.'</h3>
-
-        ';
+    ';
+    
                 //affichage des messages d'erreures contenus dans le tableau errorsArray
                 foreach ($errorsArray as $key => $val) {
                     echo '<p style="color:red;">'.$val.'</p>';

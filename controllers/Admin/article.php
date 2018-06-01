@@ -45,11 +45,8 @@
         //tableau contenant les erreurs
         $errors = array();
         
-        //Liste pour le tableau elle contient soit les actfis soit les inactifs
-        $tableList;
-        
-        
-        //instantiation de la classe CategoryManager
+       
+        //instantiation de la classe Article Manager
         $articleManager = new ArticleManager();              
         
         //catégories pour le Select
@@ -105,7 +102,7 @@
         
         
         
-      //--- Envois Formulaire ---//
+        //--- Envois Formulaire ---//
         
         //si le formulaire est envoyé
         if(isset($_POST['submit'])){
@@ -128,7 +125,6 @@
                 $errors[] = "Veuillez remplir tous les champs";
                 
             }else{
-                                
                 if(empty($articleId) || $articleId == NULL){
                     //recherche d'un article name correspondant à l'article name entré
                     $checkByArticleName = $articleManager->articleNameExists($articleName);
@@ -179,7 +175,7 @@
                     header($refresh);
                 }else{
                     //requête pour la création de l'article
-                    $articleCreationDb = $articleManager->setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
+                    $articleManager->setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
                                                                         $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive);
                     $_SESSION["ar_CreationSucces"] = "<p style='color:green;'>Article ajouté !</p>";
                     header($refresh);

@@ -7,7 +7,9 @@
     ################################################################################
     
     session_start();
-
+    include 'models/ArticleManager.php';
+    $articleManager = new ArticleManager();
+    
     //Récuperation du panier dans le cookie
     $Panier = unserialize($_COOKIE['Panier']);
     
@@ -24,9 +26,17 @@
     }else{
         foreach($PanierNoDouble as $value){
             //test si la valeur du post et définie pour l'article
+            $article = $panierBddManager->getArticleById($value);
             if(isset($_POST[''.$value.''])){
+                $nombre =$_POST[''.$value.''];
+                foreach($article as $article){
+                    if($nombre > $article['Stock']){
+                       $nombre = $article['Stock'];
+                    }
+                
+                
                 //attribution de la valeur du nombre du meme article dans une variable
-                $nombrearticles=$_POST[''.$value.''];
+                $nombrearticles=$nombre;
                 //pour chaque nombre d'articles 
                 for($i=1;$i<=$nombrearticles;$i++){
                     //Ajout dans le tableau du panier avec l'indexation de la variable initialiser au début
@@ -36,6 +46,7 @@
                 }
                 }
         }
+    }
     }
     //rafraichissement des valeurs dans le cookie
     setcookie('Panier',serialize($newPanier));

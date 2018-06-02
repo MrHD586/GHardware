@@ -10,7 +10,7 @@
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
         foreach($fkcategorie as $fkcategorie ){
-            $categorie=$aside[$fkcategorie];
+            $categorie=$asides[$fkcategorie];
         }
         
         echo'

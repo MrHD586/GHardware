@@ -6,6 +6,8 @@
 ################################################################################
 
 echo'
+
+	<div class="col-lg-9">
     
 	<div class="col-lg-10 col-lg-offset-1">
     
@@ -133,5 +135,5 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 		</div>
 </form>';
 }echo'
-    
-	</div>';
+	</div> 
+		</div>';

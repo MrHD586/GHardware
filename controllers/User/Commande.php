@@ -1,6 +1,7 @@
 <?php
 include 'models/CommandeManager.php';
     session_start();
+    $userLogin = $_SESSION['user_name'];
     $NumberOrder = $_POST['commande'];
     $commandeManager = new CommandeManager();
     $user = $commandeManager->getUserByLogin($userLogin);

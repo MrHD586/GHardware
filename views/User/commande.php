@@ -7,37 +7,37 @@ foreach($order as $value){
     echo $value['NumberOrder'].'</br>';
     if($value['State']==0){
         
-        $State='En attente du payement'.'<br>';
+        echo'En attente du payement'.'<br>';
         
     }else if($value['State']==1){
         
-        $State='Envoyer'.'<br>';
+        echo'Envoyer'.'<br>';
         
     }else{
         
-        $State='Arriver à destination'.'<br>';
+        echo'Arriver à destination'.'<br>';
         
     }
     if($value['PayementMethod']==0){
         
-        $State='Nature'.'<br>';
+        echo'Nature'.'<br>';
         
     }else if($value['PayementMethod']==1){
         
-        $State='Facture'.'<br>';
+        echo'Facture'.'<br>';
         
     }
     if($value['PayementState']==0){
         
-        $PayementState='En cour de traitement';
+        echo'En cour de traitement';
         
     }else if($value['PayementState']==1){
         
-        $PayementState='Payer';
+        echo'Payer';
         
     }else{
         
-        $PayementState='Payement refuser';
+        echo'Payement refuser';
     }
     $number++;   
     }

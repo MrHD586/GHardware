@@ -1,7 +1,7 @@
 <?php 
 $number=0;
 $PrixTotale=0;
-var_dump($order);
+var_dump($articles);
 foreach($order as $value){
     
     if($number<=0){

@@ -10,9 +10,9 @@
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
         foreach($fkcategorie as $fkcategorie ){
-            echo $fkcategorie;
+            $categorie=$aside[$fkcategorie];
         }
-        $categorie=$aside[$fkcategorie];
+        
         echo'
             
         		<div class="col-xs-12 col-sm-6 col-md-4">

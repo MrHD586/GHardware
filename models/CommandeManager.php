@@ -69,8 +69,8 @@ class CommandeManager {
         $this->dbManager->Query($sql);
     }
     //Récupère la commande
-    public function getOrder($NumberOrder) {
-        $sql = "SELECT * FROM t_order INNER JOIN t_cart ON t_order.Fk_Cart = t_cart.idCart WHERE t_order.NumberOrder= '$NumberOrder'";
+    public function getOrder($Fk_User,$NumberOrder) {
+        $sql = "SELECT * FROM t_order INNER JOIN t_cart ON t_order.Fk_Cart = t_cart.idCart WHERE t_cart.Fk_User = '$Fk_User' AND t_order.NumberOrder= '$NumberOrder'";
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }

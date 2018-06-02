@@ -1,7 +1,9 @@
 <?php 
 $number=0;
 $PrixTotale=0;
+vardump($order);
 foreach($order as $value){
+    
     if($number<=0){
     echo $value['Date'].'</br>';
     echo $value['NumberOrder'].'</br>';

@@ -87,15 +87,15 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 				<div class="col-md-1">
 					<div class="row">
 						<center>
-						'.$idCommentaire.' Test
-						</center>
+						'.$idCommentaire.'
 					</div>
+						</center>
 				</div>
 			<!-- Texte -->
 				<div class="col-md-7">
 					<div class="row">
 						<center>
-						'.$Commentaire['Text'].' Test
+						'.$Commentaire['Text'].'
 						</center>
 					</div>
 				</div>
@@ -104,7 +104,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 				<div class="col-md-1">
 					<div class="row">
 						<center>
-						'.$article[$idCommentaire].' Test
+						'.$article[$idCommentaire].'
 						</center>
 					</div>
 				</div>
@@ -115,7 +115,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 							<div class="row">
 								<center>
                         
-						'.$EtatTxt.' Test
+						'.$EtatTxt.'
 								</center>
 							</div>
 						</div>

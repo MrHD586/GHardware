@@ -2,7 +2,7 @@
 include 'models/CommandeManager.php';
     session_start();
     $userLogin = $_SESSION['user_name'];
-    $NumberOrder = $_POST['commande'];
+    $NumberOrder = $_GET['commande'];
     $commandeManager = new CommandeManager();
     $user = $commandeManager->getUserByLogin($userLogin);
     // attribution de l'id de l'utilisateur a une variable
@@ -10,5 +10,5 @@ include 'models/CommandeManager.php';
         $iduser = $value['idUser'];
     }
     $articles=$commandeManager->getArticle();
-    $order = $commandeManager->getOrder($NumberOrder);
+    $order = $commandeManager->getOrder($iduser,$NumberOrder);
     include 'views/User/commande.php';

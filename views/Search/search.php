@@ -6,6 +6,8 @@
     ####       Cette page sert à afficher les articles rechercher
     ################################################################################
     
+	echo'<div class="col-lg-9">';
+	
     foreach($Categoriearticles as $value){
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
@@ -17,7 +19,7 @@
         
         echo'
 		
-			<div class="col-lg-9">
+			
             
         		<div class="col-xs-12 col-sm-6 col-md-4">
         			<!-- START ARTICLE-->

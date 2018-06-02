@@ -9,7 +9,7 @@
     foreach($Categoriearticles as $value){
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
-        $categorie=$aside[$fkcategorie];
+        $categorie=$asides[$fkcategorie];
         echo'
             
         		<div class="col-xs-12 col-sm-6 col-md-4">

@@ -12,10 +12,14 @@
     session_start();
     
     $article =$_POST['search'];
-    
+    $marque =$_POST['searchmarque'];
     $searchManager = new SearchManager();
+    if(isset($_POST['searchmarque'])){
+        $Categoriearticles = $searchManager->SearchMarque($marque);
+    }else{
+        $Categoriearticles = $searchManager->Search($article);
+    }
     
-    $Categoriearticles = $searchManager->Search($article);
     
     $aside = $searchManager->getCategoryName();
     $asides = $searchManager->getCategoryNameAll();

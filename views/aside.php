@@ -40,8 +40,8 @@
                  echo'
 				 <li>
 		<!-- Brand Search Form  -->				
-					<form method="post" action="#">
-						<input class="searchbar" type="search" name="search" placeholder="Marques">
+					<form method="post" action="index.php?controller=Search&action=search">
+						<input class="searchbar" type="search" name="searchmarque" placeholder="Marques">
 							<br><button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
 					</form>
 				 </li>

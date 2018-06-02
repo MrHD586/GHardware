@@ -26,6 +26,12 @@
             $resultat = $this->dbManager->Query($sql);
             return $resultat;
         }
+        // récupére les articles selon la recherche entrée
+        public function SearchMarque($search){
+            $sql = "SELECT * FROM t_article INNER JOIN t_brand ON t_article.Fk_Brand = t_brand.idBrand WHERE t_brand.Name LIKE '%$search%'";  
+            $resultat = $this->dbManager->Query($sql);
+            return $resultat;
+        }
         
         //récupéraiton des nom des catégories
         public function getCategoryName() {

@@ -29,18 +29,19 @@ foreach($order as $value){
     }
     if($value['PayementState']==0){
         
-        echo'En cour de traitement';
+        echo'En cour de traitement'.'<br>';
         
     }else if($value['PayementState']==1){
         
-        echo'Payer';
+        echo'Payer'.'<br>';
         
     }else{
         
-        echo'Payement refuser';
+        echo'Payement refuser'.'<br>';
     }
     $number++;   
     }
+    
     foreach($articles as $articles){
         if($value['Fk_Article']==$articles['idArticle']){
             $Prixtotale += $value['Number']*$articles['Price'];
@@ -49,5 +50,5 @@ foreach($order as $value){
             echo $Prixtotale.'</br>';
         }
     }
-    
+    $PrixTotale=0;
 }

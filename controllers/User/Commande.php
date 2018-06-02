@@ -10,5 +10,5 @@ include 'models/CommandeManager.php';
         $iduser = $value['idUser'];
     }
     $articles=$commandeManager->getArticle();
-    $order = $commandeManager->getOrder($iduser,$NumberOrder);
+    $order = $commandeManager->getOrder($NumberOrder);
     include 'views/User/commande.php';

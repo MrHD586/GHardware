@@ -18,7 +18,7 @@ echo'
     
 			<!-- N°Commentaire -->
     
-				<div class="col-md-5">
+				<div class="col-md-7">
 					<div class="row">
 						<center>
 						<b>N°Commentaire</b>
@@ -53,10 +53,9 @@ echo'
 							</div>
 						</div>
             
-				</center>
             <!-- Action -->
     
-						<div class="col-md-2">
+						<div class="col-md-1">
 							<div class="row">
 								<center>
 						<b>Action</b>

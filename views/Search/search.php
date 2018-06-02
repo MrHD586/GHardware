@@ -9,9 +9,11 @@
     foreach($Categoriearticles as $value){
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
-        foreach($fkcategorie as $fkcategorie ){
-            $categorie=$asides[$fkcategorie];
+        foreach($asides as $asides){
+            if($asides['idCategory']==$fkcategorie)
+            $categorie=$asides[$CName];
         }
+        
         
         echo'
             

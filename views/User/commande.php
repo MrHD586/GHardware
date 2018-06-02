@@ -49,9 +49,9 @@ foreach($order as $value){
             $PrixTotal += $value['Number']*$values['Price'];
             echo 'Article:'.$values['Name'].'</br>';
             echo 'Nombre commandé:'.$value['Number'].'</br>';
-            echo 'Prix totale:'.$Prix.'</br>';
+            echo 'Prix:'.$Prix.'</br>';
         }
     }
     $Prix=0;
 }
-echo'Total:'.$PrixTotal;
+echo'Total prix:'.$PrixTotal;

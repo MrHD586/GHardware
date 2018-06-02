@@ -42,7 +42,7 @@ foreach($order as $value){
     }
     $number++;   
     }
-    echo '1';
+    echo $value['Fk_Article'];
     foreach($articles as $articles){
         if(($value['Fk_Article'])==($articles['idArticle'])){
             $Prixtotale += $value['Number']*$articles['Price'];

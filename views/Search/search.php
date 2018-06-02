@@ -63,7 +63,9 @@
         					</div>
         				</div>
         				<!-- END ARTICLE-->
-			</div>
+			
             
         			';
     }
+	
+	echo '</div>';

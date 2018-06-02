@@ -1,6 +1,7 @@
 <?php 
 $number=0;
-$PrixTotale=0;
+$Prix=0;
+$PrixTotal=0;
 foreach($order as $value){
     
     if($number<=0){
@@ -44,11 +45,13 @@ foreach($order as $value){
     }
     foreach($articles as $values){
         if(($value['Fk_Article'])==($values['idArticle'])){
-            $Prixtotale += $value['Number']*$values['Price'];
+            $Prix += $value['Number']*$values['Price'];
+            $PrixTotal += $value['Number']*$values['Price'];
             echo 'Article:'.$values['Name'].'</br>';
             echo 'Nombre commandé:'.$value['Number'].'</br>';
-            echo 'Prix totale:'.$Prixtotale.'</br>';
+            echo 'Prix totale:'.$Prix.'</br>';
         }
     }
-    $PrixTotale=0;
+    $Prix=0;
 }
+echo'Total:'.$PrixTotal;

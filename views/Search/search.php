@@ -9,7 +9,12 @@
     foreach($Categoriearticles as $value){
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
-        $categorie=$asides[$fkcategorie];
+        foreach($asides as $values){
+            if($values['idCategory']==$fkcategorie){
+              $categorie=$values['CName'];
+            }
+        }
+        
         echo'
             
         		<div class="col-xs-12 col-sm-6 col-md-4">
@@ -18,7 +23,7 @@
         					<a id="categorylink" href="index.php?controller=Article&action=articlecommentaire&id='.$id.'">
         						<!-- Category -->
         							<div class="col-xl-12">
-        								'.$categorie['CName'].'
+        								'.$categorie.'
         							</div>
         								    
         						<!-- Image -->

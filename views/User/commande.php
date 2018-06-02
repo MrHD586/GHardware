@@ -4,50 +4,50 @@ $PrixTotale=0;
 foreach($order as $value){
     
     if($number<=0){
-    echo $value['Date'].'</br>';
-    echo $value['NumberOrder'].'</br>';
+    echo 'Date de commande:'.$value['Date'].'</br>';
+    echo 'Numero commande:'.$value['NumberOrder'].'</br>';
     if($value['State']==0){
         
-        echo'En attente du payement'.'<br>';
+        echo'Etat commande:'.'En attente du payement'.'<br>';
         
     }else if($value['State']==1){
         
-        echo'Envoyer'.'<br>';
+        echo'Etat commande:'.'Envoyer'.'<br>';
         
     }else{
         
-        echo'Arriver à destination'.'<br>';
+        echo'Etat commande:'.'Arriver à destination'.'<br>';
         
     }
     if($value['PayementMethod']==0){
         
-        echo'Nature'.'<br>';
+        echo'Payement methode:'.'Nature'.'<br>';
         
     }else if($value['PayementMethod']==1){
         
-        echo'Facture'.'<br>';
+        echo'Payement methode:'.'Facture'.'<br>';
         
     }
     if($value['PayementState']==0){
         
-        echo'En cour de traitement'.'<br>';
+        echo'Etat payement:'.'En cour de traitement'.'<br>';
         
     }else if($value['PayementState']==1){
         
-        echo'Payer'.'<br>';
+        echo'Etat payement:'.'Payer'.'<br>';
         
     }else{
         
-        echo'Payement refuser'.'<br>';
+        echo'Etat payement:'.'Payement refuser'.'<br>';
     }
     $number++;   
     }
     foreach($articles as $values){
         if(($value['Fk_Article'])==($values['idArticle'])){
             $Prixtotale += $value['Number']*$values['Price'];
-            echo $values['Name'].'</br>';
-            echo $value['Number'].'</br>';
-            echo $Prixtotale.'</br>';
+            echo 'Article:'.$values['Name'].'</br>';
+            echo 'Nombre commandé:'.$value['Number'].'</br>';
+            echo 'Prix totale:'.$Prixtotale.'</br>';
         }
     }
     $PrixTotale=0;

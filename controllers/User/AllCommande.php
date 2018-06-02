@@ -8,7 +8,7 @@ $user = $commandeManager->getUserByLogin($userLogin);
 foreach($user as $value){
     $iduser = $value['idUser'];
 }
-$Order = $commandeManager->getOrder($iduser);
+$Order = $commandeManager->getAllOrder($iduser);
 $aside = $commandeManager->getCategoryName();
 include 'views/aside.php';
 include 'views/User/commandelist.php';

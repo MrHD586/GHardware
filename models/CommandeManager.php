@@ -49,7 +49,7 @@ class CommandeManager {
         $this->dbManager->Query($sql);
     }
     //Récupère la commande
-    public function getOrder($Fk_User) {
+    public function getAllOrder($Fk_User) {
         $sql = "SELECT * FROM t_order INNER JOIN t_cart ON t_order.Fk_Cart = t_cart.idCart WHERE t_cart.Fk_User = '$Fk_User'";
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
@@ -59,8 +59,19 @@ class CommandeManager {
         $resultat = $this->dbManager->Query($sql);
         return $resultat->fetchAll();
     }
+    public function getArticle() {
+        $sql = "SELECT * FROM t_article";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
+    }
     public function updateValueArticle($NewStock,$idArticle) {
         $sql = "UPDATE t_article SET Stock='$NewStock' WHERE idArticle='$idArticle'";
         $this->dbManager->Query($sql);
+    }
+    //Récupère la commande
+    public function getOrder($Fk_User,$NumberOrder) {
+        $sql = "SELECT * FROM t_order INNER JOIN t_cart ON t_order.Fk_Cart = t_cart.idCart WHERE t_cart.Fk_User = '$Fk_User' AND t_order.NumberOrder='$NumberOrder";
+        $resultat = $this->dbManager->Query($sql);
+        return $resultat->fetchAll();
     }
 }

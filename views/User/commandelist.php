@@ -90,7 +90,7 @@ foreach($Order as $value){
        
 echo'   
 		<div class="commandarticle">
-			<a class="commandlink" href="index.php?controller=User&action=Commande&commande='.$value['idOrder'].'">
+			<a class="commandlink" href="index.php?controller=User&action=Commande&commande='.$value['NumberOrder'].'">
 				<center>
 			<div class="row">
     

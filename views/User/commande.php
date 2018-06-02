@@ -1,7 +1,6 @@
 <?php 
 $number=0;
 $PrixTotale=0;
-var_dump($articles);
 foreach($order as $value){
     
     if($number<=0){
@@ -46,6 +45,7 @@ foreach($order as $value){
     
     foreach($articles as $articles){
         if(($value['Fk_Article'])==($articles['idArticle'])){
+            echo '1';
             $Prixtotale += $value['Number']*$articles['Price'];
             echo $articles['Name'].'</br>';
             echo $value['Number'].'</br>';

@@ -6,8 +6,10 @@
 ################################################################################
 
 echo'
+
+	<div class="col-lg-9">
     
-	<div class="col-lg-10 col-lg-offset-1">
+	<div class="col-lg-12">
     
     
     
@@ -16,7 +18,7 @@ echo'
     
 			<!-- N°Commentaire -->
     
-				<div class="col-md-3">
+				<div class="col-md-1">
 					<div class="row">
 						<center>
 						<b>N°Commentaire</b>
@@ -24,7 +26,7 @@ echo'
 					</div>
 				</div>
 			<!-- Texte -->
-				<div class="col-md-2">
+				<div class="col-md-7">
 					<div class="row">
 						<center>
 						<b>Texte</b>
@@ -34,7 +36,7 @@ echo'
     
             <!-- Articles -->
     
-						<div class="col-md-2">
+						<div class="col-md-1">
 							<div class="row">
 								<center>
 						<b>Article</b>
@@ -43,7 +45,7 @@ echo'
 						</div>
 			<!-- Etat -->
     
-						<div class="col-md-2">
+						<div class="col-md-1">
 							<div class="row">
 								<center>
 						<b>Etat</b>
@@ -51,10 +53,9 @@ echo'
 							</div>
 						</div>
             
-				</center>
             <!-- Action -->
     
-						<div class="col-md-2">
+						<div class="col-md-1">
 							<div class="row">
 								<center>
 						<b>Action</b>
@@ -83,15 +84,15 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
     
 			<!-- N°Commentaire -->
     
-				<div class="col-md-3">
+				<div class="col-md-1">
 					<div class="row">
 						<center>
 						'.$idCommentaire.'
-						</center>
 					</div>
+						</center>
 				</div>
 			<!-- Texte -->
-				<div class="col-md-2">
+				<div class="col-md-7">
 					<div class="row">
 						<center>
 						'.$Commentaire['Text'].'
@@ -100,7 +101,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 				</div>
 
             <!-- Article -->
-				<div class="col-md-2">
+				<div class="col-md-1">
 					<div class="row">
 						<center>
 						'.$article[$idCommentaire].'
@@ -110,7 +111,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
     
 			<!-- Etat -->
     
-						<div class="col-md-2">
+						<div class="col-md-1">
 							<div class="row">
 								<center>
                         
@@ -121,7 +122,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 				
             <!-- Action -->
     
-						<div class="col-md-2">
+						<div class="col-md-1">
 							<div class="row">
 								<center>
 						<input type="submit" name="Delete" value="Supprimer le commentaire">
@@ -133,5 +134,5 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 		</div>
 </form>';
 }echo'
-    
-	</div>';
+	</div> 
+		</div>';

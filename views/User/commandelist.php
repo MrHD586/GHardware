@@ -5,6 +5,7 @@
 #### Page de Commande (Affichage)
 ################################################################################
 echo'
+<div class="col-lg-9">
 	<div class="col-lg-10 col-lg-offset-1">
     
     
@@ -139,4 +140,5 @@ echo'
 		</div>';
     }
 }    
-echo'</div>';
+echo'</div>
+</div>';

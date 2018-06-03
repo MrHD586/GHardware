@@ -1,4 +1,4 @@
-<?php
+<?php 
 ################################################################################
 #### Auteur : Valentin Favre
 #### Date : 24 Mai 2018
@@ -11,10 +11,7 @@ echo'
     
 		<div class="col-lg-12">
     
-    
-    
 				<center>
-			<div class="row">
     
 			<!-- N°Commentaire -->
     
@@ -137,10 +134,9 @@ echo'
 			</a>
 		</div>
 	</form>';
-}
-
-echo'
-		</div> 
+}echo'
+		
 	</div>
+</div>
 
-;
+';

@@ -1,4 +1,4 @@
-<?php 
+<?php
 ################################################################################
 #### Auteur : Valentin Favre
 #### Date : 24 Mai 2018
@@ -78,62 +78,64 @@ echo'
             
 echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>	
         <div class="commandarticle">
-			    <a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
+			<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
 				<center>
-			<div class="row">
-    
-			<!-- N°Commentaire -->
-    
-				<div class="col-md-1">
 					<div class="row">
-						<center>
-						'.$idCommentaire.'
-					</div>
-						</center>
-				</div>
-			<!-- Texte -->
-				<div class="col-md-7">
-					<div class="row">
-						<center>
-						'.$Commentaire['Text'].'
-						</center>
-					</div>
-				</div>
+			
+					<!-- N°Commentaire -->
+			
+								<div class="col-md-1">
+									<div class="row">
+										<center>
+										'.$idCommentaire.'
+									</div>
+										</center>
+								</div>
+								
+					<!-- Texte -->
+								<div class="col-md-7">
+									<div class="row">
+										<center>
+										'.$Commentaire['Text'].'
+										</center>
+									</div>
+								</div>
 
-            <!-- Article -->
-				<div class="col-md-1">
-					<div class="row">
-						<center>
-						'.$article[$idCommentaire].'
-						</center>
+					<!-- Article -->
+								<div class="col-md-1">
+									<div class="row">
+										<center>
+										'.$article[$idCommentaire].'
+										</center>
+									</div>
+								</div>
+			
+					<!-- Etat -->
+			
+								<div class="col-md-1">
+									<div class="row">
+										<center>
+								
+								'.$EtatTxt.'
+										</center>
+									</div>
+								</div>
+						
+					<!-- Action -->
+			
+								<div class="col-md-1">
+									<div class="row">
+										<center>
+								<input type="submit" name="Delete" value="Supprimer le commentaire">
+										</center>
+									</div>
+								</div>
 					</div>
-				</div>
-    
-			<!-- Etat -->
-    
-						<div class="col-md-1">
-							<div class="row">
-								<center>
-                        
-						'.$EtatTxt.'
-								</center>
-							</div>
-						</div>
-				
-            <!-- Action -->
-    
-						<div class="col-md-1">
-							<div class="row">
-								<center>
-						<input type="submit" name="Delete" value="Supprimer le commentaire">
-								</center>
-							</div>
-						</div>
-                </center>
+				</center>
 			</a>
-		</div>
 		</div>
 </form>';
 }echo'
 	</div> 
-		</div>';
+	</div>
+	</div>';

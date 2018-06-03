@@ -141,6 +141,6 @@ echo'
 
 echo'
 		</div> 
-
+	</div>
 
 ;

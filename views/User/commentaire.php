@@ -74,10 +74,10 @@ echo'
             }
             
 echo'
-
-	<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>
-		<div class="row">
-			<div class="commandarticle">
+	<div class="commandarticle">
+		<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>
+			<div class="row">
+			
 				<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
 					<center>
 						
@@ -132,8 +132,9 @@ echo'
 					</center>
 				</a>
 			</div>
-		</div>
-	</form>';
+		
+	</form>
+</div>';
 }echo'
 		
 	</div>

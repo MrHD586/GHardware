@@ -28,7 +28,7 @@
             header("location:index.php?controller=Article&action=articlecommentaire&error=1&id=$Fk_Article");
             
         }else{
-            $addCommentaire = $commentaireManager->setNewCommentaire($CEtat, $CTexte, $Fk_User, $Fk_Article);
+            $addCommentaire = $commentaireManager->setNewComment($CEtat, $CTexte, $Fk_User, $Fk_Article);
             header("location:index.php?controller=Article&action=articlecommentaire&id=$Fk_Article");
         }
     }

@@ -23,11 +23,9 @@
 		
 		//Crée un nouvel utilisateur
 		public function setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, 
-		                           $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin) {
-		    //valeurs par défaut
-		    $isActive = 1;  //les users sont par défaut actifs
+		                          $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin){
             
-			$sql = "INSERT INTO t_user (Login, Password, FirstName, LastName, Email, Birthdate, Road, NPA, Town, isActive, FK_PicUser, isAdmin)
+			$sql = "INSERT INTO t_user (Login, Password, FirstName, LastName, Email, Birthdate, Road, NPA, Town, isActive, Fk_ImageUser, isAdmin)
                     VALUES ('$userLogin', '$userPassword', '$userFirstname', '$userLastName', '$userEmail', '$userBirthdate', 
                             '$userRoad', '$userNpa', '$userTown', b'$userIsActive', '$userFkPicUser', b'$userisAdmin')"; 
 			$this->dbManager->Query($sql);
@@ -50,5 +48,66 @@
 		    return $resultat;
 		}
 		
-	
+	       
+		//Récupère les utilisateurs par id
+		public function getUserById($idUser) {
+		    $sql = "SELECT * FROM t_user WHERE idUser =".intval($idUser);
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		//récupére et recherche les utilisateurs actives
+		public function searchActiveUser($search_keyword, $limit = null){
+		    $sql = "SELECT * FROM t_user WHERE isActive = 1 AND (Login LIKE :keyword OR FirstName LIKE :keyword OR LastName LIKE :keyword
+                    OR Email LIKE :keyword OR Birthdate LIKE :keyword OR Road LIKE :keyword OR NPA LIKE :keyword
+                    OR Town LIKE :keyword) ORDER BY idUser";
+		    
+		    if(empty($limit) || $limit == NULL){
+		        $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);
+		    }else{
+		        $sqlQuery = $sql.$limit;
+		        $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+		    }
+		    
+		    return $resultat;
+		}
+		
+		
+		//récupére et recherche les utilisateurs inactives
+		public function searchInactiveUser($search_keyword, $limit = null){
+		    $sql = "SELECT * FROM t_user WHERE isActive = 0 AND (Login LIKE :keyword OR FirstName LIKE :keyword OR LastName LIKE :keyword
+                    OR Email LIKE :keyword OR Birthdate LIKE :keyword OR Road LIKE :keyword OR NPA LIKE :keyword
+                    OR Town LIKE :keyword) ORDER BY idUser";
+		    
+		    if(empty($limit) || $limit == NULL){
+		        $resultat = $this->dbManager->tablesQuery($sql, $search_keyword);
+		    }else{
+		        $sqlQuery = $sql.$limit;
+		        $resultat = $this->dbManager->tablesQuery($sqlQuery, $search_keyword);
+		    }
+		    
+		    return $resultat;
+		}
+		
+		//Modifie une utilisateurs existante
+		public function modifyUserById($userId, $userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate,
+		                               $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin){
+           if($userPassword == NULL){
+               $sql = "UPDATE t_user SET Login = '$userLogin', FirstName = '$userFirstname', LastName = '$userLastName',
+                   Email = '$userEmail', Birthdate = '$userBirthdate', Road = '$userRoad', NPA = '$userNpa', Town = '$userTown',
+                   isActive = b'$userIsActive', isAdmin = '$userisAdmin' WHERE idUser =".intval($userId);
+           }else{
+              $sql = "UPDATE t_user SET Login = '$userLogin', Password = '$userPassword', FirstName = '$userFirstname', LastName = '$userLastName',
+                      Email = '$userEmail', Birthdate = '$userBirthdate', Road = '$userRoad', NPA = '$userNpa', Town = '$userTown', 
+                      isActive = b'$userIsActive', isAdmin = '$userisAdmin' WHERE idUser =".intval($userId);
+           }
+           
+	       $resultat = $this->dbManager->Query($sql);
+		}
+		
+		//Rend inactif les utilisateurs
+		public function setUserInactiveById($userId) {
+		    $sql = "UPDATE t_user SET isActive = b'0' WHERE idUser =".intval($userId);
+		    $resultat = $this->dbManager->Query($sql);
+		}	
 	}

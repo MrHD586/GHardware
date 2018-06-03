@@ -17,7 +17,7 @@
     //affichage des messages d'erreures contenus dans le tableau errorsArray
     foreach ($errorsArray as $key => $val) {
         echo '<p style="color:red;">'.$val.'</p>';
-    }   
+    }       
 	
 	echo'<form method="post" action="">
 		      
@@ -57,18 +57,18 @@
 			</p>
 			
 			<p>
-				<div class="col-lg-4"><label for="Adress">Votre Adresse</label></div>
-				<div class="col-lg-8"><input type="text" name="Adress" value="Boulevard de Charmontey 36"/></div>
+				<div class="col-lg-4"><label for="Road">Rue</label></div>
+				<div class="col-lg-8"><input type="text" name="Road" value="'.$formUserRoadValue.'"/></div>
 			</p>
 			
 			<p>
-				<div class="col-lg-4"><label for="code">Code Postal</label></div>
-				<div class="col-lg-8"><input type="number" name="code" value="1800"/></div>
+				<div class="col-lg-4"><label for="Npa">Code Postal</label></div>
+				<div class="col-lg-8"><input type="text" name="Npa" maxlength="4" value="'.$formUserNpaValue.'"/></div>
 			</p>
-			
+
 			<p>
-				<div class="col-lg-4"><label for="city">Ville</label></div>
-				<div class="col-lg-8"><input type="text" name="city" value="Vevey"/></div>
+				<div class="col-lg-4"><label for="Town">Ville</label></div>
+				<div class="col-lg-8"><input type="text" name="Town" value="'.$formUserTownValue.'"/></div>
 			</p>
             ';
             if($_GET['Paniercookie']==1){

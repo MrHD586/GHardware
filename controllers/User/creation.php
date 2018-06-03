@@ -31,7 +31,7 @@
 	    $userEmail = $_POST['Email'];  
 	    $userBirthdate = $_POST['Birthdate'];
 	    $userRoad = $_POST['Road'];
-	    $userNpa = $_POST['NPA'];
+	    $userNpa = $_POST['Npa'];
 	    $userTown = $_POST['Town'];
 	    $userFkPicUser = 1; // 1 = avatar par défaut
 	    define("userIsAdmin", 0); //les users ne sont pas par défaut admin
@@ -63,9 +63,29 @@
                 $errors[] = "Les mots de passes ne sont pas identiques";
             }
             
-            //^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$
+            //si le prénom contient que des lettres
+            if(!preg_match('/^[\pL\pM\p{Zs}.-]+$/u', $userFirstName)){
+                $errors[] = "Votre prénom ne peut pas contenir de chiffres";
+            }
+            
+            //si le nom contient que des lettres
+            if(!preg_match('/^[\pL\pM\p{Zs}.-]+$/u', $userLastName)){
+                $errors[] = "Votre nom ne peut pas contenir de chiffres";
+            }
+            
+            //email
             if(!preg_match('#^[\w.-]+@[\w.-]+\.[a-z]{2,6}$#i', $userEmail)){
                 $errors[] = "L'email n'est pas correct";
+            }
+                        
+            //si le npa contient que des chiffres
+            if (!preg_match('/^[0-9]+$/', $userNpa)) {
+                $errors[] = "Le code postal ne peut pas contenir de lettres";
+            }
+            
+            //si la ville contient que des lettres
+            if(!preg_match('/^[\pL\pM\p{Zs}.-]+$/u', $userTown)){
+                $errors[] = "La ville ne de chiffres";
             }
 	    }
 	    
@@ -80,12 +100,15 @@
 	        $formUserLastNameValue = $userLastName;
 	        $formUserEmailValue = $userEmail;
 	        $formUserBirthdateValue = $userBirthdate;
+	        $formUserRoadValue = $userRoad;
+	        $formUserNpaValue = $userNpa;
+	        $formUserTownValue = $userTown;
 	        
 	    }else{
 	        //hash du password
 	        $hash = password_hash($userPasswordMD5, PASSWORD_DEFAULT);
 	        //requête pour la création de l'utilisateur
-	        $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstname, $userLastname, $userEmail, $userBirthdate,
+	        $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstName, $userLastName, $userEmail, $userBirthdate,
 	                          $userRoad, $userNpa, $userTown, userIsActive, $userFkPicUser, userIsAdmin);
 	        if($_POST['Paniercookie']==1){
 	        header($urlToLoginPanier);

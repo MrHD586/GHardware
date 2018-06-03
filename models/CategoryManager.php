@@ -40,7 +40,7 @@
         
         //Récupère les catégories par id
         public function getCategoryById($idCategory) {
-            $sql = "SELECT CName FROM t_category WHERE idCategory =".intval($idCategory);
+            $sql = "SELECT * FROM t_category WHERE idCategory =".intval($idCategory);
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }
@@ -53,7 +53,7 @@
         }
         
         //pour verification de l'existance d'un nom lors de la création
-        public function categoryExists($categoryName){
+        public function categoryNameExists($categoryName){
             $sql = "SELECT COUNT(*) AS categoryExists FROM t_category WHERE CName = '$categoryName'";
             $resultat = $this->dbManager->Query($sql);
             $donnees = $resultat->fetch();
@@ -70,7 +70,7 @@
         }
         
         
-        //récupére et recherche les marques actives
+        //récupére et recherche les categories actives
         public function searchActiveCategory($search_keyword, $limit = null){
             $sql = "SELECT * FROM t_category WHERE isActive = 1 AND CName LIKE :keyword ORDER BY idCategory";
             
@@ -85,7 +85,7 @@
         }
         
         
-        //récupére et recherche les marques inactives
+        //récupére et recherche les categories inactives
         public function searchInactiveCategory($search_keyword, $limit = null){
             $sql = "SELECT * FROM t_category WHERE isActive = 0 AND CName LIKE :keyword ORDER BY idCategory";
             

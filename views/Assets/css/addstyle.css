@@ -1,4 +1,4 @@
-﻿body {
+body {
   background-color : rgb(40,96,144);
 }
 
@@ -63,6 +63,17 @@ input[type=password]{
 }
 
 input[type=submit] {
+    background-color: #fff;
+	border-color: #ccc;
+    color: #333;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type=button] {
     background-color: #fff;
 	border-color: #ccc;
     color: #333;

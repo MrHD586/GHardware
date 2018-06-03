@@ -121,7 +121,6 @@
                 
                 //message de confirmation de la création -> vide
                 $_SESSION["br_CreationSucces"] = null;
-                header($refresh);
             }else{
                 //si l'on est en modif
                 if(!empty($brandId) || $brandId != NULL){

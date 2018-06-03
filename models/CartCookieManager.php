@@ -30,7 +30,7 @@
         
         // récupére les noms des catégories
         public function getCategoryNames() {
-            $sql = "SELECT CName FROM t_category ORDER BY CName";
+            $sql = "SELECT CName FROM t_category WHERE isActive = 1 ORDER BY CName";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetchAll();
         }

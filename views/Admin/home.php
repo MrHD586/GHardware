@@ -29,7 +29,7 @@
 					<a id="categorylink" href="'.$userAdmin.'">
 					
 							<div class="col-xl-12">
-								<center>Nouvel Utilisateur</center>
+								<center>Utilisateurs</center>
 							</div>
 								<div class="col-xl-12">
 								<img class="img-responsive" src="images/adduser.png">
@@ -47,7 +47,7 @@
 					<a id="categorylink" href="'.$articleAdmin.'">
 					
 							<div class="col-xl-12">
-								<center>Nouvel Article</center>
+								<center>Articles</center>
 							</div>
 													<div class="col-xl-12">
 								<img class="img-responsive" src="images/article.png">
@@ -65,7 +65,7 @@
 					<a id="categorylink" href="'.$brandAdmin.'">
 					
 							<div class="col-xl-12">
-								<center>Nouvelle Marque</center>
+								<center>Marques</center>
 							</div>
 													<div class="col-xl-12">
 								<img class="img-responsive" src="images/mark.png">
@@ -83,7 +83,7 @@
 					<a id="categorylink" href="'.$categoryAdmin.'">
 					
 							<div class="col-xl-12">
-								<center>Nouvelle Catégorie</center>
+								<center>Catégories</center>
 							</div>
 													<div class="col-xl-12">
 								<img class="img-responsive" src="images/category.png">

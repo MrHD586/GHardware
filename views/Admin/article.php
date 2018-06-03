@@ -49,9 +49,9 @@
     
     //lien pour les affichages des actifs et inactifs
     if($_GET['inactive']){
-        $linkForDisplayedList = '<a style="margin-left:590px;"href="index.php?controller=Admin&action=article">Affichage des actifs</a>';
+        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=article">Affichage des actifs</a>';
     }else{
-        $linkForDisplayedList = '<a style="margin-left:580px;"href="index.php?controller=Admin&action=article&inactive=TRUE">Affichage des inactifs</a>';
+        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=article&inactive=TRUE">Affichage des inactifs</a>';
     }
     
     

@@ -84,7 +84,6 @@
         
         //si le formulaire est envoyé
         if(isset($_POST['submit'])){
-            
             $categoryId = $_POST['hiddenId'];
             $categoryName = $_POST['Name'];
             $categoryIsActive = $_POST['isActive'];
@@ -95,7 +94,7 @@
             }else{                       
                 if(empty($categoryId) || $categoryId == NULL){
                     //recherche d'un category name correspondant au category name entré
-                    $checkByCategoryName = $categoryManager->categoryExists($categoryName);
+                    $checkByCategoryName = $categoryManager->categoryNameExists($categoryName);
                 
                     //si le nom est égal au nom retourné par la requête
                     if($checkByCategoryName == TRUE){
@@ -115,7 +114,6 @@
                 
                 //message de confirmation de la création -> vide
                 $_SESSION["cat_CreationSucces"] = null;
-                header($refresh);
             }else{
                 //si l'on est en modif
                 if(!empty($categoryId) || $categoryId != NULL){

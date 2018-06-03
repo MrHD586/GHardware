@@ -24,87 +24,199 @@
                 <h3>'.$pageTitle.'</h3><br/>';
     
     
-    //------ TABLEAU ------//
-    echo '
-		        <div class="col-lg-12">
-			        <table id="tabadmin">
-        			  <tr>
-        				<th>ID</th>
-        				<th>Login</th>
-        				<th>Prénom</th>
-        				<th>Nom</th>
-        				<th>E-Mail</th>
-        				<th>Date de naissance</th>
-        				<th>Droits</th>
-        				<th>Actif</th>
-        			  </tr>
-        			  <tr>
-        				<td>1</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-        			  <tr>
-        				<td>2</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-        			  <tr>
-        				<td>3</td>
-        				<td>Login</td>
-        				<td>Prénom</td>
-        				<td>Nom</td>
-        				<td>E-Mail</td>
-        				<td>Date de naissance</td>
-        				<td>Droits</td>
-        				<td>Actif</td>
-        			  </tr>
-			        </table>
-		        </div> ';
+    //------ TABLEAU fonctionement ------//
     
-    
-    //affichage des messages d'erreures contenus dans le tableau errorsArray
-    foreach ($errorsArray as $key => $val) {
-        echo '<p style="color:red;">'.$val.'</p>';
+    if(!empty($row_count)){
+        $per_page_html .= "<div style='text-align:center;margin:20px 0px;'>";
+        $page_count = ceil($row_count/ROW_PER_PAGE);
+        
+        if($page_count>1) {
+            for($i=1;$i<=$page_count;$i++){
+                if($i==$page){
+                    $per_page_html .= '<input type="submit" name="page" value="' . $i . '" class="btn-page current" />';
+                }else{
+                    $per_page_html .= '<input type="submit" name="page" value="' . $i . '" class="btn-page" />';
+                }
+            }
+        }
+        $per_page_html .= "</div>";
     }
     
+    
+    //lien pour les affichages des actifs et inactifs
+    if($_GET['inactive']){
+        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=user">Affichage des actifs</a>';
+    }else{
+        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=user&inactive=TRUE">Affichage des inactifs</a>';
+    }
+    
+    
+    echo '
+        <div class="col-lg-12">
+            <form name="frmSearch" action="" method="post">
+        
+                <div>
+                    <input class="searchbar"  type="search" name="search[keyword]" value="'.$search_keyword.'" id="keyword"
+                    placeholder="Recherche" style="width:30%;">
+                </div>
+                        
+                '.$linkForDisplayedList.'
+                    
+                <table id="tabadmin">
+                    <thead>
+            		  <tr>
+            			<th>ID</th>
+            			<th>Login</th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Date de naissance</th>
+                        <th>Rue</th>
+                        <th>NPA</th>
+                        <th>Ville</th>
+                        <th>Actif</th>
+                        <th>Admin</th>
+                        <th style="width:10%;">Action</th>
+            		  </tr>
+                    </thead>
+                    
+                    <tbody>';
+    
+                    if(!empty($result)) {
+                        foreach($result as $row) {
+                            echo '
+                                <tr>
+                                    <td>'.$row["idUser"].'</td>
+                                    <td>'.$row["Login"].'</td>
+                                    <td>'.$row["FirstName"].'</td>
+                                    <td>'.$row["LastName"].'</td>
+                                    <td>'.$row["Email"].'</td>
+                                    <td>'.$row["Birthdate"].'</td>
+                                    <td>'.$row["Road"].'</td>
+                                    <td>'.$row["NPA"].'</td>
+                                    <td>'.$row["Town"].'</td>';
+                            
+                            if($row["isActive"] == 1){
+                                echo '<td>Oui</td>';
+                            }else{
+                                echo '<td>Non</td>';
+                            }
+                            
+                            if($row["isAdmin"] == 1){
+                                echo '<td>Oui</td>';
+                            }else{
+                                echo '<td>Non</td>';
+                            }
+                            
+                            
+                            //Bouton d'édition
+                            $editButton;
+                            
+                            if($inactiveParam == TRUE)
+                                $editButton ='<a href="index.php?controller=Admin&action=user&inactive='.$inactiveParam.'&modif='.$row["idUser"].'">
+                                              <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                                
+                                //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
+                                if(!$inactiveParam){
+                                    $editButton ='<a href="index.php?controller=Admin&action=user&modif='.$row["idUser"].'">
+                                                                                                  <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                                    $archiveButton = '<a href="index.php?controller=Admin&action=user&archive='.$row["idUser"].'" onclick="submitform()">
+                                                      <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
+                                }
+                                
+                                echo' <td>'.$editButton.$archiveButton.'</td>
+                                </tr>';
+                        }
+                    }
+    
+             echo ' </tbody>
+                </table>';
+    
+        echo $per_page_html;
+    
+    
+      echo '</form>';
+   echo'</div> ';
+    
+    
+    
+    
+    
+    
+    
     //------ FORMULAIRE ------//
+    //titre du formulaire
+    if(!empty($modifParam)){
+        $formTitle = "Modification d'un utilisateur";
+        
+        $resetButton = '<a href="index.php?controller=Admin&action=user"><input type="button" name="resetModif" value="Annuler"/></a>';
+        
+    }else{
+        $formTitle ="Saisie d'un nouvel utilisateur";
+        
+        $resetButton = '<input type="submit" name="reset" value="Annuler"/>';
+        
+    }
+    
+    
+    //valeur des champs
+    if($modifParam != NULL && !empty($modifParam)){
+        foreach($formFill as $key => $val){
+            $formUserIdValue = $key;
+            $formUserLoginValue = $key;
+            $formUserFirstNameValue = $key;
+            $formUserLastNameValue = $key;
+            $formUserEmailValue = $key;
+            $formUserBirthdateValue = $key;
+            $formUserRoadValue = $key;
+            $formUserNpaValue = $key;
+            $formUserTownValue = $key;
+        }
+    }
+    
+    
+    
+    
     echo'
                 <form method="post" action="">
-                    '.$user_CreationSucces.'
+                    <h3>'.$formTitle.'</h3>
+    ';
         
+                //affichage des messages d'erreures contenus dans le tableau errorsArray
+                foreach ($errorsArray as $key => $val) {
+                    echo '<p style="color:red;">'.$val.'</p>';
+                }
+                    
+    echo '
+                    './/message de validation
+                    $user_CreationSucces.'
+                    
+                    
+                    <input type="hidden" value="'.$formUserIdValue.'" name="hiddenId"/>
+                    
                     <p>
             			<div class="col-lg-4"><label for="Login_User">Login</label></div>
             			<div class="col-lg-8"><input type="text" name="Login" value="'.$formUserLoginValue.'"/></div>
             		</p>
                           
-            		<p>
-            			<div class="col-lg-4"><label for="Password">Mot de passe</label></div>
-            			<div class="col-lg-8"><input type="password" name="Password"/></div>
+                    <p>
+                        <div class="col-lg-4"><label for="Password">Mot de passe</label></div>
+                        <div class="col-lg-8"><input type="password" name="Password" /></div>
+                    </p>
+                        
+                    <p>
+                        <div class="col-lg-4"><label for="PasswordVerif">Confirmation</label></div>
+                        <div class="col-lg-8"><input type="password" name="PasswordVerif"/></div>
+                    </p>            		
+ 
+                    <p>
+            			<div class="col-lg-4"><label for="FirstName">Prénom</label></div>
+            			<div class="col-lg-8"><input type="text" name="FirstName" value="'.$formUserFirstNameValue.'"/></div>
             		</p>
                           
                     <p>
-            			<div class="col-lg-4"><label for="PasswordVerif">Confirmation</label></div>
-            			<div class="col-lg-8"><input type="password" name="PasswordVerif"/></div>
-            		</p>
-                          
-                    <p>
-            			<div class="col-lg-4"><label for="Firstname">Prénom</label></div>
-            			<div class="col-lg-8"><input type="text" name="Firstname" value="'.$formUserFirstNameValue.'"/></div>
-            		</p>
-                          
-                    <p>
-            			<div class="col-lg-4"><label for="Lastname">Nom</label></div>
-            			<div class="col-lg-8"><input type="text" name="Lastname" value="'.$formUserLastNameValue.'"/></div>
+            			<div class="col-lg-4"><label for="LastName">Nom</label></div>
+            			<div class="col-lg-8"><input type="text" name="LastName" value="'.$formUserLastNameValue.'"/></div>
             		</p>
                           
                     <p>
@@ -117,6 +229,21 @@
             			<div class="col-lg-8"><input type="date" name="Birthdate" value="'.$formUserBirthdateValue.'"/></div>
             		</p>
                     
+                    <p>
+        				<div class="col-lg-4"><label for="Road">Rue</label></div>
+        				<div class="col-lg-8"><input type="text" name="Road" value="'.$formUserRoadValue.'"/></div>
+        			</p>
+        			
+        			<p>
+        				<div class="col-lg-4"><label for="Npa">Code Postal</label></div>
+        				<div class="col-lg-8"><input type="text" name="Npa" maxlength="4" value="'.$formUserNpaValue.'"/></div>
+        			</p>
+        
+        			<p>
+        				<div class="col-lg-4"><label for="Town">Ville</label></div>
+        				<div class="col-lg-8"><input type="text" name="Town" value="'.$formUserTownValue.'"/></div>
+        			</p>
+
                      <p>
             			<div class="col-lg-4"><label for="Right">Droit</label></div></br>
                         <div class="col-lg-12"><input type="radio" name="isAdmin" value="0" checked="checked">Utilisateur</input></div></br>
@@ -130,10 +257,13 @@
             		</p>
                           
             	    <p>
-        				<div class="col-lg-12"></div>
-            		    <div class="col-xs-offset-2 col-lg-2"><input type="submit" name="submit" value="Envoyer"/></div>
-        				<div class="col-lg-12"></div>
-        		   </p>
+                        <div class="col-lg-12"></div>
+                		<div class="col-xs-offset-2 col-lg-2">
+                            <input type="submit" name="submit" value="Envoyer"/> 
+                            '.$resetButton.'
+                        </div>
+                	    <div class="col-lg-12"></div>
+                      </p>
             	</form>
 		    </div>
 		</div>';

@@ -56,7 +56,7 @@
     											<div class="col-xs-9">
     												<div class="commentpseudo">
     													<b>
-    												    '.$NomUtilisateur[$id].'
+    												    '.$NomUtilisateur[$id].'  '.$commentaire['Date'].'
     													</b>
     												</div>
     											</div>

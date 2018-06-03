@@ -22,9 +22,9 @@
         
         
         // crée un nouveau commentaire
-        public function setNewComment($State, $Texte, $Fk_User, $Fk_Article) {
-            $sql = "INSERT INTO t_comment (State, Text, Fk_User, Fk_Article)
-                    VALUES ('$State', '".addslashes($Texte)."', '$Fk_User', '$Fk_Article')";
+        public function setNewComment($State, $Texte, $Date, $Fk_User, $Fk_Article) {
+            $sql = "INSERT INTO t_comment (State, Text, Date, Fk_User, Fk_Article)
+                    VALUES ('$State', '".addslashes($Texte)."', '$Date', '$Fk_User', '$Fk_Article')";
             $this->dbManager->Query($sql);
         }
         

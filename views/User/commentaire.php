@@ -1,4 +1,4 @@
-<?php
+
 ################################################################################
 #### Auteur : Valentin Favre
 #### Date : 24 Mai 2018
@@ -21,7 +21,7 @@ echo'
 				<div class="col-md-1">
 					<div class="row">
 						<center>
-						<b>N°Commentaire</b>
+						<b>N°</b>
 						</center>
 					</div>
 				</div>
@@ -131,6 +131,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 						</div>
                 </center>
 			</a>
+		</div>
 		</div>
 </form>';
 }echo'

@@ -1,4 +1,4 @@
-<?php 
+<?php
 ################################################################################
 #### Auteur : Valentin Favre
 #### Date : 24 Mai 2018
@@ -12,7 +12,7 @@ echo'
 		<div class="col-lg-12">
     
 				<center>
-    
+					<div class="row">
 			<!-- N°Commentaire -->
     
 				<div class="col-md-1">
@@ -59,7 +59,7 @@ echo'
 								</center>
 							</div>
 						</div>
-            
+					</div>
 				</center>
     
 ';      foreach($Commentaire as $Commentaire){
@@ -75,63 +75,63 @@ echo'
             
 echo'
 
-	<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>	
-        <div class="commandarticle">
-			<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
-				<center>
-					<div class="row">
-			
-					<!-- N°Commentaire -->
-			
-								<div class="col-md-1">
-									<div class="row">
-										<center>
-										'.$idCommentaire.'
-									</div>
-										</center>
-								</div>
-								
-					<!-- Texte -->
-								<div class="col-md-7">
-									<div class="row">
-										<center>
-										'.$Commentaire['Text'].'
-										</center>
-									</div>
-								</div>
-
-					<!-- Article -->
-								<div class="col-md-1">
-									<div class="row">
-										<center>
-										'.$article[$idCommentaire].'
-										</center>
-									</div>
-								</div>
-			
-					<!-- Etat -->
-			
-								<div class="col-md-1">
-									<div class="row">
-										<center>
-								
-								'.$EtatTxt.'
-										</center>
-									</div>
-								</div>
+	<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>
+		<div class="row">
+			<div class="commandarticle">
+				<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
+					<center>
 						
-					<!-- Action -->
-			
-								<div class="col-md-1">
-									<div class="row">
-										<center>
-								<input type="submit" name="Delete" value="Supprimer">
-										</center>
+				
+						<!-- N°Commentaire -->
+				
+									<div class="col-md-1">
+										<div class="row">
+											<center>
+											'.$idCommentaire.'
+											</center>
+										</div>
 									</div>
-								</div>
-					</div>
-				</center>
-			</a>
+									
+						<!-- Texte -->
+									<div class="col-md-7">
+										<div class="row">
+											<center>
+											'.$Commentaire['Text'].'
+											</center>
+										</div>
+									</div>
+
+						<!-- Article -->
+									<div class="col-md-1">
+										<div class="row">
+											<center>
+											'.$article[$idCommentaire].'
+											</center>
+										</div>
+									</div>
+				
+						<!-- Etat -->
+				
+									<div class="col-md-1">
+										<div class="row">
+											<center>
+									'.$EtatTxt.'
+											</center>
+										</div>
+									</div>
+							
+						<!-- Action -->
+				
+									<div class="col-md-1">
+										<div class="row">
+											<center>
+									<input type="submit" name="Delete" value="Supprimer">
+											</center>
+										</div>
+									</div>
+					</center>
+				</a>
+			</div>
 		</div>
 	</form>';
 }echo'

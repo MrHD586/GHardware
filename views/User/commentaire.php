@@ -1,4 +1,4 @@
-<?php
+
 ################################################################################
 #### Auteur : Valentin Favre
 #### Date : 24 Mai 2018
@@ -9,7 +9,7 @@ echo'
 
 	<div class="col-lg-9">
     
-	<div class="col-lg-12">
+		<div class="col-lg-12">
     
     
     
@@ -126,7 +126,7 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 								<div class="col-md-1">
 									<div class="row">
 										<center>
-								<input type="submit" name="Delete" value="Supprimer le commentaire">
+								<input type="submit" name="Delete" value="Supprimer">
 										</center>
 									</div>
 								</div>
@@ -134,8 +134,8 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 				</center>
 			</a>
 		</div>
-</form>';
+	</form>';
 }echo'
-	</div> 
+			</div> 
 	</div>
-	</div>';
+</div>';

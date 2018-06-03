@@ -1,4 +1,4 @@
-<?php
+
 ################################################################################
 #### Auteur : Valentin Favre
 #### Date : 24 Mai 2018
@@ -76,7 +76,9 @@ echo'
                 $EtatTxt= 'Accepté et publié';
             }
             
-echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>	
+echo'
+
+	<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>	
         <div class="commandarticle">
 			<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
 				<center>
@@ -135,7 +137,10 @@ echo'<form method=POST action=index.php?controller=commentaire&action=AddDeleteC
 			</a>
 		</div>
 	</form>';
-}echo'
-			</div> 
-	</div>
-</div>';
+}
+
+echo'
+		</div> 
+
+
+;

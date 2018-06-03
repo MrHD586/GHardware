@@ -56,7 +56,7 @@
     											<div class="col-xs-9">
     												<div class="commentpseudo">
     													<b>
-    												    '.$NomUtilisateur[$id].'  '.$commentaire['Date'].'
+    												    '.$NomUtilisateur[$id].'
     													</b>
     												</div>
     											</div>
@@ -72,7 +72,8 @@
     												   '.$commentaire['Texte'].'
     											   </div>
     										</div>
-    									</div>';
+    									</div>
+                                        '.$commentaire['Date'].'';
 			      }	
 			      if($_SESSION['UserSession']==TRUE){
 										echo'<!-- New Comment Writing -->

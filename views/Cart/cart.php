@@ -39,14 +39,14 @@
     		<!-- ARTICLES -->';
             echo '<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">';
             Foreach($articles as $value){
-                foreach($value as $value){
-                    $index = $value['idArticle'];
+                foreach($value as $values){
+                    $index = $values['idArticle'];
                     
-                    if($value['Stock'] < $PanierNb[$index]){
-                        $PanierNb[$index]=$value['Stock'];
+                    if($values['Stock'] < $PanierNb[$index]){
+                        $PanierNb[$index]=$values['Stock'];
                     }
                    
-                    $prixtotal = $value['Price'] * $PanierNb[$index];
+                    $prixtotal = $values['Price'] * $PanierNb[$index];
             echo'
             
     		<div class="cartarticle">
@@ -56,7 +56,7 @@
     			
     			<!-- Article Image -->
     				<div class="col-md-2">
-    					<img class="img-responsive" src="'.$value['Link'].'">
+    					<img class="img-responsive" src="'.$values['Link'].'">
     				</div>
     				
     			<!-- Article Name -->
@@ -64,7 +64,7 @@
     				<div class="col-md-6">
     					<div class="row">
     						<center>
-    						<b>'.$value['Name'].'</b>
+    						<b>'.$values['Name'].'</b>
     						</center>
     					</div>
     				
@@ -87,7 +87,7 @@
     								<b>Prix Unitaire :</b>
     							</div>
     							<div class="row">
-    								<b>'.$value['Price'].'</b>
+    								<b>'.$values['Price'].'</b>
     							</div>
     						</div>
     						

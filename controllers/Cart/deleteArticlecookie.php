@@ -26,7 +26,7 @@
     }else{
         foreach($PanierNoDouble as $value){
             //test si la valeur du post et définie pour l'article
-            $article = $articleManager->getArticleById($value);
+            $article = $articleManager->getArticleByIdAndImage($value);
             if(isset($_POST[''.$value.''])){
                 $nombre =$_POST[''.$value.''];
                 foreach($article as $article){

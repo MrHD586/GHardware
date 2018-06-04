@@ -2,14 +2,14 @@
 ################################################################################
 #### Auteur : Viquerat Killian
 #### Date : 01 Juin 2018
-#### Page controllers/Commande/commande.php:
-#### Gestion des donnée de la commande
+#### Page controllers/order/order.php:
+#### Gestion des donnée de la order
 ################################################################################
 
-include 'models/CommandeManager.php';
+include 'models/OrderManager.php';
 
 session_start();
-$commandeManager = new CommandeManager();
+$commandeManager = new OrderManager();
 $userLogin = $_SESSION['user_name'];
 $user = $commandeManager->getUserByLogin($userLogin);
 // attribution de l'id de l'utilisateur a une variable
@@ -43,4 +43,4 @@ if(isset($_POST['continuer'])){
 $aside = $commandeManager->getCategoryName();
 
 include 'views/aside.php';
-include 'views/Commande/commande.php';
+include 'views/Order/order.php';

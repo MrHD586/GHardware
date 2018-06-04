@@ -1,9 +1,9 @@
 <?php
-include 'models/CommandeManager.php';
+include 'models/OrderManager.php';
     session_start();
     $userLogin = $_SESSION['user_name'];
     $NumberOrder = $_GET['commande'];
-    $commandeManager = new CommandeManager();
+    $commandeManager = new OrderManager();
     $user = $commandeManager->getUserByLogin($userLogin);
     // attribution de l'id de l'utilisateur a une variable
     foreach($user as $value){

@@ -99,6 +99,7 @@
         }
         
     Compteur($iduser, $ArticleNombre, $panierBddManager);
+    
     //inclusion du fichier des catégorie
     include 'views/aside.php';
     include 'views/Cart/cartbdd.php';

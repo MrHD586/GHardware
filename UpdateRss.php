@@ -44,19 +44,16 @@ function update_fluxRSS() {
     $limitation = 5;
     $donnees = $rssmanager->getRSS($index_selection, $limitation);
     //Une fois les informations récupérées, on ajoute un à un les items à notre fichier
-    while ($donnees = $reponse->fetch())
+    foreach($donnees as $value)
     {
         $xml .= '<item>';
-        $xml .= '<title>'.stripcslashes($donnees['Title']).'</title>';
-        $xml .= '<link>'.$donnees['Link'].'</link>';
-        $xml .= '<guid isPermaLink="true">'.$donnees['Guid'].'</guid>';
-        $xml .= '<pubDate>'.$donnees['pubDate'].'</pubDate>';
-        $xml .= '<description>'.stripcslashes($donnees['Description']).'</description>';
+        $xml .= '<title>'.stripcslashes($value['Title']).'</title>';
+        $xml .= '<link>'.$value['Link'].'</link>';
+        $xml .= '<guid isPermaLink="true">'.$value['Guid'].'</guid>';
+        $xml .= '<pubDate>'.$value['pubDate'].'</pubDate>';
+        $xml .= '<description>'.stripcslashes($value['Description']).'</description>';
         $xml .= '</item>';
     }
-    
-    //Puis on termine la requête
-    $reponse->closeCursor();
     
     //Et on ferme le channel et le flux RSS.
     $xml .= '</channel>';
@@ -70,12 +67,13 @@ function update_fluxRSS() {
      */
     
     //On ouvre le fichier en mode écriture
-    $fp = fopen("Rss.xml", 'w+');
+    $fp = fopen("./Rss.xml", 'w+');
     
     //On écrit notre flux RSS
     fputs($fp, $xml);
     
     //Puis on referme le fichier
     fclose($fp);
-    header("index.php?controller=Admin&Action=article");
+    //header("Location:index.php?controller=Admin&Action=article");
+    echo '1';
 } //Fermeture de la fonction

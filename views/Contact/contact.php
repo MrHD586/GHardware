@@ -18,7 +18,7 @@ echo'
 		
 		<div class="col-xs-offset-1 col-lg-5">
 			<strong>Adresse</strong><br>
-				Rue de Genève 63<br>1002 Lausanne<br><br>
+				GHardware<br>Rue de Genève 63<br>1002 Lausanne<br><br>
 			<strong>Téléphone</strong><br>
 				+41 79 888 88 88<br>
 				+41 21 777 77 77

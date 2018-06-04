@@ -50,7 +50,7 @@
         									</div><div class="col-xs-3">
                                                 ';
                                             if($_SESSION['userIsAdmin'] != TRUE){
-                                                if($article['Stock']==0){
+                                                if($value['Stock']==0){
                                                     echo'Out of Stock';
                                                 }else{
                                                     if($_SESSION['UserSession']==TRUE){

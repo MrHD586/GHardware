@@ -172,8 +172,8 @@
 		    return $resultat->fetchAll();
 		}
 		
-		public function getUserById($userId){
-		    $sql = "SELECT * FROM t_user WHERE idUser =".intval($userId); 
+		public function getUserByIdAndImage($userId){
+		    $sql = "SELECT * FROM t_user INNER JOIN t_imageuser ON t_user.Fk_ImageUser = t_imageuser.idImageUser WHERE idUser ='.intval($userId)' AND t_imageuser.isActive = 1" ; 
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}
@@ -187,11 +187,6 @@
 		    $sql = "SELECT * FROM t_user WHERE Login = '$userLogin'";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
-		}
-		public function getImageUserById($idImage) {
-		    $sql = "SELECT Link FROM t_imageuser WHERE idImageUser =".intval($idImage);
-		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
 		}
 		
 	}

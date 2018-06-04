@@ -23,12 +23,11 @@
     foreach($Commentaire as $value){
         $id = $value['idComment'];
         $Utilisateurid = $value['Fk_User'];
-        $UtilisateurName = $articlesManager->getUserById($Utilisateurid);
+        $UtilisateurName = $articlesManager->getUserByIdAndImage($Utilisateurid);
         
         foreach($UtilisateurName as $values){
             $NomUtilisateur[$id] = $values['Login'];
             $idImage = $values['Fk_ImageUser'];
-            $Image = $articlesManager->getImageUserById($idImage);
             $UserImage[$id]=$Image;
         } 
     }

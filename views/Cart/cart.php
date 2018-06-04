@@ -38,8 +38,7 @@
     		
     		<!-- ARTICLES -->';
             echo '<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">';
-            Foreach($articles as $value){
-                foreach($value as $values){
+            Foreach($articles as $values){
                     $index = $values['idArticle'];
                     
                     if($values['Stock'] < $PanierNb[$index]){
@@ -107,7 +106,7 @@
     				</center>
     			</div>';
             }
-            }
+            
             echo'</form>';
              
              echo '

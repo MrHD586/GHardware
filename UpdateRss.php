@@ -44,19 +44,16 @@ function update_fluxRSS() {
     $limitation = 5;
     $donnees = $rssmanager->getRSS($index_selection, $limitation);
     //Une fois les informations récupérées, on ajoute un à un les items à notre fichier
-    while ($donnees = $reponse->fetch())
+    foreach($donnees as $value)
     {
         $xml .= '<item>';
-        $xml .= '<title>'.stripcslashes($donnees['Title']).'</title>';
-        $xml .= '<link>'.$donnees['Link'].'</link>';
-        $xml .= '<guid isPermaLink="true">'.$donnees['Guid'].'</guid>';
-        $xml .= '<pubDate>'.$donnees['pubDate'].'</pubDate>';
-        $xml .= '<description>'.stripcslashes($donnees['Description']).'</description>';
+        $xml .= '<title>'.stripcslashes($value['Title']).'</title>';
+        $xml .= '<link>'.$value['Link'].'</link>';
+        $xml .= '<guid isPermaLink="true">'.$value['Guid'].'</guid>';
+        $xml .= '<pubDate>'.$value['pubDate'].'</pubDate>';
+        $xml .= '<description>'.stripcslashes($value['Description']).'</description>';
         $xml .= '</item>';
     }
-    
-    //Puis on termine la requête
-    $reponse->closeCursor();
     
     //Et on ferme le channel et le flux RSS.
     $xml .= '</channel>';

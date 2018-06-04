@@ -108,7 +108,7 @@
                                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                             
                             }elseif($validateParam == TRUE){
-                                $editButton ='<a href="index.php?controller=Admin&action=comment&refused='.$validateParam.'&modif='.$row["idComment"].'">
+                                $editButton ='<a href="index.php?controller=Admin&action=comment&validate='.$validateParam.'&modif='.$row["idComment"].'">
                                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                                     
                             }else{

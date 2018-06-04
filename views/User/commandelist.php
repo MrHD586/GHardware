@@ -64,7 +64,7 @@ foreach($Order as $value){
         
         if($value['PayementState']==0){
             
-            $PayementState='En cour de traitement';
+            $PayementState='En traitement';
             
         }else if($value['PayementState']==1){
             
@@ -72,7 +72,7 @@ foreach($Order as $value){
             
         }else{
             
-            $PayementState='Payement refuser';
+            $PayementState='Refusé';
         }
         
         if($value['State']==0){
@@ -85,7 +85,7 @@ foreach($Order as $value){
             
         }else{
             
-            $State='Arriver à destination';
+            $State='Délivrée';
             
         }
        

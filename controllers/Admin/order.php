@@ -21,8 +21,6 @@
     
     // ---- PARAMETRES URL ---- //
     
-    //paramêtre utile pour l'affichage des en attente
-    $waitingParam = $_GET['waiting'];
     
     //paramêtre utile pour l'affichage des validé
     $sendParam = $_GET['send'];
@@ -125,6 +123,8 @@
         
         //ÉDITION
         if($modifParam != NULL && !empty($modifParam) && !isset($_POST['submit'])){
+            $_SESSION["order_CreationSucces"] = null;
+            
             $orderToModify = $orderManager->getOrderByID($modifParam);
             
             foreach($orderToModify as $val){

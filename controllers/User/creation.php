@@ -44,8 +44,8 @@
 	            $errors[] = "Veuillez remplir tous les champs";
 	        
 	    }else{	 
-	        $userPasswordMD5 = md5($userPasswordRaw);
-	        $userPasswordVerifMD5 = md5($userPasswordVerifRaw);
+	        $userPasswordMD5 = sha256($userPasswordRaw);
+	        $userPasswordVerifMD5 = sha256($userPasswordVerifRaw);
 	        
     	    //instantiation de la classe LoginManager
     	    $creationManager = new UserCreationManager();

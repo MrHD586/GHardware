@@ -41,7 +41,7 @@ function update_fluxRSS() {
     
     //on lit les 25 premiers éléments à partir du dernier ajouté dans la base de données
     $index_selection = 0;
-    $limitation = 25;
+    $limitation = 5;
     $donnees = $rssmanager->getRSS($index_selection, $limitation);
     //Une fois les informations récupérées, on ajoute un à un les items à notre fichier
     while ($donnees = $reponse->fetch())

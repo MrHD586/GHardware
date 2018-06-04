@@ -41,7 +41,7 @@
         		      <div class="col-sm-10">
                            <br>
                            <div class="jumbotron">
-        		               '.$articles['Description'].'
+        		               '.$article['Description'].'
         	               </div>
         		      </div>
         	       </div> 

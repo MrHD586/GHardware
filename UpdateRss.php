@@ -39,7 +39,7 @@ function update_fluxRSS() {
      items à insérer dans le flux RSS.
      */
     
-    //on lit les 25 premiers éléments à partir du dernier ajouté dans la base de données
+    //on lit les 5 premiers éléments à partir du dernier ajouté dans la base de données
     $index_selection = 0;
     $limitation = 5;
     $donnees = $rssmanager->getRSS($index_selection, $limitation);
@@ -77,6 +77,6 @@ function update_fluxRSS() {
     
     //Puis on referme le fichier
     fclose($fp);
-    
+    header("index.php?controller=Admin&Action=article");
 } //Fermeture de la fonction
 ?>

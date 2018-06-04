@@ -74,6 +74,6 @@ function update_fluxRSS() {
     
     //Puis on referme le fichier
     fclose($fp);
-    header("Location:index.php?controller=Admin&Action=article");
+    //header("Location:index.php?controller=Admin&Action=article");
 } //Fermeture de la fonction
 ?>

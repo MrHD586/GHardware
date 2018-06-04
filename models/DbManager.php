@@ -50,4 +50,13 @@
 		    
 		    return $pagination_statement;
 		}
+		// execute les requêtes du contenu rss
+		public function RSSQuery($query, $index_selection, $limitation) {
+		    $reponse = $this->dbGh->prepare($query);
+		    $reponse->bindParam('index_selection', $index_selection, PDO::PARAM_INT);
+		    $reponse->bindParam('limitation', $limitation, PDO::PARAM_INT);
+		    $reponse->execute();
+		    
+		    return $reponse;
+		}
 	}

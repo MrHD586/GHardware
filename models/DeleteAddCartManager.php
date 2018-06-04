@@ -34,7 +34,7 @@
         
         
         public function deletePanier($Fk_User) {
-            $sql = "DELETE FROM t_cart WHERE Fk_User='$Fk_User'";
+            $sql = "DELETE FROM t_cart WHERE Fk_User='$Fk_User' AND isOrder=0";
             $this->dbManager->Query($sql);
         } 
         

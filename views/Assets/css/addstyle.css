@@ -84,6 +84,18 @@ input[type=button] {
     border-radius: 4px;
 }
 
+textarea {
+    width: 80%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+	border-color: #ccc;
+    resize: none;
+}
+
 label{
 	padding: 4px;
     margin: 8px 0;
@@ -189,17 +201,7 @@ input::-webkit-inner-spin-button {
 	padding-bottom:10px;
 }
 
-textarea{
-	width: 100%;
-	height: 120px;
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-sizing: border-box; 
-    margin-top: 6px; 
-    margin-bottom: 16px; 
-    resize: vertical 
-}
+
 
 
 /* Slider */

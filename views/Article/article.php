@@ -16,14 +16,24 @@
         		  <div class="row">
                       <div class="col-lg-7"><img class="img-responsive" src="'.$article['Link'].'"></div> 
         			  <div class="col-lg-4">
-        			       <div class="col-md-12">En Stock : <span class="badge text-success">'.$article['Stock'].'</span></div>
-        				   <div class="col-md-12"><h2>Prix : <span class="badge text-success">'.$article['Price'].'</h2></span></div>';
-    	                   
-    	                   if($_SESSION['UserSession']==TRUE){
-        				       echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd&id='.$article['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+                           ';
+    	                   if($article['Stock']==0){
+    	                       echo'<div class="col-md-12">En Stock : <span class="badge text-success">Out of stock</span></div>';
     	                   }else{
-                               echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=cookie&id='.$article['idArticle'].'" role="button">Ajouter au Panier</a></div>';
-                           }
+        			           echo'<div class="col-md-12">En Stock : <span class="badge text-success">'.$article['Stock'].'</span></div>';
+    	                   }
+    	                   echo'
+        				   <div class="col-md-12"><h2>Prix : <span class="badge text-success">'.$article['Price'].'</h2></span></div>';
+    	                   if($_SESSION['userIsAdmin'] != TRUE){
+    	                       if($article['Stock']!=0){
+    	                           if($_SESSION['UserSession']==TRUE){
+        				                echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd&id='.$article['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+    	                           }else{
+                                        echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=cookie&id='.$article['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+                                   }
+    	                       }
+    	                   }
+    	                   
         			  echo'</div>
         		  </div>
         		  <br>
@@ -31,7 +41,7 @@
         		      <div class="col-sm-10">
                            <br>
                            <div class="jumbotron">
-        		               '.$articles['Description'].'
+        		               '.$article['Description'].'
         	               </div>
         		      </div>
         	       </div> 

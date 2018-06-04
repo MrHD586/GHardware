@@ -23,7 +23,7 @@
         $idCommentaire=$value['idComment'];
         $idarticle=$value['Fk_Article'];
         
-        $article = $articlesManager->getArticleById($idarticle);
+        $article = $articlesManager->getArticleByIdAndImage($idarticle);
         foreach ($article as $value){
             $article[$idCommentaire] = $value['Name'];
         }

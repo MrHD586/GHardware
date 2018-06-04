@@ -28,7 +28,7 @@
         foreach($UtilisateurName as $values){
             $NomUtilisateur[$id] = $values['Login'];
             $idImage = $values['Fk_ImageUser'];
-            $UserImage[$id]=$values['Link']
+            $UserImage[$id]=$values['Link'];
         } 
     }
     

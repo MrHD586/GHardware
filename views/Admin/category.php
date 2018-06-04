@@ -129,8 +129,7 @@
     //------ FORMULAIRE ------//
     //titre du formulaire
     if(!empty($modifParam)){
-        $formTitle = "Modification d'une catégorie";
-        
+        $formTitle = "Modification d'une catégorie";        
     }else{
         $formTitle ="Saisie d'une nouvelle catégorie";
     }
@@ -177,12 +176,9 @@
                         <div class="col-lg-12"></div>
                 		<div class="col-xs-offset-2 col-lg-2">
                             <input type="submit" name="submit" value="Envoyer"/> 
-                            <input type="submit" name="reset" value="Annuler"/>
+                            <a href="index.php?controller=Admin&action=category"><input type="button" name="reset" value="Annuler"/></a>
                         </div>
                 	    <div class="col-lg-12"></div>
-                      </p>
-                </form>
-            	</form>
-			</div>
-		</div>';
+                    </p>
+            	</form>';
     

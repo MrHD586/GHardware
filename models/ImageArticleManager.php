@@ -31,7 +31,7 @@
         //Crée une nouvelle image
         public function setNewImageArticle($imageArticleLink, $imageArticleIsActive) {
             $sql = "INSERT INTO t_imageArticle (Link, isActive)
-                    VALUES ('$imageLink', b'$imageArticleIsActive')";
+                    VALUES ('$imageArticleLink', b'$imageArticleIsActive')";
             $this->dbManager->Query($sql);
         }
         

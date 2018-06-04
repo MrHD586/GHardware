@@ -144,8 +144,7 @@
    
     //titre du formulaire
     if(!empty($modifParam)){
-        $formTitle = "Modification d'un article";
-        
+        $formTitle = "Modification d'un article";        
     }else{
         $formTitle ="Saisie d'un nouvel article";
     }
@@ -225,7 +224,7 @@
                                         if($formArticleBrandValue == $value['idBrand']){
                                             echo '<option selected="selected" value="'.$value['idBrand'].'">'.$value['Name'].'</option>';
                                         }else{
-                                            echo '<option value="'.$value['idBrand'].'">'.$value['Name'].'</option>';
+                                            echo '<option value="'.$value['idBrand'].'">'.$value['BName'].'</option>';
                                         }
                                   }
                             echo '
@@ -260,10 +259,10 @@
                         <div class="col-lg-12"></div>
                 		<div class="col-xs-offset-2 col-lg-2">
                             <input type="submit" name="submit" value="Envoyer"/> 
-                            <input type="submit" name="reset" value="Annuler"/>
+                            <a href="index.php?controller=Admin&action=article"><input type="button" name="reset" value="Annuler"/></a>
                         </div>
                 	    <div class="col-lg-12"></div>
-                      </p>
+                    </p>
             	</form>';
     
  

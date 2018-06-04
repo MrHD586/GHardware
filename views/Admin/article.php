@@ -224,7 +224,7 @@
                                         if($formArticleBrandValue == $value['idBrand']){
                                             echo '<option selected="selected" value="'.$value['idBrand'].'">'.$value['Name'].'</option>';
                                         }else{
-                                            echo '<option value="'.$value['idBrand'].'">'.$value['Name'].'</option>';
+                                            echo '<option value="'.$value['idBrand'].'">'.$value['BName'].'</option>';
                                         }
                                   }
                             echo '

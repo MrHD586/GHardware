@@ -76,5 +76,3 @@ function update_fluxRSS() {
     header("Location:index.php?controller=Admin&Action=article");
 
 } //Fermeture de la fonction
-
-update_fluxRSS();

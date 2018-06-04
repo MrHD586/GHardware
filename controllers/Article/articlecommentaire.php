@@ -12,7 +12,7 @@
     
     $articlesManager = new ArticleManager();
     
-    $articles = $articlesManager->getArticleById($idarticle);
+    $articles = $articlesManager->getArticleByIdAndImage($idarticle);
     
     $aside = $articlesManager->getCategoryName();
     

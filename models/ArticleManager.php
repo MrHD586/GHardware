@@ -21,8 +21,8 @@
 		}
 		 
 		//Récupère les articles par id
-		public function getArticleById($idarticle) {
-			$sql = "SELECT * FROM t_article WHERE idArticle=".intval($idarticle); 
+		public function getArticleByIdAndImage($idarticle) {
+		    $sql = "SELECT * FROM t_article INNER JOIN t_imagearticle ON t_article.Fk_ImageArticle = t_imagearticle.idImageArticle WHERE idArticle='".intval($idarticle)."' AND t_imagearticle.isActive = 1"; 
 			$resultat = $this->dbManager->Query($sql);
 			return $resultat->fetchAll();
 		}

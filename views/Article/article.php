@@ -8,21 +8,21 @@
 
 	//affichage des données récupérées
 	//echo "<pre>".var_dump($articles)."</pre>";
-    foreach($articles as $articles){
+    foreach($articles as $article){
     	echo '<div class="col-lg-9">
     		      <div class="row">
-                       <div class="col-xs-4 col-xs-offset-4"><h1>'.$articles['Name'].'</h1></div>
+                       <div class="col-xs-4 col-xs-offset-4"><h1>'.$article['Name'].'</h1></div>
                   </div>
         		  <div class="row">
-                      <div class="col-lg-7"><img class="img-responsive" src="images/imagetemplate.png"></div> 
+                      <div class="col-lg-7"><img class="img-responsive" src="'.$article['Link'].'"></div> 
         			  <div class="col-lg-4">
-        			       <div class="col-md-12">En Stock : <span class="badge text-success">'.$articles['Stock'].'</span></div>
-        				   <div class="col-md-12"><h2>Prix : <span class="badge text-success">'.$articles['Price'].'</h2></span></div>';
+        			       <div class="col-md-12">En Stock : <span class="badge text-success">'.$article['Stock'].'</span></div>
+        				   <div class="col-md-12"><h2>Prix : <span class="badge text-success">'.$article['Price'].'</h2></span></div>';
     	                   
     	                   if($_SESSION['UserSession']==TRUE){
-        				       echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+        				       echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=bdd&id='.$article['idArticle'].'" role="button">Ajouter au Panier</a></div>';
     	                   }else{
-                               echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=cookie&id='.$articles['idArticle'].'" role="button">Ajouter au Panier</a></div>';
+                               echo'<div class="col-md-12"><a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=cookie&id='.$article['idArticle'].'" role="button">Ajouter au Panier</a></div>';
                            }
         			  echo'</div>
         		  </div>

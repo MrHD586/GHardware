@@ -28,7 +28,7 @@
         
         
         public function deleteValueCart($Fk_User,$Fk_Article) {
-            $sql = "DELETE FROM t_cart WHERE Fk_User='$Fk_User' AND Fk_Article='$Fk_Article'";
+            $sql = "DELETE FROM t_cart WHERE Fk_User='$Fk_User' AND Fk_Article='$Fk_Article' AND isOrder=0";
             $this->dbManager->Query($sql);
         }
         

@@ -75,3 +75,4 @@ function update_fluxRSS() {
     fclose($fp);
 
 } //Fermeture de la fonction
+update_fluxRSS();

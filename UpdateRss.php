@@ -58,7 +58,6 @@ function update_fluxRSS() {
     //Et on ferme le channel et le flux RSS.
     $xml .= '</channel>';
     $xml .= '</rss>';
-    echo $xml;
     /*  Tout notre fichier RSS est maintenant contenu dans la variable $xml.
      Nous allons maintenant l'écrire dans notre fichier XML et ainsi mettre à jour notre flux.
      Pour cela, nous allons utiliser les fonctions de php File pour écrire dans le fichier.
@@ -67,15 +66,15 @@ function update_fluxRSS() {
      */
     
     //On ouvre le fichier en mode écriture
-    $fp = fopen("./Rss.xml", 'w+');
+    $fp = fopen("Rss.xml", 'w+');
     
     //On écrit notre flux RSS
-    fputs($fp, $xml);
+    fwrite($fp, $xml);
     
     //Puis on referme le fichier
     fclose($fp);
-    //header("Location:index.php?controller=Admin&Action=article");
-    echo '1';
+    header("Location:index.php?controller=Admin&Action=article");
+
 } //Fermeture de la fonction
 
 update_fluxRSS();

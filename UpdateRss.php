@@ -24,7 +24,7 @@ function update_fluxRSS() {
     $xml .= '   <link>http://ghardware.clanviquerat.ch</link> ';
     $xml .= '   <description>Les meilleurs articles pour le meilleure prix</description>';
     $xml .= '   <width>80</width>';
-    $xml .= '   <height>80</width>';
+    $xml .= '   <height>80</height>';
     $xml .= ' </image>';
     $xml .= ' <language>fr</language>';
     $xml .= ' <copyright>Ghardware.clanviquerat.ch</copyright>';
@@ -69,7 +69,7 @@ function update_fluxRSS() {
     $fp = fopen("Rss.xml", 'w+');
     
     //On écrit notre flux RSS
-    fwrite($fp, $xml);
+    fputs($fp, $xml);
     
     //Puis on referme le fichier
     fclose($fp);

@@ -79,4 +79,3 @@ function update_fluxRSS() {
     fclose($fp);
     header("index.php?controller=Admin&Action=article");
 } //Fermeture de la fonction
-?>

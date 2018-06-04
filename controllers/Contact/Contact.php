@@ -7,7 +7,8 @@
 ################################################################################
 
 include 'models/CategoryManager.php';
+$categorieManager = new CategoryManager();
 session_start();
-$aside = $searchManager->getCategoryName();
+$aside = $categorieManager->getCategoryName();
 include 'views/aside.php';
 include 'views/Contact/contact.php';

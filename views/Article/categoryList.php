@@ -45,23 +45,23 @@
     							
     						<!-- Notation and Cart -->
     							<div class="col-xl-12">
-    								<div class="row">
-    									<div class="col-xs-9">
-    										*****
-    									</div><div class="col-xs-3">
-                                            ';
+    								<div class="row">';
+                                    if($value['Stock']==0){
+                                        echo'<div class="col-xs-9">
+                                        Out of Stock
+                                        </div><div class="col-xs-3">';
+                                    }else{
                                            if($_SESSION['userIsAdmin'] != TRUE){
-                                               if($value['Stock']==0){
-                                                   echo'Out of Stock';
-                                               }else{
+                                               
                                                     if($_SESSION['UserSession']==TRUE){
                                                         echo'<a href="index.php?controller=Cart&action=bdd&id='.$id.'&categorie='.$category.'"><img class="img-responsive" src="images/carticon.png"></a>';
                                                     }else{
                                                         echo'<a href="index.php?controller=Cart&action=cookie&id='.$id.'&categorie='.$category.'"><img class="img-responsive" src="images/carticon.png"></a>';
                                                     }
-                                                }
+                                                
                                            }
-    									echo'</div>
+                                    }
+    							        echo'</div>
     								</div>
     							</div>
     					</div>

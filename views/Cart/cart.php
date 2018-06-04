@@ -12,7 +12,7 @@
     			<div class="col-sm-offset-2 col-sm-4" id="carticon" >';
                 
                
-                if($_SESSION['nbarticle']==0){
+                if($Vide==1){
                     echo'<form action="index.php?controller=Cart&action=displayCookie&vide=1" method="POST">
     					   <input type="submit" name="commande" value="Passer la commande">
                         </form>';

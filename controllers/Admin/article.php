@@ -10,7 +10,7 @@
     include("models/ArticleManager.php");
         
     //On va chercher le fichier php qui contient le code pour mettre à jour le flux RSS
-    include_once("url_relative/UpdateRss.php");
+    include_once("UpdateRss.php");
     
     //Variable contenant le paramêtre de session 'userIsAdmin'
     $sessionAdminUser = $_SESSION['userIsAdmin'];
@@ -183,14 +183,14 @@
                    
                     
                     //--- RSS ---//
+                    $rssTitle = $articleName;
+                    $rssLink = $articleManager->getArticleIdByName($articleName);
+                    $rssGuid = time();
+                    $rssDescription = $articleDescription;
+                    $rssPubDate = Date("Y-m-d H:i:s");
                     
-                    /*ch.titre -> article name
-                     ch.Link -> récup id du celon le nom
-                     ch.Guid -> timestamp   time();
-                     ch.Description -> description de l'article
-                     ch.PubDate -> Date("Y-m-d H:i:s");
-                    */
-                    
+                    $articleManager->insertRss($rssTitle, $rssLink, $rssGuid, $rssDescription, $rssPubDate);
+                 
                     //On appelle la fonction de mise à jour du fichier
                     update_fluxRSS();
                     header($refresh);

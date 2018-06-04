@@ -27,8 +27,8 @@
             return $resultat;
         }
         // récupére les articles selon la recherche entrée
-        public function SearchMarque($search){
-            $sql = "SELECT * FROM t_article INNER JOIN t_brand ON t_article.Fk_Brand = t_brand.idBrand WHERE t_brand.BName LIKE '%$search%'";  
+        public function SearchMarqueAndImageArticle($search){
+            $sql = "SELECT * FROM t_article INNER JOIN t_brand ON t_article.Fk_Brand = t_brand.idBrand INNER JOIN t_imagearticle ON t_article.Fk_ImageArticle = t_imagearticle.idImageArticle WHERE t_brand.BName LIKE '%$search%' AND t_imagearticle.isActive = 1";  
             $resultat = $this->dbManager->Query($sql);
             return $resultat;
         }

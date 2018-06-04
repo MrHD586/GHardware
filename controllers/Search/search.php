@@ -15,7 +15,7 @@
     $marque =$_POST['searchmarque'];
     $searchManager = new SearchManager();
     if(isset($_POST['searchmarque'])){
-        $Categoriearticles = $searchManager->SearchMarque($marque);
+        $Categoriearticles = $searchManager->SearchMarqueAndImageArticle($marque);
     }else{
         $Categoriearticles = $searchManager->SearchArticleAndImageArticle($article);
     }

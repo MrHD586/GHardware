@@ -50,7 +50,7 @@
     									<!-- Avatar -->
     										<div class="pseudoavatar">
     											<div class="col-xs-3">
-    												<img width="50" height="50" src="images/defaultavatar.png">
+    												<img width="50" height="50" src="'.$UserImage[$id].'">
     											</div>
     									<!-- Pseudo -->
     											<div class="col-xs-9">

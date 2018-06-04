@@ -27,6 +27,9 @@
         
         foreach($UtilisateurName as $values){
             $NomUtilisateur[$id] = $values['Login'];
+            $idImage = $values['Fk_ImageUser'];
+            $Image = $articlesManager->getImageUserById($idImage);
+            $UserImage[$id]=$Image['Link'];
         } 
     }
     

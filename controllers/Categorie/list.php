@@ -14,7 +14,7 @@
     
     $categoryManager = new CategoryManager();
     
-    $CategoryArticle = $categoryManager->getArticleByCategoryName($category);
+    $CategoryArticle = $categoryManager->getArticleByCategoryNameAndArticleImage($category);
     
     $aside = $categoryManager->getCategoryName();
     

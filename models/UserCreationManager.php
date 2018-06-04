@@ -89,7 +89,7 @@
 		    return $resultat;
 		}
 		
-		//Modifie une utilisateurs existante
+		//Modifie un utilisateurs existant
 		public function modifyUserById($userId, $userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate,
 		                               $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin){
            if($userPassword == NULL){

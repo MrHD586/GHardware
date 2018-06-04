@@ -110,12 +110,10 @@
                                         //Bouton d'édition
                                         $editButton;
                                         
-                                        if($inactiveParam == TRUE)
+                                        if($inactiveParam == TRUE){
                                             $editButton ='<a href="index.php?controller=Admin&action=article&inactive='.$inactiveParam.'&modif='.$row["idArticle"].'">
                                                           <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
-                                        
-                                        //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
-                                        if(!$inactiveParam){
+                                        }else{
                                             $editButton ='<a href="index.php?controller=Admin&action=article&modif='.$row["idArticle"].'">
                                                           <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                                             $archiveButton = '<a href="index.php?controller=Admin&action=article&archive='.$row["idArticle"].'" onclick="submitform()">

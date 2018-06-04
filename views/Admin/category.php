@@ -95,17 +95,17 @@
                                 //Bouton d'édition
                                 $editButton;
                                 
-                                if($inactiveParam == TRUE)
+                                if($inactiveParam == TRUE){
                                     $editButton ='<a href="index.php?controller=Admin&action=category&inactive='.$inactiveParam.'&modif='.$row["idCategory"].'">
                                                                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                                     
                                     //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
-                                    if(!$inactiveParam){
-                                        $editButton ='<a href="index.php?controller=Admin&action=category&modif='.$row["idCategory"].'">
-                                                                                  <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
-                                        $archiveButton = '<a href="index.php?controller=Admin&action=category&archive='.$row["idCategory"].'" onclick="submitform()">
-                                                                                      <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
-                                    }
+                                }else{
+                                    $editButton ='<a href="index.php?controller=Admin&action=category&modif='.$row["idCategory"].'">
+                                                                              <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                                    $archiveButton = '<a href="index.php?controller=Admin&action=category&archive='.$row["idCategory"].'" onclick="submitform()">
+                                                                                  <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
+                                }
                                     
                                     echo' <td>'.$editButton.$archiveButton.'</td>
                                       </tr>';

@@ -23,7 +23,9 @@
        
         //récuperation du panier de l'utilisateur actuelle
         $articlesarrays = $panierBddManager->getPanierByUserId($iduser);
-            
+        if(empty($articlesarrays)){
+            $Vide=1;
+        }
             //For pour assigner le nombre d'articles dans une variable pour chaque article présent dans le panier
             foreach($articlesarrays as $value){
                 $nb=$value['Number'];

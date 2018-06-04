@@ -5,14 +5,19 @@
     <div class="col-lg-9">
     		<!-- CART MENU -->
     			<div class="row">
-        
     				<div class="cartmenu">
     		<!-- Order the cart content button -->
-    			<div class="col-sm-offset-2 col-sm-4" id="carticon" >
-                    <form action="index.php?controller=Order&action=order" method="POST">
+    			<div class="col-sm-offset-2 col-sm-4" id="carticon" >';
+                   if($Vide==1){
+                    echo'<form action="index.php?controller=Cart&action=bdd&vide=1" method="POST">
+    					   <input type="submit" name="commande" value="Passer la commande">
+                        </form>';
+                    }else{
+                    echo'<form action="index.php?controller=Order&action=order" method="POST">
     					<input type="submit" name="commande" value="Passer la commande">
-                    </form>
-    			</div>
+                    </form>';
+                    }
+    			echo'</div>
         
     		<!-- Discard the shopping cart button -->
     					<div class="col-sm-4" id="carticon">

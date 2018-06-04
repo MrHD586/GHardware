@@ -18,7 +18,10 @@
 				<a href="http://ghardware.clanviquerat.ch/Snake.php">Nos créations</a><br>
 				<a href="http://lmgtfy.com/?q=Comment+aller+se+faire+enculer">Nos adresses privées</a><br>
 				<a href="https://www.latlmes.com/breaking/ghardware-rvlation-de-2018-1">Nos exploits</a><br>
-				
+				<a href="http://ghardware.clanviquerat.ch/rss.xml">
+                <img src="images/rss_logo.png" alt="Flux RSS" border="0" />
+                Flux RSS News
+                </a>
 				</div>
         		<div class="col-sm-4"><a href="index.php?controller=Contact&action=Contact">Contact</a></div>
         	</div>

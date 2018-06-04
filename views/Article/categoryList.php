@@ -27,7 +27,7 @@
     						
     						<!-- Image -->
     							<div class="col-xl-12">
-    								<img class="img-responsive" src="images/imagetemplate.png">
+    								<img class="img-responsive" src="'.$value['Link'].'">
     							</div>
     						<!-- Price and Text -->
     							<div class="col-xl-12">

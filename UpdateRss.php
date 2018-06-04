@@ -69,7 +69,7 @@ function update_fluxRSS() {
     $fp = fopen("Rss.xml", 'w+');
     
     //On écrit notre flux RSS
-    fputs($fp, $xml);
+    fwrite($fp, $xml);
     
     //Puis on referme le fichier
     fclose($fp);

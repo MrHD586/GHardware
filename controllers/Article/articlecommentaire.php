@@ -29,7 +29,7 @@
             $NomUtilisateur[$id] = $values['Login'];
             $idImage = $values['Fk_ImageUser'];
             $Image = $articlesManager->getImageUserById($idImage);
-            $UserImage[$id]=$Image['Link'];
+            $UserImage[$id]=$Image;
         } 
     }
     

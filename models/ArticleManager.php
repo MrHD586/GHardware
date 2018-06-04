@@ -189,7 +189,7 @@
 		    return $resultat;
 		}
 		public function getImageUserById($idImage) {
-		    $sql = "SELECT * FROM t_imageuser WHERE idImageUser =".intval($idImage);
+		    $sql = "SELECT Link FROM t_imageuser WHERE idImageUser =".intval($idImage);
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}

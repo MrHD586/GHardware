@@ -83,7 +83,7 @@
                             echo '
                                     <tr>
                                         <td>'.$row["idBrand"].'</td>
-                                        <td>'.$row["Name"].'</td>';
+                                        <td>'.$row["BName"].'</td>';
             
                                         if($row["isActive"] == 1){
                                             echo '<td>Oui</td>';

@@ -22,7 +22,7 @@ class RSSManager {
     //Récupère les articles et image par id
     public function getRSS($index_selection, $limitation) {
         $sql = "SELECT * FROM flux_rss ORDER BY pubDate DESC LIMIT :index_selection, :limitation";
-        $resultat = $this->dbManager->RSSQuery($sql);
+        $resultat = $this->dbManager->RSSQuery($sql, $index_selection, $limitation);
         return $resultat->fetchAll();
     }
 }

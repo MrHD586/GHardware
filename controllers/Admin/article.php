@@ -1,7 +1,7 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 15 Mai 2018
+    #### Date : 30 Mai 2018
     #### Page controllers/Admin/article.php:
     #### 	  Page de managment des articles avec formulaire et tableau
     ################################################################################
@@ -187,7 +187,7 @@
         
         //ÉDITION
         if($modifParam != NULL && !empty($modifParam) && !isset($_POST['submit'])){
-            $articleToModify = $articleManager->getArticleById($modifParam);
+            $articleToModify = $articleManager->getArticleByIdAndImage($modifParam);
             
             foreach($articleToModify as $val){
                 $formArticleIdValue = $val['idArticle'];

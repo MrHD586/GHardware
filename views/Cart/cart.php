@@ -10,9 +10,7 @@
     				<div class="cartmenu">
     		<!-- Order the cart content button -->
     			<div class="col-sm-offset-2 col-sm-4" id="carticon" >';
-                if($error==1){
-                    echo '<p style="color:red;">Vous ne pouvez pas passer une commande sans articles dans le panier</p>';
-                }
+                
                
                 if($Vide==1){
                     echo'<form action="index.php?controller=Cart&action=displayCookie&vide=1" method="POST">
@@ -34,8 +32,11 @@
     						</form>
     					</div>
                     </div>    
-    			</div>
-    		
+    			</div>';
+    		if($error==1){
+                    echo '<p style="color:red;">Vous ne pouvez pas passer une commande sans articles dans le panier</p>';
+                }
+            echo'
     		<!-- ARTICLES -->';
             echo '<form action="index.php?controller=Cart&action=deleteArticlecookie" method="POST">';
             Foreach($articles as $value){

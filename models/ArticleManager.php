@@ -200,7 +200,7 @@
 		//Crée un nouvel article
 		public function insertRss($rssTitle, $rssLink, $rssGuid, $rssDescription, $rssPubDate) {
 		        $sql = "INSERT INTO t_rss (Title, Link, Guid, Description, pubDate)
-                        VALUES ('$rssTitle', '$rssLink', '$rssGuid', '$$rssDescription', '$rssPubDate')";
+                        VALUES ('$rssTitle', '$rssLink', '$rssGuid', '$rssDescription', '$rssPubDate')";
 		        $this->dbManager->Query($sql);
 		}
 	}

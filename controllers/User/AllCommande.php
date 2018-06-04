@@ -1,7 +1,7 @@
 <?php
-include 'models/CommandeManager.php';
+include 'models/OrderManager.php';
 session_start();
-$commandeManager = new CommandeManager();
+$commandeManager = new OrderManager();
 $userLogin = $_SESSION['user_name'];
 $user = $commandeManager->getUserByLogin($userLogin);
 // attribution de l'id de l'utilisateur a une variable

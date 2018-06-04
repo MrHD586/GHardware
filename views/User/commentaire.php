@@ -78,7 +78,7 @@ echo'
 	<div class="commandarticle">
 	
 		<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
-		<form method=POST action=index.php?controller=commentaire&action=AddDeleteCommentaire&id='.$idCommentaire.'>
+		<form method=POST action=index.php?controller=comment&action=AddDeleteComment&id='.$idCommentaire.'>
 			<div class="row">
 			
 				

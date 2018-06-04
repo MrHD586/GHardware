@@ -9,7 +9,7 @@
     				<div class="cartmenu">
     		<!-- Order the cart content button -->
     			<div class="col-sm-offset-2 col-sm-4" id="carticon" >
-                    <form action="index.php?controller=Commande&action=commande" method="POST">
+                    <form action="index.php?controller=Order&action=order" method="POST">
     					<input type="submit" name="commande" value="Passer la commande">
                     </form>
     			</div>

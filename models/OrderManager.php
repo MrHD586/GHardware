@@ -2,7 +2,7 @@
 ################################################################################
 #### Auteur : Viquerat Killian
 #### Date : 01 Juin 2018
-#### Classe CommandeManager :
+#### Classe OrderManager :
 #### 		Cette classe possède des fonctions effectuants
 ####		des requêtes souvant utilisées.
 ################################################################################
@@ -11,7 +11,7 @@
 include("models/DbManager.php");
 
 
-class CommandeManager {
+class OrderManager {
     
     private $dbManager;
     

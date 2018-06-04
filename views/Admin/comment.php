@@ -44,16 +44,9 @@
     
     
     //lien pour les affichages des actifs et inactifs
-    if($_GET['validate']){
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=comment">Affichage des "en attente"</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <a href="index.php?controller=Admin&action=comment&refused=TRUE"> Affichage des refusés</a>';
-    }elseif($_GET['refused']){
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=comment">Affichage des "en attente"</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <a href="index.php?controller=Admin&action=comment&validate=TRUE">Affichage des validés</a>';
-    }else{
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=comment&validate=TRUE">Affichage des validés</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <a href="index.php?controller=Admin&action=comment&refused=TRUE">Affichage des refusés</a>';
-    }
+    $linkForDisplayedList = 'Affichage :&nbsp;&nbsp;<a href="index.php?controller=Admin&action=comment">| en attente |</a>&nbsp;&nbsp;
+                             <a href="index.php?controller=Admin&action=comment&validate=TRUE">| validés |</a>&nbsp;&nbsp;
+                             <a href="index.php?controller=Admin&action=comment&refused=TRUE">| refusés |</a>';
     
     
     echo '
@@ -139,11 +132,8 @@
     //------ FORMULAIRE ------//    
     //valeur des champs
     if($modifParam != NULL && !empty($modifParam)){
-        
-        
         $formTitle = "Modification d'un commentaire";
-        
-        $resetButton = '<input type="submit" name="reset" value="Annuler"/>';   
+          
         
         foreach($formFill as $key => $val){
             $formCommentIdValue = $key;
@@ -186,10 +176,10 @@
                             <div class="col-lg-12"></div>
                     		<div class="col-xs-offset-2 col-lg-2">
                                 <input type="submit" name="submit" value="Envoyer"/> 
-                                '.$resetButton.'
+                                <a href="index.php?controller=Admin&action=comment"><input type="button" name="reset" value="Annuler"/></a>
                             </div>
                     	    <div class="col-lg-12"></div>
-                          </p>
+                        </p>
                 	</form>';
     }
     

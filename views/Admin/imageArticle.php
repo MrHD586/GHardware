@@ -10,10 +10,10 @@
     $pageTitle = "Gestion des catégories";
     
     //message lors de création réussite
-    if($_SESSION['cat_CreationSucces'] != null){
-        $cat_CreationSucces = $_SESSION['cat_CreationSucces']."<br/>";
+    if($_SESSION['imgAr_CreationSucces'] != null){
+        $imgAr_CreationSucces = $_SESSION['imgAr_CreationSucces']."<br/>";
     }else{
-        $cat_CreationSucces = null;
+        $imgAr_CreationSucces = null;
     }
     
     
@@ -47,9 +47,9 @@
     
     //lien pour les affichages des actifs et inactifs
     if($_GET['inactive']){
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=category">Affichage des actifs</a>';
+        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=imageArticle">Affichage des actifs</a>';
     }else{
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=category&inactive=TRUE">Affichage des inactifs</a>';
+        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=imageArticle&inactive=TRUE">Affichage des inactifs</a>';
     }
     
     
@@ -70,7 +70,7 @@
                     <thead>
             		  <tr>
             			<th>ID</th>
-            			<th>Nom</th>
+            			<th>Lien</th>
                         <th>Actif</th>
                         <th style="width:10%;">Action</th>
             		  </tr>
@@ -82,8 +82,8 @@
                             foreach($result as $row) {
                                 echo '
                                     <tr>
-                                        <td>'.$row["idCategory"].'</td>
-                                        <td>'.$row["CName"].'</td>';
+                                        <td>'.$row["idImageArticle"].'</td>
+                                        <td>'.$row["Link"].'</td>';
                                 
                                 if($row["isActive"] == 1){
                                     echo '<td>Oui</td>';
@@ -96,15 +96,15 @@
                                 $editButton;
                                 
                                 if($inactiveParam == TRUE){
-                                    $editButton ='<a href="index.php?controller=Admin&action=category&inactive='.$inactiveParam.'&modif='.$row["idCategory"].'">
-                                                                              <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                                    $editButton ='<a href="index.php?controller=Admin&action=imageArticle&inactive='.$inactiveParam.'&modif='.$row["idImageArticle"].'">
+                                                  <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                                     
                                     //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
                                 }else{
-                                    $editButton ='<a href="index.php?controller=Admin&action=category&modif='.$row["idCategory"].'">
-                                                                              <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
-                                    $archiveButton = '<a href="index.php?controller=Admin&action=category&archive='.$row["idCategory"].'" onclick="submitform()">
-                                                                                  <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
+                                    $editButton ='<a href="index.php?controller=Admin&action=imageArticle&modif='.$row["idImageArticle"].'">
+                                                  <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                                    $archiveButton = '<a href="index.php?controller=Admin&action=imageArticle&archive='.$row["idImageArticle"].'" onclick="submitform()">
+                                                      <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
                                 }
                                     
                                     echo' <td>'.$editButton.$archiveButton.'</td>
@@ -129,18 +129,17 @@
     //------ FORMULAIRE ------//
     //titre du formulaire
     if(!empty($modifParam)){
-        $formTitle = "Modification d'une catégorie";
-        
+        $formTitle = "Modification d'une image";       
     }else{
-        $formTitle ="Saisie d'une nouvelle catégorie";
+        $formTitle ="Saisie d'une nouvelle image";
     }
     
     
     //valeur des champs
     if($modifParam != NULL && !empty($modifParam)){
         foreach($formFill as $key => $val){
-            $formCategoryIdValue = $key;
-            $formCategoryNameValue = $key;
+            $formImageArticleIdValue = $key;
+            $formImageArticleLinkValue = $key;
         }
     }
     
@@ -158,13 +157,13 @@
                 }
     echo '
                     './/message de validation
-                      $cat_CreationSucces.'
+                      $imgAr_CreationSucces.'
 
-                    <input type="hidden" value="'.$formCategoryIdValue.'" name="hiddenId"/>
+                    <input type="hidden" value="'.$formImageArticleIdValue.'" name="hiddenId"/>
                         
                     <p>
-            			<div class="col-lg-2"><label for="Name">Nom</label></div>
-            			<div class="col-lg-10"><input type="text" name="Name" value="'.$formCategoryNameValue.'"/></div>
+            			<div class="col-lg-2"><label for="Link">Lien</label></div>
+            			<div class="col-lg-10"><input type="text" name="Link" value="'.$formImageArticleLinkValue.'"/></div>
             		</p>
     
                     <p>
@@ -177,12 +176,9 @@
                         <div class="col-lg-12"></div>
                 		<div class="col-xs-offset-2 col-lg-2">
                             <input type="submit" name="submit" value="Envoyer"/> 
-                            <input type="submit" name="reset" value="Annuler"/>
+                            <a href="index.php?controller=Admin&action=imageArticle"><input type="button" name="reset" value="Annuler"/></a>
                         </div>
                 	    <div class="col-lg-12"></div>
-                      </p>
-                </form>
-            	</form>
-			</div>
-		</div>';
+                    </p>
+                </form>';
     

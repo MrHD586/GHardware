@@ -16,7 +16,7 @@
     $redirectToHome = "location:index.php?controller=Site&action=home";
     
     //Lien Adminbrand "refresh"
-    $refresh ="location:index.php?controller=Admin&action=imageArticles";
+    $refresh ="location:index.php?controller=Admin&action=imageArticle";
     
     
     // ---- PARAMETRES URL ---- //
@@ -51,7 +51,7 @@
         $search_keyword = '';
         if(isset($_POST['search']['keyword'])){
             $search_keyword = $_POST['search']['keyword'];
-            $_SESSION["imgimgAr_CreationSucces"] = NULL;
+            $_SESSION["imgAr_CreationSucces"] = NULL;
         }
         
         $per_page_html = '';
@@ -89,7 +89,7 @@
             $imageArticleIsActive = $_POST['isActive'];
             
             //si un champ est vides
-            if(empty($categoryName)){
+            if(empty($imageArticleLink)){
                 $errors[] = "Veuillez remplir tous les champs";
             }else{                       
                 if(empty($imageArticleId) || $imageArticleId == NULL){
@@ -126,7 +126,7 @@
                     
                 }else{
                     //requête pour la création de la marque
-                    $imageArticleManager->setImageArticleInactiveById($imageArticleLink, $imageArticleIsActive);
+                    $imageArticleManager->setNewImageArticle($imageArticleLink, $imageArticleIsActive);
                     $_SESSION["imgAr_CreationSucces"] = "<p style='color:green;'>Image ajoutée !</p>";
                     header($refresh);
                 }

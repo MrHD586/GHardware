@@ -44,16 +44,10 @@
     
     
     //lien pour les affichages des actifs et inactifs
-    if($_GET['delivered']){
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=order">Affichage des "en attente de payement"</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                     <a href="index.php?controller=Admin&action=order&sends=TRUE"> Affichage des "envoyées"</a>';
-    }elseif($_GET['send']){
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=order">Affichage des "en attente de payement"</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                     <a href="index.php?controller=Admin&action=order&delivered=TRUE">Affichage des déliverées</a>';
-    }else{
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=order&send=TRUE">Affichage des envoyées</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <a href="index.php?controller=Admin&action=order&delivered=TRUE">Affichage des déliverées</a>';
-    }
+    $linkForDisplayedList = 'Affichage :&nbsp;&nbsp;<a href="index.php?controller=Admin&action=order">| en attente de payement |</a>&nbsp;&nbsp;
+                             <a href="index.php?controller=Admin&action=order&send=TRUE">| envoyées |</a>&nbsp;&nbsp;
+                             <a href="index.php?controller=Admin&action=order&delivered=TRUE">| délivrées |</a>';
+  
     
     
     echo '
@@ -156,11 +150,7 @@
     //------ FORMULAIRE ------//
     //valeur des champs
     if($modifParam != NULL && !empty($modifParam)){
-        
-        
         $formTitle = "Modification d'une commande";
-        
-        $resetButton = '<input type="submit" name="reset" value="Annuler"/>';
         
         foreach($formFill as $key => $val){
             $formOrderIdValue = $key;
@@ -209,9 +199,9 @@
                 <div class="col-lg-12"></div>
         		<div class="col-xs-offset-2 col-lg-2">
                     <input type="submit" name="submit" value="Envoyer"/>
-                    '.$resetButton.'
+                    <a href="index.php?controller=Admin&action=order"><input type="button" name="reset" value="Annuler"/></a>
                 </div>
         	    <div class="col-lg-12"></div>
-              </p>
+            </p>
     	</form>';
     }

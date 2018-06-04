@@ -27,6 +27,13 @@
 			return $resultat->fetchAll();
 		}
 		
+		//Récupère les articles et image par id
+		public function getArticleIdByName($articleName) {
+		    $sql = "SELECT idArticle FROM t_article WHERE Name = '$articleName'";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
 		
 		//récupére et recherche les articles actifs
 		public function searchActiveArticle($search_keyword, $limit = null){
@@ -189,4 +196,11 @@
 		    return $resultat;
 		}
 		
+		
+		//Crée un nouvel article
+		public function insertRss($rssTitle, $rssLink, $rssGuid, $rssDescription, $rssPubDate) {
+		        $sql = "INSERT INTO t_rss (Title, Link, Guid, Description, pubDate)
+                        VALUES ('$rssTitle', '$rssLink', '$rssGuid', '$rssPubDate')";
+		        $this->dbManager->Query($sql);
+		}
 	}

@@ -1,7 +1,7 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 08 Mai 2018
+    #### Date : 31 Mai 2018
     #### Page controllers/Admin/category.php:
     #### 	  Page de managment des categories avec formulaire et tableau
     ################################################################################

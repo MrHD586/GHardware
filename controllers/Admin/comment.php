@@ -1,7 +1,7 @@
 <?php
     ################################################################################
     #### Auteur : Butticaz Yvann
-    #### Date : 08 Mai 2018
+    #### Date : 04 Juin 2018
     #### Page controllers/Admin/user.php:
     #### 	  Page de managment des utilisateurs avec formulaire et tableau
     ################################################################################

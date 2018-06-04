@@ -20,16 +20,18 @@
         $CEtat=0;
         $Date=Date("Y-m-d H:i:s");
         $user = $commentaireManager->getUserByLogin($userLogin);
-       
+        print_r($user);
         foreach($user as $value){
             $Fk_User = $value['idUser'];
+            echo $Fk_User;
+            
         }
         
         if(empty($CTexte)){
             header("location:index.php?controller=Article&action=articlecommentaire&error=1&id=$Fk_Article");
             
         }else{
-            $addCommentaire = $commentaireManager->setNewComment($CEtat, $CTexte,$Date, $Fk_User, $Fk_Article);
+            $addCommentaire = $commentaireManager->setNewComment($CEtat, $CTexte, $Fk_User, $Fk_Article, $Date);
             header("location:index.php?controller=Article&action=articlecommentaire&id=$Fk_Article");
         }
     }

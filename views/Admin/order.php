@@ -112,16 +112,17 @@
                             //Bouton d'édition
                             $editButton;
                             
-                            if($inactiveParam == TRUE){
+                            if($inactiveParam == TRUE)
                                 $editButton ='<a href="index.php?controller=Admin&action=user&inactive='.$inactiveParam.'&modif='.$row["idUser"].'">
                                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                                 
-                            }else{
-                                $editButton ='<a href="index.php?controller=Admin&action=user&modif='.$row["idUser"].'">
-                                                                                              <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
-                                $archiveButton = '<a href="index.php?controller=Admin&action=user&archive='.$row["idUser"].'" onclick="submitform()">
-                                                  <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
-                            }
+                                //Le bouton d'archivage n'est pas afficher si le tableau affiche les élements inactifs
+                                if(!$inactiveParam){
+                                    $editButton ='<a href="index.php?controller=Admin&action=user&modif='.$row["idUser"].'">
+                                                                                                  <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
+                                    $archiveButton = '<a href="index.php?controller=Admin&action=user&archive='.$row["idUser"].'" onclick="submitform()">
+                                                      <img src="images/action_archive.gif" alt="" title="Archiver" /></a>';
+                                }
                                 
                                 echo' <td>'.$editButton.$archiveButton.'</td>
                                 </tr>';

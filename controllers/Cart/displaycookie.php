@@ -21,7 +21,7 @@
     $error=$_GET['vide'];
     
     //test pour savoir si le cookie est vide
-    if((count($Panier))==0){
+    if($Panier[1]==NULL){
         $Vide=1;
     }
     

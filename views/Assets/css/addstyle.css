@@ -203,12 +203,6 @@ textarea{
 
 
 /* Slider */
-
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -272,6 +266,8 @@ img {vertical-align: middle;}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
+}
+
 
 
 /* Dropdown Menu */

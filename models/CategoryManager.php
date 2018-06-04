@@ -10,8 +10,6 @@
     //include de la classe DbManager
     include("models/DbManager.php");
     
-    //paramêtre de catégorie dans l'url
-    //$Category = $_GET['categorie'];
     
     class CategoryManager {
         

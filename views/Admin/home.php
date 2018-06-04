@@ -14,6 +14,7 @@
     $articleAdmin = "index.php?controller=Admin&action=article";
     $brandAdmin = "index.php?controller=Admin&action=brand";
     $categoryAdmin = "index.php?controller=Admin&action=category";
+    $imageAdmin = "index.php?controller=Admin&action=imageArticle";
     
 
 	echo '
@@ -126,6 +127,25 @@
 							</div>
 													<div class="col-xl-12">
 								<img class="img-responsive" src="images/category.png">
+							</div>
+							
+							</a>	
+							
+					</div>
+				</div>
+
+
+            <!-- New Image -->
+			<div class="col-xs-12 col-sm-6 col-md-3">
+				
+				<div class="articlebox">
+					<a id="categorylink" href="'.$imageAdmin.'">
+					
+							<div class="col-xl-12">
+								<center>Images</center>
+							</div>
+								<div class="col-xl-12">
+								<img class="img-responsive" src="images/images.png">
 							</div>
 							
 							</a>	

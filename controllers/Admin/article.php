@@ -10,7 +10,7 @@
     include("models/ArticleManager.php");
         
     //On va chercher le fichier php qui contient le code pour mettre à jour le flux RSS
-    include_once("../UpdateRss.php");
+    include_once("UpdateRss.php");
     
     //Variable contenant le paramêtre de session 'userIsAdmin'
     $sessionAdminUser = $_SESSION['userIsAdmin'];

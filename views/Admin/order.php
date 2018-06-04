@@ -46,12 +46,12 @@
     //lien pour les affichages des actifs et inactifs
     if($_GET['delivered']){
         $linkForDisplayedList = '<a href="index.php?controller=Admin&action=order">Affichage des "en attente"</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                     <a href="index.php?controller=Admin&action=order&refused=TRUE"> Affichage des refusés</a>';
+                                     <a href="index.php?controller=Admin&action=order&sends=TRUE"> Affichage des refusés</a>';
     }elseif($_GET['sends']){
         $linkForDisplayedList = '<a href="index.php?controller=Admin&action=order">Affichage des "en attente"</a>&nbsp;&nbsp;&nbsp;&nbsp;
                                      <a href="index.php?controller=Admin&action=order&validate=TRUE">Affichage des validés</a>';
     }else{
-        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=order&refused=TRUE">Affichage des refusés</a>
+        $linkForDisplayedList = '<a href="index.php?controller=Admin&action=order&refused=TRUE"> des refusés</a>
                                  <a href="index.php?controller=Admin&action=order&validate=TRUE">Affichage des validés</a>&nbsp;&nbsp;&nbsp;&nbsp;';
     }
     

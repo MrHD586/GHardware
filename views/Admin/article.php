@@ -96,7 +96,7 @@
                                         <td>'.$row["Price"].'</td>
                                         <td>'.$row["Description"].'</td>
                                         <td>'.$articleManager->getCategoryNameById($row["Fk_Category"])['CName'].'</td>
-                                        <td>'.$articleManager->getBrandNameById($row["Fk_Brand"])['Name'].'</td>
+                                        <td>'.$articleManager->getBrandNameById($row["Fk_Brand"])['BName'].'</td>
                                         <td>'.$articleManager->getImageArticleNameById($row["Fk_ImageArticle"])['Link'].'</td>';
                                             
                                         if($row["isActive"] == 1){

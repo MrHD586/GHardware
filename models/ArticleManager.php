@@ -131,14 +131,14 @@
 		
 		//Récupère toutes les marques
 		public function getBrand() {
-		    $sql = "SELECT * FROM t_brand WHERE isActive = 1 ORDER BY Name";
+		    $sql = "SELECT * FROM t_brand WHERE isActive = 1 ORDER BY BName";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}
 		
 		//Récupère toutes les marques
 		public function getBrandNameById($idBrand) {
-		    $sql = "SELECT Name FROM t_brand WHERE isActive = 1 AND idBrand =".intval($idBrand); ;
+		    $sql = "SELECT BName FROM t_brand WHERE isActive = 1 AND idBrand =".intval($idBrand); ;
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetch();
 		}

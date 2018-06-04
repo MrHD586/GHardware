@@ -18,9 +18,7 @@
         }
         
         echo'
-		
-			
-            
+
         		<div class="col-xs-12 col-sm-6 col-md-4">
         			<!-- START ARTICLE-->
         				<div class="articlebox">
@@ -32,7 +30,7 @@
         								    
         						<!-- Image -->
         							<div class="col-xl-12">
-        								<img class="img-responsive" src="images/imagetemplate.png">
+        								<img class="img-responsive" src="'.$value['Link'].'">
         							</div>
         						<!-- Price and Text -->
         							<div class="col-xl-12">

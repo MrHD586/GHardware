@@ -21,8 +21,8 @@
         }
         
         // récupére les articles selon la recherche entrée
-        public function Search($search){
-            $sql = "SELECT * FROM t_article WHERE Name LIKE '%$search%'";
+        public function SearchArticleAndImageArticle($search){
+            $sql = "SELECT * FROM t_article INNER JOIN t_imagearticle ON t_article.Fk_ImageArticle = t_imagearticle.idImageArticle WHERE Name LIKE '%$search%' AND t_imagearticle.isActive = 1";
             $resultat = $this->dbManager->Query($sql);
             return $resultat;
         }

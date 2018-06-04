@@ -1,7 +1,7 @@
 <?php
 
 //On déclare la fonction Php :
-function update_fluxRSS() {
+function update_fluxRSS($articleManager) {
     /*  Nous allons générer notre fichier XML d'un seul coup. Pour cela, nous allons stocker tout notre
      fichier dans une variable php : $xml.
      On commence par déclarer le fichier XML puis la version du flux RSS 2.0.

@@ -197,7 +197,7 @@
                     $articleManager->insertRss($rssTitle, $rssLink, $rssGuid, $rssDescription, $rssPubDate);
                  
                     //On appelle la fonction de mise à jour du fichier
-                    update_fluxRSS();
+                    update_fluxRSS($articleManager);
                     header($refresh);
                 }
             }

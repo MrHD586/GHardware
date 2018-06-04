@@ -203,4 +203,10 @@
                         VALUES ('$rssTitle', '$rssLink', '$rssGuid', '$rssDescription', '$rssPubDate')";
 		        $this->dbManager->Query($sql);
 		}
+		//Récupère les données du rss
+		public function getRSS($index_selection, $limitation) {
+		    $sql = "SELECT * FROM t_rss ORDER BY pubDate DESC LIMIT :index_selection, :limitation";
+		    $resultat = $this->dbManager->RSSQuery($sql, $index_selection, $limitation);
+		    return $resultat->fetchAll();
+		}
 	}

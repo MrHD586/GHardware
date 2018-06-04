@@ -2,9 +2,6 @@
 
 //On déclare la fonction Php :
 function update_fluxRSS() {
-    include 'models/RSSManager.php';
-    $rssmanager = new RSSManager();
-    
     /*  Nous allons générer notre fichier XML d'un seul coup. Pour cela, nous allons stocker tout notre
      fichier dans une variable php : $xml.
      On commence par déclarer le fichier XML puis la version du flux RSS 2.0.
@@ -42,7 +39,7 @@ function update_fluxRSS() {
     //on lit les 5 premiers éléments à partir du dernier ajouté dans la base de données
     $index_selection = 0;
     $limitation = 5;
-    $donnees = $rssmanager->getRSS($index_selection, $limitation);
+    $donnees =  $articleManager->getRSS($index_selection, $limitation);
     //Une fois les informations récupérées, on ajoute un à un les items à notre fichier
     foreach($donnees as $value)
     {
@@ -64,7 +61,6 @@ function update_fluxRSS() {
      
      Notez que l'adresse URL du fichier doit être relative obligatoirement !
      */
-    echo $xml;
     //On ouvre le fichier en mode écriture
     $fp = fopen("Rss.xml", 'w+');
     
@@ -75,4 +71,3 @@ function update_fluxRSS() {
     fclose($fp);
 
 } //Fermeture de la fonction
-update_fluxRSS();

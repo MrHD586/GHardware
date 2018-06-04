@@ -72,7 +72,7 @@
 		//Crée un nouvel article
 		public function setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive) {
-		    $sql = "INSERT INTO t_article (Name, Stock, Price, Description,isActive, Fk_Category, Fk_Brand, Fk_ImageArticle)
+		    $sql = "INSERT INTO t_article (Name, Stock, Price, Description, isActive, Fk_Category, Fk_Brand, Fk_ImageArticle)
                     VALUES ('$articleName', '$articleStock', '$articlePrice', '$articleDescription',
 		                     b'$articleIsActive', '$articleCategory',' $articleBrand', '$articlePicArticle')";
 		    $this->dbManager->Query($sql);

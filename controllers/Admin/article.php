@@ -184,7 +184,12 @@
                     
                     //--- RSS ---//
                     $rssTitle = $articleName;
-                    $rssLink = $articleManager->getArticleIdByName($articleName);
+                    $rssLinkTmp = $articleManager->getArticleIdByName($articleName);
+                    
+                    foreach($rssLinkTmp as $val){
+                        $rssLink = $val['idArticle'];
+                    }
+                    
                     $rssGuid = time();
                     $rssDescription = $articleDescription;
                     $rssPubDate = Date("Y-m-d H:i:s");

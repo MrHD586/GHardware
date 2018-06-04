@@ -2,6 +2,8 @@
 
 //On déclare la fonction Php :
 function update_fluxRSS() {
+    include 'models/RSSManager.php';
+    $rssmanager = new RSSManager();
     
     /*  Nous allons générer notre fichier XML d'un seul coup. Pour cela, nous allons stocker tout notre
      fichier dans une variable php : $xml.
@@ -40,28 +42,16 @@ function update_fluxRSS() {
     //on lit les 25 premiers éléments à partir du dernier ajouté dans la base de données
     $index_selection = 0;
     $limitation = 25;
-    
-    //On se connecte à notre base de données (pensez à mettre les bons logins)
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=flux_rss', 'nom_utilisateur', 'mot_de_passe');
-    }
-    catch(Exception $e) {die('Erreur : '.$e->getMessage());}
-    
-    //On prépare la requête et on exécute celle-ci pour obtenir les informations souhaitées :
-    $reponse = $bdd->prepare('SELECT * FROM flux_rss ORDER BY pubDate DESC LIMIT :index_selection, :limitation') or die(print_r($bdd->errorInfo()));
-    $reponse->bindParam('index_selection', $index_selection, PDO::PARAM_INT);
-    $reponse->bindParam('limitation', $limitation, PDO::PARAM_INT);
-    $reponse->execute();
-    
+    $donnees = $rssmanager->getRSS($index_selection, $limitation);
     //Une fois les informations récupérées, on ajoute un à un les items à notre fichier
     while ($donnees = $reponse->fetch())
     {
         $xml .= '<item>';
-        $xml .= '<title>'.stripcslashes($donnees['title']).'</title>';
-        $xml .= '<link>'.$donnees['link'].'</link>';
-        $xml .= '<guid isPermaLink="true">'.$donnees['link'].'</guid>';
-        $xml .= '<pubDate>'.(date("D, d M Y H:i:s O", strtotime($donnees['pubDate']))).'</pubDate>';
-        $xml .= '<description>'.stripcslashes($donnees['description']).'</description>';
+        $xml .= '<title>'.stripcslashes($donnees['Title']).'</title>';
+        $xml .= '<link>'.$donnees['Link'].'</link>';
+        $xml .= '<guid isPermaLink="true">'.$donnees['Guid'].'</guid>';
+        $xml .= '<pubDate>'.$donnees['pubDate'].'</pubDate>';
+        $xml .= '<description>'.stripcslashes($donnees['Description']).'</description>';
         $xml .= '</item>';
     }
     

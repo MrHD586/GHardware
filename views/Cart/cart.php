@@ -14,7 +14,7 @@
                     echo '<p style="color:red;">Vous ne pouvez pas passer une commande sans articles dans le panier</p>';
                 }
                
-                if($vide==1){
+                if($Vide==1){
                     echo'<form action="index.php?controller=Cart&action=displayCookie&vide=1" method="POST">
     					   <input type="submit" name="commande" value="Passer la commande">
                         </form>';

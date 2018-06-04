@@ -56,7 +56,7 @@
     			
     			<!-- Article Image -->
     				<div class="col-md-2">
-    					<img class="img-responsive" src="images/imagetemplate.png">
+    					<img class="img-responsive" src="'.$value['Link'].'">
     				</div>
     				
     			<!-- Article Name -->

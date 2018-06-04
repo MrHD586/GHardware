@@ -38,7 +38,7 @@
         //stockage du nombre du même articles voulu avec l'id de l'articles pour le retrouver facilement
         $PanierNb[$index] = $Nombre[$index];
         //stockage des donnée de la db sur l'article avec l'id de l'articles pour le retrouver facilement
-        $articles[$index] = $panierCookieManager->getArticleById($index);
+        $articles[$index] = $panierCookieManager->getArticleByIdAndImage($index);
     }
     
     $aside = $panierCookieManager->getCategoryNames();

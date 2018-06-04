@@ -173,7 +173,7 @@
 		}
 		
 		public function getUserByIdAndImage($userId){
-		    $sql = "SELECT * FROM t_user INNER JOIN t_imageuser ON t_user.Fk_ImageUser = t_imageuser.idImageUser WHERE idUser ='.intval($userId)' AND t_imageuser.isActive = 1" ; 
+		    $sql = "SELECT * FROM t_user INNER JOIN t_imageuser ON t_user.Fk_ImageUser = t_imageuser.idImageUser WHERE idUser ='".intval($userId)."' AND t_imageuser.isActive = 1" ; 
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat;
 		}

@@ -23,17 +23,15 @@
        
         //récuperation du panier de l'utilisateur actuelle
         $articlesarrays = $panierBddManager->getPanierByUserId($iduser);
-        if(empty($articlesarrays)){
-            $Vide=1;
-        }
+        
             //For pour assigner le nombre d'articles dans une variable pour chaque article présent dans le panier
             foreach($articlesarrays as $value){
+                
                 $nb=$value['Number'];
                 
                 //addition du nombre d'articles dans une variable externe
                 $ArticleNombre+=$nb;
             }
-        
         //attribution du nombre d'article total calculé dans la variable de session    
         $_SESSION['nbarticle'] = $ArticleNombre;
     }
@@ -101,7 +99,9 @@
         }
         
     Compteur($iduser, $ArticleNombre, $panierBddManager);
-    
+    if($_GET['vide']==1){
+        $error=1;
+    }
     //inclusion du fichier des catégorie
     include 'views/aside.php';
     include 'views/Cart/cartbdd.php';

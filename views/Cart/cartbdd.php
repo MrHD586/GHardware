@@ -26,8 +26,11 @@
     						</form>
     					</div>
                     </div>
-    			</div>
-        
+    			</div>';
+    			if($error==1){
+    			    echo '<p style="color:red;">Vous ne pouvez pas passer une commande sans articles dans le panier</p>';
+    			}
+    		echo'
     		<!-- ARTICLES -->';
             Foreach($articlesbdd as $value){
                 foreach($value as $value){

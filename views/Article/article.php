@@ -8,7 +8,6 @@
 
 	//affichage des données récupérées
 	//echo "<pre>".var_dump($articles)."</pre>";
-    var_dump($UtilisateurName);
     foreach($articles as $articles){
     	echo '<div class="col-lg-9">
     		      <div class="row">

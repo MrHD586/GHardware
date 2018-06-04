@@ -64,12 +64,12 @@ function update_fluxRSS() {
      
      Notez que l'adresse URL du fichier doit être relative obligatoirement !
      */
-    
+    echo $xml;
     //On ouvre le fichier en mode écriture
     $fp = fopen("Rss.xml", 'w+');
     
     //On écrit notre flux RSS
-    fwrite($fp, $xml);
+    fputs($fp, $xml);
     
     //Puis on referme le fichier
     fclose($fp);

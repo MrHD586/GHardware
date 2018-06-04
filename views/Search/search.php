@@ -44,11 +44,15 @@
         								    
         						<!-- Notation and Cart -->
         							<div class="col-xl-12">
-        								<div class="row">
-        									<div class="col-xs-9">
-        										*****
-        									</div><div class="col-xs-3">
-                                                ';
+        								<div class="row">';
+        								if($value['Stock']==0){
+                                            echo'<div class="col-xs-9">
+                                            Out of Stock
+                                            </div><div class="col-xs-3">';
+                                        }else{
+                                            echo'<div class="col-xs-9">
+                                            *****
+                                            </div><div class="col-xs-3">';
                                             if($_SESSION['userIsAdmin'] != TRUE){
                                                 if($value['Stock']==0){
                                                     echo'Out of Stock';
@@ -60,6 +64,7 @@
                                                     }
                                                 }
                                             }
+                                        }
                                             echo'</div>
         								</div>
         							</div>

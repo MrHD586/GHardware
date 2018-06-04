@@ -72,7 +72,7 @@
     						
     				<!-- + and - Buttons -->	
     							<input type="button" onclick="nb =document.getElementById('.$index.').value;nb--;document.getElementById('.$index.').value= nb;submit()" value="-">
-                								<input type="number" value="'.$nombre[$index].'" onchange="submit()" name="'.$index.'" id="'.$index.'"min="0" max="99">
+                								<input type="number" value="'.$PanierNb[$index].'" onchange="submit()" name="'.$index.'" id="'.$index.'"min="0" max="99">
                 									<input type="button" onclick="nb =document.getElementById('.$index.').value;nb++;document.getElementById('.$index.').value= nb;submit()" value="+">
     						
     						

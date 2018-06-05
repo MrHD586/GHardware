@@ -29,19 +29,7 @@ echo'
 		</div>
 		
 		<div class="col-xs-offset-1 col-lg-11">
-			<form method="post" action="">
-				<p>
-					<div class="col-lg-2"><label for="Contact_Name">Nom</label></div>
-					<div class="col-lg-10"><input type="text" name="Contact_Name"/></div>
-					<div class="col-lg-2"><label for="Contact_FName">Prénom</label></div>
-					<div class="col-lg-10"><input type="text" name="Contact_FName"/></div>
-					<div class="col-lg-2"><label for="Contact_Email">Email</label></div>
-					<div class="col-lg-10"><input type="text" name="Contact_Email"/></div>
-					<div class="col-lg-2"><label for="Contact_Text">Message</label></div>
-					<div class="col-lg-10"><textarea name="Contact_Text"/></textarea></div>
-					<div class="col-xs-offset-2 col-lg-2"><input type="submit" name="submit" value="Envoyer"/></div>
-				</p>
-			</form>
+					<div class="col-xs-offset-2 col-lg-2"><a href="mailto:contact@ghardware.ch?Subject=Contact%20Ghardware%20WebShopping"><input type="button" name="submit" value="Nous contacter"/></a></div>
 		</div>
 		
 	</div>

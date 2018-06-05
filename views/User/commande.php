@@ -62,17 +62,7 @@ foreach($order as $value){
             
             $paymentstate='Payement refuser';
         }
-        $number++;
-        foreach($articles as $values){
-            if(($value['Fk_Article'])==($values['idArticle'])){
-                $Prix += $value['Number']*$values['Price'];
-                $PrixTotal += $value['Number']*$values['Price'];
-                echo '<li>Article : '.$values['Name'].'</li>';
-                echo '<li>Nombre commandé : '.$value['Number'].'</li>';
-                echo '<li>Prix:'.$Prix.'</li>';
-            }
-        }
-        $Prix=0;
+        
     
 echo'
 
@@ -92,16 +82,17 @@ echo'
 			<li><strong>Etat de la commande : </strong></li>
 			<li><strong>Méthode de payement : </strong></li>
 			<li><strong>Etat du payement : </strong></li>
-			<br>
+			<br>';
+
+}echo'
 			<li><strong>Article : </strong></li>
 			<li><strong>Quantité : </strong></li>
 			<li><strong>Prix : </strong></li>
 			<br>
 		</ul>
-			
-		</div>
-	
-	<div class="col-sm-4">
+		</div>';
+if($number<=0){
+echo'	<div class="col-sm-4">
 			
 			'.$FirstName.' '.$LastName.'<br>
 			<br>
@@ -116,7 +107,20 @@ echo'
 			Envoyée<br>
 			Nature<br>
 			Accepté<br>
-';}echo'
+';}
+$number++;
+foreach($articles as $values){
+    if(($value['Fk_Article'])==($values['idArticle'])){
+        $Prix += $value['Number']*$values['Price'];
+        $PrixTotal += $value['Number']*$values['Price'];
+        echo '<li>Article : '.$values['Name'].'</li>';
+        echo '<li>Nombre commandé : '.$value['Number'].'</li>';
+        echo '<li>Prix:'.$Prix.'</li>';
+    }
+}
+$Prix=0;
+
+    echo'
 			<br>
 			'.$values['Name'].'<br>
 			'.$value['Number'].'<br>

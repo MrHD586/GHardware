@@ -361,3 +361,7 @@ input::-webkit-inner-spin-button {
 .showing{
 	display: none;
 }
+
+.separation{
+	border-top: 2px solid #ddd;
+}

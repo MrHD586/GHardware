@@ -18,7 +18,7 @@ echo'
 	</div>
 	<div class="col-sm-12">
 		<div class="col-lg-offset-4 col-sm-4">
-					<h1>Commande N°' . $value['NumberOrder'] . '</h1>
+					<h1>Commande N°019584940393</h1>
 				</div>
 	</div>
 	
@@ -41,16 +41,17 @@ echo'
 			<li><strong>Quantité : </strong></li>
 			<li><strong>Prix : </strong></li>
 			<br>
+		<ul>
 			
 	</div><div class="col-sm-4">
 			'.$FirstName.' '.$LastName.'<br>
 			<br>
-			'.$Road.'<br>
-			'.$NPA.'<br>
-			'.$Town.'<br>
+			Chemin de MescouillesMickey 13<br>
+			1080<br>
+			Vevey<br>
 			<br>
-			'.$value['Date'].'<br>
-			'.$value['NumberOrder'].'<br>
+			01.01.2018<br>
+			019584940393<br>
 			<br>
 			Envoyée<br>
 			Nature<br>
@@ -68,7 +69,7 @@ echo'
 	</div>
 
 	<div class="col-lg-offset-2 col-sm-4">
-		<strong>TOTAL : </strong>
+		<ul><li><strong>TOTAL : </strong></li></ul>
 	</div>
 	
 	<div class="col-sm-4">
@@ -80,8 +81,10 @@ echo'
 
 ';    
 
+/*
+
 echo'
-	<ul>
+	
 ';
 
 foreach($order as $value){
@@ -139,3 +142,5 @@ foreach($order as $value){
 echo'<br><strong><li>Total prix : '.$PrixTotal;
 
 echo'</strong></li></ul>';
+
+*/

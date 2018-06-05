@@ -30,12 +30,10 @@ echo'
 echo'
 
 	<div class="hiding">
-		<div class="col-lg-offset-2 col-sm-8">
-		<strong>'.$FirstName.' '.$LastName.'</strong><br>
-		</div>
 	
 		<div class="col-lg-offset-2 col-sm-4">
 		<ul>
+			<li><strong>Nom complet : </strong></li>
 			<br>
 			<li><strong>Adresse : </strong></li>
 			<br>
@@ -58,6 +56,7 @@ echo'
 	
 	<div class="col-sm-4">
 			
+			'.$FirstName.' '.$LastName.'<br>
 			<br>
 			Chemin de MescouillesMickey 13<br>
 			1080<br>

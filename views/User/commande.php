@@ -19,6 +19,7 @@ echo'
 	<div class="col-sm-12">
 		<div class="col-lg-offset-4 col-sm-8">
 					<h1>Commande N°019584940393</h1>
+		</div>
 		
 	
 
@@ -93,6 +94,7 @@ echo'
 
 echo'
 	<div class="showing">
+		<div class="col-lg-offset-4 col-sm-8">
 ';
 
 foreach($order as $value){

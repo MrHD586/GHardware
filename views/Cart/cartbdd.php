@@ -33,12 +33,12 @@
     		echo'
     		<!-- ARTICLES -->';
             Foreach($articlesbdd as $value){
-                foreach($value as $value){
-                    $index = $value['idArticle'];
-                    if($nombre[$index] > $value['Stock']){
-                        $nombre[$index]=$value['Stock'];
+                foreach($value as $values){
+                    $index = $values['idArticle'];
+                    if($nombre[$index] > $values['Stock']){
+                        $nombre[$index]=$values['Stock'];
                     }
-                    $prixtotal = $value['Price'] * $nombre[$index];
+                    $prixtotal = $values['Price'] * $nombre[$index];
                     echo'
                 
                 		<div class="cartarticle">
@@ -48,7 +48,7 @@
                             
                 			<!-- Article Image -->
                 				<div class="col-md-2">
-                					<img class="img-responsive" src="'.$$value['Link'].'">
+                					<img class="img-responsive" src="'.$values['Link'].'">
                 				</div>
                             
                 			<!-- Article Name -->
@@ -56,7 +56,7 @@
                 				<div class="col-md-6">
                 					<div class="row">
                 						<center>
-                						<b>'.$value['Name'].'</b>
+                						<b>'.$values['Name'].'</b>
                 						</center>
                 					</div>
                 						    
@@ -81,7 +81,7 @@
                 								<b>Prix Unitaire :</b>
                 							</div>
                 							<div class="row">
-                								<b>'.$value['Price'].'</b>
+                								<b>'.$values['Price'].'</b>
                 							</div>
                 						</div>
                 								    

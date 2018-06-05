@@ -154,18 +154,6 @@
     
     //valeur des champs
     if($modifParam != NULL && !empty($modifParam)){
-        foreach($formFill as $key => $val){
-            $formUserIdValue = $key;
-            $formUserLoginValue = $key;
-            $formUserFirstNameValue = $key;
-            $formUserLastNameValue = $key;
-            $formUserEmailValue = $key;
-            $formUserBirthdateValue = $key;
-            $formUserRoadValue = $key;
-            $formUserNpaValue = $key;
-            $formUserTownValue = $key;
-        }
-        
         $passwordInModif = '<p style="color:orange;">Si les champs mot de passe sont vide, le mot de passe ne sera pas modifié ! </p>';
     }
     

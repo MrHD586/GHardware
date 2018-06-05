@@ -150,18 +150,7 @@
     }
     
     
-    //valeur des champs 
-    if($modifParam != NULL && !empty($modifParam)){
-        foreach($formFill as $key => $val){
-            $formArticleIdValue = $key;
-            $formArticleNameValue = $key;
-            $formArticleStockValue = $key;
-            $formArticleNameValue = $key;
-            $formArticlePriceValue = $key;
-            
-        }
-    }
-    
+  
     echo'
                 <form method="post" action="">
                       <h3>'.$formTitle.'</h3>
@@ -222,7 +211,7 @@
                                 <option style="display:none;" selected label="Veulliez choisir une marque" value="0">
                                 '; foreach($brandNameSelect as $value){
                                         if($formArticleBrandValue == $value['idBrand']){
-                                            echo '<option selected="selected" value="'.$value['idBrand'].'">'.$value['Name'].'</option>';
+                                            echo '<option selected="selected" value="'.$value['idBrand'].'">'.$value['BName'].'</option>';
                                         }else{
                                             echo '<option value="'.$value['idBrand'].'">'.$value['BName'].'</option>';
                                         }

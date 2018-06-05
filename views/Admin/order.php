@@ -152,13 +152,6 @@
     if($modifParam != NULL && !empty($modifParam)){
         $formTitle = "Modification d'une commande";
         
-        foreach($formFill as $key => $val){
-            $formOrderIdValue = $key;
-            $formOrderNumberValue = $key;
-            $formOrderStateValue = $key;
-            $formOrderPayementStateValue = $key;
-        }
-        
         
         echo'
             <form method="post" action="">

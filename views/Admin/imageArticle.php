@@ -133,16 +133,7 @@
     }else{
         $formTitle ="Saisie d'une nouvelle image";
     }
-    
-    
-    //valeur des champs
-    if($modifParam != NULL && !empty($modifParam)){
-        foreach($formFill as $key => $val){
-            $formImageArticleIdValue = $key;
-            $formImageArticleLinkValue = $key;
-        }
-    }
-    
+   
     
     
     

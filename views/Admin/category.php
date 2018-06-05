@@ -134,16 +134,7 @@
         $formTitle ="Saisie d'une nouvelle catégorie";
     }
     
-    
-    //valeur des champs
-    if($modifParam != NULL && !empty($modifParam)){
-        foreach($formFill as $key => $val){
-            $formCategoryIdValue = $key;
-            $formCategoryNameValue = $key;
-        }
-    }
-    
-    
+      
     
     
     echo '

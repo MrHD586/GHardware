@@ -133,14 +133,6 @@
     //valeur des champs
     if($modifParam != NULL && !empty($modifParam)){
         $formTitle = "Modification d'un commentaire";
-          
-        
-        foreach($formFill as $key => $val){
-            $formCommentIdValue = $key;
-            $formCommentStateValue = $key;
-            $formCommentTextValue = $key;
-        }
-    
     
         echo'
                     <form method="post" action="">

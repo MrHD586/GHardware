@@ -135,16 +135,7 @@
         $formTitle ="Saisie d'une nouvelle marque";
     }
     
-    
-    //valeur des champs
-    if($modifParam != NULL && !empty($modifParam)){
-        foreach($formFill as $key => $val){
-            $formBrandIdValue = $key;
-            $formBrandNameValue = $key;
-        }
-    }
-		
-    
+       
     
     
     echo '

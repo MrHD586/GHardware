@@ -15,9 +15,15 @@
 		height:auto;
 	}
 	
-	.hiding{
+	footer{
 		display:none;
 	}
+	
+	.showing{
+		display: block;
+	}
+	
+	
 	
 	.container {
 	border: 0px solid black;

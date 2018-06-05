@@ -9,9 +9,9 @@ $PrixTotal=0;
 echo'
 
 	<div class="col-sm-12">
-		<div class="printonly">
+		<div class="showing">
 			<div class="col-lg-offset-4 col-sm-4">
-				<img style="width:0px;" id="imgprint" src="images/GHardwareLogoB.png">
+				<img class="showing" id="imgprint" src="images/GHardwareLogoB.png">
 				<h1>Commande</h1>
 			</div>
 		</div>

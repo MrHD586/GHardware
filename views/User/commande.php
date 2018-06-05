@@ -93,7 +93,7 @@ echo'	    <li><strong>Article : </strong></li>
 			<li><strong>Quantité : </strong></li>
 			<li><strong>Prix : </strong></li>
 			<br>';
-}
+            }
 if($number<=0){
    echo'</ul>
 		</div>
@@ -126,6 +126,7 @@ foreach($articles as $values){
 			echo'<br>';
    }
     $Prix=0;
+}
 }
 }
 echo'			

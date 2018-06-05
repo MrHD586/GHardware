@@ -22,12 +22,7 @@ echo'
 			<strong>Téléphone</strong><br>
 				+41 79 888 88 88<br>
 				+41 21 777 77 77
-		</div>
-
-		<div class="col-xs-offset-1 col-lg-11">
-			<h1>Nous contacter</h1>
-		</div>
-		
+		</div>		
 		<div class="col-xs-offset-1 col-lg-11">
 					<div class="col-xs-offset-2 col-lg-2"><a href="mailto:contact@ghardware.ch?Subject=Contact%20Ghardware%20WebShopping"><input type="button" name="submit" value="Nous contacter"/></a></div>
 		</div>

@@ -12,4 +12,8 @@
 	footer{
 		display:none;
 	}
+	
+	.printonly{
+	display:block;
+	}
 }

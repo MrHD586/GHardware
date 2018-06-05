@@ -6,7 +6,14 @@ $number=0;
 $Prix=0;
 $PrixTotal=0;
 
-    
+echo'
+	<div class="printonly">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4"><img class="img-responsive" src="images/GHardwareLogoB.png"></div>
+	</div>
+
+
+';    
 
 foreach($order as $value){
     if($number<=0){

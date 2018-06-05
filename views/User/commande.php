@@ -1,4 +1,7 @@
 <?php 
+
+echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
+
 $number=0;
 $Prix=0;
 $PrixTotal=0;

@@ -1,0 +1,15 @@
+@media print {
+/* insert your style declarations here */
+
+	header{
+		display:none;
+	}
+	
+	.sidemenu{
+		display:none;
+	}
+	
+	footer{
+		display:none;
+	}
+}

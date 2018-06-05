@@ -17,7 +17,7 @@ echo'
 		
 	</div>
 	<div class="col-sm-12">
-		<div class="col-lg-offset-2 col-sm-8">
+		<div class="col-lg-offset-4 col-sm-8">
 					<h1>Commande N°019584940393</h1>
 		
 	
@@ -29,9 +29,12 @@ echo'
 echo'
 
 	<div class="hiding">
+		<div class="col-lg-offset-4 col-sm-8">
+		<strong>'.$FirstName.' '.$LastName.'</strong><br>
+		</div>
+	
 		<div class="col-lg-offset-2 col-sm-4">
 		<ul>
-			<br>
 			<br>
 			<li><strong>Adresse : </strong></li>
 			<br>
@@ -53,7 +56,7 @@ echo'
 	</div>
 	
 	<div class="col-sm-4">
-			'.$FirstName.' '.$LastName.'<br>
+			
 			<br>
 			Chemin de MescouillesMickey 13<br>
 			1080<br>

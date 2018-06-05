@@ -286,11 +286,17 @@
                 $userOldPasswordMd5 = md5($userOldPassword);
                 $userNewPasswordMd5 = md5($userNewPassword);
                 
+                //hash du nouveau password
+                $hash = password_hash($userOldPasswordMd5, PASSWORD_DEFAULT);
+                
                 //verification du password md5 selon l'actuel
-                $isValid = password_verify($userOldPasswordMd5, $userInfoPassword);
+                $isValid = password_verify($hash, $userInfoPassword);
                 
                
                 if(!$isValid){
+                    //message de confirmation de la création
+                    $_SESSION["ModifSucces"] = NULL;
+                    echo'yes';
                     $errorsArray[] = "Votre ancien mot de passe est faux";
                     
                 }else{
@@ -304,9 +310,7 @@
                     header($refresh);
                 }
                 
-                
-                
-                
+                 
             }
         }
     }

@@ -51,7 +51,7 @@
                                             </div><div class="col-xs-3">';
                                         }else{
                                             echo'<div class="col-xs-9">
-                                            *****
+                                            
                                             </div><div class="col-xs-3">';
                                             if($_SESSION['userIsAdmin'] != TRUE){
                                                 if($value['Stock']==0){

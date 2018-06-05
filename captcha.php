@@ -14,7 +14,7 @@ function image($mot)
 	$marge = 15;
 	
 	//Police
-	$font = 'angelina.ttf';
+	$font = 'angelina.TTF';
 	
 	// Flou Gaussien
 	$matrix_blur = array(

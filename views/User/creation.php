@@ -73,7 +73,7 @@
 			</p>
 			
 			<p>
-				<div class="col-lg-4"><label for="captcha">Recopiez les chiffres : <img src="captcha.php" alt="Captcha" /></label></div>
+				<div class="col-lg-4"><label for="captcha">Recopiez les chiffres : <img src="../captcha.php" alt="Captcha" /></label></div>
 				<div class="col-lg-8"><input type="text" name="captcha" id="captcha" /></div>
 			</p>
 			

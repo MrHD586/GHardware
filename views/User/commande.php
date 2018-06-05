@@ -117,6 +117,7 @@ echo'
 			Nature<br>
 			Accepté<br>
 			<br>';}
+$number++;
 echo'
 			'.$values['Name'].'<br>
 			'.$value['Number'].'<br>

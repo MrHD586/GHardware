@@ -12,35 +12,7 @@
 		
 			<div class="col-lg-9">
 			
-		<!-- SLIDER -->	
-			
-			<div class="slideshow-container">
-
-			<!-- Slide 1 -->
-				<div class="mySlides fade">
-				  <div class="numbertext">1 / 3</div>
-					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=13"><img src="images/Slide1.png" style="width:100%"></a>
-				  <div class="text">1</div>
-				</div>
-			
-			<!-- Slide 2 -->
-				<div class="mySlides fade">
-				  <div class="numbertext">2 / 3</div>
-					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=8"><img src="images/Slide2.png" style="width:100%"></a>
-				  <div class="text">2</div>
-				</div>
-			
-			<!-- Slide 3 -->
-				<div class="mySlides fade">
-				  <div class="numbertext">3 / 3</div>
-					<a href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=16"><img src="images/Slide3.png" style="width:100%"></a>
-				  <div class="text">3</div>
-				</div>
-
-			
-			</div>
-			
-			<br>
+		
 
 			
 			<!-- Slider -->
@@ -58,7 +30,7 @@
 					slideIndex++;
 					if (slideIndex > slides.length) {slideIndex = 1} 
 					slides[slideIndex-1].style.display = "block"; 
-					setTimeout(showSlides, 2000); // Change image every 2 seconds
+					setTimeout(showSlides, 4000); // Change image every 2 seconds
 				}
 			</script>
 			

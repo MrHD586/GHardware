@@ -145,10 +145,7 @@ echo'
 	
 ';
 
-echo'
-	<div class="showing">
-		<div class="col-lg-offset-4 col-sm-8">
-';
+
 echo'
 	<div class="showing">
 		<div class="col-lg-offset-4 col-sm-8">

@@ -1,4 +1,4 @@
-<?php
+
 
 echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
 
@@ -17,7 +17,7 @@ echo'
 		
 	</div>
 	<div class="col-sm-12">
-		<div class="col-lg-offset-4 col-sm-8">
+		<div class="col-lg-offset-3 col-sm-8">
 					<h1>Commande N°019584940393</h1>
 		</div>
 		
@@ -54,7 +54,7 @@ echo'
 			<br>
 		<ul>
 			
-	</div>
+		</div>
 	
 	<div class="col-sm-4">
 			
@@ -77,17 +77,18 @@ echo'
 			
 	</div>
 	
-	<div class="col-sm-12">
-		<span class="separation">
-	</div>
-
-	<div class="col-lg-offset-2 col-sm-4">
-		<ul><li><strong>TOTAL : </strong></li></ul>
-	</div>
-	
-	<div class="col-sm-4">
-		<strong>140 CHF</strong>
-	</div>
+		<div class="separation">
+			<div class="col-sm-12">
+			</div>
+		
+			<div class="col-lg-offset-2 col-sm-4">
+				<ul><li><strong>TOTAL : </strong></li></ul>
+			</div>
+			
+			<div class="col-sm-4">
+				<strong>140 CHF</strong>
+			</div>
+		</div>
 	</div>
 	
 ';

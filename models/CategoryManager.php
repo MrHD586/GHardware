@@ -46,7 +46,7 @@
         //Crée une nouvelle catégorie
         public function setNewCategory($categoryName, $categoryIsActive) {
                 $sql = "INSERT INTO t_category (CName, isActive)
-                        VALUES ('$categoryName', b'$categoryIsActive')";
+                        VALUES ('".addslashes($categoryName)."', b'$categoryIsActive')";
                 $this->dbManager->Query($sql);
         }
         
@@ -99,7 +99,7 @@
         
         //Modifie une categories existante
         public function modifyCategoryById($categoryId, $categoryName, $categoryIsActive){
-            $sql = "UPDATE t_category SET CName = '$categoryName', isActive = b'$categoryIsActive'
+            $sql = "UPDATE t_category SET CName = '".addslashes($categoryName)."', isActive = b'$categoryIsActive'
                        WHERE idCategory =".intval($categoryId);
             $resultat = $this->dbManager->Query($sql);
         }

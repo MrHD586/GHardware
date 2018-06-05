@@ -73,7 +73,7 @@
 		public function setNewArticle($articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive) {
 		    $sql = "INSERT INTO t_article (Name, Stock, Price, Description, isActive, Fk_Category, Fk_Brand, Fk_ImageArticle)
-                    VALUES ('$articleName', '$articleStock', '$articlePrice', '$articleDescription',
+                    VALUES ('".addslashes($articleName)."', '$articleStock', '$articlePrice', '".addslashes($articleDescription)."',
 		                     b'$articleIsActive', '$articleCategory',' $articleBrand', '$articlePicArticle')";
 		    $this->dbManager->Query($sql);
 		}
@@ -81,8 +81,8 @@
 		//Modifie un article existant
 		public function modifyArticleById($articleId, $articleName, $articleStock, $articlePrice, $articleDescription,
 		                              $articleCategory, $articleBrand, $articlePicArticle, $articleIsActive){
-	       $sql = "UPDATE t_article SET Name = '$articleName', Stock ='$articleStock', Price ='$articlePrice', 
-                       Description = '$articleDescription', isActive = b'$articleIsActive',Fk_Category ='$articleCategory', 
+                       $sql = "UPDATE t_article SET Name = '".addslashes($articleName)."', Stock ='$articleStock', Price ='$articlePrice', 
+                       Description = '".addslashes($articleDescription)."', isActive = b'$articleIsActive',Fk_Category ='$articleCategory', 
                        Fk_Brand ='$articleBrand', Fk_ImageArticle ='$articlePicArticle' 
                        WHERE idArticle =".intval($articleId); 
 		  $resultat = $this->dbManager->Query($sql);

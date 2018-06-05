@@ -69,7 +69,7 @@
         
         //Modifie une marque existante
         public function modifyBrandById($brandId, $brandName, $brandIsActive){
-                $sql = "UPDATE t_brand SET BName = '$brandName', isActive = b'$brandIsActive'
+            $sql = "UPDATE t_brand SET BName = '".addslashes($brandName)."', isActive = b'$brandIsActive'
                        WHERE idBrand =".intval($brandId);
                 $resultat = $this->dbManager->Query($sql);
         }
@@ -91,7 +91,7 @@
         //Crée une nouvelle marques
         public function setNewBrand($brandName, $brandIsActive) {
             $sql = "INSERT INTO t_brand (BName, isActive)
-                            VALUES ('$brandName', b'$brandIsActive')";
+                            VALUES ('".addslashes($brandName)."', b'$brandIsActive')";
             $this->dbManager->Query($sql);
         }
         

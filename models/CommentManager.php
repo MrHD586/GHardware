@@ -111,7 +111,7 @@
         
         //Modifie un commentaire existant
         public function modifyCommentById($commentId, $commentState, $commentText){
-                $sql = "UPDATE t_comment SET State = '$commentState', Text = '$commentText'  WHERE idComment =".intval($commentId);
+            $sql = "UPDATE t_comment SET State = '$commentState', Text = '".addslashes($commentText)."'  WHERE idComment =".intval($commentId);
                 $resultat = $this->dbManager->Query($sql);
         }
     }

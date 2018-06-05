@@ -40,22 +40,23 @@ function display()
 {
     ?>
 
-    <div style="text-align:center;">
-        <h3>TYPE THE TEXT YOU SEE IN THE IMAGE</h3>
-        <b>This is just to check if you are a robot</b>
+    
+        <div class="col-lg-4">TYPE THE TEXT YOU SEE IN THE IMAGE</div>
+        
 
-        <div style="display:block;margin-bottom:20px;margin-top:20px;">
+        <div class="col-lg-8" style="display:block;margin-bottom:20px;margin-top:20px;">
             <img src="image<?php echo $_SESSION['count'] ?>.png">
         </div>
         <form action=" <?php echo $_SERVER['PHP_SELF']; ?>" method="POST"
         / >
-        <input type="text" name="input"/>
+		<div class="col-lg-4"></div>
+        <div class="col-lg-8"><input type="text" name="input"/>
         <input type="hidden" name="flag" value="1"/>
-        <input type="submit" value="contrôler" name="submit"/>
+        <input type="submit" value="contrôler" name="submit"/></div>
         </form>
 
 
-    </div>
+    
 
 <?php
 }

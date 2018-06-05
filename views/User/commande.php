@@ -12,6 +12,7 @@ echo'
 		<div class="printonly">
 			<div class="col-lg-offset-4 col-sm-4">
 				<img style="width:0px;" id="imgprint" src="images/GHardwareLogoB.png">
+				<h1>Commande</h1>
 			</div>
 		</div>
 	</div>

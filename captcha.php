@@ -14,7 +14,7 @@ function image($mot)
 	$marge = 15;
 	
 	//Police
-	$font = './angelina.ttf';
+	$font = 'angelina.ttf';
 	
 	// Flou Gaussien
 	$matrix_blur = array(
@@ -28,7 +28,7 @@ function image($mot)
 	$hauteur = $box[1] - $box[7];
 	$largeur_lettre = round($largeur/strlen($mot));
 	
-	//Création de l'image
+	//Crï¿½ation de l'image
 	
 	$img = imagecreate($largeur+$marge, $hauteur+$marge);
 	$blanc = imagecolorallocate($img, 255, 255, 255); 
@@ -41,7 +41,7 @@ function image($mot)
 		imagettftext($img,$size,$angle,($i*$largeur_lettre)+$marge, $hauteur+mt_rand(0,$marge/2),$noir, $font, $l);	
 	}
 	
-	//Création de la Captcha + Flou
+	//Crï¿½ation de la Captcha + Flou
 	imageconvolution($img, $matrix_blur,16,0);
 
 	imagepng($img);

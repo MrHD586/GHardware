@@ -2,11 +2,12 @@
 $number=0;
 $Prix=0;
 $PrixTotal=0;
-foreach($user as $valueuser){
-    echo'Adresse:'.$valueuser['FirstName'].' '.$valueuser['LastName'].'</br>'.$valueuser['Road'].'</br>'.$valueuser['NPA'].' '.$valueuser['Town'].'</br>';
-}
+
+    
+
 foreach($order as $value){
     if($number<=0){
+        echo'Adresse:'.$FirstName.' '.$LastName.'</br>'.$Road.'</br>'.$NPA.' '.$Town.'</br>';
         echo 'Date de commande:'.$value['Date'].'</br>';
         echo 'Numero commande:'.$value['NumberOrder'].'</br>';
         if($value['State']==0){

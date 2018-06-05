@@ -42,13 +42,7 @@ foreach($order as $value){
             $paymentstate='Payement refuser';
         }
     }
-    foreach($articles as $values){
-        if(($value['Fk_Article'])==($values['idArticle'])){
-            $Prix += $value['Number']*$values['Price'];
-            $PrixTotal += $value['Number']*$values['Price'];
-        }
-        $Prix=0;
-    }
+    
     if($number<=0){
 echo'
 	
@@ -118,11 +112,18 @@ echo'
 			Accepté<br>
 			<br>';}
 $number++;
-echo'
-			'.$values['Name'].'<br>
-			'.$value['Number'].'<br>
-			'.$Prix.' CHF<br>
-			<br>';
+foreach($articles as $values){
+    if(($value['Fk_Article'])==($values['idArticle'])){
+        $Prix += $value['Number']*$values['Price'];
+        $PrixTotal += $value['Number']*$values['Price'];
+ 
+			echo$values['Name'].'<br>';
+			echo$value['Number'].'<br>';
+			echo$Prix.' CHF<br>';
+			echo'<br>';
+   }
+    $Prix=0;
+}
 }
 echo'			
 	</div>

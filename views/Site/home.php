@@ -83,7 +83,7 @@
 											
 											<!-- Category -->
 											<div class="col-xl-12">
-												Catégorie
+												Alimentation
 											</div>
 														
 
@@ -120,7 +120,7 @@
 											
 											<!-- Category -->
 											<div class="col-xl-12">
-												Catégorie
+												Boitiers
 											</div>
 														
 
@@ -156,7 +156,7 @@
 											
 											<!-- Category -->
 											<div class="col-xl-12">
-												Catégorie
+												Cartes graphiques
 											</div>
 														
 
@@ -193,7 +193,7 @@
 											
 											<!-- Category -->
 											<div class="col-xl-12">
-												Catégorie
+												Ventirad
 											</div>
 														
 
@@ -230,7 +230,7 @@
 											
 											<!-- Category -->
 											<div class="col-xl-12">
-												Catégorie
+												Carte graphiques
 											</div>
 														
 
@@ -266,7 +266,7 @@
 											
 											<!-- Category -->
 											<div class="col-xl-12">
-												Catégorie
+												Cartes mères
 											</div>
 														
 

@@ -22,7 +22,15 @@
     				echo '<h2>Veuillez-vous connecter ou crée un compte avant de pouvoir commander</h2><br/>';
     			}else{
     				echo ' <h2>Connexion</h2><br/>';
-    			}     
+    			}   
+    			
+    			//message si l'utilisateur vient de se modifier son mdp ou de créer un compte
+    			if($_GET['newpass'] == true){
+    			    echo'<p style="color:green;">Mot de passe modifié avec succès, veuillez-vous reconnecter.</p>';
+    			}elseif($_GET['newacc'] == true){
+    			    echo'<p style="color:green;">Compte crée avec succès, vous pouvez vous connecter.</p>';
+    			}
+    			
     			
             echo'
             </div>

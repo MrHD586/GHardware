@@ -13,13 +13,17 @@
     // ----- LIEN POUR REDIRECTION ----- //
     //redirection sur création si erreurs
     $urlToCreation = "location:index.php?controller=User&action=creation";
+    
     //login
-    $urlToLogin = "location:index.php?controller=Login&action=login";
+    $urlToLogin = "location:index.php?controller=Login&action=login&newacc=true";
+    
     //login panier
     $urlToLoginPanier = "location:index.php?controller=Login&action=login&Paniercookie=1";
+    
     //tableau contenant les erreurs
     $errors = array();
         
+    
     //si le formulaire est envoyé
 	if(isset($_POST['submit'])){
 	    	    
@@ -111,9 +115,9 @@
 	        $userCreationDb = $creationManager->setNewUser($userLogin, $hash, $userFirstName, $userLastName, $userEmail, $userBirthdate,
 	                          $userRoad, $userNpa, $userTown, userIsActive, $userFkPicUser, userIsAdmin);
 	        if($_POST['Paniercookie']==1){
-	        header($urlToLoginPanier);
+	           header($urlToLoginPanier);
 	        }else{
-	        header($urlToLogin);
+	           header($urlToLogin);
 	        }
 	    }
 	}

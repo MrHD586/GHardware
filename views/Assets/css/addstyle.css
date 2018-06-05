@@ -1,3 +1,15 @@
+@media print {
+/* insert your style declarations here */
+
+	header{
+		display:none;
+	}
+	
+	footer{
+		display:none;
+	}
+}
+
 body {
   background-color : rgb(40,96,144);
 }

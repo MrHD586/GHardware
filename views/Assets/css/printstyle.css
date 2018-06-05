@@ -13,13 +13,10 @@
 		display:none;
 	}
 	
-	.printonly{
-	width:300px;
-	height:auto;
-	}
-	
-	#imgprint{
+	img{
 		display:block;
+		width:300px;
+		height:auto;
 	}
 	
 	.container {

@@ -1,4 +1,4 @@
-
+<?php
 
 echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
 

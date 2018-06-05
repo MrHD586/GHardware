@@ -14,9 +14,12 @@
 	}
 	
 	.printonly{
-	display:block;
 	width:300px;
 	height:auto;
+	}
+	
+	#imgprint{
+		display:block;
 	}
 	
 	.container {

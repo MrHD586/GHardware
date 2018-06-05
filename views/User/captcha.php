@@ -61,5 +61,4 @@ function captcha()
 
 header("Content-type: image/png");
 captcha();
-?>
 

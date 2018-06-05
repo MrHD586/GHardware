@@ -94,7 +94,7 @@
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												70
+												70 CHF
 											</div>
 											
 											<!-- Name -->
@@ -131,7 +131,7 @@
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												193
+												193 CHF
 											</div>
 											
 											<!-- Name -->
@@ -167,7 +167,7 @@
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												870
+												870 CHF
 											</div>
 											
 											<!-- Name -->
@@ -204,7 +204,7 @@
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												119
+												119 CHF
 											</div>
 											
 											<!-- Name -->
@@ -226,7 +226,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-4">
 								
 								<div class="articlebox">
-									<a id="categorylink" href="#">
+									<a id="categorylink" href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=13">
 											
 											<!-- Category -->
 											<div class="col-xl-12">
@@ -236,34 +236,22 @@
 
 											<!-- Image -->
 											<div class="col-xl-12">
-												<img class="img-responsive" src="images/imagetemplate.png">
+												<img class="img-responsive" src="images/AsusGeForceGTX1080STRIXA8G-GAMING.jpg">
 											</div>
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												214.50
+												848 CHF
 											</div>
 											
 											<!-- Name -->
 											<div class="col-xl-12">
-												NOM DE L\'ARTICLE
+												Asus GeForce GTX 1080 STRIX A8G-GAMING
 											</div>
 											
 									</a>	
 											
-									
-											<div class="col-xl-12">
-												<div class="row">
-													<!-- Note -->
-													<div class="col-xs-9">
-														*****
-													</div><div class="col-xs-3">
-													
-													<!-- Cart Button -->
-														<a href="#"><img class="img-responsive" src="images/carticon.png"></a>
-													</div>
-												</div>
-											</div>
+							
 								</div>
 				</div>	
 
@@ -274,7 +262,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-4">
 								
 								<div class="articlebox">
-									<a id="categorylink" href="#">
+									<a id="categorylink" href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=16">
 											
 											<!-- Category -->
 											<div class="col-xl-12">
@@ -284,34 +272,23 @@
 
 											<!-- Image -->
 											<div class="col-xl-12">
-												<img class="img-responsive" src="images/imagetemplate.png">
+												<img class="img-responsive" src="images/AsRockH110PROBTC+.png">
 											</div>
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												214.50
+												179 CHF
 											</div>
 											
 											<!-- Name -->
 											<div class="col-xl-12">
-												NOM DE L\'ARTICLE
+												AsRock H110 PRO BTC+
 											</div>
 											
 									</a>	
 											
 									
-											<div class="col-xl-12">
-												<div class="row">
-													<!-- Note -->
-													<div class="col-xs-9">
-														*****
-													</div><div class="col-xs-3">
-													
-													<!-- Cart Button -->
-														<a href="#"><img class="img-responsive" src="images/carticon.png"></a>
-													</div>
-												</div>
-											</div>
+											
 								</div>
 				</div>	
 

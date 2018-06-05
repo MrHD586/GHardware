@@ -7,11 +7,13 @@ $Prix=0;
 $PrixTotal=0;
 
 echo'
-	<div class="printonly">
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4"><img class="img-responsive" src="images/GHardwareLogoB.png"></div>
-	</div>
 
+	<div class="col-sm-12">
+		<div class="printonly">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"><img class="printonly" src="images/GHardwareLogoB.png"></div>
+		</div>
+	</div>
 
 ';    
 

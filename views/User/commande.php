@@ -195,7 +195,6 @@ foreach($order as $value){
     foreach($articles as $values){
         if(($value['Fk_Article'])==($values['idArticle'])){
             $Prix += $value['Number']*$values['Price'];
-            $PrixTotal += $value['Number']*$values['Price'];
             echo '<li>Article : '.$values['Name'].'</li>';
             echo '<li>Nombre commandé : '.$value['Number'].'</li>';
             echo '<li>Prix:'.$Prix.'</li>';

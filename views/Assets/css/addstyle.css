@@ -357,7 +357,3 @@ input::-webkit-inner-spin-button {
     width: auto;
   }
 }
-
-.printonly{
-	display:none;
-}

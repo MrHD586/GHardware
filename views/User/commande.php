@@ -12,15 +12,18 @@ echo'
 		<div class="showing">
 			<div class="col-lg-offset-4 col-sm-4">
 				<img id="imgprint" src="images/GHardwareLogoB.png">
-				test
 			</div>
 		</div>
-		<h1>Commande</h1>
+		
 	</div>
 	
-	
+	<div class="col-lg-offset-1 col-sm-4">
+				<h1>Commande</h1>
+			</div>
 	
 	<div class="col-lg-offset-2 col-sm-10">
+	
+	
 
 ';    
 

@@ -45,7 +45,7 @@ function update_fluxRSS($articleManager) {
     {
         $xml .= '<item>';
         $xml .= '<title>'.stripcslashes($value['Title']).'</title>';
-        $xml .= '<link>http://ghardware.clanviquerat.ch/index.php?controller=Article&amp;action=articlecommentaire&amp;id='.$value['Link'].'</link>';
+        $xml .= '<link>location:index.php?controller=Article&amp;action=articlecommentaire&amp;id='.$value['Link'].'</link>';
         $xml .= '<guid isPermaLink="true">'.$value['Guid'].'</guid>';
         $xml .= '<pubDate>'.$value['pubDate'].'</pubDate>';
         $xml .= '<description>'.stripcslashes($value['Description']).'</description>';

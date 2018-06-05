@@ -1,4 +1,4 @@
-<?php
+
 
 echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
 
@@ -7,7 +7,7 @@ $Prix=0;
 $PrixTotal=0;
 
 echo'
-
+	
 	<div class="col-sm-12">
 		<div class="showing">
 			<div class="col-lg-offset-4 col-sm-4">
@@ -52,7 +52,7 @@ echo'
 			<li><strong>Quantité : </strong></li>
 			<li><strong>Prix : </strong></li>
 			<br>
-		<ul>
+		</ul>
 			
 		</div>
 	

@@ -1,4 +1,4 @@
-<?php
+
 
 echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
 
@@ -27,7 +27,69 @@ echo'
 
 
 echo'
+
+	<div class="hiding">
+		<div class="col-lg-offset-2 col-sm-4">
+		<ul>
+			<br>
+			<br>
+			<li><strong>Adresse : </strong></li>
+			<br>
+			<br>
+			<br>
+			<li><strong>Date de commande : </strong></li>
+			<li><strong>Numéro de commande : </strong></li>
+			<br>
+			<li><strong>Etat de la commande : </strong></li>
+			<li><strong>Méthode de payement : </strong></li>
+			<li><strong>Etat du payement : </strong></li>
+			<br>
+			<li><strong>Article : </strong></li>
+			<li><strong>Quantité : </strong></li>
+			<li><strong>Prix : </strong></li>
+			<br>
+		<ul>
+			
+	</div>
 	
+	<div class="col-sm-4">
+			'.$FirstName.' '.$LastName.'<br>
+			<br>
+			Chemin de MescouillesMickey 13<br>
+			1080<br>
+			Vevey<br>
+			<br>
+			01.01.2018<br>
+			019584940393<br>
+			<br>
+			Envoyée<br>
+			Nature<br>
+			Accepté<br>
+			<br>
+			Corsair CX550M<br>
+			2<br>
+			140 CHF<br>
+			<br>
+			
+	</div>
+	
+	<div class="col-sm-12">
+		<span class="separation">
+	</div>
+
+	<div class="col-lg-offset-2 col-sm-4">
+		<ul><li><strong>TOTAL : </strong></li></ul>
+	</div>
+	
+	<div class="col-sm-4">
+		<strong>140 CHF</strong>
+	</div>
+	</div>
+	
+';
+
+echo'
+	<div class="showing">
 ';
 
 foreach($order as $value){
@@ -87,3 +149,4 @@ echo'<br><strong><li>Total prix : '.$PrixTotal;
 echo'</strong></li></ul></div>
 	</div>';
 
+echo'</div>';

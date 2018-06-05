@@ -11,7 +11,7 @@ echo'
 	<div class="col-sm-12">
 		<div class="printonly">
 			<div class="col-lg-offset-4 col-sm-4">
-				<img width:0px height:0px; id="imgprint" src="images/GHardwareLogoB.png">
+				<img width:0px id="imgprint" src="images/GHardwareLogoB.png">
 			</div>
 		</div>
 	</div>

@@ -5,6 +5,7 @@ echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
 $number=0;
 $Prix=0;
 $PrixTotal=0;
+$NombreArticle=count($articles);
 foreach($order as $value){
     if($number<=0){
         if($value['State']==0){
@@ -86,12 +87,14 @@ echo'
 			<li><strong>Méthode de payement : </strong></li>
 			<li><strong>Etat du payement : </strong></li>
 			<br>';
-}echo'
-			<li><strong>Article : </strong></li>
+
+            for($i=1;$i<=$NombreArticle;$i++) {
+echo'	    <li><strong>Article : </strong></li>
 			<li><strong>Quantité : </strong></li>
 			<li><strong>Prix : </strong></li>
-			<br>
-';if($number<=0){
+			<br>';
+}
+if($number<=0){
    echo'</ul>
 		</div>
 
@@ -136,7 +139,7 @@ echo'
 			</div>
 			
 			<div class="col-sm-4">
-				<strong>140 CHF</strong>
+				<strong>'.$PrixTotal,' CHF</strong>
 			</div>
 		</div>
 	</div>

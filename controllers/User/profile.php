@@ -302,7 +302,7 @@
                     
                     //hash du nouveau password
                     $hash = password_hash($userNewPasswordMd5, PASSWORD_DEFAULT);
-                    echo $hash.'</br>';
+                    
                     $profileManager->modifyUserPasswordById($userInfoId, $hash);
                     
                     //message de confirmation de la création

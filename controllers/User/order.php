@@ -6,8 +6,8 @@ include 'models/OrderManager.php';
     $commandeManager = new OrderManager();
     $user = $commandeManager->getUserByLogin($userLogin);
     // attribution de l'id de l'utilisateur a une variable
-    foreach($user as $value){
-        $iduser = $value['idUser'];
+    foreach($user as $valueuserid){
+        $iduser = $valueuserid['idUser'];
     }
     $articles=$commandeManager->getArticle();
     $order = $commandeManager->getOrder($iduser,$NumberOrder);

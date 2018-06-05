@@ -70,14 +70,12 @@
 			<p>
 				<div class="col-lg-4"><label for="Town">Ville</label></div>
 				<div class="col-lg-8"><input type="text" name="Town" value="'.$formUserTownValue.'"/></div>
-			</p>
-			
-			<p>
-				<div class="col-lg-4"><label for="captcha">Recopiez les chiffres : <img src="../captcha.php" alt="Captcha" /></label></div>
-				<div class="col-lg-8"><input type="text" name="captcha" id="captcha" /></div>
-			</p>
-			
-            ';
+			</p>';
+			include('./capcha.php');
+			//<p>
+				//<div class="col-lg-4"><label for="captcha">Recopiez les chiffres : <img src="../captcha.php" alt="Captcha" /></label></div>
+				//<div class="col-lg-8"><input type="text" name="captcha" id="captcha" /></div>
+			//</p>
             if($_GET['Paniercookie']==1){
                 echo' <input type="hidden" name="Paniercookie" value="1">';
             }

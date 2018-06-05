@@ -94,7 +94,7 @@
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												214.50
+												70
 											</div>
 											
 											<!-- Name -->
@@ -152,7 +152,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-4">
 								
 								<div class="articlebox">
-									<a id="categorylink" href="#">
+									<a id="categorylink" href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=5">
 											
 											<!-- Category -->
 											<div class="col-xl-12">
@@ -162,34 +162,23 @@
 
 											<!-- Image -->
 											<div class="col-xl-12">
-												<img class="img-responsive" src="images/imagetemplate.png">
+												<img class="img-responsive" src="images/1080strix.jpg">
 											</div>
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												214.50
+												870
 											</div>
 											
 											<!-- Name -->
 											<div class="col-xl-12">
-												NOM DE L\'ARTICLE
+												Nvidia GTX 1080 Strix
 											</div>
 											
 									</a>	
 											
 									
-											<div class="col-xl-12">
-												<div class="row">
-													<!-- Note -->
-													<div class="col-xs-9">
-														*****
-													</div><div class="col-xs-3">
-													
-													<!-- Cart Button -->
-														<a href="#"><img class="img-responsive" src="images/carticon.png"></a>
-													</div>
-												</div>
-											</div>
+											
 								</div>
 				</div>	
 
@@ -200,7 +189,7 @@
 				<div class="col-xs-12 col-sm-6 col-md-4">
 								
 								<div class="articlebox">
-									<a id="categorylink" href="#">
+									<a id="categorylink" href="http://ghardware.clanviquerat.ch/index.php?controller=Article&action=articlecommentaire&id=9">
 											
 											<!-- Category -->
 											<div class="col-xl-12">
@@ -210,34 +199,23 @@
 
 											<!-- Image -->
 											<div class="col-xl-12">
-												<img class="img-responsive" src="images/imagetemplate.png">
+												<img class="img-responsive" src="images/bequiet.jpg">
 											</div>
 									
 											<!-- Price -->
 											<div class="col-xl-12">
-												214.50
+												119
 											</div>
 											
 											<!-- Name -->
 											<div class="col-xl-12">
-												NOM DE L\'ARTICLE
+												Be quiet! Straight Power 10 CM
 											</div>
 											
 									</a>	
 											
 									
-											<div class="col-xl-12">
-												<div class="row">
-													<!-- Note -->
-													<div class="col-xs-9">
-														*****
-													</div><div class="col-xs-3">
-													
-													<!-- Cart Button -->
-														<a href="#"><img class="img-responsive" src="images/carticon.png"></a>
-													</div>
-												</div>
-											</div>
+											
 								</div>
 				</div>	
 

@@ -1,64 +1,94 @@
 <?php
 session_start();
+$_SESSION['count'] = time();
+$image;
+?>
 
-
-function nombre($n){
-	//Random Character
-	return str_pad(mt_rand(0,pow(10,$n)-1),$n,'0',STR_PAD_LEFT);
+<?php
+$flag = 5;
+if (isset($_POST["flag"])) {
+    $input = $_POST["input"];
+    $flag = $_POST["flag"];
 }
+if ($flag == 1) {
+    if ($input == $_SESSION['captcha_string']) {
+        ?>
 
-function image($mot)
+        <div style="text-align:center;">
+            <h1>Your answer is correct!</h1>
+
+
+        </div>
+
+    <?php
+    } else {
+        ?>
+
+        <div style="text-align:center;">
+            <h1>Your answer is incorrect!<br>please try again </h1>
+        </div>
+
+        <?php
+        create_image();
+        display();
+    }
+} else {
+    create_image();
+    display();
+}
+function display()
 {
-	//Dimension Captcha
-	$size = 32;
-	$marge = 15;
-	
-	//Police
-	$font = 'angelina.TTF';
-	
-	// Flou Gaussien
-	$matrix_blur = array(
-		array(1,2,1),
-		array(2,4,2),
-		array(1,2,1));
-		
-	
-	$box = imagettfbbox($size, 0, $font, $mot);
-	$largeur = $box[2] - $box[0];
-	$hauteur = $box[1] - $box[7];
-	$largeur_lettre = round($largeur/strlen($mot));
-	
-	//Cr�ation de l'image
-	
-	$img = imagecreate($largeur+$marge, $hauteur+$marge);
-	$blanc = imagecolorallocate($img, 255, 255, 255); 
-	$noir = imagecolorallocate($img, 0, 0, 0);
-	
-	for($i = 0; $i < strlen($mot);++$i)
-	{
-		$l = $mot[$i];
-		$angle = mt_rand(-35,35);
-		imagettftext($img,$size,$angle,($i*$largeur_lettre)+$marge, $hauteur+mt_rand(0,$marge/2),$noir, $font, $l);	
-	}
-	
-	//Cr�ation de la Captcha + Flou
-	imageconvolution($img, $matrix_blur,16,0);
+    ?>
 
-	imagepng($img);
-	imagedestroy($img);
+    <div style="text-align:center;">
+        <h3>TYPE THE TEXT YOU SEE IN THE IMAGE</h3>
+        <b>This is just to check if you are a robot</b>
+
+        <div style="display:block;margin-bottom:20px;margin-top:20px;">
+            <img src="image<?php echo $_SESSION['count'] ?>.png">
+        </div>
+        <form action=" <?php echo $_SERVER['PHP_SELF']; ?>" method="POST"
+        / >
+        <input type="text" name="input"/>
+        <input type="hidden" name="flag" value="1"/>
+        <input type="submit" value="contrôler" name="submit"/>
+        </form>
+
+
+    </div>
+
+<?php
 }
-
-//Appel de la Captcha
-
-function captcha()
+function  create_image()
 {
-	$mot = nombre(5);
-	$_SESSION['captcha'] = $mot;
-	image($mot);
+    global $image;
+    $image = imagecreatetruecolor(200, 50) or die("Cannot Initialize new GD image stream");
+    $background_color = imagecolorallocate($image, 255, 255, 255);
+    $text_color = imagecolorallocate($image, 0, 255, 255);
+    $line_color = imagecolorallocate($image, 64, 64, 64);
+    $pixel_color = imagecolorallocate($image, 0, 0, 255);
+    imagefilledrectangle($image, 0, 0, 200, 50, $background_color);
+    for ($i = 0; $i < 3; $i++) {
+        imageline($image, 0, rand() % 50, 200, rand() % 50, $line_color);
+    }
+    for ($i = 0; $i < 1000; $i++) {
+        imagesetpixel($image, rand() % 200, rand() % 50, $pixel_color);
+    }
+    $letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    $len = strlen($letters);
+    $letter = $letters[rand(0, $len - 1)];
+    $text_color = imagecolorallocate($image, 0, 0, 0);
+    $word = "";
+    for ($i = 0; $i < 6; $i++) {
+        $letter = $letters[rand(0, $len - 1)];
+        imagestring($image, 7, 5 + ($i * 30), 20, $letter, $text_color);
+        $word .= $letter;
+    }
+    $_SESSION['captcha_string'] = $word;
+    $images = glob("*.png");
+    foreach ($images as $image_to_delete) {
+        @unlink($image_to_delete);
+    }
+    imagepng($image, "image" . $_SESSION['count'] . ".png");
 }
-
-//Image
-
-header("Content-type: image/png");
-captcha();
-
+?>

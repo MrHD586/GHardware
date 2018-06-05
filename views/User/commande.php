@@ -5,7 +5,7 @@ echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
 $number=0;
 $Prix=0;
 $PrixTotal=0;
-$NombreArticle=count($articles);
+$NombreArticle=count($order);
 foreach($order as $value){
     if($number<=0){
         if($value['State']==0){
@@ -59,9 +59,6 @@ echo'
 		<div class="col-lg-offset-3 col-sm-8">
 					<h1>Commande '.$value['NumberOrder'].'</h1>
 		</div>
-		
-	
-
 ';    
 
 
@@ -129,7 +126,7 @@ foreach($articles as $values){
     $Prix=0;
 }
 }
-}
+
 echo'			
 	</div>
 	<div class="separation">

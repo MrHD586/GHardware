@@ -73,9 +73,6 @@
                 $loginButtonText = $_SESSION['user_name'];
                 $loginButtonHref ="DropdownButtonFonction()";
                 
-                if($_SESSION['userIsAdmin'] == TRUE){
-                   $adminDropdown = '<a href="index.php?controller=Admin&action=home">Administration</a>'; 
-                }
             }else{
                 $loginButtonText = "Login";
                 $loginButtonHref ="location.href = 'index.php?controller=Login&action=login';";
@@ -86,7 +83,6 @@
 		  <div class="dropdown">
 				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="images/defaultavatar.png"></button> 
 				  <div id="myDropdown" class="dropdown-content">	
-                        '.$adminDropdown.'
     					<a href="index.php?controller=User&action=profile">Profil</a>
                         <a href="index.php?controller=User&action=AllCommande">Commandes</a>
                         <a href="index.php?controller=User&action=CommentaireUser">Commentaire</a>

@@ -94,8 +94,9 @@
                                                         ';if($error==1){
                                                         echo '<p style="color:red;">Veuillez remplir le champs texte pour poster un commentaire</p>';
 										                  }echo'
-														<input class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"/>
-    												<br><button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
+														<input class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"/>';
+                                                        include 'captcha.php';
+    												echo'<br><button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
     											</form>
     										</div>
     									</div>

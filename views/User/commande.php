@@ -5,27 +5,6 @@ echo'<link href="views/Assets/css/printstyle.css" rel="stylesheet">';
 $number=0;
 $Prix=0;
 $PrixTotal=0;
-
-echo'
-	
-	<div class="col-sm-12">
-		<div class="showing">
-			<div class="col-lg-offset-4 col-sm-4">
-				<img id="imgprint" src="images/GHardwareLogoB.png"><br>
-			</div>
-		</div>
-		
-	</div>
-	<div class="col-sm-12">
-		<div class="col-lg-offset-3 col-sm-8">
-					<h1>Commande N°019584940393</h1>
-		</div>
-		
-	
-
-';    
-
-
 foreach($order as $value){
     if($number<=0){
         if($value['State']==0){
@@ -62,6 +41,36 @@ foreach($order as $value){
             
             $paymentstate='Payement refuser';
         }
+    }
+    foreach($articles as $values){
+        if(($value['Fk_Article'])==($values['idArticle'])){
+            $Prix += $value['Number']*$values['Price'];
+            $PrixTotal += $value['Number']*$values['Price'];
+        }
+        $Prix=0;
+    }
+    if($number<=0){
+echo'
+	
+	<div class="col-sm-12">
+		<div class="showing">
+			<div class="col-lg-offset-4 col-sm-4">
+				<img id="imgprint" src="images/GHardwareLogoB.png"><br>
+			</div>
+		</div>
+		
+	</div>
+	<div class="col-sm-12">
+		<div class="col-lg-offset-3 col-sm-8">
+					<h1>Commande '.$value['NumberOrder'].'</h1>
+		</div>
+		
+	
+
+';    
+
+
+
         
     
 echo'
@@ -83,16 +92,16 @@ echo'
 			<li><strong>Méthode de payement : </strong></li>
 			<li><strong>Etat du payement : </strong></li>
 			<br>';
-
 }echo'
 			<li><strong>Article : </strong></li>
 			<li><strong>Quantité : </strong></li>
 			<li><strong>Prix : </strong></li>
 			<br>
-		</ul>
-		</div>';
-if($number<=0){
-echo'	<div class="col-sm-4">
+';if($number<=0){
+   echo'</ul>
+		</div>
+
+        <div class="col-sm-4">
 			
 			'.$FirstName.' '.$LastName.'<br>
 			<br>
@@ -107,29 +116,16 @@ echo'	<div class="col-sm-4">
 			Envoyée<br>
 			Nature<br>
 			Accepté<br>
-';}
-$number++;
-foreach($articles as $values){
-    if(($value['Fk_Article'])==($values['idArticle'])){
-        $Prix += $value['Number']*$values['Price'];
-        $PrixTotal += $value['Number']*$values['Price'];
-        echo '<li>Article : '.$values['Name'].'</li>';
-        echo '<li>Nombre commandé : '.$value['Number'].'</li>';
-        echo '<li>Prix:'.$Prix.'</li>';
-    }
-}
-$Prix=0;
-
-    echo'
-			<br>
+			<br>';}
+echo'
 			'.$values['Name'].'<br>
 			'.$value['Number'].'<br>
 			'.$Prix.' CHF<br>
-			<br>
-			
-	</div>';
+			<br>';
 }
-echo'	<div class="separation">
+echo'			
+	</div>
+	<div class="separation">
 			<div class="col-sm-12">
 			</div>
 		
@@ -149,4 +145,4 @@ echo'
 	<div class="showing">
 		<div class="col-lg-offset-4 col-sm-8">
 ';
- 
+

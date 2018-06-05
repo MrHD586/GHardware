@@ -94,6 +94,7 @@ echo'	    <li><strong>Article : </strong></li>
 			<li><strong>Prix : </strong></li>
 			<br>';
             }
+    }
 if($number<=0){
    echo'</ul>
 		</div>

@@ -359,7 +359,5 @@ input::-webkit-inner-spin-button {
 }
 
 .printonly{
-	width:0px;
-	height:0px;
 	display:none;
 }

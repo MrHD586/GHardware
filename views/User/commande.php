@@ -10,12 +10,17 @@ echo'
 
 	<div class="col-sm-12">
 		<div class="printonly">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4"><img class="printonly" src="images/GHardwareLogoB.png"></div>
+			<div class="col-lg-offset-4 col-sm-4">
+				<img src="images/GHardwareLogoB.png">
+			</div>
 		</div>
 	</div>
+	
+	<div class="col-lg-offset-2 col-sm-10">
 
 ';    
+
+
 
 foreach($order as $value){
     if($number<=0){
@@ -70,3 +75,5 @@ foreach($order as $value){
     $Prix=0;
 }
 echo'Total prix:'.$PrixTotal;
+
+echo'</div>';

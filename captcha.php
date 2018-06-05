@@ -15,7 +15,7 @@ if ($flag == 1) {
         ?>
 
         <div style="text-align:center;">
-            <h1>Your answer is correct!</h1>
+            <strong>Bonne réponse !</strong>
 
 
         </div>
@@ -25,7 +25,7 @@ if ($flag == 1) {
         ?>
 
         <div style="text-align:center;">
-            <h1>Your answer is incorrect!<br>please try again </h1>
+            <strong>Mauvaise réponse<br>Veuillez réessayer</strong>
         </div>
 
         <?php
@@ -41,7 +41,7 @@ function display()
     ?>
 
     
-        <div class="col-lg-4">TYPE THE TEXT YOU SEE IN THE IMAGE</div>
+        <div class="col-lg-4"><strong>Entrez les chiffres visibles sur l'image</strong></div>
         
 
         <div class="col-lg-8" style="display:block;margin-bottom:20px;margin-top:20px;">

@@ -26,7 +26,54 @@ echo'
 ';    
 
 
-
+foreach($order as $value){
+    if($number<=0){
+        if($value['State']==0){
+            
+            $state='En attente du payement';
+            
+        }else if($value['State']==1){
+            
+            $state='Envoyée';
+            
+        }else{
+            
+            $state='Arrivée à destination';
+            
+        }
+        if($value['PayementMethod']==0){
+            
+            $paymentmethod='Nature';
+            
+        }else if($value['PayementMethod']==1){
+            
+            $paymentmethod='Facture';
+            
+        }
+        if($value['PayementState']==0){
+            
+            $paymentstate='En cours de traitement';
+            
+        }else if($value['PayementState']==1){
+            
+            $paymentstate='Payé';
+            
+        }else{
+            
+            $paymentstate='Payement refuser';
+        }
+        $number++;
+        foreach($articles as $values){
+            if(($value['Fk_Article'])==($values['idArticle'])){
+                $Prix += $value['Number']*$values['Price'];
+                $PrixTotal += $value['Number']*$values['Price'];
+                echo '<li>Article : '.$values['Name'].'</li>';
+                echo '<li>Nombre commandé : '.$value['Number'].'</li>';
+                echo '<li>Prix:'.$Prix.'</li>';
+            }
+        }
+        $Prix=0;
+    
 echo'
 
 	<div class="hiding">
@@ -58,25 +105,27 @@ echo'
 			
 			'.$FirstName.' '.$LastName.'<br>
 			<br>
-			Chemin de MescouillesMickey 13<br>
-			1080<br>
-			Vevey<br>
+			'.$Road.'<br>
+			'.$NPA.'<br>
+			'.$Town.'<br>
 			<br>
-			01.01.2018<br>
-			019584940393<br>
+			'.$value['Date'].'<br>
+			'.$value['NumberOrder'].'<br>
+
 			<br>
 			Envoyée<br>
 			Nature<br>
 			Accepté<br>
+';}echo'
 			<br>
-			Corsair CX550M<br>
-			2<br>
-			140 CHF<br>
+			'.$values['Name'].'<br>
+			'.$value['Number'].'<br>
+			'.$Prix.' CHF<br>
 			<br>
 			
-	</div>
-	
-		<div class="separation">
+	</div>';
+}
+echo'	<div class="separation">
 			<div class="col-sm-12">
 			</div>
 		
@@ -96,62 +145,4 @@ echo'
 	<div class="showing">
 		<div class="col-lg-offset-4 col-sm-8">
 ';
-
-foreach($order as $value){
-    if($number<=0){
-        echo'<li>Adresse : '.$FirstName.' '.$LastName.'</br>'.$Road.'</br>'.$NPA.' '.$Town.'</br></li>';
-        echo '<li>Date de commande : '.$value['Date'].'</li>';
-        echo '<li>Numero commande : '.$value['NumberOrder'].'</li>';
-        if($value['State']==0){
-        
-            echo'<li>Etat commande : '.'En attente du payement'.'</li>';
-        
-        }else if($value['State']==1){
-        
-            echo'<li>Etat commande : '.'Envoyée'.'</li>';
-        
-        }else{
-        
-            echo'<li>Etat commande : '.'Arrivée à destination'.'</li>';
-        
-        }
-        if($value['PayementMethod']==0){
-        
-            echo'<li>Payement methode : '.'Nature'.'</li>';
-        
-        }else if($value['PayementMethod']==1){
-        
-            echo'<li>Payement methode : '.'Facture'.'</li>';
-        
-        }
-        if($value['PayementState']==0){
-        
-            echo'<li>Etat payement : '.'En cours de traitement'.'</li>';
-        
-        }else if($value['PayementState']==1){
-        
-            echo'<li>Etat payement : '.'Payé'.'</li>';
-        
-        }else{
-        
-            echo'<li>Etat payement : '.'Payement refuser'.'</li>';
-        }
-        $number++;   
-    }
-    foreach($articles as $values){
-        if(($value['Fk_Article'])==($values['idArticle'])){
-            $Prix += $value['Number']*$values['Price'];
-            $PrixTotal += $value['Number']*$values['Price'];
-            echo '<li>Article : '.$values['Name'].'</li>';
-            echo '<li>Nombre commandé : '.$value['Number'].'</li>';
-            echo '<li>Prix:'.$Prix.'</li>';
-        }
-    }
-    $Prix=0;
-}
-echo'<br><strong><li>Total prix : '.$PrixTotal;
-
-echo'</strong></li></ul></div>
-	</div>';
-
-echo'</div>';
+ 

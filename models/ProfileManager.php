@@ -89,8 +89,8 @@
 		}
 		
 		//Modifie le mot de passe
-		public function modifyUserPasswordById($userId, $userPassword){
-		    $sql = "UPDATE t_user SET Password = '$userPassword'  WHERE idUser =".intval($userId);
+		public function modifyUserPasswordById($userId, $hash){
+		    $sql = "UPDATE t_user SET Password = '$hash' WHERE idUser =".intval($userId);
 		    
 		    $resultat = $this->dbManager->Query($sql);
 		}

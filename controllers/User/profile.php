@@ -12,6 +12,9 @@
     //Lien pour "refresh"
     $refresh ="location:index.php?controller=User&action=profile";
     
+    //Lien pour sur la page login
+    $loginPage ="location:index.php?controller=Login&action=login&newpass=true";
+    
     $profileManager = new ProfileManager();
     
     $aside = $profileManager->getCategoryName();
@@ -286,28 +289,26 @@
                 $userOldPasswordMd5 = md5($userOldPassword);
                 $userNewPasswordMd5 = md5($userNewPassword);
                 
-                //hash du nouveau password
-                $hash = password_hash($userOldPasswordMd5, PASSWORD_DEFAULT);
                 
                 //verification du password md5 selon l'actuel
-                $isValid = password_verify($hash, $userInfoPassword);
+                $isValid = password_verify($userOldPasswordMd5, $userInfoPassword);
                 
-               
                 if(!$isValid){
                     //message de confirmation de la création
                     $_SESSION["ModifSucces"] = NULL;
-                    echo'yes';
                     $errorsArray[] = "Votre ancien mot de passe est faux";
                     
                 }else{
+                    
                     //hash du nouveau password
                     $hash = password_hash($userNewPasswordMd5, PASSWORD_DEFAULT);
                     
-                    $profileManager->modifyUserPasswordById($userId, $hash);
+                    $profileManager->modifyUserPasswordById($userInfoId, $hash);
                     
                     //message de confirmation de la création
                     $_SESSION["ModifSucces"] = "<p style='color:green;'>Mot de passe modifié !</p>";
-                    header($refresh);
+                    session_destroy();
+                    header($loginPage);
                 }
                 
                  

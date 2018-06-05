@@ -8,11 +8,11 @@ include 'models/OrderManager.php';
     // attribution de l'id de l'utilisateur a une variable
     foreach($user as $valueuserid){
         $iduser = $valueuserid['idUser'];
-        $FirstName = $valueuser['FirstName'];
-        $LastName = $valueuser['LastName'];
-        $Road =$valueuser['Road'];
-        $NPA = $valueuser['NPA'];
-        $Town = $valueuser['Town'];
+        $FirstName = $valueuserid['FirstName'];
+        $LastName = $valueuserid['LastName'];
+        $Road =$valueuserid['Road'];
+        $NPA = $valueuserid['NPA'];
+        $Town = $valueuserid['Town'];
     }
     $articles=$commandeManager->getArticle();
     $order = $commandeManager->getOrder($iduser,$NumberOrder);

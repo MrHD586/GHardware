@@ -30,7 +30,7 @@ echo'
 echo'
 
 	<div class="hiding">
-		<div class="col-lg-offset-4 col-sm-8">
+		<div class="col-lg-offset-2 col-sm-8">
 		<strong>'.$FirstName.' '.$LastName.'</strong><br>
 		</div>
 	

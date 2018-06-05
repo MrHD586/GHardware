@@ -152,8 +152,8 @@ echo'
 ';
 
 foreach($order as $value){
-    if($number<=0){
-        echo'<li>Adresse : '.$FirstName.' '.$LastName.'</br>'.$Road.'</br>'.$NPA.' '.$Town.'</br></li>';
+    if($numbers<=0){
+        echo'<li>Adresse : '.$FirstName.' '.$LastName.' / '.$Road.' / '.$NPA.' '.$Town.'</br></li>';
         echo '<li>Date de commande : '.$value['Date'].'</li>';
         echo '<li>Numero commande : '.$value['NumberOrder'].'</li>';
         if($value['State']==0){
@@ -190,12 +190,11 @@ foreach($order as $value){
             
             echo'<li>Etat payement : '.'Payement refuser'.'</li>';
         }
-        $number++;
+        $numbers++;
     }
     foreach($articles as $values){
         if(($value['Fk_Article'])==($values['idArticle'])){
             $Prix += $value['Number']*$values['Price'];
-            $PrixTotal += $value['Number']*$values['Price'];
             echo '<li>Article : '.$values['Name'].'</li>';
             echo '<li>Nombre commandé : '.$value['Number'].'</li>';
             echo '<li>Prix:'.$Prix.'</li>';

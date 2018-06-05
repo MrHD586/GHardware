@@ -129,7 +129,7 @@ foreach($articles as $values){
     $Prix=0;
 }
 }
-}
+
 echo'			
 	</div>
 	<div class="separation">

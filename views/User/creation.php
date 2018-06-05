@@ -71,7 +71,7 @@
 				<div class="col-lg-4"><label for="Town">Ville</label></div>
 				<div class="col-lg-8"><input type="text" name="Town" value="'.$formUserTownValue.'"/></div>
 			</p>';
-			include('./capcha.php');
+			include('Location:capcha.php');
 			//<p>
 				//<div class="col-lg-4"><label for="captcha">Recopiez les chiffres : <img src="../captcha.php" alt="Captcha" /></label></div>
 				//<div class="col-lg-8"><input type="text" name="captcha" id="captcha" /></div>

@@ -9,14 +9,14 @@
 		display:none;
 	}
 	
-	footer{
-		display:none;
-	}
-	
 	img{
 		display:block;
 		width:300px;
 		height:auto;
+	}
+	
+	.hiding{
+		display:none;
 	}
 	
 	.container {

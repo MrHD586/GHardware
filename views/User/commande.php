@@ -154,8 +154,8 @@ echo'
 foreach($order as $value){
     if($numbers<=0){
         echo'<li>Adresse : '.$FirstName.' '.$LastName.'</br>'.$Road.'</br>'.$NPA.' '.$Town.'</br></li>';
-        echo '<li>Date de commande : '.$value['Date'].'</li>';
-        echo '<li>Numero commande : '.$value['NumberOrder'].'</li>';
+        echo '<li>___Date de commande : '.$value['Date'].'</li>';
+        echo '<li>___Numero commande : '.$value['NumberOrder'].'</li>';
         if($value['State']==0){
             
             echo'<li>Etat commande : '.'En attente du payement'.'</li>';

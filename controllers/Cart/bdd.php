@@ -95,7 +95,7 @@
         foreach($articles as $value){
             //stockage de l'id d'article pour l'indexation et la requète db
             $index = $value;
-            $articlesbdd[$index] = $panierBddManager->getArticleById($index);
+            $articlesbdd[$index] = $panierBddManager->getArticleByIdByAndImage($index);
         }
         
     Compteur($iduser, $ArticleNombre, $panierBddManager);

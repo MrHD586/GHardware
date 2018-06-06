@@ -37,7 +37,7 @@
     }
     
     //récupération les imagess
-    $ImageUserList = $profileManager->getUserImages();
+    $ImageUserList = $profileManager->getUserImage();
     
     
     //--- Modification de l'avatar ---//
@@ -50,10 +50,11 @@
                 if($userNewAvatar){
                     $profileManager->modifyUserAvatarById($userInfoId, $userNewAvatar);
                     
+                    $newUserImageLink = $profileManager->getUserImageLinkByID($userNewAvatar);
                     //message de confirmation de la création
                     $_SESSION["ModifSucces"] = "<p style='color:green;'>Avatar modifié !</p>";
                                     
-                    $_SESSION['user_image'] = $userNewAvatar;
+                    $_SESSION['user_image'] = $newUserImageLink;
                     
                     header($refresh);
                 }

@@ -45,8 +45,15 @@
 		}
 		
 		//récupère toute les images
-		public function getUserImages(){
+		public function getUserImage(){
 		    $sql = "SELECT * FROM t_imageuser WHERE isActive = 1";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
+		
+		//récupère toute les images
+		public function getUserImageLinkByID($idImageUser){
+		    $sql = "SELECT Link FROM t_imageuser WHERE idImageUser =".intval($idImageUser);
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}

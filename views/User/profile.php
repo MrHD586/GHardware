@@ -18,15 +18,11 @@
     echo '	
     	<div class="col-lg-9">
     		<div class="row">
-    <div class="dropdown">
-				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.$userAvatar.'</button> 
-				  <div id="myDropdown" class="dropdown-content">	
-    					<a href="index.php?controller=User&action=profile">Profil</a>
-                        <a href="index.php?controller=User&action=AllCommande">Commandes</a>
-                        <a href="index.php?controller=User&action=CommentaireUser">Commentaire</a>
-                        <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
-				    </div>
-			</div>
+                <select name="selectBox1">
+                    <option value="img1.png" style="background-image:url('.$_SESSION['user_image'].');">male</option>
+                    <option value="img2.png" style="background-image:url(img2.png);">female</option>
+                    <option value="img2.png" style="background-image:url(img3.png);">others</option>
+                </select> 
                <!-- AVATAR -->
                <div class="col-sm-3">
     				<div class="col-xs-12">

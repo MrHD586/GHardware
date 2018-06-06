@@ -19,7 +19,7 @@
     	<div class="col-lg-9">
     		<div class="row">
                 <select name="selectBox1">
-                    <option value="img1.png" style="background-image:url('.$_SESSION['user_image'].');">male</option>
+                    <option value="value here"><img src="'.$_SESSION['user_image'].'" /></option>
                     <option value="img2.png" style="background-image:url(img2.png);">female</option>
                     <option value="img2.png" style="background-image:url(img3.png);">others</option>
                 </select> 

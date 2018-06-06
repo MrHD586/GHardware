@@ -52,7 +52,7 @@
     
     echo '
             <div class="col-lg-12">
-                <form name="frmSearch" action="Location:index.php?controller=Admin&action=order&NumberOrder='.$NumberOrder.'" method="post">
+                <form name="frmSearch" action="index.php?controller=Admin&action=order&NumberOrder='.$NumberOrder.'" method="post">
         
                     <div>
                         <input class="searchbar"  type="search" name="search[keyword]" value="'.$search_keyword.'" id="keyword"

@@ -27,6 +27,6 @@
     $aside = $searchManager->getCategoryName();
     //récuperation de toute les donnée de category
     $asides = $searchManager->getCategoryNameAll();
-    
+    $nbArticle=count($Categoriearticles);
     include 'views/aside.php';
     include 'views/Search/search.php';

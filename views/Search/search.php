@@ -7,7 +7,9 @@
     ################################################################################
     
 	echo'<div class="col-lg-9">';
-	
+	if($nbArticle==0){
+	echo'<h1>Aucun article trouvé</h1>';
+	}
     foreach($Categoriearticles as $value){
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];

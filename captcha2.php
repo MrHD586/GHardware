@@ -15,7 +15,7 @@ if ($flag == 1) {
         ?>
 
         <div style="text-align:center;">
-            <h1>Your answer is correct!</h1>
+            <strong>Bonne réponse !</strong>
 
 
         </div>
@@ -25,7 +25,7 @@ if ($flag == 1) {
         ?>
 
         <div style="text-align:center;">
-            <h1>Your answer is incorrect!<br>please try again </h1>
+            <strong>Mauvaise réponse<br>Veuillez réessayer</strong>
         </div>
 
         <?php
@@ -40,22 +40,23 @@ function display()
 {
     ?>
 
-    <div style="text-align:center;">
-        <h3>TYPE THE TEXT YOU SEE IN THE IMAGE</h3>
-        <b>This is just to check if you are a robot</b>
+    
+        <div class="col-lg-4"><strong>Entrez les chiffres visibles sur l'image</strong></div>
+        
 
-        <div style="display:block;margin-bottom:20px;margin-top:20px;">
+        <div class="col-lg-8" style="display:block;margin-bottom:20px;margin-top:20px;">
             <img src="image<?php echo $_SESSION['count'] ?>.png">
         </div>
         <form action=" <?php echo $_SERVER['PHP_SELF']; ?>" method="POST"
         / >
-        <input type="text" name="input"/>
+		<div class="col-lg-4"></div>
+        <div class="col-lg-8"><input type="text" name="input"/>
         <input type="hidden" name="flag" value="1"/>
-        <input type="submit" value="contrôler" name="submit"/>
+        <input type="submit" value="contrôler" name="submit" value="Valider"/></div>
         </form>
 
 
-    </div>
+    
 
 <?php
 }

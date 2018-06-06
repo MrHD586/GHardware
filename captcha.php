@@ -45,7 +45,7 @@ function display()
     ?>
 
     
-        <div class="col-lg-4"><strong>Entrez les chiffres visibles sur l'image</strong></div>
+        <div class="col-lg-4"><strong>Entrez les lettres visibles sur l'image</strong></div>
         
 
         <div class="col-lg-8" style="display:block;margin-bottom:20px;margin-top:20px;">

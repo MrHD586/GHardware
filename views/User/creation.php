@@ -21,7 +21,7 @@
     }       
 	
 	echo'<form method="post" action="">
-		      
+		    <p style="color:red;">Veuillez remplir le captcha avant d\'écrire vos informations</p>  
 			<p>
 				<div class="col-lg-4"><label for="Login_User">Votre Login</label></div>
 				<div class="col-lg-8"><input type="text" name="Login" value="'.$formUserLoginValue.'"/></div>

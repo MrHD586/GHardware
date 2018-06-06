@@ -94,6 +94,7 @@
                                                         ';if($error==1){
                                                         echo '<p style="color:red;">Veuillez remplir le champs texte pour poster un commentaire</p>';
 										                  }echo'
+                                                        <p style="color:red;">Veuillez remplir le captcha avant d\'écrire votre commentaire</p>
 														<input class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"/>';
                                                         include 'captcha.php';
                                                         if($_SESSION['captcharéussi']==1){

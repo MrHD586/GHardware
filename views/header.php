@@ -72,7 +72,7 @@
             if($_SESSION['UserSession'] != null){
                 $loginButtonText = $_SESSION['user_name'];
                 $loginButtonHref ="DropdownButtonFonction()";
-                $userAvatar = $_SESSION['user_image'];
+                $userAvatar = '<img id="avatarmenu" width="20" height="20" src="'.$_SESSION['user_image'].'">';
                 
             }else{
                 $loginButtonText = "Login";
@@ -84,7 +84,7 @@
             
 		 echo'
 		  <div class="dropdown">
-				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="'.$userAvatar.'"></button> 
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.$userAvatar.'"></button> 
 				  <div id="myDropdown" class="dropdown-content">	
     					<a href="index.php?controller=User&action=profile">Profil</a>
                         <a href="index.php?controller=User&action=AllCommande">Commandes</a>

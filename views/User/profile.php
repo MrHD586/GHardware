@@ -23,7 +23,7 @@
 
 
     <select name="webmenu" id="webmenu">
-        <option value="calendar" data-image="icons/icon_calendar.gif">Calendar</option>
+        <option value="calendar" data-image="'.$_SESSION['user_image'].'">Calendar</option>
         <option value="shopping_cart" data-image="icons/icon_cart.gif">Shopping Cart</option>
         <option value="cd" data-image="icons/icon_cd.gif">CD</option>
         <option value="email"  selected="selected" title="icons/icon_email.gif">Email</option>

@@ -8,7 +8,7 @@
     
     //titre du formulaire
     $pageTitle = "Gestion des commandes";
-    
+    $NumberOrder = 0;
     //message lors de création réussite
     if($_SESSION['order_CreationSucces'] != null){
         $order_CreationSucces = $_SESSION['order_CreationSucces']."<br/>";
@@ -78,6 +78,8 @@
     
     if(!empty($result)) {
         foreach($result as $row) {
+            if($NumberOrder!=$row["NumberOrder"]){
+                $NumberOrder=$row["NumberOrder"];
             echo '
                 <tr>
                     <td>'.$row["idOrder"].'</td>
@@ -128,6 +130,7 @@
             
             echo' <td>'.$editButton.'</td>
                                     </tr>';
+            }
         }
     }
     

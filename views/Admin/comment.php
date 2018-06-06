@@ -172,6 +172,6 @@
                             </div>
                     	    <div class="col-lg-12"></div>
                         </p>
-                	</form>';
+                	</form></div></div>';
     }
     

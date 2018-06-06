@@ -91,6 +91,7 @@
         //si le formulaire est envoyé
         if(isset($_POST['submit'])){
             $orderId = $_POST['hiddenId'];
+            $NumberOrder = $_POST['Text'];
             $orderState = $_POST['State'];
             $orderPayementState = $_POST['PayementState'];
             
@@ -113,7 +114,7 @@
                 //si l'on est en modif
                 if(!empty($orderId) || $orderId != NULL){
                     //requête pour la modif de l'utilisateur sans modif du password
-                    $orderManager->modifyOrderById($orderId, $orderState, $orderPayementState);
+                    $orderManager->modifyOrderById($NumberOrder, $orderState, $orderPayementState);
                     $_SESSION["order_CreationSucces"] = "<p style='color:green;'>Commande modifiée !</p>";
                     header($refresh);
                 }

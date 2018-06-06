@@ -8,7 +8,6 @@
     
     //titre du formulaire
     $pageTitle = "Gestion des commandes";
-    
     //message lors de création réussite
     if($_SESSION['order_CreationSucces'] != null){
         $order_CreationSucces = $_SESSION['order_CreationSucces']."<br/>";
@@ -128,6 +127,7 @@
             
             echo' <td>'.$editButton.'</td>
                                     </tr>';
+            
         }
     }
     

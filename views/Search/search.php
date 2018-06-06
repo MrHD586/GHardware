@@ -7,14 +7,12 @@
     ################################################################################
     
 	echo'<div class="col-lg-9">';
-	if(isset($Searcharticles['queryString'])){
-	    echo'<h1>Aucun article trouvé</h1>';
-	}
 	foreach($Searcharticles as $value){
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
         foreach($asides as $values){
             if($values['idCategory']==$fkcategorie){
+              $nombre=1;
               $categorie=$values['CName'];
             }
         }
@@ -77,5 +75,7 @@
             
         			';
     }
-	
+    if($nombre==NULL){
+      echo'<h1>Aucun article trouvé</h1>';
+    }
 	echo '</div>';

@@ -42,9 +42,11 @@
                 $_SESSION['UserSession'] = TRUE;
                 $_SESSION['user_name'] = $userLogin;
                 
-                $_SESSION['test'] = $row['Fk_ImageUser'];
+                
                 //récupération du lien de l'image de l'avatar                
                 $userImage = $loginManager->getUserImageByUserFkImage($row['Fk_ImageUser']);
+                
+                $_SESSION['test'] = $userImage;
                 
                 foreach($userImage as $value){
                     $_SESSION['user_image'] = $value['Link'];

@@ -16,33 +16,6 @@
  
 
     echo '	
-<link rel="stylesheet" href="css/sample.css" />
-<script src="../js/jquery/jquery-1.9.0.min.js"></script>
-<!-- <msdropdown> -->
-<link rel="stylesheet" type="text/css" href="../css/msdropdown/dd.css" />
-<script src="../js/msdropdown/jquery.dd.min.js"></script>
-<!-- </msdropdown> -->
-
-
-    
-
-    <tr>
-        <td valign="top">
-            <select id="payments" name="payments" style="width:250px;">
-                <option value="" data-description="Choos your payment gateway">Payment Gateway</option>
-                <option value="amex" data-image="'.$_SESSION['user_image'].'" data-description="My life. My card...">Amex</option>
-                <option value="Discover" data-image="'.$_SESSION['user_image'].'" data-description="It pays to Discover...">Discover</option>
-                <option value="Mastercard" data-image="'.$_SESSION['user_image'].'" data-title="For everything else..." data-description="For everything else...">Mastercard</option>
-                <option value="cash" data-image="'.$_SESSION['user_image'].'" data-description="Sorry not available..." disabled="true">Cash on devlivery</option>
-                <option value="Visa" data-image="'.$_SESSION['user_image'].'" data-description="All you need...">Visa</option>
-                <option value="Paypal" data-image="'.$_SESSION['user_image'].'" data-description="Pay and get paid...">Paypal</option>
-            </select> &nbsp;
-        </td>
-    </tr>
-
-
-
-
 
     	<div class="col-lg-9">
     		<div class="row">

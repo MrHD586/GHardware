@@ -54,7 +54,7 @@
     			    header($urlToAdmin);
     			}else{
     			    if($_POST['Paniercookie']==1){
-    			    header('location:index.php?controller=Cart&action=CookieToBdd');
+    			    header('location:index.php?controller=Cart&action=cookieToBdd');
     			    }else{
     			    header($urlToHome);
     			    }

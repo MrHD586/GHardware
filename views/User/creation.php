@@ -71,6 +71,7 @@
 				<div class="col-lg-4"><label for="Town">Ville</label></div>
 				<div class="col-lg-8"><input type="text" name="Town" value="'.$formUserTownValue.'"/></div>
 			</p>';
+			include 'captcha.php';
 			//<p>
 				//<div class="col-lg-4"><label for="captcha">Recopiez les chiffres : <img src="../captcha.php" alt="Captcha" /></label></div>
 				//<div class="col-lg-8"><input type="text" name="captcha" id="captcha" /></div>
@@ -82,13 +83,10 @@
             echo'
        
 		    <p>
-
 			    <div class=" col-lg-12"><input type="submit" name="submit" value="Envoyer"/></div>
-		    </p>';
+		    </p>';  
             }
-            echo'
-		</form>';
-include 'captcha.php';
-echo'	</div>
+		echo'</form>
+	</div>
 		</div>
     ';

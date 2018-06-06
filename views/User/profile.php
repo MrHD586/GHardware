@@ -22,7 +22,7 @@
                <!-- AVATAR -->
                <div class="col-sm-3">
     				<div class="col-xs-12">
-    					<img id="avatarmenu" width="135" height="135" src="images/defaultavatar.png">
+    					<img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'">
     				</div>
     				
     				<div class="col-xs-12">

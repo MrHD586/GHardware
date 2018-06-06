@@ -41,6 +41,18 @@
             if($userLogin == $row['Login'] && $isValid){
                 $_SESSION['UserSession'] = TRUE;
                 $_SESSION['user_name'] = $userLogin;
+                
+                
+                //récupération du lien de l'image de l'avatar
+                $userImageId = $row['Fk_ImageUser'];
+                
+                $userImage = $loginManager->getUserImageByUserFkImage($userImageId);
+                
+                $userImageRow = $userImage->fetch();
+                
+                $_SESSION['user_image'] = $userImageRow['Link'];
+                
+                
                                
     			if($row['isAdmin'] == 1){
     			    $_SESSION['userIsAdmin'] = TRUE; 

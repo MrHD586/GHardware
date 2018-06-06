@@ -16,6 +16,28 @@
  
 
     echo '	
+
+script src="js/msdropdown/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+
+
+    <select name="webmenu" id="webmenu">
+        <option value="calendar" data-image="icons/icon_calendar.gif">Calendar</option>
+        <option value="shopping_cart" data-image="icons/icon_cart.gif">Shopping Cart</option>
+        <option value="cd" data-image="icons/icon_cd.gif">CD</option>
+        <option value="email"  selected="selected" title="icons/icon_email.gif">Email</option>
+        <option value="faq" data-image="icons/icon_faq.gif">FAQ</option>
+        <option value="games" data-image="icons/icon_games.gif">Games</option>
+      </select>
+
+
+
+
+
+
+
+
     	<div class="col-lg-9">
     		<div class="row">
                 <select name="selectBox1">
@@ -183,6 +205,17 @@
     		   </div>
     		</div>
     	</div>';
+             
+             echo'
+             <script language="javascript">
+             $(document).ready(function(e) {
+                 try {
+                     $("body select").msDropDown();
+                 } catch(e) {
+                     alert(e.message);
+                 }
+             });
+                 </script>';
 					   
 					   
 					   

@@ -44,13 +44,17 @@
     if($_GET['modif'] == 'avatar'){
         if($_GET['id'] != NULL){
             $userNewAvatar = $_GET['id'];
-        
+            
+            $newUserImageLink = $profileManager->getUserImageLinkByID($userNewAvatar);
+            
+            $_SESSION['user_imageTest'] = $newUserImageLink['Link'];
+            
             if(isset($_POST['submit'])){
                 
                 if($userNewAvatar){
                     $profileManager->modifyUserAvatarById($userInfoId, $userNewAvatar);
                     
-                    $newUserImageLink = $profileManager->getUserImageLinkByID($userNewAvatar);
+                    
                     //message de confirmation de la création
                     $_SESSION["ModifSucces"] = "<p style='color:green;'>Avatar modifié !</p>";
                                     

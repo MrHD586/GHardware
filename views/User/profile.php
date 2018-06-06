@@ -22,33 +22,41 @@
         
                <!-- AVATAR -->
                <div class="col-sm-3">
-    				<div class="col-xs-12">
-    					<img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'">
-    				</div>
+    				<div class="col-xs-12">';
+    
+                    if(!$_GET['id']){
+                        echo '<img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'">';
+                    }else{
+                        
+                        echo '<img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_imageTest'].'">';
+                    }
+                    
+               echo'</div>
     				
     				<div class="col-xs-12">
     					<a class="btn btn-default navbar-btn" href="index.php?controller=User&action=profile&modif=avatar" role="button">Changer Avatar</a>
     				</div>
     		   </div>';
-    
+   
                 if($_GET['modif'] == 'avatar'){
                     echo'
 				        <div class="col-sm-12">
-    						<form method="post" action="">';
+    						<form id="avatarForm" method="post" action="">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button></br></br>';
                     
                                 foreach($ImageUserList as $imageValue){
                                     echo'
                                         <tr>
                                             <td>
                                                 <a href="index.php?controller=User&action=profile&modif=avatar&id='.$imageValue['idImageUser'].'">
-                                                    <img id="avatarmenu" width="135" height="135" src="'.$imageValue['Link'].'">
+                                                    <img id="avatarmenu"  width="120" height="120" src="'.$imageValue['Link'].'">                                                                                           
                                                 </a>
                                             </td>
-                                        </tr>
-                                    ';
+                                        </tr>';
                                 }
-                           echo '</br><button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button>
-                            </form>
+                                
+                     echo ' </form>
 					    </div>';
                 }
     
@@ -74,7 +82,6 @@
     					   echo'
         				        <div class="col-sm-12">
             						<form method="post" action="">
-                                        <input type="hidden" value="'.$userIds.'" name="hiddenId"/>
                                         <input class="searchbar" type="text" name="login" placeholder="Nom d\'utilisateur">
                                         <button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button>
                                     </form>
@@ -201,7 +208,6 @@
     		   </div>
     		</div>
     	</div>';
-             
 					   
 					   
 					   

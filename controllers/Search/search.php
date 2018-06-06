@@ -18,10 +18,10 @@
     //condition pour savoir si searchmarque a été set
     if(isset($_POST['searchmarque'])){
         //si il a été set, récuperation des données des articles par rapport à la marque
-        $Categoriearticles = $searchManager->SearchMarqueAndImageArticle($marque);
+        $Searcharticles = $searchManager->SearchMarqueAndImageArticle($marque);
     }else{
         //sinon récuperation des données des articles par nom
-        $Categoriearticles = $searchManager->SearchArticleAndImageArticle($article);
+        $Searcharticles = $searchManager->SearchArticleAndImageArticle($article);
     }
     //récuperation des donnée de category mais seulement le nom
     $aside = $searchManager->getCategoryName();

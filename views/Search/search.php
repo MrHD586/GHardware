@@ -8,8 +8,8 @@
     
 	echo'<div class="col-lg-9">';
 	
-    foreach($Categoriearticles as $value){
-        if($value['idArticle']==NULL){
+	foreach($Searcharticles as $value){
+        if($value['idArticle']==''){
             echo'<h1>Aucun article trouvé</h1>';
         }
         $id = $value['idArticle'];

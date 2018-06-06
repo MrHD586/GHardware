@@ -84,7 +84,7 @@
             
 		 echo'
 		  <div class="dropdown">
-				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.$userAvatar.'"></button> 
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.$userAvatar.'</button> 
 				  <div id="myDropdown" class="dropdown-content">	
     					<a href="index.php?controller=User&action=profile">Profil</a>
                         <a href="index.php?controller=User&action=AllCommande">Commandes</a>

@@ -186,7 +186,7 @@
                         $userPasswordParam = NULL;
                         //requête pour la modif de l'utilisateur sans modif du password
                         $userManager->modifyUserById($userId, $userLogin, $userPasswordParam, $userFirstName, $userLastName, $userEmail, $userBirthdate,
-                                                     $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin);
+                        $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userIsAdmin);
                         $_SESSION["user_CreationSucces"] = "<p style='color:green;'>Utilisateur modifié !</p>";
                         header($refresh);
                     }else{
@@ -194,7 +194,7 @@
                         $hash = password_hash($userPasswordMD5, PASSWORD_DEFAULT);
                         //requête pour la modificaiton de l'article
                         $userManager->modifyUserById($userId, $userLogin, $hash, $userFirstName, $userLastName, $userEmail, $userBirthdate,
-                            $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin);
+                            $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userIsAdmin);
                         $_SESSION["user_CreationSucces"] = "<p style='color:green;'>Utilisateur modifié !</p>";
                         header($refresh);
                     }

@@ -23,11 +23,11 @@
 		
 		//Crée un nouvel utilisateur
 		public function setNewUser($userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate, 
-		                          $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin){
+		                          $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userIsAdmin){
             
 			$sql = "INSERT INTO t_user (Login, Password, FirstName, LastName, Email, Birthdate, Road, NPA, Town, isActive, Fk_ImageUser, isAdmin)
                     VALUES ('".addslashes($userLogin)."', '$userPassword', '".addslashes($userFirstname)."', '".addslashes($userLastName)."',
-                              '$userEmail', '$userBirthdate', '".addslashes($userRoad)."', '$userNpa',  '".addslashes($userTown)."', b'$userIsActive', '$userFkPicUser', b'$userisAdmin')"; 
+                              '$userEmail', '$userBirthdate', '".addslashes($userRoad)."', '$userNpa',  '".addslashes($userTown)."', b'$userIsActive', '$userFkPicUser', b'$userIsAdmin')"; 
 			$this->dbManager->Query($sql);
 		}
 		
@@ -91,17 +91,17 @@
 		
 		//Modifie un utilisateurs existant
 		public function modifyUserById($userId, $userLogin, $userPassword, $userFirstname, $userLastName, $userEmail, $userBirthdate,
-		                               $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userisAdmin){
+		    $userRoad, $userNpa, $userTown, $userIsActive, $userFkPicUser, $userIsAdmin){
            if($userPassword == NULL){
                $sql = "UPDATE t_user SET Login = '".addslashes($userLogin)."', FirstName = '".addslashes($userFirstname)."', 
                     LastName = '".addslashes($userLastName)."', Email = '$userEmail', Birthdate = '$userBirthdate',
                     Road = '".addslashes($userRoad)."', NPA = '$userNpa', Town = '".addslashes($userTown)."',
-                    isActive = b'$userIsActive', isAdmin = '$userisAdmin' WHERE idUser =".intval($userId);
+                    isActive = b'$userIsActive', isAdmin = b'$userIsAdmin' WHERE idUser =".intval($userId);
            }else{
                $sql = "UPDATE t_user SET Login = '".addslashes($userLogin)."', Password = '$userPassword', 
                       FirstName = '".addslashes($userFirstname)."', LastName = '".addslashes($userLastName)."',
                       Email = '$userEmail', Birthdate = '$userBirthdate', Road = '".addslashes($userRoad)."', NPA = '$userNpa', 
-                      Town = '".addslashes($userTown)."', isActive = b'$userIsActive', isAdmin = '$userisAdmin' WHERE idUser =".intval($userId);
+                      Town = '".addslashes($userTown)."', isActive = b'$userIsActive', isAdmin = b'$userIsAdmin' WHERE idUser =".intval($userId);
            }
            
 	       $resultat = $this->dbManager->Query($sql);

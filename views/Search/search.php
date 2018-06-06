@@ -9,7 +9,7 @@
 	echo'<div class="col-lg-9">';
 	
     foreach($Categoriearticles as $value){
-        if($value==NULL){
+        if($value['idArticle']==NULL){
             echo'<h1>Aucun article trouvé</h1>';
         }
         $id = $value['idArticle'];

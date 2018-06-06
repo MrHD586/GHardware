@@ -44,7 +44,12 @@
 		    return $resultat;
 		}
 		
-		
+		//récupère toute les images
+		public function getUserImages(){
+		    $sql = "SELECT * FROM t_imageuser WHERE isActive = 1";
+		    $resultat = $this->dbManager->Query($sql);
+		    return $resultat->fetchAll();
+		}
 		
 		//Récupère l'id d'un utilisateur selon son login
 		public function getUserByLogin($userLogin){

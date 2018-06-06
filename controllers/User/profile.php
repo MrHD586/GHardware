@@ -36,6 +36,11 @@
         $userInfoTown = $value['Town'];
     }
     
+    //récupération les imagess
+    $ImageUserList = $profileManager->getUserImages();
+    
+    
+    
     
     
     

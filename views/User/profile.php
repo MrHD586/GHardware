@@ -31,17 +31,23 @@
     				</div>
     		   </div>';
     
-                if($_GET['modif'] == 'login'){
+                if($_GET['modif'] == 'avatar'){
                     echo'
 				        <div class="col-sm-12">
-    						<form method="post" action="">
-                                <tr>
-                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
-                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
-                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
-                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
-                                </tr>
-                                <button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button>
+    						<form method="post" action="">';
+                    
+                                foreach($ImageUserList as $imageValue){
+                                    echo'
+                                        <tr>
+                                            <td>
+                                                <a href="index.php?controller=User&action=profile&modif=avatar&id"'.$imageValue['idImageUser'].'>
+                                                    <img id="avatarmenu" width="135" height="135" src="'.$imageValue['Link'].'">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    ';
+                                }
+                           echo '<button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button>
                             </form>
 					    </div>';
                 }

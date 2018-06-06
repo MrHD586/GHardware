@@ -48,7 +48,7 @@ function display()
             <img src="image<?php echo $_SESSION['count'] ?>.png">
         </div>
         <form action=" <?php echo $_SERVER['PHP_SELF']; ?>" method="POST"
-        / >
+         >
 		<div class="col-lg-4"></div>
         <div class="col-lg-8"><input type="text" name="input"/>
         <input type="hidden" name="flag" value="1"/>

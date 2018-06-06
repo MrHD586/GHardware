@@ -67,6 +67,7 @@
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=displayCookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
                 }
             }
+            echo $_SESSION['test'];
             
             //titre et fonction du bouton
             if($_SESSION['UserSession'] != null){

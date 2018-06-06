@@ -55,7 +55,7 @@
 		public function getUserImageLinkByID($idImageUser){
 		    $sql = "SELECT Link FROM t_imageuser WHERE idImageUser =".intval($idImageUser);
 		    $resultat = $this->dbManager->Query($sql);
-		    return $resultat->fetchAll();
+		    return $resultat->fetch();
 		}
 		
 		//Récupère l'id d'un utilisateur selon son login

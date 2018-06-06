@@ -9,6 +9,7 @@
 	echo '
                
             	</div> 
+				</div>
 				
 				<footer>
 	           <!-- End Row Central Part | DO NOT TOUCH -->

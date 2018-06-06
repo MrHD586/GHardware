@@ -47,7 +47,7 @@
                                         </tr>
                                     ';
                                 }
-                           echo '<button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button>
+                           echo '</br><button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button>
                             </form>
 					    </div>';
                 }

@@ -17,7 +17,6 @@ if ($flag == 1) {
         <div style="text-align:center;">
             <strong>Bonne réponse !</strong>
 
-
         </div>
 
     <?php

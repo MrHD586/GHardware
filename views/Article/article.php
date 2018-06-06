@@ -96,7 +96,11 @@
 										                  }echo'
 														<input class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"/>';
                                                         include 'captcha.php';
-    												echo'<br><button type="submit" class="btn btn-primary btn-sm">Envoyer</button>
+                                                        if($_SESSION['captcharéussi']==1){
+                                                      
+    												echo'<br><button type="submit" value"submit "class="btn btn-primary btn-sm">Envoyer</button>';
+                                                        }
+                                                echo'
     											</form>
     										</div>
     									</div>

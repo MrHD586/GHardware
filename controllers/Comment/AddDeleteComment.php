@@ -15,7 +15,7 @@
         $deletecommentaire = $commentaireManager->deleteValueComment($_GET['id']);
         //redirection sur la page ou l'utilisateur peux voir ses commentaires
         header("location:index.php?controller=User&action=CommentaireUser");
-    }else{
+    }else if(isset($_POST['submit'])){
         //déclaration de plusieurs variable
         //récuperation du nom d'utilisateur
         $userLogin = $_SESSION['user_name'];

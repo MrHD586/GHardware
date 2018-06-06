@@ -40,8 +40,21 @@
     $ImageUserList = $profileManager->getUserImages();
     
     
-    
-    
+    //--- Modification de l'avatar ---//
+    if($_GET['modif'] == 'avatar'){
+        if(isset($_POST['submit'])){
+            $userNewAvatar = $_GET['id'];
+            
+            if($userNewAvatar){
+                $profileManager->modifyUserAvatarById($userInfoId, $userNewAvatar);
+                
+                //message de confirmation de la création
+                $_SESSION["ModifSucces"] = "<p style='color:green;'>Avatar modifié !</p>";
+                                
+                header($refresh);
+            }
+        }
+    }
     
     
     

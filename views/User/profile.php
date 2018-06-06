@@ -40,7 +40,7 @@
                                     echo'
                                         <tr>
                                             <td>
-                                                <a href="index.php?controller=User&action=profile&modif=avatar&id'.$imageValue['idImageUser'].'">
+                                                <a href="index.php?controller=User&action=profile&modif=avatar&id='.$imageValue['idImageUser'].'">
                                                     <img id="avatarmenu" width="135" height="135" src="'.$imageValue['Link'].'">
                                                 </a>
                                             </td>

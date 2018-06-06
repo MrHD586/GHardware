@@ -58,6 +58,14 @@
 		    return $resultat->fetchAll();
 		}
 		
+		
+		//Modifie l'avatar
+		public function modifyUserAvatarById($userId, $idAvatar){
+		    $sql = "UPDATE t_user SET Fk_ImageUser = '".addslashes($idAvatar)."' WHERE idUser =".intval($userId);
+		    
+		    $resultat = $this->dbManager->Query($sql);
+		}
+		
 		//Modifie le login
 		public function modifyUserLoginById($userId, $userLogin){
 		    $sql = "UPDATE t_user SET Login = '".addslashes($userLogin)."' WHERE idUser =".intval($userId);

@@ -22,14 +22,14 @@
 		 
 		//Récupère les articles et image par id
 		public function getArticleByIdAndImage($idarticle) {
-		    $sql = "SELECT * FROM t_article INNER JOIN t_imagearticle ON t_article.Fk_ImageArticle = t_imagearticle.idImageArticle WHERE idArticle='".intval($idarticle)."' AND t_imagearticle.isActive = 1"; 
+		    $sql = "SELECT * FROM t_article INNER JOIN t_imagearticle ON t_article.Fk_ImageArticle = t_imagearticle.idImageArticle WHERE idArticle='".intval($idarticle)."' AND t_imagearticle.isActive = 1 AND t_article.isActive = 1"; 
 			$resultat = $this->dbManager->Query($sql);
 			return $resultat->fetchAll();
 		}
 		
 		//Récupère les articles et image par id
 		public function getArticleIdByName($articleName) {
-		    $sql = "SELECT idArticle FROM t_article WHERE Name = '$articleName'";
+		    $sql = "SELECT idArticle FROM t_article WHERE Name = '$articleName' AND isActive = 1";
 		    $resultat = $this->dbManager->Query($sql);
 		    return $resultat->fetchAll();
 		}

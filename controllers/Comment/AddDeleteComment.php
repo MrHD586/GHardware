@@ -8,6 +8,8 @@
     
     include 'models/CommentManager.php';
     $id=$_GET['id'];
+    $input=$_POST['input'];
+    $flag=$_POST["flag"];
     $commentaireManager = new CommentManager();
     //test pour savoir si l'utilisateur a voulu supprimer son commentaire
     if(isset($_POST['Delete'])){
@@ -47,5 +49,5 @@
             header("location:index.php?controller=Article&action=articlecommentaire&id=$Fk_Article");
         }
     }
-    header("Location:index.php?controller=Article&action=articlecommentaire&id=$id");
+    header("Location:index.php?controller=Article&action=articlecommentaire&id=$id&input=$input&flag=$flag");
     

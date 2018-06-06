@@ -9,6 +9,9 @@ $flag = 5;
 if (isset($_POST["flag"])) {
     $input = $_POST["input"];
     $flag = $_POST["flag"];
+}else{
+    $input = $_GET["input"];
+    $flag = $_GET["flag"];
 }
 if ($flag == 1) {
     if ($input == $_SESSION['captcha_string']) {

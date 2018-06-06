@@ -79,7 +79,7 @@
             if($_GET['Paniercookie']==1){
                 echo' <input type="hidden" name="Paniercookie" value="1">';
             }
-            if($_SESSION['captcharéussi']=!1){
+            if($_SESSION['captcharéussi']==1){
             echo'
        
 		    <p>

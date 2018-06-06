@@ -212,7 +212,6 @@
                  try {
                      $("body select").msDropDown();
                  } catch(e) {
-                     alert(e.message);
                  }
              });
                  </script>';

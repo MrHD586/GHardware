@@ -20,7 +20,7 @@ if ($flag == 1) {
         </div>
 
     <?php
-    $_SESSION['captcharéussi']==1;
+    $_SESSION['captcharéussi']=1;
     } else {
         ?>
 

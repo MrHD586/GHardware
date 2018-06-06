@@ -42,16 +42,21 @@
     
     //--- Modification de l'avatar ---//
     if($_GET['modif'] == 'avatar'){
-        if(isset($_POST['submit'])){
+        if($_GET['id'] != NULL){
             $userNewAvatar = $_GET['id'];
-            
-            if($userNewAvatar){
-                $profileManager->modifyUserAvatarById($userInfoId, $userNewAvatar);
+        
+            if(isset($_POST['submit'])){
                 
-                //message de confirmation de la création
-                $_SESSION["ModifSucces"] = "<p style='color:green;'>Avatar modifié !</p>";
-                                
-                header($refresh);
+                if($userNewAvatar){
+                    $profileManager->modifyUserAvatarById($userInfoId, $userNewAvatar);
+                    
+                    //message de confirmation de la création
+                    $_SESSION["ModifSucces"] = "<p style='color:green;'>Avatar modifié !</p>";
+                                    
+                    $_SESSION['user_image'] = $userNewAvatar;
+                    
+                    header($refresh);
+                }
             }
         }
     }

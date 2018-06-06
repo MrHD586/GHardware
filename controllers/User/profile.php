@@ -54,7 +54,7 @@
                     //message de confirmation de la création
                     $_SESSION["ModifSucces"] = "<p style='color:green;'>Avatar modifié !</p>";
                                     
-                    $_SESSION['user_image'] = $newUserImageLink;
+                    $_SESSION['user_image'] = $newUserImageLink['Link'];
                     
                     header($refresh);
                 }
@@ -275,12 +275,7 @@
     }
     
     
-   
-    if($_GET['modif'] == 'password'){
-        
-        
-        
-    }
+ 
   
     //--- modification du mot de passe ---//
     

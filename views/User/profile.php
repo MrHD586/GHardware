@@ -17,7 +17,7 @@
 
     echo '	
 
-script src="js/msdropdown/jquery-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/msdropdown/jquery-1.3.2.min.js" type="text/javascript"></script>
 <script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
 

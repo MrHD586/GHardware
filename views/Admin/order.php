@@ -8,7 +8,7 @@
     
     //titre du formulaire
     $pageTitle = "Gestion des commandes";
-    $_SESSION['NumberOrder'] = $_GET['$NumberOrder'];
+    $NumberOrder= $_SESSION['NumberOrder'];
     //message lors de création réussite
     if($_SESSION['order_CreationSucces'] != null){
         $order_CreationSucces = $_SESSION['order_CreationSucces']."<br/>";
@@ -52,7 +52,7 @@
     
     echo '
             <div class="col-lg-12">
-                <form name="frmSearch" action="index.php?controller=Admin&action=order&NumberOrder='.$NumberOrder.'" method="post">
+                <form name="frmSearch" action="" method="post">
         
                     <div>
                         <input class="searchbar"  type="search" name="search[keyword]" value="'.$search_keyword.'" id="keyword"

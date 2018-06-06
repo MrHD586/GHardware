@@ -42,17 +42,13 @@
                 $_SESSION['UserSession'] = TRUE;
                 $_SESSION['user_name'] = $userLogin;
                 
-                
-                //récupération du lien de l'image de l'avatar
-                $userImageId = $row['Fk_ImageUser'];
-                
-                $userImage = $loginManager->getUserImageByUserFkImage($userImageId);
+                $_SESSION['test'] = $row['Fk_ImageUser'];
+                //récupération du lien de l'image de l'avatar                
+                $userImage = $loginManager->getUserImageByUserFkImage($row['Fk_ImageUser']);
                 
                 foreach($userImage as $value){
                     $_SESSION['user_image'] = $value['Link'];
                 }
-                
-                
                 
                                
     			if($row['isAdmin'] == 1){

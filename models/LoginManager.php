@@ -29,7 +29,7 @@
         
         // Récupération du user par login
         public function getUserImageByUserFkImage($userFkImage){
-            $sql = "SELECT Link FROM t_imageuser WHERE idImageUser = '$userFkImage'";
+            $sql = "SELECT * FROM t_imageuser WHERE idImageUser = '$userFkImage'";
             $resultat = $this->dbManager->Query($sql);
             return $resultat->fetch();
         }

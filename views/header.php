@@ -78,7 +78,7 @@
                 $loginButtonHref ="location.href = 'index.php?controller=Login&action=login';";
             }
           
-                
+            
 		 echo'
 		  <div class="dropdown">
 				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="'.$_SESSION['user_image'].'"></button> 

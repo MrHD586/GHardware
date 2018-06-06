@@ -67,22 +67,24 @@
                     echo'<a class="btn btn-default navbar-btn" href="index.php?controller=Cart&action=displayCookie" role="button">Panier <span class="badge text-success">'.$Nombre.'</span></a>';
                 }
             }
-            echo $_SESSION['test'];
             
             //titre et fonction du bouton
             if($_SESSION['UserSession'] != null){
                 $loginButtonText = $_SESSION['user_name'];
                 $loginButtonHref ="DropdownButtonFonction()";
+                $userAvatar = $_SESSION['user_image'];
                 
             }else{
                 $loginButtonText = "Login";
-                $loginButtonHref ="location.href = 'index.php?controller=Login&action=login';";
+                $loginButtonHref ="location.href = 'index.php?controller=Login&action=login'";
+                $userAvatar = null;
             }
           
             
+            
 		 echo'
 		  <div class="dropdown">
-				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="'.$_SESSION['user_image'].'"></button> 
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="'.$userAvatar.'"></button> 
 				  <div id="myDropdown" class="dropdown-content">	
     					<a href="index.php?controller=User&action=profile">Profil</a>
                         <a href="index.php?controller=User&action=AllCommande">Commandes</a>

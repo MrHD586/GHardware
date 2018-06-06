@@ -16,24 +16,42 @@
  
 
     echo '	
-
-<script src="js/msdropdown/jquery-1.3.2.min.js" type="text/javascript"></script>
-<script src="js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
+<script src="js/jquery/jquery-1.9.0.min.js"></script>
+<!-- <msdropdown> -->
 <link rel="stylesheet" type="text/css" href="css/msdropdown/dd.css" />
+<script src="js/msdropdown/jquery.dd.js"></script>
+<!-- </msdropdown> -->
 
 
-    <select name="webmenu" id="webmenu">
-        <option><img src="'.$_SESSION['user_image'].'"></option>
-        <option value="calendar" data-image="'.$_SESSION['user_image'].'">Calendar</option>
-        <option value="shopping_cart" data-image="icons/icon_cart.gif">Shopping Cart</option>
-        <option value="cd" data-image="icons/icon_cd.gif">CD</option>
-        <option value="email"  selected="selected" title="icons/icon_email.gif">Email</option>
-        <option value="faq" data-image="icons/icon_faq.gif">FAQ</option>
-        <option value="games" data-image="icons/icon_games.gif">Games</option>
-      </select>
+    
 
-
-
+<tr>
+    <td valign="top">
+    <select id="payments" name="payments" style="width:250px;">
+        <option value="" data-description="Choos your payment gateway">Payment Gateway</option>
+        <option value="amex" data-image="'.$_SESSION['user_image'].'" data-description="My life. My card...">Amex</option>
+        <option value="Discover" data-image="'.$_SESSION['user_image'].'" data-description="It pays to Discover...">Discover</option>
+        <option value="Mastercard" data-image="'.$_SESSION['user_image'].'" data-title="For everything else..." data-description="For everything else...">Mastercard</option>
+        <option value="cash" data-image="'.$_SESSION['user_image'].'" data-description="Sorry not available..." disabled="true">Cash on devlivery</option>
+        <option value="Visa" data-image="'.$_SESSION['user_image'].'" data-description="All you need...">Visa</option>
+        <option value="Paypal" data-image="'.$_SESSION['user_image'].'" data-description="Pay and get paid...">Paypal</option>
+    </select> &nbsp;
+    <select style="width:200px" class="tech" name="tech" id="tech" onchange="showValue(this)">
+      <option value="calendar" data-image="images/msdropdown/icons/icon_calendar.gif">Calendar</option>
+      <option value="shopping_cart" data-image="images/msdropdown/icons/icon_cart.gif">Shopping Cart</option>
+      <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
+      <option value="email"  data-image="images/msdropdown/icons/icon_email.gif">Email</option>
+      <option value="faq" data-image="images/msdropdown/icons/icon_faq.gif">FAQ</option>
+      <option value="games" data-image="images/msdropdown/icons/icon_games.gif">Games</option>
+      <option value="music" data-image="images/msdropdown/icons/icon_music.gif">Music</option>
+      <option value="phone" data-image="images/msdropdown/icons/icon_phone.gif">Phone</option>
+      <option value="graph" data-image="images/msdropdown/icons/icon_sales.gif">Graph</option>
+      <option value="secured" data-image="images/msdropdown/icons/icon_secure.gif">Secured</option>
+      <option value="video" data-image="images/msdropdown/icons/icon_video.gif">Video</option>
+      <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
+    </select>
+    </td>
+  </tr>
 
 
 
@@ -203,15 +221,6 @@
     		</div>
     	</div>';
              
-             echo'
-             <script language="javascript">
-             $(document).ready(function(e) {
-                 try {
-                     $("body select").msDropDown();
-                 } catch(e) {
-                 }
-             });
-                 </script>';
 					   
 					   
 					   

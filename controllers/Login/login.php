@@ -48,9 +48,10 @@
                 
                 $userImage = $loginManager->getUserImageByUserFkImage($userImageId);
                 
-                $userImageRow = $userImage->fetch();
+                foreach($userImage as $value){
+                    $_SESSION['user_image'] = $value['Link'];
+                }
                 
-                $_SESSION['user_image'] = $userImageRow['Link'];
                 
                 
                                

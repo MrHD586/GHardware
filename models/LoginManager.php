@@ -31,7 +31,7 @@
         public function getUserImageByUserFkImage($userFkImage){
             $sql = "SELECT Link FROM t_imageuser WHERE idImageUser = '$userFkImage'";
             $resultat = $this->dbManager->Query($sql);
-            return $resultat;
+            return $resultat->fetch();
         }
     }
 

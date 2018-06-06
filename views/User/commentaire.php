@@ -62,9 +62,9 @@ echo'
 					</div>
 				</center>
     
-';      foreach($Commentaire as $Commentaire){
-        $idCommentaire=$Commentaire['idComment'];
-            $Etat=$Commentaire['State'];
+';      foreach($Commentaire as $Commentaires){
+        $idCommentaire=$Commentaires['idComment'];
+            $Etat=$Commentaires['State'];
             if($Etat==0){
                 $EtatTxt= 'En attente';
             }else if($Etat==1){
@@ -77,7 +77,7 @@ echo'
 	
 	<div class="commandarticle">
 	
-		<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaire['Fk_Article'].'">
+		<a class="commandlink" href="index.php?controller=Article&action=articlecommentaire&id='.$Commentaires['Fk_Article'].'">
 		<form method=POST action=index.php?controller=comment&action=AddDeleteComment&id='.$idCommentaire.'>
 			<div class="row">
 			
@@ -99,7 +99,7 @@ echo'
 									<div class="col-md-7">
 										<div class="row">
 											<center>
-											'.$Commentaire['Text'].'
+											'.$Commentaires['Text'].'
 											</center>
 										</div>
 									</div>

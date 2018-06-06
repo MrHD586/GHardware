@@ -45,6 +45,7 @@
 		}
 		
 		
+		
 		//Récupère l'id d'un utilisateur selon son login
 		public function getUserByLogin($userLogin){
 		    $sql = "SELECT * FROM t_user WHERE Login ='$userLogin'";

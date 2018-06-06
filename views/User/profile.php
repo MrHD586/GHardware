@@ -18,7 +18,15 @@
     echo '	
     	<div class="col-lg-9">
     		<div class="row">
-    
+    <div class="dropdown">
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.$userAvatar.'</button> 
+				  <div id="myDropdown" class="dropdown-content">	
+    					<a href="index.php?controller=User&action=profile">Profil</a>
+                        <a href="index.php?controller=User&action=AllCommande">Commandes</a>
+                        <a href="index.php?controller=User&action=CommentaireUser">Commentaire</a>
+                        <a href="index.php?controller=Login&action=logout"> Deconnexion</a>
+				    </div>
+			</div>
                <!-- AVATAR -->
                <div class="col-sm-3">
     				<div class="col-xs-12">

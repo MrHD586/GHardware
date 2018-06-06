@@ -81,7 +81,7 @@
                 
 		 echo'
 		  <div class="dropdown">
-				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="images/defaultavatar.png"></button> 
+				<button onclick="'.$loginButtonHref.'" class="btn btn-default navbar-btn dropbtn">'.$loginButtonText.' <img id="avatarmenu" width="20" height="20" src="'.$_SESSION['user_image'].'"></button> 
 				  <div id="myDropdown" class="dropdown-content">	
     					<a href="index.php?controller=User&action=profile">Profil</a>
                         <a href="index.php?controller=User&action=AllCommande">Commandes</a>

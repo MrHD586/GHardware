@@ -28,8 +28,8 @@
         //récuperation des donnée de l'articles par rapport a l'id d'article du commentaire
         $article = $articlesManager->getArticleByIdAndImage($idarticle);
         //For pour attrivuer le nom de l'articles a un tableau avec l'index de l'id du coommentaire pour le retrouver facilement
-        foreach ($article as $value){
-            $article[$idCommentaire] = $value['Name'];
+        foreach ($article as $values){
+            $article[$idCommentaire] = $values['Name'];
         }
         
     }

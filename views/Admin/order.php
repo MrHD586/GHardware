@@ -113,15 +113,15 @@
             $editButton;
             
             if($deliveredParam == TRUE){
-                $editButton ='<a href="index.php?controller=Admin&action=order&delivered='.$deliveredParam.'&modif='.$row["idOrder"].'">
+                $editButton ='<a href="index.php?controller=Admin&action=order&delivered='.$deliveredParam.'&modif='.$row["idOrder"].'&Numberorder='.$row["NumberOrder"].'">
                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                 
             }elseif($sendParam == TRUE){
-                $editButton ='<a href="index.php?controller=Admin&action=order&send='.$sendParam.'&modif='.$row["idOrder"].'">
+                $editButton ='<a href="index.php?controller=Admin&action=order&send='.$sendParam.'&modif='.$row["idOrder"].'&Numberorder='.$row["NumberOrder"].'">
                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
                 
             }else{
-                $editButton ='<a href="index.php?controller=Admin&action=order&modif='.$row["idOrder"].'">
+                $editButton ='<a href="index.php?controller=Admin&action=order&modif='.$row["idOrder"].'&Numberorder='.$row["NumberOrder"].'">
                               <img src="images/action_edit.gif" alt="" title="Editer" /></a>';
             }
             

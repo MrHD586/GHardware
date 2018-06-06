@@ -140,8 +140,8 @@ class OrderManager {
     
     
     //Modifie un commentaire existant
-    public function modifyOrderById($orderId, $orderState, $orderPaymentState){
-        $sql = "UPDATE t_order SET State = '$orderState', PayementState = '$orderPaymentState'  WHERE idOrder =".intval($orderId);
+    public function modifyOrderById($numberorder, $orderState, $orderPaymentState){
+        $sql = "UPDATE t_order SET State = '$orderState', PayementState = '$orderPaymentState'  WHERE NumberOrder =".intval($numberorder);
         $resultat = $this->dbManager->Query($sql);
     }
 }

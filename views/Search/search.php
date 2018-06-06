@@ -7,9 +7,8 @@
     ################################################################################
     
 	echo'<div class="col-lg-9">';
-	var_dump($Searcharticles);
 	foreach($Searcharticles as $value){
-        if($value==''){
+	    if(isset($value['queryString'])){
             echo'<h1>Aucun article trouvé</h1>';
         }
         $id = $value['idArticle'];

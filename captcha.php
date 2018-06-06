@@ -33,6 +33,7 @@ if ($flag == 1) {
         display();
     }
 } else {
+    $_SESSION['captcharéussi']=0;
     create_image();
     display();
 }

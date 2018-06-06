@@ -27,9 +27,24 @@
     				</div>
     				
     				<div class="col-xs-12">
-    					<a class="btn btn-default navbar-btn" href="" role="button">Changer Avatar</a>
+    					<a class="btn btn-default navbar-btn" href="index.php?controller=User&action=profile&modif=avatar" role="button">Changer Avatar</a>
     				</div>
     		   </div>';
+    
+                if($_GET['modif'] == 'login'){
+                    echo'
+				        <div class="col-sm-12">
+    						<form method="post" action="">
+                                <tr>
+                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
+                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
+                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
+                                    <td><img id="avatarmenu" width="135" height="135" src="'.$_SESSION['user_image'].'"></td>
+                                </tr>
+                                <button type="submit" class="btn btn-primary btn-sm" name="submit">Valider</button>
+                            </form>
+					    </div>';
+                }
     
     
                 //affichage des messages d'erreures contenus dans le tableau errorsArray

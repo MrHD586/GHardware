@@ -98,7 +98,7 @@
                                                         include 'captcha.php';
                                                         if($_SESSION['captcharéussi']==1){
                                                       
-    												echo'<br><button type="submit" value"submit" class="btn btn-primary btn-sm">Envoyer</button>';
+    												echo'<br><button type="submit" name"submit" value"submit" class="btn btn-primary btn-sm">Envoyer</button>';
                                                         }
                                                 echo'
     											</form>

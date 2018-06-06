@@ -52,7 +52,7 @@ function display()
 		<div class="col-lg-4"></div>
         <div class="col-lg-8"><input type="text" name="input"/>
         <input type="hidden" name="flag" value="1"/>
-        <input type="submit" value="contrôler" name="submit" value="Valider"/></div>
+        <input type="submit" value="contrôler" name="submitcaptcha" value="Valider"/></div>
         </form>
 
 

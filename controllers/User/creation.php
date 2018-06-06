@@ -23,7 +23,7 @@
     //tableau contenant les erreurs
     $errors = array();
         
-    
+    if(isset($_POST['captcharéussi']))
     //si le formulaire est envoyé
 	if(isset($_POST['submit'])){
 	    	    

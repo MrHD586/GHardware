@@ -23,6 +23,7 @@
 
 
     <select name="webmenu" id="webmenu">
+        <option><img src="'.$_SESSION['user_image'].'"></option>
         <option value="calendar" data-image="'.$_SESSION['user_image'].'">Calendar</option>
         <option value="shopping_cart" data-image="icons/icon_cart.gif">Shopping Cart</option>
         <option value="cd" data-image="icons/icon_cd.gif">CD</option>
@@ -40,11 +41,7 @@
 
     	<div class="col-lg-9">
     		<div class="row">
-                <select name="selectBox1">
-                    <option value="value here"><img src="'.$_SESSION['user_image'].'" /></option>
-                    <option value="img2.png" style="background-image:url(img2.png);">female</option>
-                    <option value="img2.png" style="background-image:url(img3.png);">others</option>
-                </select> 
+        
                <!-- AVATAR -->
                <div class="col-sm-3">
     				<div class="col-xs-12">

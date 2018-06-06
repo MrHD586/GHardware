@@ -7,10 +7,11 @@
     ################################################################################
     
 	echo'<div class="col-lg-9">';
-	if($nbArticle==0){
-	echo'<h1>Aucun article trouvé</h1>';
-	}
+	
     foreach($Categoriearticles as $value){
+        if($value==NULL){
+            echo'<h1>Aucun article trouvé</h1>';
+        }
         $id = $value['idArticle'];
         $fkcategorie = $value['Fk_Category'];
         foreach($asides as $values){

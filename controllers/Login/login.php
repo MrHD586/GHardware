@@ -46,11 +46,7 @@
                 //récupération du lien de l'image de l'avatar                
                 $userImage = $loginManager->getUserImageByUserFkImage($row['Fk_ImageUser']);
                 
-                $_SESSION['test'] = $userImage['Link'];
-                
-                foreach($userImage as $value){
-                    $_SESSION['user_image'] = $value['Link'];
-                }
+                $_SESSION['user_image'] = $userImage['Link'];
                 
                                
     			if($row['isAdmin'] == 1){

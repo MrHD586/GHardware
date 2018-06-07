@@ -107,9 +107,9 @@
     									</div>
 									</div>
 								</div>
-							</div>
+							
     			';}
-    								echo'
+    								echo'</div>
     								
     								
     							

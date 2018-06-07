@@ -9,6 +9,7 @@
 	echo '
                
             	</div> 
+					</div>
 				
 				
 				<footer>

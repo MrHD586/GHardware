@@ -46,7 +46,7 @@
             //si il est rempli ajout du commentaire avec son état,texte,Utilisateur,Articles,Date
             $addCommentaire = $commentaireManager->setNewComment($CEtat, $CTexte, $Fk_User, $Fk_Article, $Date);
             //redirection sur l'article ou le commentaire a été écrit
-            header("location:index.php?controller=Article&action=articlecommentaire&id=$Fk_Article");
+            header("location:index.php?controller=User&action=CommentaireUser");
         }
     }else{
     header("Location:index.php?controller=Article&action=articlecommentaire&id=$id&input=$input&flag=$flag");

@@ -1,4 +1,4 @@
-﻿<?php
+﻿
 	################################################################################
 	#### Auteur : Butticaz Yvann   
 	#### Date : 22 Février 2018
@@ -84,6 +84,9 @@
     										</div>
     									</div>
                                         '.$commentaire['Date'].'';
+									</div>
+								</div>
+							</div>
 			      }	
 			      if($_SESSION['UserSession']==TRUE){
 										echo'<!-- New Comment Writing -->
@@ -105,11 +108,10 @@
     											</form>
     										</div>
     									</div>
-									</div>
-								</div>
+									
 							
     			';}
-    								echo'</div>
+    								echo'
     								
     								
     							

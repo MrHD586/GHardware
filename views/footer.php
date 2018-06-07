@@ -8,7 +8,7 @@
 	
 	echo '
                
-            	</div> 
+            	
 				
 				
 				<footer>

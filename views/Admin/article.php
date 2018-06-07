@@ -252,7 +252,7 @@
                         </div>
                 	    <div class="col-lg-12"></div>
                     </p>
-            	</form></div></div></div>';
+            	</form></div></div>';
     
  
          

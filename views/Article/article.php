@@ -83,10 +83,10 @@
     											   </div>
     										</div>
     									</div>
-                                        '.$commentaire['Date'].'';
+                                        '.$commentaire['Date'].'
 									</div>
 								</div>
-							</div>
+							</div>';
 			      }	
 			      if($_SESSION['UserSession']==TRUE){
 										echo'<!-- New Comment Writing -->

@@ -105,12 +105,15 @@
     											</form>
     										</div>
     									</div>
+									</div>
+								</div>
+							</div>
     			';}
-    								echo'</div>
+    								echo'
     								
     								
     							
-    						</div>
+    						
     			   
     	      
 		</div>

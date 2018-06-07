@@ -47,72 +47,7 @@
         	       </div> 
 				   
 				   
-				   <!-- Comment Space -->';
-    			   foreach($Commentaire as $commentaire){
-    			       $id=$commentaire['idComment'];
-    			   
-    				echo'<div class="row">
-    							<div class="col-lg-10">
-    								
-    								<div class="commentarticle">
-    								
-    									<div class="row">
-    									<!-- Avatar -->
-    										<div class="pseudoavatar">
-    											<div class="col-xs-3">
-    												<img width="50" height="50" src="'.$UserImage[$id].'">
-    											</div>
-    									<!-- Pseudo -->
-    											<div class="col-xs-9">
-    												<div class="commentpseudo">
-    													<b>
-    												    '.$NomUtilisateur[$id].'
-    													</b>
-    												</div>
-    											</div>
-    										</div>
-    										
-    									</div>
-    									
-    									
-    									<div class="row">
-    									<!-- Comment -->
-    										<div class="col-xs-10 col-xs-offset-1">
-    											<div class="jumbotron">
-    												   '.$commentaire['Text'].'
-    											   </div>
-    										</div>
-    									</div>
-                                        '.$commentaire['Date'].'';
-			      }	
-			      if($_SESSION['UserSession']==TRUE){
-										echo'<!-- New Comment Writing -->
-    									
-    									<div class="commentform">
-    										<div class="col-xs-10 col-xs-offset-1">
-    											<form method="POST" action="index.php?controller=Comment&action=AddDeleteComment&id='.$_GET['id'].'">
-                                                        ';if($error==1){
-                                                        echo '<p style="color:red;">Veuillez remplir le champs texte pour poster un commentaire</p>';
-										                  }echo'
-                                                        <p style="color:red;">Veuillez remplir le captcha avant d\'écrire votre commentaire</p>
-														<input class="comment" type="text" name="writecomment" placeholder="Ecrivez votre commentaire"/>';
-                                                        include 'captcha.php';
-                                                        if($_SESSION['captcharéussi']==1){
-                                                      
-    												echo'<br><button type="submit" name="submit" value="submit" class="btn btn-primary btn-sm">Envoyer</button>';
-                                                        }
-                                                echo'
-    											</form>
-    										</div>
-    									</div>
-    			';}
-    								echo'</div>
-    								
-    								
-    							
-    						</div>
-    			   
-    	      </div>
+				   
 		</div>
     		  
 	

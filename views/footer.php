@@ -10,7 +10,7 @@
                
             	
 					
-				
+				</div> 
 				
 				<footer>
 	           <!-- End Row Central Part | DO NOT TOUCH -->
@@ -36,7 +36,7 @@
         	
         	</footer>
 			
-				</div> 
+				
         </body>
     </html>
 	';
